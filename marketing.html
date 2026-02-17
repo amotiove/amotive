@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing & Growth — Amotive</title>
+<meta name="description" content="Social media, content, and paid ads managed end-to-end. €2,000/mo. Real growth, real results.">
+<!-- External font dependencies removed per brand requirements -->
+<link rel="stylesheet" href="css/shared.css">
+<style>
+:root {
+  --accent: #2ECC71;
+  --accent-bright: #45D988;
+  --accent-dim: #27AE60;
+  --accent-glow: rgba(46, 204, 113, 0.12);
+  --gradient-accent: linear-gradient(135deg, #27AE60 0%, #45D988 50%, #2ECC71 100%);
+  --gradient-accent-text: linear-gradient(135deg, #2ECC71 0%, #7DEFA5 50%, #2ECC71 100%);
+}
+.accent-text {
+  background: var(--gradient-accent-text);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding-top: 100px; padding-bottom: 60px;
+  position: relative; overflow: hidden;
+}
+.hero-content { max-width: 720px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 20px; border-radius: 2px;
+  font-size: 0.68rem; font-weight: 700; color: var(--accent);
+  background: rgba(46, 204, 113, 0.05); border: 1px solid rgba(46, 204, 113, 0.1);
+  margin-bottom: 36px; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+.hero h1 { margin-bottom: 32px; }
+.hero h1 em {
+  font-style: italic;
+  background: var(--gradient-accent-text);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub { font-size: 1.1rem; color: var(--silver); margin-bottom: 52px; max-width: 580px; line-height: 1.85; }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Stats bar */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 64px;
+  border: 1px solid rgba(46, 204, 113, 0.08);
+  border-radius: 4px; overflow: hidden;
+}
+.stat-item {
+  padding: 36px 28px; text-align: center;
+  border-right: 1px solid rgba(46, 204, 113, 0.06);
+  background: var(--navy-light);
+}
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; font-weight: 900;
+  color: var(--accent-bright); margin-bottom: 6px;
+}
+.stat-label { font-size: 0.72rem; color: var(--steel); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Services */
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 28px; margin-top: 64px;
+}
+.service-card {
+  padding: 40px 32px; background: var(--navy-light);
+  border: 1px solid rgba(46, 204, 113, 0.06); border-radius: 4px;
+  transition: all 0.4s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px); border-color: rgba(46, 204, 113, 0.18);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.service-icon {
+  width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; border: 1px solid rgba(46, 204, 113, 0.15); border-radius: 3px;
+  color: var(--accent); font-size: 1.2rem;
+}
+.service-card h3 { margin-bottom: 12px; color: var(--platinum); }
+.service-card p { color: var(--silver); font-size: 0.9rem; line-height: 1.75; }
+
+/* Process */
+.process-track {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 64px; position: relative;
+}
+.process-track::before {
+  content: ''; position: absolute; top: 32px; left: 12.5%; right: 12.5%;
+  height: 1px; background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.2), transparent);
+}
+.process-step { text-align: center; position: relative; }
+.step-num {
+  width: 64px; height: 64px; margin: 0 auto 24px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 50%;
+  font-family: Georgia, 'Times New Roman', serif; font-weight: 900; font-size: 1.3rem;
+  color: var(--accent); background: var(--navy-deep); position: relative; z-index: 2;
+}
+.process-step h3 { margin-bottom: 8px; }
+.process-step p { color: var(--steel); font-size: 0.85rem; max-width: 200px; margin: 0 auto; line-height: 1.65; }
+
+/* Pricing */
+.pricing-card {
+  max-width: 600px; margin: 64px auto 0; padding: 56px 48px; text-align: center;
+  background: var(--navy-light); border: 1px solid rgba(46, 204, 113, 0.1);
+  border-radius: 4px; position: relative; overflow: hidden;
+}
+.pricing-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--gradient-accent);
+}
+.pricing-amount { font-family: Georgia, 'Times New Roman', serif; font-size: 3.5rem; font-weight: 900; color: var(--accent-bright); margin-bottom: 8px; }
+.pricing-period { color: var(--steel); font-size: 0.9rem; margin-bottom: 8px; }
+.pricing-note { color: var(--silver); font-size: 0.9rem; margin-bottom: 36px; }
+.pricing-list { list-style: none; text-align: left; max-width: 380px; margin: 0 auto 40px; }
+.pricing-list li { padding: 10px 0; color: var(--silver); font-size: 0.9rem; display: flex; align-items: center; gap: 12px; }
+.pricing-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+/* FAQ */
+.faq-list { max-width: 720px; margin: 64px auto 0; }
+.faq-item { border-bottom: 1px solid rgba(46, 204, 113, 0.06); }
+.faq-q {
+  width: 100%; padding: 24px 0; background: none; border: none;
+  color: var(--platinum); font-size: 1rem; font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; transition: color 0.3s;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-q::after { content: '+'; font-size: 1.4rem; color: var(--accent); transition: transform 0.3s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 24px; }
+.faq-a p { color: var(--silver); font-size: 0.9rem; line-height: 1.8; }
+
+/* CTA */
+.cta-section { text-align: center; padding: 150px 0; position: relative; }
+.cta-section::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.04) 0%, transparent 70%); pointer-events: none;
+}
+.cta-section p { color: var(--silver); font-size: 1.1rem; margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.85; }
+.upsell { margin-top: 24px; font-size: 0.88rem; color: var(--steel); }
+.upsell a { color: var(--orange); text-decoration: none; font-weight: 600; }
+.upsell a:hover { text-decoration: underline; }
+
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .process-track { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .process-track::before { display: none; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .process-track { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: 1fr; }
+  .hero { min-height: auto; padding: 140px 0 80px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <a href="index.html" class="logo"><span>am</span>otive</a>
+    <ul class="nav-links">
+      <li><a href="website.html">Websites</a></li>
+      <li><a href="marketing.html" style="color: #2ECC71;">Marketing</a></li>
+      <li><a href="premium.html">Full Growth</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cta" class="btn btn-orange btn-sm">Start a Project</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="website.html">Websites</a>
+  <a href="marketing.html">Marketing</a>
+  <a href="premium.html">Full Growth</a>
+  <a href="#cta" class="btn btn-orange">Start a Project</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="geo-particles">
+    <div class="geo-particle geo-diamond" style="top: 10%; left: 6%; --size: 10px; --dur: 14s; --drift: -30px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="top: 30%; right: 10%; --size: 5px; --dur: 10s; --delay: 2s; --drift: -20px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-cross" style="bottom: 25%; left: 12%; --size: 16px; --dur: 16s; --delay: 1s; --drift: -35px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-triangle" style="top: 55%; right: 8%; --size: 10px; --half: 5px; --dur: 18s; --delay: 0.5s; --drift: -28px; --pcolor: var(--accent-dim);"></div>
+    <div class="geo-particle geo-diamond" style="bottom: 18%; right: 20%; --size: 7px; --dur: 13s; --delay: 3s; --drift: -22px; --pcolor: var(--accent-bright);"></div>
+    <div class="geo-particle geo-dot" style="top: 45%; left: 20%; --size: 3px; --dur: 11s; --delay: 4s; --drift: -18px; --pcolor: var(--accent);"></div>
+  </div>
+  <div class="corner-decor corner-tl" style="--corner-color: rgba(46, 204, 113, 0.12);"></div>
+  <div class="corner-decor corner-br" style="--corner-color: rgba(46, 204, 113, 0.12);"></div>
+  <div class="line-trace line-trace-h" style="top: 15%; right: 3%; --trace-color: var(--accent);"></div>
+  <div class="line-trace line-trace-v" style="bottom: 10%; left: 5%; --trace-color: var(--accent);"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">Marketing & Growth</div>
+      <h1 class="reveal">Growth doesn't happen by <em>accident</em></h1>
+      <p class="hero-sub reveal">Your competitors are posting, advertising, and building audiences while you're figuring out what to say next Tuesday. Let's change&nbsp;that.</p>
+      <div class="hero-buttons reveal">
+        <a href="#cta" class="btn" style="background: linear-gradient(135deg, #27AE60, #2ECC71, #27AE60); color: white; box-shadow: 0 4px 24px rgba(46, 204, 113, 0.2);">Start Growing</a>
+        <a href="#process" class="btn btn-outline">See the Process</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH STATS -->
+<section class="section-alt">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>The opportunity you're <span class="accent-text">missing</span></h2>
+      <p class="dim" style="max-width: 520px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">Every day without a strategy is a day your competitors gain ground.</p>
+    </div>
+    <div class="stats-bar reveal">
+      <div class="stat-item"><div class="stat-value">5.2%</div><div class="stat-label">Avg. Organic Reach</div></div>
+      <div class="stat-item"><div class="stat-value">20+</div><div class="stat-label">Posts / Month</div></div>
+      <div class="stat-item"><div class="stat-value">4.2×</div><div class="stat-label">Target ROAS</div></div>
+      <div class="stat-item"><div class="stat-value">2</div><div class="stat-label">Platforms Managed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div class="geo-particles">
+    <div class="geo-particle geo-cross" style="top: 8%; right: 6%; --size: 14px; --dur: 15s; --drift: -20px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 12%; left: 8%; --size: 4px; --dur: 12s; --delay: 1s; --drift: -18px; --pcolor: var(--accent);"></div>
+  </div>
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>What's <span class="accent-text">included</span></h2>
+      <p class="dim" style="max-width: 520px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">Full-service marketing. You approve the strategy, we handle execution.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal" style="transition-delay: 0s;">
+        <div class="service-icon">📱</div>
+        <h3>2 Platforms Managed</h3>
+        <p>Instagram, Facebook, LinkedIn, TikTok — pick two. We own the strategy, content calendar, and posting schedule.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <div class="service-icon">🎬</div>
+        <h3>20+ Posts per Month</h3>
+        <p>Reels, carousels, Stories, static posts. A consistent, on-brand presence that builds authority and engagement.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.2s;">
+        <div class="service-icon">💬</div>
+        <h3>Community Management</h3>
+        <p>Comments, DMs, mentions — we respond as your brand voice. Your audience feels heard, not ignored.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.3s;">
+        <div class="service-icon">📊</div>
+        <h3>Paid Ads Management</h3>
+        <p>Google or Meta Ads, fully managed. Campaign setup, targeting, creative, optimization. Ad spend up to €3K in scope.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.4s;">
+        <div class="service-icon">📞</div>
+        <h3>Monthly Strategy Call</h3>
+        <p>One call per month to review performance, adjust strategy, and plan next month. Plus a written performance report.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.5s;">
+        <div class="service-icon">📈</div>
+        <h3>Performance Reports</h3>
+        <p>Clear, honest monthly reports. What worked, what didn't, what we're changing. No vanity metrics — real business impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section-alt">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>How we <span class="accent-text">grow</span> your business</h2>
+    </div>
+    <div class="process-track">
+      <div class="process-step reveal" style="transition-delay: 0s;"><div class="step-num">1</div><h3>Strategy</h3><p>We audit your current presence, study your competitors, and build a tailored growth plan.</p></div>
+      <div class="process-step reveal" style="transition-delay: 0.15s;"><div class="step-num">2</div><h3>Create</h3><p>Content is produced in batches — visual, copy, video. You approve before anything goes live.</p></div>
+      <div class="process-step reveal" style="transition-delay: 0.3s;"><div class="step-num">3</div><h3>Publish</h3><p>Scheduled posting at optimal times. Paid campaigns launched and monitored daily.</p></div>
+      <div class="process-step reveal" style="transition-delay: 0.45s;"><div class="step-num">4</div><h3>Optimize</h3><p>Analyze results, double down on what works, cut what doesn't. Every month sharper than the last.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>Invest in <span class="accent-text">growth</span></h2>
+    </div>
+    <div class="pricing-card reveal">
+      <div class="pricing-amount">€2,000</div>
+      <div class="pricing-period">per month</div>
+      <div class="pricing-note">3-month minimum commitment</div>
+      <ul class="pricing-list">
+        <li>2 social platforms fully managed</li>
+        <li>20+ posts per month (Reels, carousels, Stories)</li>
+        <li>Community management</li>
+        <li>Google or Meta Ads management</li>
+        <li>Ad spend up to €3K in scope</li>
+        <li>Monthly strategy call + report</li>
+        <li>Content calendar with approval workflow</li>
+      </ul>
+      <a href="#cta" class="btn" style="background: linear-gradient(135deg, #27AE60, #2ECC71, #27AE60); color: white; box-shadow: 0 4px 24px rgba(46, 204, 113, 0.2);">Start Growing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section-alt">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>Common <span class="accent-text">questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">Why a 3-month minimum?</button>
+        <div class="faq-a"><p>Marketing compounds over time. Month one is setup and testing. Month two, we have data. Month three, real momentum. Anything less and we'd be selling you false promises.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What if my ad spend exceeds €3K?</button>
+        <div class="faq-a"><p>We can manage larger budgets — we'll just adjust the management fee to match the additional complexity. We'll always be transparent about costs before you commit.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you create all the content?</button>
+        <div class="faq-a"><p>Yes — copywriting, graphic design, and basic video editing are included. For complex video production (professional shoots, motion graphics), we can quote separately.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Can I choose which platforms?</button>
+        <div class="faq-a"><p>Absolutely. We'll recommend based on where your audience actually is, but the final call is always yours. Most clients choose Instagram + one other (Facebook, LinkedIn, or TikTok).</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What results can I realistically expect?</button>
+        <div class="faq-a"><p>It depends on your industry, budget, and starting point. We won't promise "10x growth in 30 days." We will promise clear reporting, honest assessments, and a strategy that improves every month.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="cta-section">
+  <div class="geo-particles">
+    <div class="geo-particle geo-diamond" style="top: 20%; left: 10%; --size: 10px; --dur: 14s; --drift: -30px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 25%; right: 12%; --size: 4px; --dur: 11s; --delay: 2s; --drift: -20px; --pcolor: var(--accent);"></div>
+  </div>
+  <div class="container">
+    <div class="divider divider-emerald reveal"></div>
+    <h2 class="reveal">Your audience is already<br><span class="accent-text">out there</span></h2>
+    <p class="reveal">They're scrolling past your competitors' content right now. The only question is whether they'll see yours too. Let's make sure they do.</p>
+    <a href="mailto:hello@amotive.io" class="btn reveal" style="background: linear-gradient(135deg, #27AE60, #2ECC71, #27AE60); color: white; box-shadow: 0 4px 24px rgba(46, 204, 113, 0.2);">Start Your Growth Plan</a>
+    <div class="upsell reveal">Want the website included free? <a href="premium.html">See Full Growth →</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span>am</span>otive</a>
+        <p>Premium digital growth for businesses that refuse to settle.</p>
+      </div>
+      <div class="footer-col"><h4>Packages</h4><a href="website.html">Website Design</a><a href="marketing.html">Marketing &amp; Growth</a><a href="premium.html">Full Growth</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#">How We Work</a><a href="#">Case Studies</a><a href="mailto:hello@amotive.io">Contact</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Twitter</a></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 Amotive. All rights reserved.</div><div>An <a href="#">Amotion</a> company</div></div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+const toggle = document.getElementById('navToggle'), mobileMenu = document.getElementById('mobileMenu');
+toggle.addEventListener('click', () => { toggle.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : ''; });
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }));
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const h = a.getAttribute('href'); if (h === '#') return; e.preventDefault(); const t = document.querySelector(h); if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }); });
+const ro = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+document.querySelectorAll('.faq-q').forEach(btn => { btn.addEventListener('click', () => { btn.parentElement.classList.toggle('open'); }); });
+let ticking = false;
+window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(() => { const s = window.scrollY; document.querySelectorAll('.geo-particle').forEach((p, i) => { p.style.transform = `translateY(${s * (0.02 + i * 0.008)}px) rotate(${45 + s * 0.01}deg)`; }); ticking = false; }); ticking = true; } }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Design — Amotive</title>
+<meta name="description" content="Custom, high-performance websites built to convert. €2,500 one-time. Delivered in 2–3 weeks.">
+<!-- External font dependencies removed per brand requirements -->
+<link rel="stylesheet" href="css/shared.css">
+<style>
+/* ═══════════════════════════════════════
+   WEBSITE PAGE — Ice Blue / Silver World
+   Trust, Precision, Professionalism
+   ═══════════════════════════════════════ */
+:root {
+  --accent: #5B9BD5;
+  --accent-bright: #7BB3E0;
+  --accent-dim: #3A7BBF;
+  --accent-glow: rgba(91, 155, 213, 0.12);
+  --gradient-accent: linear-gradient(135deg, #3A7BBF 0%, #7BB3E0 50%, #5B9BD5 100%);
+  --gradient-accent-text: linear-gradient(135deg, #5B9BD5 0%, #A8D4F5 50%, #5B9BD5 100%);
+}
+
+.accent-text {
+  background: var(--gradient-accent-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hero ────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 100px; padding-bottom: 60px;
+  position: relative; overflow: hidden;
+}
+.hero-content { max-width: 720px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 20px; border-radius: 2px;
+  font-size: 0.68rem; font-weight: 700;
+  color: var(--accent);
+  background: rgba(91, 155, 213, 0.05);
+  border: 1px solid rgba(91, 155, 213, 0.1);
+  margin-bottom: 36px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.hero-eyebrow::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--accent); border-radius: 50%;
+}
+.hero h1 { margin-bottom: 32px; }
+.hero h1 em {
+  font-style: italic;
+  background: var(--gradient-accent-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 1.1rem; color: var(--silver);
+  margin-bottom: 52px; max-width: 580px; line-height: 1.85;
+}
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* ── Services Grid ───────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px; margin-top: 64px;
+}
+.service-card {
+  padding: 40px 32px;
+  background: var(--navy-light);
+  border: 1px solid rgba(91, 155, 213, 0.06);
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(91, 155, 213, 0.18);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.service-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(91, 155, 213, 0.15);
+  border-radius: 3px;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+.service-card h3 { margin-bottom: 12px; color: var(--platinum); }
+.service-card p { color: var(--silver); font-size: 0.9rem; line-height: 1.75; }
+
+/* ── Process ─────────────────────────── */
+.process-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 64px; position: relative;
+}
+.process-track::before {
+  content: '';
+  position: absolute; top: 32px; left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(91, 155, 213, 0.2), rgba(91, 155, 213, 0.2), transparent);
+}
+.process-step { text-align: center; position: relative; }
+.step-num {
+  width: 64px; height: 64px; margin: 0 auto 24px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(91, 155, 213, 0.2);
+  border-radius: 50%;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 900; font-size: 1.3rem;
+  color: var(--accent);
+  background: var(--navy-deep);
+  position: relative; z-index: 2;
+}
+.process-step h3 { margin-bottom: 8px; }
+.process-step p { color: var(--steel); font-size: 0.85rem; max-width: 200px; margin: 0 auto; line-height: 1.65; }
+
+/* ── Pricing ─────────────────────────── */
+.pricing-card {
+  max-width: 600px; margin: 64px auto 0;
+  padding: 56px 48px; text-align: center;
+  background: var(--navy-light);
+  border: 1px solid rgba(91, 155, 213, 0.1);
+  border-radius: 4px;
+  position: relative; overflow: hidden;
+}
+.pricing-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient-accent);
+}
+.pricing-amount {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3.5rem; font-weight: 900;
+  color: var(--accent-bright);
+  margin-bottom: 8px;
+}
+.pricing-period { color: var(--steel); font-size: 0.9rem; margin-bottom: 8px; }
+.pricing-delivery {
+  color: var(--silver); font-size: 0.95rem; margin-bottom: 36px;
+}
+.pricing-list {
+  list-style: none; text-align: left;
+  max-width: 380px; margin: 0 auto 40px;
+}
+.pricing-list li {
+  padding: 10px 0;
+  color: var(--silver); font-size: 0.9rem;
+  display: flex; align-items: center; gap: 12px;
+}
+.pricing-list li::before {
+  content: '✓'; color: var(--accent);
+  font-weight: 700; flex-shrink: 0;
+}
+
+/* ── FAQ ─────────────────────────────── */
+.faq-list { max-width: 720px; margin: 64px auto 0; }
+.faq-item {
+  border-bottom: 1px solid rgba(91, 155, 213, 0.06);
+}
+.faq-q {
+  width: 100%; padding: 24px 0; background: none; border: none;
+  color: var(--platinum); font-size: 1rem; font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: color 0.3s;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-q::after {
+  content: '+'; font-size: 1.4rem; color: var(--accent);
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 24px; }
+.faq-a p { color: var(--silver); font-size: 0.9rem; line-height: 1.8; }
+
+/* ── CTA ─────────────────────────────── */
+.cta-section {
+  text-align: center; padding: 150px 0;
+  position: relative;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(91, 155, 213, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section p {
+  color: var(--silver); font-size: 1.1rem;
+  margin-bottom: 48px; max-width: 480px;
+  margin-left: auto; margin-right: auto; line-height: 1.85;
+}
+.upsell {
+  margin-top: 24px; font-size: 0.88rem; color: var(--steel);
+}
+.upsell a { color: var(--orange); text-decoration: none; font-weight: 600; }
+.upsell a:hover { text-decoration: underline; }
+
+/* ── Responsive ──────────────────────── */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .process-track { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .process-track::before { display: none; }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .process-track { grid-template-columns: 1fr; }
+  .hero { min-height: auto; padding: 140px 0 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="nav">
+  <div class="container">
+    <a href="index.html" class="logo"><span>am</span>otive</a>
+    <ul class="nav-links">
+      <li><a href="website.html" style="color: #5B9BD5;">Websites</a></li>
+      <li><a href="marketing.html">Marketing</a></li>
+      <li><a href="premium.html">Full Growth</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cta" class="btn btn-orange btn-sm">Start a Project</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="website.html">Websites</a>
+  <a href="marketing.html">Marketing</a>
+  <a href="premium.html">Full Growth</a>
+  <a href="#cta" class="btn btn-orange">Start a Project</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="geo-particles">
+    <div class="geo-particle geo-diamond" style="top: 12%; left: 8%; --size: 10px; --dur: 14s; --delay: 0s; --drift: -30px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="top: 28%; right: 12%; --size: 5px; --dur: 10s; --delay: 2s; --drift: -20px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-cross" style="bottom: 22%; left: 15%; --size: 16px; --dur: 16s; --delay: 1s; --drift: -35px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-diamond" style="top: 55%; right: 6%; --size: 8px; --dur: 12s; --delay: 3s; --drift: -25px; --pcolor: var(--accent-bright);"></div>
+    <div class="geo-particle geo-triangle" style="bottom: 30%; right: 18%; --size: 10px; --half: 5px; --dur: 18s; --delay: 0.5s; --drift: -28px; --pcolor: var(--accent-dim);"></div>
+    <div class="geo-particle geo-dot" style="top: 42%; left: 22%; --size: 3px; --dur: 11s; --delay: 4s; --drift: -18px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-diamond" style="bottom: 15%; left: 5%; --size: 6px; --dur: 13s; --delay: 2.5s; --drift: -22px; --pcolor: var(--accent-dim);"></div>
+  </div>
+
+  <div class="corner-decor corner-tl" style="--corner-color: rgba(91, 155, 213, 0.12);"></div>
+  <div class="corner-decor corner-br" style="--corner-color: rgba(91, 155, 213, 0.12);"></div>
+
+  <div class="line-trace line-trace-h" style="top: 18%; left: 3%; --trace-color: var(--accent);"></div>
+  <div class="line-trace line-trace-v" style="bottom: 12%; right: 4%; --trace-color: var(--accent);"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">Website Design</div>
+      <h1 class="reveal">When was the last time your website <em>won</em> you a&nbsp;customer?</h1>
+      <p class="hero-sub reveal">Most business websites are digital brochures collecting dust. Yours should be a 24/7 salesperson — fast, persuasive, and impossible to&nbsp;ignore.</p>
+      <div class="hero-buttons reveal">
+        <a href="#cta" class="btn" style="background: linear-gradient(135deg, #3A7BBF, #5B9BD5, #3A7BBF); color: white; box-shadow: 0 4px 24px rgba(91, 155, 213, 0.2);">Get Your Website</a>
+        <a href="#process" class="btn btn-outline">See How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════ -->
+<section class="section-alt">
+  <div class="geo-particles">
+    <div class="geo-particle geo-cross" style="top: 10%; right: 8%; --size: 14px; --dur: 15s; --drift: -20px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 15%; left: 6%; --size: 4px; --dur: 12s; --delay: 1s; --drift: -18px; --pcolor: var(--accent);"></div>
+  </div>
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-silver"></div>
+      <h2>Everything your website <span class="accent-text">needs</span></h2>
+      <p class="dim" style="max-width: 520px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">No templates. No page builders. Custom-coded, hand-crafted, built to perform.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal" style="transition-delay: 0s;">
+        <div class="service-icon">◇</div>
+        <h3>Custom Responsive Design</h3>
+        <p>Every pixel intentional. Every layout fluid. Looks stunning on desktop, tablet, and mobile — because your customers use all three.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <div class="service-icon">⬡</div>
+        <h3>Up to 8 Pages</h3>
+        <p>Home, About, Services, Contact, and up to four more. Enough room to tell your full story without overwhelming visitors.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.2s;">
+        <div class="service-icon">◎</div>
+        <h3>SEO Built In</h3>
+        <p>Semantic HTML, meta tags, schema markup, sitemap, robots.txt. The technical foundation Google needs to find and rank you.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.3s;">
+        <div class="service-icon">⊞</div>
+        <h3>Analytics & Search Console</h3>
+        <p>Google Analytics 4 and Search Console configured from day one. Know exactly who visits, what they do, and where they come from.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.4s;">
+        <div class="service-icon">⚡</div>
+        <h3>Speed Optimized</h3>
+        <p>Under 2-second load times. Optimized images, clean code, lazy loading. Because 53% of visitors leave after 3 seconds.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.5s;">
+        <div class="service-icon">✉</div>
+        <h3>Contact Forms & Support</h3>
+        <p>Professional contact forms that actually work. Plus 30 days of post-launch support for tweaks, questions, and peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROCESS
+     ═══════════════════════════════════════ -->
+<section id="process">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-silver"></div>
+      <h2>From idea to <span class="accent-text">launch</span></h2>
+      <p class="dim" style="max-width: 480px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">Four steps. Two to three weeks. Zero headaches.</p>
+    </div>
+
+    <div class="process-track">
+      <div class="process-step reveal" style="transition-delay: 0s;">
+        <div class="step-num">1</div>
+        <h3>Discovery</h3>
+        <p>We learn your business, your audience, your goals. One call. No fluff.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.15s;">
+        <div class="step-num">2</div>
+        <h3>Design</h3>
+        <p>Custom layouts and visual direction. You approve before we write a single line of code.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.3s;">
+        <div class="step-num">3</div>
+        <h3>Build</h3>
+        <p>Clean, fast, responsive code. SEO wired in. Analytics connected. Everything tested.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.45s;">
+        <div class="step-num">4</div>
+        <h3>Launch</h3>
+        <p>Go live with confidence. We handle deployment, DNS, SSL — and stick around for 30 days after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PRICING
+     ═══════════════════════════════════════ -->
+<section class="section-alt">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-silver"></div>
+      <h2>Simple, <span class="accent-text">honest</span> pricing</h2>
+    </div>
+
+    <div class="pricing-card reveal">
+      <div class="pricing-amount">€2,500</div>
+      <div class="pricing-period">One-time investment</div>
+      <div class="pricing-delivery">Delivered in 2–3 weeks</div>
+      <ul class="pricing-list">
+        <li>Custom responsive design (no templates)</li>
+        <li>Up to 8 pages</li>
+        <li>SEO foundation built in</li>
+        <li>Google Analytics + Search Console</li>
+        <li>Contact forms configured</li>
+        <li>Speed optimized (&lt;2s load time)</li>
+        <li>30 days post-launch support</li>
+        <li>Mobile-first, accessible code</li>
+      </ul>
+      <a href="#cta" class="btn" style="background: linear-gradient(135deg, #3A7BBF, #5B9BD5, #3A7BBF); color: white; box-shadow: 0 4px 24px rgba(91, 155, 213, 0.2);">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-silver"></div>
+      <h2>Common <span class="accent-text">questions</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">What if I need more than 8 pages?</button>
+        <div class="faq-a"><p>Most businesses don't. But if you do, additional pages are €200 each. We'll figure out the right scope during discovery — no surprises.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do I need to provide the content?</button>
+        <div class="faq-a"><p>Ideally, yes — you know your business best. But if you need help, we can write SEO-optimized copy for an additional fee. We'll guide you either way.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What platform do you build on?</button>
+        <div class="faq-a"><p>It depends on your needs. Static sites for speed, WordPress for content-heavy sites, or custom solutions for complex requirements. We recommend what fits — not what's easiest for us.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What happens after the 30 days of support?</button>
+        <div class="faq-a"><p>Your website is yours. We hand over everything. If you want ongoing maintenance, we offer retainer options — but there's zero obligation. You're never locked in.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Can I update the site myself?</button>
+        <div class="faq-a"><p>Absolutely. If we build on WordPress or a CMS, you'll get full training. If it's a static site, we'll set up a simple editing workflow. You'll never be dependent on us for basic changes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA
+     ═══════════════════════════════════════ -->
+<section id="cta" class="cta-section">
+  <div class="geo-particles">
+    <div class="geo-particle geo-diamond" style="top: 20%; left: 10%; --size: 10px; --dur: 14s; --drift: -30px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 25%; right: 12%; --size: 4px; --dur: 11s; --delay: 2s; --drift: -20px; --pcolor: var(--accent);"></div>
+  </div>
+  <div class="container">
+    <div class="divider divider-silver reveal"></div>
+    <h2 class="reveal">Your next customer is<br>searching <span class="accent-text">right now</span></h2>
+    <p class="reveal">The question isn't whether you need a better website. It's how many customers you're losing while you wait. Let's fix that.</p>
+    <a href="mailto:hello@amotive.io" class="btn reveal" style="background: linear-gradient(135deg, #3A7BBF, #5B9BD5, #3A7BBF); color: white; box-shadow: 0 4px 24px rgba(91, 155, 213, 0.2);">Start Your Website Project</a>
+    <div class="upsell reveal">Ready for the full package? <a href="premium.html">See Full Growth →</a></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span>am</span>otive</a>
+        <p>Premium digital growth for businesses that refuse to settle.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Packages</h4>
+        <a href="website.html">Website Design</a>
+        <a href="marketing.html">Marketing &amp; Growth</a>
+        <a href="premium.html">Full Growth</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">How We Work</a>
+        <a href="#">Case Studies</a>
+        <a href="mailto:hello@amotive.io">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Amotive. All rights reserved.</div>
+      <div>An <a href="#">Amotion</a> company</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+const toggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active'); mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }));
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const href = a.getAttribute('href'); if (href === '#') return; e.preventDefault(); const t = document.querySelector(href); if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }); });
+const ro = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+// FAQ toggles
+document.querySelectorAll('.faq-q').forEach(btn => { btn.addEventListener('click', () => { btn.parentElement.classList.toggle('open'); }); });
+// Parallax
+let ticking = false;
+window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(() => { const s = window.scrollY; document.querySelectorAll('.geo-particle').forEach((p, i) => { p.style.transform = `translateY(${s * (0.02 + i * 0.008)}px) rotate(${45 + s * 0.01}deg)`; }); ticking = false; }); ticking = true; } }, { passive: true });
+</script>
+</body>
+</html>
