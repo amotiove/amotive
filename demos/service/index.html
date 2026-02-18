@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesa — Contemporary Portuguese Cuisine | Lisbon</title>
+    <meta name="description" content="Experience modern Portuguese gastronomy at Mesa, where traditional flavors meet contemporary artistry in the heart of Lisbon.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rich-dark: #0D0D0D;
+            --warm-gold: #D4A853;
+            --cream: #F5F0E8;
+            --terra-cotta: #C4704A;
+            --glass-bg: rgba(245, 240, 232, 0.1);
+            --glass-border: rgba(212, 168, 83, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--rich-dark);
+            color: var(--cream);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        /* Floating Decorative Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .floating-element.herb {
+            width: 20px;
+            height: 20px;
+            background: var(--warm-gold);
+            border-radius: 50% 0;
+            animation-delay: 0s;
+        }
+
+        .floating-element.spice {
+            width: 15px;
+            height: 15px;
+            background: var(--terra-cotta);
+            border-radius: 3px;
+            animation-delay: 2s;
+        }
+
+        .floating-element.geometric {
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(45deg, var(--warm-gold), var(--terra-cotta));
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            backdrop-filter: blur(20px);
+            background: rgba(13, 13, 13, 0.9);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(25px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--warm-gold);
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--warm-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .language-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--cream);
+            padding: 8px 16px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-toggle:hover {
+            background: var(--glass-border);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(13, 13, 13, 0.4), rgba(13, 13, 13, 0.6)), 
+                        url('https://picsum.photos/1920/1080?random=1&blur=1') center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: heroReveal 2s ease-out 0.5s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(48px, 8vw, 120px);
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            transform: perspective(1000px) rotateX(20deg);
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--warm-gold);
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--warm-gold), var(--terra-cotta));
+            color: var(--rich-dark);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 168, 83, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(212, 168, 83, 0.4);
+        }
+
+        @keyframes heroReveal {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: perspective(1000px) rotateX(20deg) translateY(0px); }
+            50% { transform: perspective(1000px) rotateX(20deg) translateY(-10px); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--warm-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            text-align: center;
+            color: var(--cream);
+            opacity: 0.8;
+            margin-bottom: 80px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--cream);
+        }
+
+        .story-text h3 {
+            font-size: 32px;
+            color: var(--warm-gold);
+            margin-bottom: 30px;
+        }
+
+        .story-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: url('https://picsum.photos/600/500?random=2') center/cover;
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.3s ease;
+        }
+
+        .story-image:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
+        }
+
+        /* Menu Highlights */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .menu-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            transform: perspective(1000px) rotateX(0deg);
+        }
+
+        .menu-card:hover {
+            transform: perspective(1000px) rotateX(5deg) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 168, 83, 0.2);
+        }
+
+        .menu-card-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .menu-card-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(212, 168, 83, 0.9);
+            color: var(--rich-dark);
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-card-content {
+            padding: 30px;
+        }
+
+        .menu-card h3 {
+            font-size: 24px;
+            color: var(--warm-gold);
+            margin-bottom: 15px;
+        }
+
+        .menu-card p {
+            color: var(--cream);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(212, 168, 83, 0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Reservations Form */
+        .reservation-form {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 60px;
+            backdrop-filter: blur(20px);
+            max-width: 600px;
+            margin: 60px auto 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            color: var(--warm-gold);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(245, 240, 232, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            color: var(--cream);
+            font-size: 16px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--warm-gold);
+            box-shadow: 0 0 20px rgba(212, 168, 83, 0.2);
+        }
+
+        input::placeholder {
+            color: rgba(245, 240, 232, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--warm-gold), var(--terra-cotta));
+            color: var(--rich-dark);
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 168, 83, 0.3);
+        }
+
+        /* Location & Hours */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(20px);
+            color: var(--warm-gold);
+            font-size: 24px;
+        }
+
+        .hours-info h3 {
+            font-size: 32px;
+            color: var(--warm-gold);
+            margin-bottom: 30px;
+        }
+
+        .hours-info p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--cream);
+            margin-bottom: 20px;
+        }
+
+        .address {
+            color: var(--terra-cotta);
+            font-weight: 500;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .review-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .stars {
+            color: var(--warm-gold);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .review-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--cream);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .reviewer {
+            color: var(--terra-cotta);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(13, 13, 13, 0.95);
+            padding: 80px 5% 40px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--warm-gold);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--warm-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: var(--warm-gold);
+            color: var(--rich-dark);
+        }
+
+        .newsletter {
+            max-width: 400px;
+            margin: 0 auto 40px;
+        }
+
+        .newsletter h3 {
+            color: var(--warm-gold);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 12px 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            color: var(--cream);
+        }
+
+        .newsletter button {
+            padding: 12px 24px;
+            background: var(--warm-gold);
+            color: var(--rich-dark);
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            color: var(--cream);
+            opacity: 0.6;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .story-grid,
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .menu-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .reservation-form {
+                padding: 40px 30px;
+                margin: 40px 20px 0;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .section {
+                padding: 80px 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .reservation-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Decorative Elements -->
+    <div class="floating-element herb" style="top: 20%; left: 10%;"></div>
+    <div class="floating-element spice" style="top: 60%; right: 15%;"></div>
+    <div class="floating-element geometric" style="top: 80%; left: 20%;"></div>
+    <div class="floating-element herb" style="top: 30%; right: 30%;"></div>
+    <div class="floating-element spice" style="top: 70%; left: 70%;"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">Mesa</a>
+            <ul class="nav-links">
+                <li><a href="#story">Nossa História</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Ambiente</a></li>
+                <li><a href="#reservations">Reservas</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <button class="language-toggle" onclick="toggleLanguage()">PT | EN</button>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Mesa</h1>
+            <p class="hero-subtitle">Contemporary Portuguese Cuisine</p>
+            <a href="#reservations" class="cta-button">Reserve Your Table</a>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="section">
+        <h2 class="section-title">Nossa História</h2>
+        <p class="section-subtitle">Da quinta para a mesa, do oceano para o prato</p>
+        
+        <div class="story-grid">
+            <div class="story-text">
+                <h3>Tradição Reimaginada</h3>
+                <p>At Mesa, we honor the rich culinary heritage of Portugal while embracing contemporary techniques and presentation. Our philosophy is simple: source the finest local ingredients from Lisbon's markets and the Atlantic waters, then transform them into dishes that tell stories.</p>
+                
+                <p>From the traditional <em>bacalhau</em> preparations passed down through generations to innovative interpretations of <em>cataplana</em>, each plate celebrates both our roots and our evolution. Our pastry chef's modern take on <em>pastel de nata</em> has become a signature, earning praise from food critics across Europe.</p>
+                
+                <p>Led by Chef António Silva, our kitchen team brings together decades of experience from Michelin-starred kitchens with an unwavering commitment to Portuguese terroir.</p>
+            </div>
+            <div class="story-image"></div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="section">
+        <h2 class="section-title">Destaques do Menu</h2>
+        <p class="section-subtitle">Signature dishes that define our contemporary Portuguese cuisine</p>
+        
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-card-image" style="background-image: url('https://picsum.photos/400/250?random=10');">
+                    <div class="menu-card-overlay">€45</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3>Bacalhau Confit</h3>
+                    <p>48-hour salt cod confit with purple potato purée, samphire, and olive oil caviar. A modern interpretation of Portugal's most beloved ingredient.</p>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <div class="menu-card-image" style="background-image: url('https://picsum.photos/400/250?random=11');">
+                    <div class="menu-card-overlay">€52</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3>Cataplana Reimagined</h3>
+                    <p>Deconstructed seafood cataplana with Algarve clams, tiger prawns, and saffron foam. Traditional flavors in contemporary form.</p>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <div class="menu-card-image" style="background-image: url('https://picsum.photos/400/250?random=12');">
+                    <div class="menu-card-overlay">€38</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3>Porco Preto Alentejano</h3>
+                    <p>Slow-cooked Alentejo black pork belly with migas de broa, roasted fig, and port wine reduction. A celebration of interior Portugal.</p>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <div class="menu-card-image" style="background-image: url('https://picsum.photos/400/250?random=13');">
+                    <div class="menu-card-overlay">€18</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3>Pastéis Modernos</h3>
+                    <p>Our signature dessert: warm pastel de nata with vanilla bean custard, caramelized pineapple, and cinnamon soil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambiance Gallery -->
+    <section id="gallery" class="section">
+        <h2 class="section-title">Ambiente</h2>
+        <p class="section-subtitle">Experience the warmth and elegance of our Lisbon location</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" style="background-image: url('https://picsum.photos/400/300?random=20');"></div>
+            <div class="gallery-item" style="background-image: url('https://picsum.photos/400/300?random=21');"></div>
+            <div class="gallery-item" style="background-image: url('https://picsum.photos/400/300?random=22');"></div>
+            <div class="gallery-item" style="background-image: url('https://picsum.photos/400/300?random=23');"></div>
+            <div class="gallery-item" style="background-image: url('https://picsum.photos/400/300?random=24');"></div>
+            <div class="gallery-item" style="background-image: url('https://picsum.photos/400/300?random=25');"></div>
+        </div>
+    </section>
+
+    <!-- Reservations -->
+    <section id="reservations" class="section">
+        <h2 class="section-title">Reservas</h2>
+        <p class="section-subtitle">Secure your table for an unforgettable culinary journey</p>
+        
+        <div class="reservation-form">
+            <form id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Data</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Hora</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select time</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="21:00">21:00</option>
+                            <option value="21:30">21:30</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Número de Pessoas</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select party size</option>
+                            <option value="1">1 person</option>
+                            <option value="2">2 people</option>
+                            <option value="3">3 people</option>
+                            <option value="4">4 people</option>
+                            <option value="5">5 people</option>
+                            <option value="6">6 people</option>
+                            <option value="7">7+ people</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+351..." required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requests">Pedidos Especiais</label>
+                    <input type="text" id="requests" name="requests" placeholder="Dietary restrictions, celebrations, etc.">
+                </div>
+                
+                <button type="submit" class="submit-btn">Confirmar Reserva</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Localização & Horários</h2>
+        <p class="section-subtitle">Find us in the heart of Lisbon's culinary district</p>
+        
+        <div class="location-grid">
+            <div class="map-placeholder">
+                Interactive Map Coming Soon
+            </div>
+            <div class="hours-info">
+                <h3>Horários</h3>
+                <p><strong>Terça a Sábado:</strong> 18:30 - 24:00</p>
+                <p><strong>Domingo:</strong> 18:30 - 22:30</p>
+                <p><strong>Segunda:</strong> Fechado</p>
+                
+                <h3 style="margin-top: 40px;">Contacto</h3>
+                <p class="address">Rua do Ouro, 142<br>1100-063 Lisboa, Portugal</p>
+                <p>Telefone: +351 21 123 4567</p>
+                <p>Email: reservas@mesa-lisboa.pt</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="section">
+        <h2 class="section-title">O Que Dizem</h2>
+        <p class="section-subtitle">Testimonials from our cherished guests</p>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"An extraordinary culinary journey through Portuguese flavors. Chef António has created something truly special – each dish tells a story of tradition beautifully reimagined."</p>
+                <p class="reviewer">— Sofia Marques, TripAdvisor</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The bacalhau confit was a revelation. Never thought I could fall in love with cod again until this meal. The atmosphere is intimate and the service impeccable."</p>
+                <p class="reviewer">— James Wright, Google Reviews</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Mesa elevates Portuguese cuisine to art. Every course was a delightful surprise. The pastel de nata dessert alone is worth the visit. Absolutely stunning!"</p>
+                <p class="reviewer">— Maria Santos, Zomato</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#story">About Us</a>
+                <a href="#menu">Menu</a>
+                <a href="#reservations">Reservations</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="TripAdvisor">🧳</a>
+                <a href="#" aria-label="Google">🍽️</a>
+            </div>
+            
+            <div class="newsletter">
+                <h3>Newsletter</h3>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Mesa Restaurant. All rights reserved.</p>
+                <p style="margin-top: 20px; font-size: 12px; opacity: 0.4;">
+                    Demo website created by <strong>Amotive</strong> - Premium web design for restaurants
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Language toggle functionality
+        function toggleLanguage() {
+            const currentLang = document.documentElement.lang;
+            const newLang = currentLang === 'en' ? 'pt' : 'en';
+            document.documentElement.lang = newLang;
+            
+            // In a real implementation, this would switch content
+            // For demo purposes, we just toggle the button text
+            const button = document.querySelector('.language-toggle');
+            button.textContent = newLang === 'pt' ? 'PT | EN' : 'EN | PT';
+        }
+
+        // Reservation form submission
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Animate submission
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Processing...';
+            submitBtn.style.background = 'linear-gradient(135deg, #2ECC71, #27AE60)';
+            
+            // Simulate form processing
+            setTimeout(() => {
+                submitBtn.textContent = 'Reservation Confirmed! ✓';
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = 'linear-gradient(135deg, var(--warm-gold), var(--terra-cotta))';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Gallery hover effects with subtle 3D tilt
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+
+        // Menu card tilt effects
+        document.querySelectorAll('.menu-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+
+        // Newsletter subscription
+        document.querySelector('.newsletter button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const input = document.querySelector('.newsletter input');
+            const email = input.value.trim();
+            
+            if (email && email.includes('@')) {
+                const originalText = this.textContent;
+                this.textContent = 'Subscribed! ✓';
+                this.style.background = '#2ECC71';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = 'var(--warm-gold)';
+                    input.value = '';
+                }, 2000);
+            } else {
+                input.style.borderColor = '#e74c3c';
+                setTimeout(() => {
+                    input.style.borderColor = 'var(--glass-border)';
+                }, 2000);
+            }
+        });
+
+        // Set minimum date for reservations to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+        
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Initialize animations
+        window.addEventListener('load', () => {
+            // Add a slight delay to hero animation
+            setTimeout(() => {
+                document.querySelector('.hero-content').style.animationDelay = '0s';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

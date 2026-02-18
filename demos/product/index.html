@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinta do Vale - Premium Portuguese Wines Since 1892</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --wine-red: #4A0E0E;
+            --champagne: #F5E6D3;
+            --forest-green: #2D4A2D;
+            --gold: #C9A84C;
+            --wine-red-light: #6B1515;
+            --wine-red-dark: #2A0808;
+            --champagne-dark: #E5D4B8;
+            --forest-green-light: #3D5A3D;
+            --gold-light: #D4B760;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--wine-red-dark);
+            color: var(--champagne);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Custom cursor */
+        * {
+            cursor: none;
+        }
+
+        #cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        .heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(42, 8, 8, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(42, 8, 8, 0.95);
+            padding: 15px 5%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--champagne);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--wine-red) 0%, var(--wine-red-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="vineyard" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect fill="%234A0E0E" width="20" height="20"/><circle cx="10" cy="10" r="1" fill="%232D4A2D" opacity="0.3"/><path d="M5,15 Q10,10 15,15" stroke="%23C9A84C" stroke-width="0.5" fill="none" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23vineyard)"/></svg>') repeat;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: heroFadeIn 2s ease forwards 0.5s;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 8rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--gold), var(--champagne), var(--gold));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--champagne);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-year {
+            color: var(--gold);
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-style: italic;
+        }
+
+        @keyframes heroFadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Floating decorative elements */
+        .floating-grape {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, var(--forest-green-light), var(--forest-green));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .grape-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .grape-2 { top: 60%; right: 15%; animation-delay: 2s; }
+        .grape-3 { bottom: 30%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, var(--gold), var(--champagne));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0.8;
+        }
+
+        /* Featured Products */
+        #featured {
+            background: linear-gradient(180deg, var(--wine-red-dark) 0%, var(--wine-red) 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: rgba(245, 230, 211, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            padding: 30px;
+            text-align: center;
+            perspective: 1000px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(201, 168, 76, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+            animation: shimmer 1s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: rotateX(5deg) rotateY(10deg) translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .product-image {
+            width: 200px;
+            height: 300px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, var(--wine-red), var(--wine-red-light));
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .product-image::after {
+            content: '🍷';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--champagne);
+        }
+
+        .product-type {
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .price-tag {
+            background: rgba(201, 168, 76, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: inline-block;
+            font-weight: 600;
+            color: var(--gold);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        /* Story Section */
+        #story {
+            background: var(--wine-red);
+            position: relative;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gold);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: rgba(245, 230, 211, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 0 40px;
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            transform: translateX(50px);
+        }
+
+        .timeline-content.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .timeline-year {
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px var(--gold);
+        }
+
+        /* Collection Grid */
+        #collection {
+            background: var(--wine-red-dark);
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 4rem;
+        }
+
+        .collection-item {
+            background: linear-gradient(135deg, var(--wine-red) 0%, var(--forest-green) 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .collection-item::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .collection-item:hover::after {
+            opacity: 1;
+        }
+
+        .collection-item:hover {
+            transform: scale(1.05) rotateZ(1deg);
+        }
+
+        .collection-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .collection-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--champagne);
+        }
+
+        /* Wine Club */
+        #wine-club {
+            background: linear-gradient(45deg, var(--forest-green) 0%, var(--wine-red) 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .club-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(245, 230, 211, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            position: relative;
+        }
+
+        .club-benefits {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .club-benefits li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .club-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--gold), var(--gold-light));
+            color: var(--wine-red-dark);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.4);
+        }
+
+        /* Reviews */
+        #reviews {
+            background: var(--wine-red);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 4rem;
+        }
+
+        .review-card {
+            background: rgba(245, 230, 211, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .review-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .reviewer {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--wine-red-dark);
+            padding: 80px 5% 40px;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--champagne);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            opacity: 0.6;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .products-grid,
+            .collection-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .club-card {
+                padding: 40px 30px;
+            }
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading screen */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--wine-red-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-logo {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .loading-text {
+            font-size: 1.2rem;
+            color: var(--champagne);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="loading-content">
+            <div class="loading-logo heading">Quinta do Vale</div>
+            <div class="loading-text">Carregando experiência premium...</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo heading">Quinta do Vale</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#featured">Vinhos</a></li>
+                <li><a href="#story">História</a></li>
+                <li><a href="#collection">Coleção</a></li>
+                <li><a href="#wine-club">Clube</a></li>
+                <li><a href="#reviews">Avaliações</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="parallax-bg"></div>
+        <div class="floating-grape grape-1"></div>
+        <div class="floating-grape grape-2"></div>
+        <div class="floating-grape grape-3"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title heading">Quinta do Vale</h1>
+            <p class="hero-subtitle">Premium Portuguese Wines</p>
+            <p class="hero-year">Since 1892</p>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="reveal">
+        <h2 class="section-title heading">Vinhos em Destaque</h2>
+        <p class="section-subtitle">Descobra nossa seleção premium do Douro Valley</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3 class="product-name heading">Reserva Especial 2018</h3>
+                <p class="product-type">Tinto Premium • Douro DOC</p>
+                <div class="price-tag">€45.00</div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3 class="product-name heading">Colheita Tardia 2019</h3>
+                <p class="product-type">Branco Doce • Edição Limitada</p>
+                <div class="price-tag">€38.00</div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3 class="product-name heading">Grande Reserva 2016</h3>
+                <p class="product-type">Tinto Envelhecido • 5 Anos</p>
+                <div class="price-tag">€75.00</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story/Heritage -->
+    <section id="story" class="reveal">
+        <h2 class="section-title heading">Nossa História</h2>
+        <p class="section-subtitle">Cinco gerações de tradição vinícola no coração do Douro</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year heading">1892</div>
+                    <h4>Fundação da Quinta</h4>
+                    <p>António Silva estabelece a primeira vinha na margem do Rio Douro, plantando castas autóctones portuguesas numa tradição que perdura até hoje.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year heading">1925</div>
+                    <h4>Expansão das Vinhas</h4>
+                    <p>O filho Manuel Silva expande as propriedades, adquirindo os melhores terrenos em socalcos com exposição solar ideal.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year heading">1978</div>
+                    <h4>Modernização</h4>
+                    <p>Introdução de técnicas modernas de vinificação, mantendo sempre o respeito pela tradição familiar e métodos artesanais.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year heading">2024</div>
+                    <h4>Nova Era Digital</h4>
+                    <p>Quinta geração abraça a era digital, levando os nossos vinhos premium a wine lovers em todo o mundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection -->
+    <section id="collection" class="reveal">
+        <h2 class="section-title heading">Nossa Coleção</h2>
+        <p class="section-subtitle">Explore nossas categorias de vinhos únicos</p>
+        
+        <div class="collection-grid">
+            <div class="collection-item">
+                <div class="collection-icon">🍷</div>
+                <h3 class="collection-name heading">Tintos Premium</h3>
+                <p>Vinhos robustos com caráter único do terroir do Douro</p>
+            </div>
+            
+            <div class="collection-item">
+                <div class="collection-icon">🥂</div>
+                <h3 class="collection-name heading">Brancos Elegantes</h3>
+                <p>Frescura e mineralidade das nossas melhores parcelas</p>
+            </div>
+            
+            <div class="collection-item">
+                <div class="collection-icon">✨</div>
+                <h3 class="collection-name heading">Edições Especiais</h3>
+                <p>Colheitas limitadas e vinhos de guarda excecionais</p>
+            </div>
+            
+            <div class="collection-item">
+                <div class="collection-icon">🏆</div>
+                <h3 class="collection-name heading">Prémios Internacionais</h3>
+                <p>Vinhos reconhecidos mundialmente por sua excelência</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Club -->
+    <section id="wine-club" class="reveal">
+        <h2 class="section-title heading">Clube de Vinhos</h2>
+        <p class="section-subtitle">Junte-se à nossa família de apaixonados por vinhos</p>
+        
+        <div class="club-card">
+            <h3 class="heading" style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--gold);">Membro Premium</h3>
+            
+            <ul class="club-benefits">
+                <li>Acesso exclusivo a vinhos de edição limitada</li>
+                <li>Descontos de 15% em todas as compras</li>
+                <li>Visitas guiadas gratuitas à quinta</li>
+                <li>Degustações exclusivas com o enólogo</li>
+                <li>Newsletter mensal com dicas de harmonização</li>
+                <li>Entrega gratuita em encomendas acima de €50</li>
+            </ul>
+            
+            <button class="cta-button">Aderir ao Clube</button>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="reveal">
+        <h2 class="section-title heading">O Que Dizem</h2>
+        <p class="section-subtitle">Opiniões dos nossos clientes e críticos especializados</p>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Excecional! O Reserva Especial 2018 é uma obra-prima. Notas complexas de frutas vermelhas maduras com toques de carvalho perfeitamente equilibrados."</p>
+                <p class="reviewer">- Maria Santos, Sommelière</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"A Quinta do Vale mantém a tradição portuguesa com excelência moderna. Cada garrafa conta uma história do Douro."</p>
+                <p class="reviewer">- Robert Johnson, Wine Spectator</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Membro do clube há 3 anos. A qualidade é consistente e o atendimento é impecável. Recomendo vivamente!"</p>
+                <p class="reviewer">- António Silva, Cliente Premium</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quinta do Vale</h3>
+                <p>Rua das Vinhas, 123</p>
+                <p>5150-123 Vila Real</p>
+                <p>Douro, Portugal</p>
+                <p>+351 259 123 456</p>
+                <p>info@quintadovale.pt</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Produtos</h3>
+                <a href="#">Tintos Premium</a>
+                <a href="#">Brancos Elegantes</a>
+                <a href="#">Edições Especiais</a>
+                <a href="#">Vinhos do Porto</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Serviços</h3>
+                <a href="#">Clube de Vinhos</a>
+                <a href="#">Visitas à Quinta</a>
+                <a href="#">Eventos Corporativos</a>
+                <a href="#">Degustações</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">Newsletter</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Quinta do Vale. Todos os direitos reservados. | Beba com moderação.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Custom cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-bg');
+            const speed = 0.5;
+            parallax.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with reveal class
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Timeline animation
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.timeline-content').forEach(el => {
+            timelineObserver.observe(el);
+        });
+
+        // Review cards animation
+        const reviewObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.review-card').forEach(el => {
+            reviewObserver.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Product card 3D tilt effect
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+
+        // Collection items hover effect
+        document.querySelectorAll('.collection-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'scale(1.05) rotateZ(1deg)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'scale(1) rotateZ(0deg)';
+            });
+        });
+
+        // CTA Button click effect
+        document.querySelector('.cta-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Create ripple effect
+            const button = e.target;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            button.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+            
+            // Simulate form or subscription action
+            alert('Obrigado pelo seu interesse! Entraremos em contacto brevemente.');
+        });
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .cta-button {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Enhanced floating grapes animation
+        document.querySelectorAll('.floating-grape').forEach((grape, index) => {
+            grape.addEventListener('mouseover', () => {
+                grape.style.animation = `float 1s ease-in-out infinite, spin 2s linear infinite`;
+            });
+            
+            grape.addEventListener('mouseleave', () => {
+                grape.style.animation = `float 6s ease-in-out infinite`;
+                grape.style.animationDelay = `${index * 2}s`;
+            });
+        });
+
+        // Add spin animation
+        const spinStyle = document.createElement('style');
+        spinStyle.textContent = `
+            @keyframes spin {
+                from { transform: rotate(0deg) scale(1); }
+                50% { transform: rotate(180deg) scale(1.2); }
+                to { transform: rotate(360deg) scale(1); }
+            }
+        `;
+        document.head.appendChild(spinStyle);
+    </script>
+</body>
+</html>

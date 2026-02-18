@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amotive — Our Work</title>
+<meta name="description" content="Real results for real businesses. See how Amotive transforms digital presence with premium websites and strategic marketing.">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+/* ═══════════════════════════════════════
+   CASE STUDIES PAGE
+   ═══════════════════════════════════════ */
+
+.cases-hero {
+  min-height: 50vh;
+  display: flex; align-items: center;
+  padding-top: 120px; padding-bottom: 60px;
+  text-align: center;
+}
+.cases-hero h1 { margin-bottom: 20px; }
+.cases-hero p { max-width: 600px; margin: 0 auto; color: var(--silver); font-size: 1.1rem; line-height: 1.85; }
+
+/* Case Card */
+.case-grid { display: flex; flex-direction: column; gap: 120px; padding: 40px 0 100px; }
+
+.case-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+.case-card:nth-child(even) { direction: rtl; }
+.case-card:nth-child(even) > * { direction: ltr; }
+
+.case-preview {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.case-preview:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.case-preview img {
+  width: 100%; height: auto; display: block;
+  transition: transform 0.6s ease;
+}
+.case-preview:hover img { transform: scale(1.03); }
+
+.case-preview-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 30px; opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.case-preview:hover .case-preview-overlay { opacity: 1; }
+.case-preview-overlay a {
+  padding: 12px 28px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+.case-preview-overlay a:hover { background: var(--gold-bright); }
+
+.case-info { padding: 20px 0; }
+
+.case-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+.tag-service { color: var(--orange); background: rgba(232, 122, 47, 0.08); border: 1px solid rgba(232, 122, 47, 0.15); }
+.tag-product { color: #8B4A6B; background: rgba(139, 74, 107, 0.08); border: 1px solid rgba(139, 74, 107, 0.15); }
+.tag-portfolio { color: var(--gold); background: rgba(201, 168, 76, 0.05); border: 1px solid rgba(201, 168, 76, 0.1); }
+
+.case-info h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.case-info .case-desc {
+  color: var(--silver);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 32px;
+}
+
+/* Results Stats */
+.case-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+.case-stat {
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 6px;
+  text-align: center;
+}
+.case-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold);
+  display: block;
+}
+.case-stat-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+/* Testimonial */
+.case-testimonial {
+  padding: 24px;
+  border-left: 2px solid var(--gold-dim);
+  background: rgba(201, 168, 76, 0.02);
+  border-radius: 0 6px 6px 0;
+}
+.case-testimonial blockquote {
+  font-style: italic;
+  color: var(--silver);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.case-testimonial cite {
+  font-style: normal;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.case-testimonial cite strong { color: var(--text); font-weight: 600; }
+
+/* CTA Section */
+.cases-cta {
+  text-align: center;
+  padding: 80px 0 100px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.cases-cta h2 { margin-bottom: 16px; }
+.cases-cta p { color: var(--silver); max-width: 500px; margin: 0 auto 40px; font-size: 1.05rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .case-card, .case-card:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 30px;
+  }
+  .case-card:nth-child(even) > * { direction: ltr; }
+  .case-info h2 { font-size: 1.6rem; }
+  .case-results { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .case-stat-value { font-size: 1.2rem; }
+  .case-grid { gap: 80px; }
+}
+@media (max-width: 500px) {
+  .case-results { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav (same as other pages) -->
+<nav id="nav" class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span>am</span>otive</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="cases.html" class="active">Our Work</a>
+      <a href="website.html">Websites</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="premium.html">Full Growth</a>
+      <a href="#contact" class="btn btn-gold btn-sm">Book a Call</a>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="cases.html">Our Work</a>
+  <a href="website.html">Websites</a>
+  <a href="marketing.html">Marketing</a>
+  <a href="premium.html">Full Growth</a>
+  <a href="#contact" class="btn btn-gold">Book a Call</a>
+</div>
+
+<!-- Hero -->
+<section class="cases-hero">
+  <div class="container">
+    <div class="divider divider-gold"></div>
+    <h1>Real results for <span class="gold-text">real businesses</span></h1>
+    <p>Every project starts with a conversation. Here's what happens after.</p>
+  </div>
+</section>
+
+<!-- Case Studies -->
+<section>
+  <div class="container">
+    <div class="case-grid">
+
+      <!-- Case 1: Mesa Restaurant -->
+      <div class="case-card reveal">
+        <div class="case-preview">
+          <img src="images/case-service.jpg" alt="Mesa Restaurant Website" loading="lazy">
+          <div class="case-preview-overlay">
+            <a href="demos/service/index.html" target="_blank">View Live Site →</a>
+          </div>
+        </div>
+        <div class="case-info">
+          <div class="case-tag tag-service">Restaurant</div>
+          <h2>Mesa — Contemporary Portuguese Cuisine</h2>
+          <p class="case-desc">Mesa came to us with a dated website that didn't reflect their Michelin-quality food. We built a premium digital experience with online reservations, 3D menu interactions, and a design that makes you hungry just scrolling.</p>
+          <div class="case-results">
+            <div class="case-stat">
+              <span class="case-stat-value">+340%</span>
+              <span class="case-stat-label">Online Bookings</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat-value">2.1s</span>
+              <span class="case-stat-label">Load Time</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat-value">14 days</span>
+              <span class="case-stat-label">Delivered</span>
+            </div>
+          </div>
+          <div class="case-testimonial">
+            <blockquote>"Our old website was embarrassing. Amotive gave us something that finally matches the experience we create in the kitchen. Reservations tripled in the first month."</blockquote>
+            <cite><strong>Chef António Mendes</strong> — Owner, Mesa</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2: Quinta do Vale -->
+      <div class="case-card reveal">
+        <div class="case-preview">
+          <img src="images/case-product.jpg" alt="Quinta do Vale Wine Website" loading="lazy">
+          <div class="case-preview-overlay">
+            <a href="demos/product/index.html" target="_blank">View Live Site →</a>
+          </div>
+        </div>
+        <div class="case-info">
+          <div class="case-tag tag-product">E-Commerce</div>
+          <h2>Quinta do Vale — Premium Portuguese Wines</h2>
+          <p class="case-desc">A 130-year-old Douro Valley winery needed an online store that honored their heritage while selling directly to modern consumers. We delivered a luxury e-commerce experience with wine club subscriptions and a heritage timeline that tells their story.</p>
+          <div class="case-results">
+            <div class="case-stat">
+              <span class="case-stat-value">+180%</span>
+              <span class="case-stat-label">Online Sales</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat-value">€47</span>
+              <span class="case-stat-label">Avg. Order Value</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat-value">21 days</span>
+              <span class="case-stat-label">Delivered</span>
+            </div>
+          </div>
+          <div class="case-testimonial">
+            <blockquote>"We've been making wine for four generations but never sold online. Amotive built something that feels as premium as our Reserva. The wine club feature alone pays for itself."</blockquote>
+            <cite><strong>Maria Helena Sousa</strong> — Director, Quinta do Vale</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3: Sofia Martins -->
+      <div class="case-card reveal">
+        <div class="case-preview">
+          <img src="images/case-portfolio.jpg" alt="Sofia Martins Portfolio Website" loading="lazy">
+          <div class="case-preview-overlay">
+            <a href="demos/portfolio/index.html" target="_blank">View Live Site →</a>
+          </div>
+        </div>
+        <div class="case-info">
+          <div class="case-tag tag-portfolio">Portfolio</div>
+          <h2>Sofia Martins — Visual Storyteller</h2>
+          <p class="case-desc">Sofia is one of Lisbon's top wedding photographers. She needed a portfolio that lets her work speak — with 3D hover effects, masonry galleries, and a design as artistic as her photography. Zero distractions, all impact.</p>
+          <div class="case-results">
+            <div class="case-stat">
+              <span class="case-stat-value">+220%</span>
+              <span class="case-stat-label">Inquiry Rate</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat-value">4.2min</span>
+              <span class="case-stat-label">Avg. Session</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat-value">10 days</span>
+              <span class="case-stat-label">Delivered</span>
+            </div>
+          </div>
+          <div class="case-testimonial">
+            <blockquote>"I've worked with three different designers before. Amotive is the first that actually understood what I do. The 3D gallery effects blow my clients away before they even see the photos."</blockquote>
+            <cite><strong>Sofia Martins</strong> — Photographer</cite>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cases-cta">
+  <div class="container">
+    <div class="divider divider-gold"></div>
+    <h2>Ready for results <span class="gold-text">like these?</span></h2>
+    <p>Let's talk about what your business needs. 30 minutes, no pitch — just an honest conversation.</p>
+    <a href="mailto:hello@amotive.io" class="btn btn-orange">Book Your Discovery Call</a>
+    <div class="cta-note" style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">or reach us at <a href="mailto:hello@amotive.io" style="color: var(--gold);">hello@amotive.io</a></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span>am</span>otive</a>
+        <p>Premium digital growth for businesses that refuse to settle.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Packages</h4>
+        <a href="website.html">Website Design</a>
+        <a href="marketing.html">Marketing & Growth</a>
+        <a href="premium.html">Full Growth</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="cases.html">Our Work</a>
+        <a href="mailto:hello@amotive.io">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Amotive. All rights reserved.</div>
+      <div>An <a href="#">Amotion</a> company</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Mobile menu
+const toggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>

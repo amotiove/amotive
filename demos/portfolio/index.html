@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia Martins — Visual Storyteller</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --charcoal: #1a1a1a;
+            --cream: #f5f0e8;
+            --gold: #C9A84C;
+            --gold-hover: #d4b356;
+            --text-muted: #999;
+            --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(201, 168, 76, 0.05) 0%, transparent 50%),
+                            radial-gradient(circle at 40% 80%, rgba(245, 240, 232, 0.03) 0%, transparent 50%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--charcoal);
+            color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3Ccircle cx='19' cy='19' r='1'/%3E%3Ccircle cx='25' cy='25' r='1'/%3E%3Ccircle cx='31' cy='31' r='1'/%3E%3Ccircle cx='37' cy='37' r='1'/%3E%3Ccircle cx='43' cy='43' r='1'/%3E%3Ccircle cx='49' cy='49' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Typography */
+        .heading-display {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3), 0 0 0 var(--cream);
+        }
+
+        .heading-large {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        /* Smooth reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(26, 26, 26, 0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--cream);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: var(--gradient-mesh), var(--charcoal);
+            perspective: 1000px;
+        }
+
+        .hero-content {
+            transform-style: preserve-3d;
+            animation: heroFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translateZ(0) rotateX(0deg); }
+            50% { transform: translateZ(20px) rotateX(2deg); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 8rem);
+            margin-bottom: 1rem;
+            transform: perspective(500px) rotateX(15deg);
+            text-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--gold);
+            margin-bottom: 2rem;
+            transform: translateZ(30px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-2 {
+            width: 60px;
+            height: 60px;
+            top: 70%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-3 {
+            width: 80px;
+            height: 80px;
+            top: 40%;
+            right: 10%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Section styling */
+        section {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            columns: 3;
+            column-gap: 2rem;
+            column-fill: balance;
+        }
+
+        .portfolio-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: rotateX(5deg) rotateY(5deg) translateZ(20px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-title {
+            color: var(--cream);
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+
+        .about:hover .about-image img {
+            transform: rotateY(5deg) translateZ(10px);
+        }
+
+        .about:hover .about-image::before {
+            transform: rotateY(-5deg) translateZ(-10px);
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(245, 240, 232, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(245, 240, 232, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-style: preserve-3d;
+        }
+
+        .service-card:hover {
+            transform: translateY(-20px) translateZ(30px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            background: rgba(245, 240, 232, 0.08);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--gradient-mesh);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-container {
+            position: relative;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .testimonial-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem;
+            background: rgba(245, 240, 232, 0.03);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-style: preserve-3d;
+        }
+
+        .testimonial-card.active {
+            transform: rotateY(0deg) translateZ(0);
+            opacity: 1;
+        }
+
+        .testimonial-card.next {
+            transform: rotateY(90deg) translateZ(-200px);
+            opacity: 0;
+        }
+
+        .testimonial-card.prev {
+            transform: rotateY(-90deg) translateZ(-200px);
+            opacity: 0;
+        }
+
+        .testimonial-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--cream);
+        }
+
+        .testimonial-author {
+            font-size: 1rem;
+            color: var(--gold);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(245, 240, 232, 0.3);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background: var(--gold);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.1) 0%, transparent 50%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: rgba(245, 240, 232, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(245, 240, 232, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(245, 240, 232, 0.3);
+            padding: 1rem 0;
+            color: var(--cream);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-bottom-color: var(--gold);
+        }
+
+        .form-label {
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label,
+        .form-textarea:focus + .form-label,
+        .form-textarea:not(:placeholder-shown) + .form-label {
+            top: -0.5rem;
+            font-size: 0.8rem;
+            color: var(--gold);
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: var(--charcoal);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .portfolio-grid {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .portfolio-grid {
+                columns: 1;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">SM</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        <div class="floating-element floating-3"></div>
+        
+        <div class="hero-content">
+            <h1 class="heading-display reveal">Sofia Martins</h1>
+            <p class="subtitle reveal stagger-1">Visual Storyteller</p>
+        </div>
+        
+        <div class="scroll-indicator" onclick="document.getElementById('portfolio').scrollIntoView()">
+            ↓
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title heading-large reveal">Portfolio</h2>
+            <p class="section-subtitle reveal stagger-1">Capturing moments that matter</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal stagger-1">
+                    <img src="https://picsum.photos/400/600?random=1" alt="Portrait Photography">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Portrait Series</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal stagger-2">
+                    <img src="https://picsum.photos/400/500?random=2" alt="Fashion Photography">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Fashion Editorial</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal stagger-3">
+                    <img src="https://picsum.photos/400/700?random=3" alt="Architecture Photography">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Architecture</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal stagger-1">
+                    <img src="https://picsum.photos/400/450?random=4" alt="Street Photography">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Street Stories</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal stagger-2">
+                    <img src="https://picsum.photos/400/650?random=5" alt="Nature Photography">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Natural Beauty</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal stagger-3">
+                    <img src="https://picsum.photos/400/550?random=6" alt="Event Photography">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Special Moments</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image reveal">
+                    <img src="https://picsum.photos/600/700?random=7" alt="Sofia Martins">
+                </div>
+                <div class="about-text">
+                    <h2 class="heading-large reveal stagger-1">About Me</h2>
+                    <p class="reveal stagger-2">With over a decade of experience behind the lens, I specialize in capturing the authentic beauty in every moment. My work spans from intimate portraits to grand architectural photography, always seeking the story within each frame.</p>
+                    <p class="reveal stagger-3">Based in Barcelona, I draw inspiration from the city's vibrant culture and stunning architecture. My approach combines technical precision with artistic vision, creating images that not only document but truly resonate with the viewer's emotions.</p>
+                    <p class="reveal stagger-4">When I'm not behind the camera, you'll find me exploring hidden corners of the city, always on the lookout for that perfect interplay of light and shadow that defines my signature style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title heading-large reveal">Services</h2>
+            <p class="section-subtitle reveal stagger-1">Bringing your vision to life</p>
+            
+            <div class="services-grid">
+                <div class="service-card reveal stagger-1">
+                    <div class="service-icon">📸</div>
+                    <h3>Portrait Photography</h3>
+                    <p>Intimate and authentic portraits that capture the essence of who you are. From personal headshots to family sessions, every image tells your unique story.</p>
+                </div>
+                <div class="service-card reveal stagger-2">
+                    <div class="service-icon">💍</div>
+                    <h3>Wedding Photography</h3>
+                    <p>Your most precious day deserves to be captured with care and artistry. I document every emotion, every detail, every magical moment.</p>
+                </div>
+                <div class="service-card reveal stagger-3">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Photography</h3>
+                    <p>Professional imagery that elevates your brand. From product photography to corporate events, I help businesses tell their story visually.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title heading-large reveal">What Clients Say</h2>
+            
+            <div class="testimonial-container">
+                <div class="testimonial-card active">
+                    <p class="testimonial-quote">"Sofia has an incredible eye for capturing the perfect moment. Her portraits are simply stunning, and she made our entire family feel comfortable and natural during the shoot."</p>
+                    <p class="testimonial-author">— Maria & Carlos Rodriguez</p>
+                </div>
+                <div class="testimonial-card next">
+                    <p class="testimonial-quote">"Working with Sofia was an absolute pleasure. She understood our brand vision perfectly and delivered photographs that exceeded our expectations. True professional."</p>
+                    <p class="testimonial-author">— Alexandra Chen, CEO of Luxe Boutique</p>
+                </div>
+                <div class="testimonial-card prev">
+                    <p class="testimonial-quote">"Our wedding photos are like poetry in visual form. Sofia captured not just the moments, but the emotions, the atmosphere, the very soul of our special day."</p>
+                    <p class="testimonial-author">— David & Emma Thompson</p>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <div class="testimonial-dot active" data-slide="0"></div>
+                <div class="testimonial-dot" data-slide="1"></div>
+                <div class="testimonial-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title heading-large reveal">Let's Create Together</h2>
+            <p class="section-subtitle reveal stagger-1">Ready to tell your story?</p>
+            
+            <div class="contact-content">
+                <form class="contact-form reveal stagger-2">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder=" " required>
+                        <label class="form-label">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder=" " required>
+                        <label class="form-label">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder=" ">
+                        <label class="form-label">Project Type</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-textarea" rows="5" placeholder=" " required></textarea>
+                        <label class="form-label">Tell me about your vision</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                
+                <div class="contact-info reveal stagger-3">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p>hello@sofiamartins.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p>+34 123 456 789</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <p>Barcelona, Spain</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Follow</h4>
+                        <p>@sofia_martins_photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Testimonial carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-card');
+        const dots = document.querySelectorAll('.testimonial-dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.className = 'testimonial-card';
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i === (index + 1) % slides.length) {
+                    slide.classList.add('next');
+                } else {
+                    slide.classList.add('prev');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto-rotate testimonials
+        setInterval(nextSlide, 5000);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize first reveal animation
+        setTimeout(() => {
+            document.querySelectorAll('.hero .reveal').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 500);
+    </script>
+</body>
+</html>
