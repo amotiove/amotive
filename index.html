@@ -1,1276 +1,1317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amotive — Premium Digital Agency | Websites, Marketing & Growth Strategy</title>
-    <meta name="description" content="Amotive is a premium digital agency that designs and builds high-converting websites, manages marketing campaigns, runs paid advertising, and delivers growth strategy for businesses worldwide.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --gold: #C9A84C;
-            --bg-black: #0A0A0A;
-            --text-white: #FFFFFF;
-            --text-muted: #E0E0E0;
-            --text-gray: #666666;
-            --text-mono: #888888;
-            --near-black: #1A1A1A;
-            --light-gray: #E8E8E8;
-            --charcoal: #1A1A1A;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-white);
-            overflow-x: hidden;
-            cursor: default;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 1px solid var(--gold);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.3s ease;
-            mix-blend-mode: difference;
-        }
-
-        .cursor.hover {
-            width: 60px;
-            height: 60px;
-        }
-
-        /* Three.js Canvas */
-        #three-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            opacity: 0;
-        }
-
-        /* Typography */
-        .playfair {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .space-mono {
-            font-family: 'Space Mono', monospace;
-        }
-
-        .dm-sans {
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        /* Section Base */
-        .section {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Section 0: Loading Gate */
-        .loading-gate {
-            background: var(--bg-black);
-            flex-direction: column;
-            text-align: center;
-            z-index: 1000;
-        }
-
-        .logo-massive {
-            font-size: clamp(80px, 12vw, 160px);
-            font-weight: 800;
-            margin-bottom: 40px;
-            line-height: 0.9;
-        }
-
-        .logo-massive .am {
-            color: var(--gold);
-        }
-
-        .logo-massive .otive {
-            color: var(--text-white);
-        }
-
-        .divider {
-            width: 120px;
-            height: 1px;
-            background: var(--gold);
-            margin: 0 auto 40px;
-        }
-
-        .experience-text {
-            font-size: 16px;
-            color: var(--text-gray);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 60px;
-        }
-
-        .experience-cards {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-        }
-
-        .experience-card {
-            background: var(--bg-black);
-            border: 1px solid var(--gold);
-            padding: 40px 60px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .experience-card.classic {
-            background: transparent;
-            border: 1px solid var(--text-white);
-        }
-
-        .experience-card h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .pill-button {
-            display: inline-block;
-            padding: 15px 40px;
-            border: 1px solid var(--gold);
-            border-radius: 50px;
-            background: transparent;
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
-
-        .pill-button:hover {
-            background: var(--gold);
-            color: var(--near-black);
-        }
-
-        /* Section 1: Hero */
-        .hero-section {
-            height: 100vh;
-            display: flex;
-            padding: 0;
-        }
-
-        .hero-left {
-            width: 70%;
-            background: var(--gold);
-            padding: 120px 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero-massive {
-            font-size: clamp(120px, 15vw, 200px);
-            font-weight: 800;
-            color: var(--near-black);
-            line-height: 0.85;
-            margin: 0 0 40px 0;
-        }
-
-        .hero-massive .slash {
-            font-style: italic;
-            font-size: 1.1em;
-            font-weight: 900;
-        }
-
-        .hero-subline {
-            font-size: clamp(16px, 1.8vw, 22px);
-            color: var(--near-black);
-            max-width: 600px;
-            line-height: 1.4;
-            margin: 0;
-            font-weight: 400;
-        }
-
-        .hero-right {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-right-top {
-            flex: 1;
-            background: var(--light-gray);
-            padding: 60px 40px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-right-top p {
-            font-size: clamp(20px, 2.2vw, 28px);
-            color: var(--near-black);
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .hero-right-bottom {
-            flex: 1;
-            background: var(--charcoal);
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .services-label {
-            color: var(--gold);
-            font-size: 14px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-
-        .service-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            color: var(--text-gray);
-            font-size: 14px;
-            letter-spacing: 2px;
-        }
-
-        .service-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-
-        .hero-image {
-            height: 200px;
-            background: linear-gradient(45deg, #1A1A1A 0%, #333 50%, #1A1A1A 100%);
-        }
-
-        /* Section 2: 3D Object */
-        .three-section {
-            background: var(--bg-black);
-            flex-direction: column;
-            text-align: center;
-            position: relative;
-        }
-
-        .three-text-above,
-        .three-text-below {
-            font-size: clamp(60px, 8vw, 120px);
-            font-weight: 100;
-            color: var(--text-white);
-            z-index: 10;
-            position: relative;
-        }
-
-        .three-text-above {
-            margin-bottom: 200px;
-        }
-
-        .three-text-below {
-            margin-top: 200px;
-        }
-
-        .three-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
-            z-index: 1;
-        }
-
-        /* Section 3: Services */
-        .services-section {
-            background: var(--bg-black);
-            flex-direction: column;
-            text-align: center;
-            padding: 120px 80px;
-        }
-
-        .services-title {
-            margin-bottom: 120px;
-        }
-
-        .services-letters {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .service-letter {
-            font-size: clamp(60px, 8vw, 100px);
-            font-weight: 800;
-            color: var(--text-white);
-            text-shadow: 
-                0 0 20px var(--gold),
-                0 0 40px var(--gold),
-                0 0 60px rgba(201, 168, 76, 0.5);
-            position: relative;
-        }
-
-        .service-letter::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 2px;
-            background: var(--gold);
-        }
-
-        .service-cards {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: var(--charcoal);
-            border: 1px solid var(--gold);
-            padding: 60px 40px;
-            flex: 1;
-            max-width: 350px;
-            text-align: left;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-number {
-            font-size: 12px;
-            color: var(--text-gray);
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 32px;
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .service-card p {
-            font-size: 16px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Section 4: Portfolio */
-        .portfolio-section {
-            background: var(--bg-black);
-            flex-direction: column;
-            padding: 120px 80px;
-            text-align: center;
-        }
-
-        .portfolio-title {
-            font-size: clamp(48px, 6vw, 80px);
-            font-weight: 400;
-            margin-bottom: 100px;
-        }
-
-        .portfolio-grid {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            max-width: 1400px;
-            margin: 0 auto 80px;
-        }
-
-        .portfolio-card {
-            background: linear-gradient(145deg, var(--charcoal) 0%, #111 100%);
-            padding: 50px 40px;
-            flex: 1;
-            max-width: 400px;
-            text-align: left;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--gold);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .portfolio-client {
-            font-size: 28px;
-            color: var(--gold);
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-
-        .portfolio-industry {
-            font-size: 12px;
-            color: var(--text-gray);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .portfolio-description {
-            font-size: 16px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .portfolio-link {
-            color: var(--gold);
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-
-        .portfolio-link:hover {
-            color: var(--text-white);
-        }
-
-        .portfolio-coming {
-            color: var(--text-gray);
-            font-size: 14px;
-            letter-spacing: 2px;
-        }
-
-        /* Section 5: Data */
-        .data-section {
-            height: 100vh;
-            display: flex;
-            padding: 0;
-        }
-
-        .data-left {
-            width: 60%;
-            padding: 120px 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .data-title {
-            font-size: clamp(48px, 6vw, 80px);
-            font-weight: 400;
-            margin-bottom: 40px;
-        }
-
-        .data-subtitle {
-            font-size: 20px;
-            color: var(--text-gray);
-            line-height: 1.4;
-            max-width: 500px;
-        }
-
-        .data-right {
-            width: 40%;
-            background: var(--near-black);
-            padding: 120px 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .data-stat {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--gold);
-        }
-
-        .data-stat:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .data-number {
-            font-size: 56px;
-            color: var(--gold);
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
-
-        .data-label {
-            font-size: 16px;
-            color: var(--text-gray);
-            letter-spacing: 1px;
-        }
-
-        /* Section 6: Contact */
-        .contact-section {
-            background: var(--bg-black);
-            flex-direction: column;
-            text-align: center;
-            padding: 120px 80px;
-        }
-
-        .contact-title {
-            font-size: clamp(60px, 8vw, 120px);
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .contact-subtitle {
-            font-size: clamp(60px, 8vw, 120px);
-            font-weight: 400;
-            color: var(--gold);
-            margin-bottom: 60px;
-        }
-
-        .contact-divider {
-            width: 120px;
-            height: 1px;
-            background: var(--gold);
-            margin: 0 auto 60px;
-        }
-
-        .contact-email {
-            font-size: 24px;
-            color: var(--text-white);
-            text-decoration: none;
-            margin-bottom: 60px;
-            display: inline-block;
-            letter-spacing: 2px;
-            transition: color 0.3s ease;
-        }
-
-        .contact-email:hover {
-            color: var(--gold);
-        }
-
-        .contact-cta {
-            margin-bottom: 60px;
-        }
-
-        .contact-social {
-            margin-bottom: 100px;
-        }
-
-        .contact-social a {
-            color: var(--text-gray);
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 2px;
-            transition: color 0.3s ease;
-        }
-
-        .contact-social a:hover {
-            color: var(--gold);
-        }
-
-        .contact-footer {
-            color: var(--text-gray);
-            font-size: 12px;
-            letter-spacing: 1px;
-        }
-
-        /* Animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        .stagger-item {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section {
-                flex-direction: column;
-                height: auto;
-                min-height: 100vh;
-            }
-
-            .hero-left,
-            .hero-right {
-                width: 100%;
-            }
-
-            .hero-right {
-                flex-direction: column;
-            }
-
-            .data-section {
-                flex-direction: column;
-                height: auto;
-                min-height: 100vh;
-            }
-
-            .data-left,
-            .data-right {
-                width: 100%;
-            }
-
-            .experience-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .service-cards,
-            .portfolio-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .services-letters {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            #three-canvas {
-                display: none;
-            }
-
-            .hero-massive {
-                font-size: 80px;
-            }
-
-            .contact-title,
-            .contact-subtitle {
-                font-size: 60px;
-            }
-        }
-
-        /* Hover Effects */
-        .hover-target {
-            cursor: pointer;
-        }
-
-        .hover-target:hover {
-            color: var(--gold);
-            transition: color 0.3s ease;
-        }
-
-        /* Loading Animation */
-        .loading-fade-out {
-            opacity: 0;
-            visibility: hidden;
-            transition: all 1s ease;
-        }
-
-        /* Scroll Indicator */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gold);
-            transform-origin: left;
-            transform: scaleX(0);
-            z-index: 1000;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amotive — Premium Digital Agency | Websites, Marketing & Growth Strategy</title>
+<meta name="description" content="Amotive is a premium digital agency that designs and builds high-converting websites, manages marketing campaigns, runs paid advertising, and delivers growth strategy for businesses worldwide.">
+<style>
+/* ═══════════════════════════════════════════════════
+   AMOTIVE — Enhanced V2 with Interactive 3D
+   Color Psychology + 3D Decorative System + Interactivity
+   ═══════════════════════════════════════════════════ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  /* Navy Foundation (Trust, Authority) */
+  --navy-deep: #050A12;
+  --navy: #0A1628;
+  --navy-light: #122038;
+  --navy-mid: #1A2D4A;
+  --navy-surface: #0E1A2E;
+
+  /* Gold (Premium, Prestige) */
+  --gold: #C9A84C;
+  --gold-bright: #E2C36B;
+  --gold-light: #F0DFA0;
+  --gold-dim: #8A7535;
+  --gold-glow: rgba(201, 168, 76, 0.12);
+  --gradient-gold: linear-gradient(135deg, #B8963E 0%, #E2C36B 45%, #C9A84C 100%);
+  --gradient-gold-text: linear-gradient(135deg, #D4B85C 0%, #F0DFA0 50%, #C9A84C 100%);
+
+  /* Orange (Energy, Action — Amotion DNA) */
+  --orange: #E87A2F;
+  --orange-bright: #FF8C42;
+  --orange-dim: #B85E1E;
+  --gradient-orange: linear-gradient(135deg, #D46A20 0%, #FF8C42 50%, #E87A2F 100%);
+
+  /* Emerald (Growth, Prosperity) */
+  --emerald: #2ECC71;
+  --emerald-bright: #45D988;
+  --emerald-dim: #27AE60;
+
+  /* Crimson (Urgency, Warning) */
+  --crimson: #C0392B;
+  --crimson-dim: #A93226;
+
+  /* Silver (Blue-tinted, Professional) */
+  --ice-blue: #5B9BD5;
+  --ice-bright: #7BB3E0;
+  --ice-dim: #3A7BBF;
+
+  /* Neutral */
+  --platinum: #E8EAEF;
+  --silver: #A8B2C4;
+  --steel: #6C7A8E;
+  --graphite: #384456;
+
+  /* Button shadow colors */
+  --btn-shadow-gold: 201, 168, 76;
+  --btn-shadow-orange: 232, 122, 47;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--navy-deep);
+  color: var(--silver);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+}
+
+/* ── Premium Grain Texture ─────────────── */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* ── Typography (BOLDER - No External Fonts) ───────────────── */
+h1, h2, h3, h4 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--platinum);
+}
+h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  letter-spacing: -0.025em;
+  font-weight: 900;
+}
+h2 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: -0.015em;
+  font-weight: 900;
+}
+h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+}
+
+.gold-text {
+  background: var(--gradient-gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.orange-text {
+  background: var(--gradient-orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.dim { color: var(--steel); }
+
+/* ── Layout ────────────────────────────── */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+section { padding: 130px 0; position: relative; }
+.section-alt { background: var(--navy-surface); }
+
+/* ── Dividers ──────────────────────────── */
+.divider {
+  width: 48px; height: 2px;
+  margin: 0 auto 24px;
+  border-radius: 1px;
+}
+.divider-gold { background: var(--gradient-gold); }
+.divider-orange { background: var(--gradient-orange); }
+.divider-emerald { background: var(--emerald); }
+.divider-silver { background: linear-gradient(135deg, #5B9BD5, #7BB3E0, #5B9BD5); }
+
+/* ═══════════════════════════════════════
+   3D DECORATIVE SYSTEM
+   ═══════════════════════════════════════ */
+
+/* ── Rotating Wireframe Cube ───────────── */
+.geo-scene {
+  perspective: 800px;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.wireframe-cube {
+  width: 220px; height: 220px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinCube 25s linear infinite;
+}
+.wireframe-cube .face {
+  position: absolute;
+  width: 220px; height: 220px;
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  background: rgba(201, 168, 76, 0.008);
+  backface-visibility: visible;
+}
+.wireframe-cube .face:nth-child(1) { transform: translateZ(110px); }
+.wireframe-cube .face:nth-child(2) { transform: rotateY(180deg) translateZ(110px); }
+.wireframe-cube .face:nth-child(3) { transform: rotateY(90deg) translateZ(110px); }
+.wireframe-cube .face:nth-child(4) { transform: rotateY(-90deg) translateZ(110px); }
+.wireframe-cube .face:nth-child(5) { transform: rotateX(90deg) translateZ(110px); }
+.wireframe-cube .face:nth-child(6) { transform: rotateX(-90deg) translateZ(110px); }
+
+@keyframes spinCube {
+  0% { transform: rotateX(-15deg) rotateY(0deg); }
+  100% { transform: rotateX(-15deg) rotateY(360deg); }
+}
+
+/* Inner cube (smaller, offset rotation) */
+.wireframe-cube-inner {
+  width: 130px; height: 130px;
+  position: absolute;
+  top: 50%; left: 50%;
+  margin-top: -65px; margin-left: -65px;
+  transform-style: preserve-3d;
+  animation: spinCubeReverse 18s linear infinite;
+}
+.wireframe-cube-inner .face {
+  position: absolute;
+  width: 130px; height: 130px;
+  border: 1px solid rgba(232, 122, 47, 0.12);
+  background: transparent;
+  backface-visibility: visible;
+}
+.wireframe-cube-inner .face:nth-child(1) { transform: translateZ(65px); }
+.wireframe-cube-inner .face:nth-child(2) { transform: rotateY(180deg) translateZ(65px); }
+.wireframe-cube-inner .face:nth-child(3) { transform: rotateY(90deg) translateZ(65px); }
+.wireframe-cube-inner .face:nth-child(4) { transform: rotateY(-90deg) translateZ(65px); }
+.wireframe-cube-inner .face:nth-child(5) { transform: rotateX(90deg) translateZ(65px); }
+.wireframe-cube-inner .face:nth-child(6) { transform: rotateX(-90deg) translateZ(65px); }
+
+@keyframes spinCubeReverse {
+  0% { transform: rotateX(20deg) rotateY(360deg) rotateZ(10deg); }
+  100% { transform: rotateX(20deg) rotateY(0deg) rotateZ(10deg); }
+}
+
+/* ── Floating Geometric Particles ──────── */
+.geo-particles {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; overflow: hidden;
+}
+.geo-particle {
+  position: absolute;
+  opacity: 0.15;
+  animation: floatParticle var(--dur, 12s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+/* Diamond shape */
+.geo-diamond {
+  width: var(--size, 12px); height: var(--size, 12px);
+  border: 1px solid var(--pcolor, var(--gold));
+  transform: rotate(45deg);
+}
+/* Triangle shape */
+.geo-triangle {
+  width: 0; height: 0;
+  border-left: var(--half, 6px) solid transparent;
+  border-right: var(--half, 6px) solid transparent;
+  border-bottom: var(--size, 12px) solid var(--pcolor, var(--gold));
+  background: none;
+  opacity: 0.08;
+}
+/* Circle dot */
+.geo-dot {
+  width: var(--size, 4px); height: var(--size, 4px);
+  border-radius: 50%;
+  background: var(--pcolor, var(--gold));
+  opacity: 0.12;
+}
+/* Cross shape */
+.geo-cross {
+  width: var(--size, 14px); height: var(--size, 14px);
+  position: relative;
+}
+.geo-cross::before, .geo-cross::after {
+  content: '';
+  position: absolute;
+  background: var(--pcolor, var(--gold));
+}
+.geo-cross::before {
+  width: 100%; height: 1px;
+  top: 50%; left: 0;
+}
+.geo-cross::after {
+  width: 1px; height: 100%;
+  top: 0; left: 50%;
+}
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 45deg)); }
+  50% { transform: translateY(var(--drift, -25px)) rotate(calc(var(--rot, 45deg) + 15deg)); }
+}
+
+/* ── Corner Brackets (Art Deco accents) ── */
+.corner-decor {
+  position: absolute;
+  width: 60px; height: 60px;
+  pointer-events: none;
+}
+.corner-decor::before,
+.corner-decor::after {
+  content: '';
+  position: absolute;
+  background: var(--corner-color, rgba(201, 168, 76, 0.12));
+}
+.corner-tl { top: 20px; left: 20px; }
+.corner-tl::before { width: 30px; height: 1px; top: 0; left: 0; }
+.corner-tl::after { width: 1px; height: 30px; top: 0; left: 0; }
+
+.corner-tr { top: 20px; right: 20px; }
+.corner-tr::before { width: 30px; height: 1px; top: 0; right: 0; }
+.corner-tr::after { width: 1px; height: 30px; top: 0; right: 0; }
+
+.corner-bl { bottom: 20px; left: 20px; }
+.corner-bl::before { width: 30px; height: 1px; bottom: 0; left: 0; }
+.corner-bl::after { width: 1px; height: 30px; bottom: 0; left: 0; }
+
+.corner-br { bottom: 20px; right: 20px; }
+.corner-br::before { width: 30px; height: 1px; bottom: 0; right: 0; }
+.corner-br::after { width: 1px; height: 30px; bottom: 0; right: 0; }
+
+/* ── Animated Line Trace ───────────────── */
+.line-trace {
+  position: absolute;
+  overflow: hidden;
+}
+.line-trace-h {
+  width: 120px; height: 1px;
+}
+.line-trace-h::after {
+  content: '';
+  position: absolute;
+  width: 40px; height: 1px;
+  background: var(--trace-color, var(--gold));
+  animation: traceH 4s ease-in-out infinite;
+  opacity: 0.3;
+}
+@keyframes traceH {
+  0% { left: -40px; }
+  50% { left: 120px; }
+  100% { left: -40px; }
+}
+.line-trace-v {
+  width: 1px; height: 120px;
+}
+.line-trace-v::after {
+  content: '';
+  position: absolute;
+  width: 1px; height: 40px;
+  background: var(--trace-color, var(--gold));
+  animation: traceV 5s ease-in-out infinite;
+  opacity: 0.3;
+}
+@keyframes traceV {
+  0% { top: -40px; }
+  50% { top: 120px; }
+  100% { top: -40px; }
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION WITH ENHANCED 3D
+   ═══════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 20px 0;
+  background: rgba(5, 10, 18, 0.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+nav.scrolled {
+  padding: 14px 0;
+  background: rgba(5, 10, 18, 0.92);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+.logo {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800; font-size: 1.45rem;
+  color: var(--platinum);
+  text-decoration: none; letter-spacing: 0.02em;
+}
+.logo span {
+  background: var(--gradient-gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+.nav-links a {
+  color: var(--steel); text-decoration: none;
+  font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Enhanced nav link hover with 3D */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-50%);
+}
+.nav-links a:hover {
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 28px; height: 20px; position: relative; z-index: 1001;
+}
+.nav-toggle span {
+  display: block; width: 100%; height: 1.5px;
+  background: var(--platinum); position: absolute;
+  left: 0; transition: all 0.3s;
+}
+.nav-toggle span:nth-child(1) { top: 0; }
+.nav-toggle span:nth-child(2) { top: 9px; }
+.nav-toggle span:nth-child(3) { top: 18px; }
+.nav-toggle.active span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+
+.mobile-menu {
+  display: none; position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(5, 10, 18, 0.97);
+  backdrop-filter: blur(24px);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center; justify-content: center; gap: 28px;
+}
+.mobile-menu.active { display: flex; }
+.mobile-menu a {
+  color: var(--platinum); text-decoration: none;
+  font-size: 1.15rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════
+   ENHANCED 3D BUTTONS
+   ═══════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 38px; border-radius: 3px;
+  font-weight: 800; font-size: 0.85rem;
+  text-decoration: none; 
+  cursor: pointer; border: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  
+  /* Enhanced 3D properties */
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.btn-gold {
+  background: var(--gradient-gold);
+  color: var(--navy-deep);
+  box-shadow: 0 4px 24px rgba(201, 168, 76, 0.2);
+}
+.btn-gold:hover {
+  transform: translateY(-3px) translateZ(10px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(var(--btn-shadow-gold), 0.4);
+}
+.btn-orange {
+  background: var(--gradient-orange);
+  color: white;
+  box-shadow: 0 4px 24px rgba(232, 122, 47, 0.25);
+}
+.btn-orange:hover {
+  transform: translateY(-3px) translateZ(10px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(var(--btn-shadow-orange), 0.4);
+}
+.btn-emerald {
+  background: linear-gradient(135deg, #27AE60, #2ECC71, #27AE60);
+  color: white;
+  box-shadow: 0 4px 24px rgba(46, 204, 113, 0.2);
+}
+.btn-emerald:hover {
+  transform: translateY(-3px) translateZ(10px) scale(1.03);
+  box-shadow: 0 8px 36px rgba(46, 204, 113, 0.35);
+}
+.btn-ice {
+  background: linear-gradient(135deg, #3A7BBF, #5B9BD5, #3A7BBF);
+  color: white;
+  box-shadow: 0 4px 24px rgba(91, 155, 213, 0.2);
+}
+.btn-ice:hover {
+  transform: translateY(-3px) translateZ(10px) scale(1.03);
+  box-shadow: 0 8px 36px rgba(91, 155, 213, 0.35);
+}
+.btn-outline {
+  background: transparent; color: var(--platinum);
+  border: 1px solid var(--graphite);
+}
+.btn-outline:hover { 
+  border-color: var(--gold); color: var(--gold);
+  transform: translateY(-3px) translateZ(10px) scale(1.03);
+}
+.btn-sm { padding: 12px 28px; font-size: 0.78rem; }
+
+/* CTA Breathe Animation */
+.btn-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* ═══════════════════════════════════════
+   ENHANCED SCROLL ANIMATIONS
+   ═══════════════════════════════════════ */
+.reveal {
+  opacity: 0; 
+  transform: translateY(30px) translateZ(-20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible { 
+  opacity: 1; 
+  transform: translateY(0) translateZ(0);
+}
+
+/* ═══════════════════════════════════════
+   FOOTER WITH ENHANCED HOVER
+   ═══════════════════════════════════════ */
+footer {
+  padding: 72px 0 44px;
+  border-top: 1px solid rgba(201, 168, 76, 0.06);
+  position: relative;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand p {
+  color: var(--steel); font-size: 0.85rem;
+  margin-top: 16px; max-width: 280px; line-height: 1.7;
+}
+.footer-col h4 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--gold-dim); margin-bottom: 20px;
+}
+.footer-col a {
+  display: block; color: var(--steel);
+  text-decoration: none; font-size: 0.88rem;
+  padding: 5px 0; 
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.footer-col a:hover { 
+  color: var(--platinum);
+  transform: translateY(-2px);
+}
+.footer-bottom {
+  margin-top: 48px; padding-top: 28px;
+  border-top: 1px solid rgba(201, 168, 76, 0.04);
+  display: flex; justify-content: space-between;
+  align-items: center; color: var(--steel); font-size: 0.78rem;
+}
+.footer-bottom a { color: var(--gold-dim); text-decoration: none; }
+
+/* ═══════════════════════════════════════
+   LANDING PAGE SPECIFIC STYLES
+   ═══════════════════════════════════════ */
+
+/* ── Hero ────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 100px; padding-bottom: 60px;
+  position: relative; overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px; align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 20px; border-radius: 2px;
+  font-size: 0.68rem; font-weight: 700;
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  margin-bottom: 36px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.hero-eyebrow::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--gold); border-radius: 50%;
+}
+.hero h1 { margin-bottom: 32px; }
+.hero h1 em {
+  font-style: italic;
+  background: var(--gradient-gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 1.1rem; color: var(--silver);
+  margin-bottom: 52px; max-width: 520px; line-height: 1.85;
+}
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* ── Hero 3D Scene ───────────────────── */
+.hero-3d {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 500px;
+}
+.hero-3d .geo-scene {
+  position: relative;
+  width: 340px; height: 340px;
+}
+
+/* Glow behind cube */
+.cube-glow {
+  position: absolute;
+  width: 300px; height: 300px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  filter: blur(30px);
+  animation: gentlePulse 6s ease-in-out infinite alternate;
+}
+@keyframes gentlePulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Floating stat badges near the cube */
+.hero-badge {
+  position: absolute; padding: 18px 24px;
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 3px;
+  z-index: 5;
+}
+.hero-badge-1 { top: 5%; right: -10%; }
+.hero-badge-2 { bottom: 10%; left: -5%; }
+.badge-value {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.8rem; font-weight: 900;
+  color: var(--emerald);
+}
+.badge-label {
+  font-size: 0.7rem; color: var(--steel);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ── Flash Roll ──────────────────────── */
+.flash-roll {
+  padding: 100px 0;
+  position: relative;
+  border-top: 1px solid rgba(201, 168, 76, 0.04);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.04);
+}
+.flash-roll-inner {
+  max-width: 780px; margin: 0 auto; text-align: center;
+}
+.flash-roll blockquote {
+  font-size: 1.1rem; line-height: 1.9;
+  color: var(--silver);
+}
+.flash-roll blockquote strong {
+  color: #C8D2E0; font-weight: 700;
+}
+.flash-roll-source {
+  margin-top: 36px; font-size: 0.9rem;
+  color: var(--gold); font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* ── Package Teasers with TILT CARDS ─────────────────── */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px; margin-top: 72px;
+}
+.package-teaser {
+  padding: 48px 36px;
+  background: var(--navy-light);
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease;
+  position: relative; overflow: hidden;
+  text-decoration: none;
+  display: flex; flex-direction: column;
+  
+  /* Tilt card properties */
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.package-teaser::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; opacity: 0;
+  transition: opacity 0.4s;
+}
+.package-teaser:hover::before { opacity: 1; }
+
+/* Silver accent — Website package */
+.teaser-silver {
+  border: 1px solid rgba(91, 155, 213, 0.08);
+}
+.teaser-silver::before { background: linear-gradient(90deg, #5B9BD5, #7BB3E0); }
+.teaser-silver:hover { border-color: rgba(91, 155, 213, 0.2); }
+.teaser-silver .teaser-label { color: var(--ice-blue); }
+.teaser-silver .teaser-price { color: var(--ice-bright); }
+
+/* Green accent — Marketing package */
+.teaser-green {
+  border: 1px solid rgba(46, 204, 113, 0.06);
+}
+.teaser-green::before { background: linear-gradient(90deg, #27AE60, #2ECC71); }
+.teaser-green:hover { border-color: rgba(46, 204, 113, 0.18); }
+.teaser-green .teaser-label { color: var(--emerald); }
+.teaser-green .teaser-price { color: var(--emerald-bright); }
+
+/* Orange accent — Full Growth package */
+.teaser-orange {
+  border: 1px solid rgba(232, 122, 47, 0.06);
+}
+.teaser-orange::before { background: var(--gradient-orange); }
+.teaser-orange:hover { border-color: rgba(232, 122, 47, 0.2); }
+.teaser-orange .teaser-label { color: var(--orange); }
+.teaser-orange .teaser-price { color: var(--orange-bright); }
+
+.teaser-label {
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.teaser-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.6rem; font-weight: 900;
+  color: var(--platinum); margin-bottom: 14px;
+}
+.teaser-desc {
+  color: var(--silver); font-size: 0.92rem;
+  line-height: 1.75; margin-bottom: 28px;
+  flex-grow: 1;
+}
+.teaser-price {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem; font-weight: 900;
+  margin-bottom: 4px;
+}
+.teaser-period {
+  font-size: 0.78rem; color: var(--steel);
+  margin-bottom: 24px;
+}
+.teaser-link {
+  font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--steel);
+  transition: color 0.3s;
+}
+.package-teaser:hover .teaser-link { color: var(--platinum); }
+.teaser-link::after { content: ' →'; }
+
+/* Tiny 3D shape inside each teaser */
+.teaser-geo {
+  position: absolute;
+  bottom: 20px; right: 20px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+.teaser-geo .mini-diamond {
+  width: 40px; height: 40px;
+  border: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* ═══════════════════════════════════════
+   INTAKE FORM SECTION (Glass Morphism)
+   ═══════════════════════════════════════ */
+.intake-section {
+  text-align: center; padding: 150px 0;
+  position: relative;
+}
+.intake-section::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 122, 47, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.intake-form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 48px;
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.intake-form-card h3 {
+  margin-bottom: 8px;
+  color: var(--platinum);
+}
+
+.intake-form-card p {
+  color: var(--silver);
+  margin-bottom: 36px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  color: var(--silver);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(18, 32, 56, 0.8);
+  border: 1px solid rgba(108, 122, 142, 0.2);
+  border-radius: 4px;
+  color: var(--platinum);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-submit {
+  margin-top: 32px;
+}
+
+/* ── Landing Responsive ──────────────── */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-3d { display: none; }
+  .hero { min-height: auto; padding: 140px 0 100px; }
+  .packages-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .form-row { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .corner-decor { display: none; }
+  .line-trace { display: none; }
+  
+  /* Disable tilt on touch devices */
+  .package-teaser {
+    transform: none !important;
+  }
+}
+@media (max-width: 640px) {
+  section { padding: 90px 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .intake-form-card { padding: 32px 24px; }
+}
+</style>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <!-- App Identity (Google OAuth Verification) -->
-    <div id="app-identity" style="position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden;" aria-hidden="false">
-        <h1>Amotive</h1>
-        <p>Amotive is a premium digital agency application that provides website design, social media marketing, paid advertising campaign management, SEO optimization, and comprehensive digital growth strategy services for businesses worldwide. Amotive uses Google Workspace integrations including Gmail for client communication and Google Calendar for project scheduling to deliver seamless service to our clients.</p>
+
+<!-- App Identity (Google OAuth Verification) -->
+<div id="app-identity" style="position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden;" aria-hidden="false">
+    <h1>Amotive</h1>
+    <p>Amotive is a premium digital agency application that provides website design, social media marketing, paid advertising campaign management, SEO optimization, and comprehensive digital growth strategy services for businesses worldwide. Amotive uses Google Workspace integrations including Gmail for client communication and Google Calendar for project scheduling to deliver seamless service to our clients.</p>
+</div>
+
+<!-- Navigation -->
+<nav id="nav">
+  <div class="container">
+    <a href="/" class="logo"><span>am</span>otive</a>
+    <ul class="nav-links">
+      <li><a href="/websites">Websites</a></li>
+      <li><a href="/marketing">Marketing</a></li>
+      <li><a href="/premium">Full Growth</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#intake" class="btn btn-orange btn-sm">Start Your Project</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/websites">Websites</a>
+  <a href="/marketing">Marketing</a>
+  <a href="/premium">Full Growth</a>
+  <a href="#intake" class="btn btn-orange">Start Your Project</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     HERO — Premium First Impression
+     3D Wireframe Cube + Inception Question
+     ═══════════════════════════════════════ -->
+<section class="hero">
+  <!-- Floating geometric particles -->
+  <div class="geo-particles" id="heroParticles">
+    <div class="geo-particle geo-diamond" style="top: 12%; left: 8%; --size: 10px; --dur: 14s; --delay: 0s; --drift: -30px; --pcolor: var(--gold);"></div>
+    <div class="geo-particle geo-dot" style="top: 25%; right: 15%; --size: 5px; --dur: 10s; --delay: 2s; --drift: -20px;"></div>
+    <div class="geo-particle geo-cross" style="bottom: 20%; left: 12%; --size: 16px; --dur: 16s; --delay: 1s; --drift: -35px;"></div>
+    <div class="geo-particle geo-diamond" style="top: 60%; left: 5%; --size: 8px; --dur: 12s; --delay: 3s; --drift: -25px;"></div>
+    <div class="geo-particle geo-triangle" style="bottom: 30%; right: 8%; --size: 10px; --half: 5px; --dur: 18s; --delay: 0.5s; --drift: -28px; --pcolor: var(--gold-dim);"></div>
+    <div class="geo-particle geo-dot" style="top: 40%; left: 20%; --size: 3px; --dur: 11s; --delay: 4s; --drift: -18px;"></div>
+    <div class="geo-particle geo-diamond" style="bottom: 15%; right: 20%; --size: 6px; --dur: 13s; --delay: 2.5s; --drift: -22px; --pcolor: var(--gold-bright);"></div>
+  </div>
+
+  <!-- Corner accents -->
+  <div class="corner-decor corner-tl"></div>
+  <div class="corner-decor corner-br"></div>
+
+  <!-- Animated line traces -->
+  <div class="line-trace line-trace-h" style="top: 15%; left: 3%;"></div>
+  <div class="line-trace line-trace-v" style="bottom: 10%; right: 5%;"></div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">Premium Digital Growth</div>
+        <h1 class="reveal">Your business has a reputation.<br>Does your digital presence <em>match&nbsp;it?</em></h1>
+        <p class="hero-sub reveal">We craft digital experiences for businesses that refuse to settle&nbsp;— premium websites, strategic marketing, and campaigns that deliver measurable growth.</p>
+        <div class="hero-buttons reveal">
+          <a href="#packages" class="btn btn-gold">Explore Packages</a>
+          <a href="#intake" class="btn btn-outline">Start Your Project</a>
+        </div>
+      </div>
+
+      <!-- 3D Wireframe Scene -->
+      <div class="hero-3d">
+        <div class="cube-glow"></div>
+        <div class="geo-scene">
+          <div class="wireframe-cube">
+            <div class="face"></div>
+            <div class="face"></div>
+            <div class="face"></div>
+            <div class="face"></div>
+            <div class="face"></div>
+            <div class="face"></div>
+            <!-- Inner cube -->
+            <div class="wireframe-cube-inner">
+              <div class="face"></div>
+              <div class="face"></div>
+              <div class="face"></div>
+              <div class="face"></div>
+              <div class="face"></div>
+              <div class="face"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating badges -->
+        <div class="hero-badge hero-badge-1 reveal">
+          <div class="badge-value">4.2×</div>
+          <div class="badge-label">Average Return on Ad Spend</div>
+        </div>
+        <div class="hero-badge hero-badge-2 reveal">
+          <div class="badge-value">14 days</div>
+          <div class="badge-label">Average Delivery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FLASH ROLL — Clinical Silver
+     Dense expertise. No warm colors.
+     ═══════════════════════════════════════ -->
+<section class="flash-roll">
+  <div class="corner-decor corner-tl" style="--corner-color: rgba(168, 178, 196, 0.08);"></div>
+  <div class="corner-decor corner-br" style="--corner-color: rgba(168, 178, 196, 0.08);"></div>
+  <div class="container">
+    <div class="flash-roll-inner reveal">
+      <div class="divider divider-gold"></div>
+      <blockquote>
+        Instagram's organic reach has dropped to <strong>5.2%</strong> for business accounts. Google's top three results capture <strong>75.1%</strong> of all clicks. The average local business website loads in <strong>8.6 seconds</strong>&nbsp;— when 53% of visitors leave after three. Meta CPMs in Portugal average <strong>€8–12</strong>. A properly structured Google Ads campaign for local services should target a <strong>4:1 ROAS minimum</strong>. The businesses winning right now aren't spending more — they're spending smarter. Most agencies won't tell you these numbers because they don't track them.
+      </blockquote>
+      <div class="flash-roll-source">We do.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PACKAGES — Three Doors with TILT CARDS
+     Each teaser hints at its page's color
+     ═══════════════════════════════════════ -->
+<section id="packages" class="section-alt">
+  <div class="geo-particles">
+    <div class="geo-particle geo-diamond" style="top: 15%; right: 10%; --size: 8px; --dur: 15s; --delay: 1s; --drift: -20px; --pcolor: var(--gold-dim);"></div>
+    <div class="geo-particle geo-cross" style="bottom: 20%; left: 8%; --size: 12px; --dur: 13s; --delay: 0s; --drift: -25px; --pcolor: var(--gold-dim);"></div>
+  </div>
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="divider divider-gold reveal"></div>
+      <h2 class="reveal">Three paths to <span class="gold-text">growth</span></h2>
+      <p class="dim reveal" style="max-width: 520px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">Each works independently. Together, they compound.</p>
     </div>
 
-    <!-- cursor removed -->
+    <div class="packages-grid">
+      <!-- SILVER — Website -->
+      <a href="website-v2.html" class="package-teaser teaser-silver tilt-card reveal">
+        <div class="teaser-label">Website Design</div>
+        <div class="teaser-title">Built to Convert</div>
+        <div class="teaser-desc">A modern, fast website that turns visitors into customers. Custom design, SEO built in, delivered in 2–3&nbsp;weeks.</div>
+        <div class="teaser-price">€2,500</div>
+        <div class="teaser-period">one-time</div>
+        <div class="teaser-link">View details</div>
+        <div class="teaser-geo" style="color: var(--ice-blue);"><div class="mini-diamond"></div></div>
+      </a>
+
+      <!-- GREEN — Marketing -->
+      <a href="marketing-v2.html" class="package-teaser teaser-green tilt-card reveal">
+        <div class="teaser-label">Marketing &amp; Growth</div>
+        <div class="teaser-title">Fuel Your Growth</div>
+        <div class="teaser-desc">Social media, content, and paid ads managed end-to-end. You approve the strategy, we handle the execution.</div>
+        <div class="teaser-price">€2,000</div>
+        <div class="teaser-period">per month</div>
+        <div class="teaser-link">View details</div>
+        <div class="teaser-geo" style="color: var(--emerald);"><div class="mini-diamond"></div></div>
+      </a>
+
+      <!-- ORANGE — Full Growth -->
+      <a href="premium-v2.html" class="package-teaser teaser-orange tilt-card reveal">
+        <div class="teaser-label">Full Growth Engine</div>
+        <div class="teaser-title">Everything. Done.</div>
+        <div class="teaser-desc">Website + marketing + ads + SEO. The complete growth engine. Website built&nbsp;free.</div>
+        <div class="teaser-price">€3,500</div>
+        <div class="teaser-period">per month</div>
+        <div class="teaser-link">View details</div>
+        <div class="teaser-geo" style="color: var(--orange);"><div class="mini-diamond"></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     INTAKE FORM — Glass Morphism
+     ═══════════════════════════════════════ -->
+<section id="intake" class="intake-section">
+  <div class="geo-particles">
+    <div class="geo-particle geo-diamond" style="top: 20%; left: 10%; --size: 10px; --dur: 14s; --drift: -30px; --pcolor: var(--orange-dim);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 25%; right: 12%; --size: 4px; --dur: 11s; --delay: 2s; --drift: -20px; --pcolor: var(--gold);"></div>
+  </div>
+  <div class="container">
+    <div class="divider divider-orange reveal"></div>
+    <h2 class="reveal">You know your business<br>better than <span class="gold-text">anyone</span></h2>
     
-    <!-- Scroll Progress -->
-    <div class="scroll-progress"></div>
+    <div class="intake-form-card reveal">
+      <h3>Start Your Project</h3>
+      <p>Tell us about your business and goals. We'll craft a strategy that fits your vision and budget.</p>
+      
+      <!-- Google Forms embed will be configured later -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform?embedded=true" 
+              width="100%" 
+              height="800" 
+              frameborder="0" 
+              marginheight="0" 
+              marginwidth="0">
+        Loading form…
+      </iframe>
+    </div>
+  </div>
+</section>
 
-    <!-- Three.js Canvas -->
-    <canvas id="three-canvas"></canvas>
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span>am</span>otive</a>
+        <p>Premium digital growth for businesses that refuse to settle.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Packages</h4>
+        <a href="/websites">Website Design</a>
+        <a href="/marketing">Marketing &amp; Growth</a>
+        <a href="/premium">Full Growth</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="mailto:hello@amotive.io">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://instagram.com/amotive.io" target="_blank">Instagram</a>
+        <a href="https://linkedin.com/company/amotive" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/amotive_io" target="_blank">Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Amotive. All rights reserved.</div>
+      <div>An <a href="#">Amotion</a> company</div>
+    </div>
+  </div>
+</footer>
 
-    <!-- Section 0: Loading Gate -->
-    <section class="section loading-gate" id="loading-gate">
-        <div class="logo-massive playfair">
-            <span class="am">am</span><span class="otive">otive</span>
-        </div>
-        <div class="divider"></div>
-        <div class="experience-text space-mono">Choose your experience</div>
-        <div class="experience-cards">
-            <div class="experience-card immersive">
-                <h3 class="playfair">Immersive</h3>
-                <a href="#" class="pill-button space-mono enter-btn">Enter</a>
-            </div>
-            <div class="experience-card classic">
-                <h3 class="playfair">Classic</h3>
-                <a href="#" class="pill-button space-mono browse-btn">Browse</a>
-            </div>
-        </div>
-    </section>
+<script>
+// ═══════════════════════════════════════
+// Enhanced V2 JavaScript with 3D Effects
+// ═══════════════════════════════════════
 
-    <!-- Section 1: Hero -->
-    <section class="section hero-section" id="hero">
-        <div class="hero-left">
-            <div class="hero-massive playfair fade-in-up" role="heading" aria-level="2" aria-label="Amotive">
-                am<span class="slash">/</span><br>otive
-            </div>
-            <p class="hero-subline dm-sans fade-in-up">
-                Amotive is a premium digital agency that designs high-converting websites, runs marketing campaigns, and delivers growth strategy for businesses worldwide.
-            </p>
-        </div>
-        <div class="hero-right">
-            <div class="hero-right-top">
-                <p class="dm-sans fade-in-up">Crafting award-worthy digital experiences that convert visitors into believers.</p>
-            </div>
-            <div class="hero-right-bottom">
-                <div class="services-label space-mono fade-in-up">Services</div>
-                <div class="service-item space-mono stagger-item">
-                    <div class="service-dot"></div>
-                    01. WEBSITES
-                </div>
-                <div class="service-item space-mono stagger-item">
-                    <div class="service-dot"></div>
-                    02. BRANDING
-                </div>
-                <div class="service-item space-mono stagger-item">
-                    <div class="service-dot"></div>
-                    03. MARKETING
-                </div>
-                <div class="service-item space-mono stagger-item">
-                    <div class="service-dot"></div>
-                    04. STRATEGY
-                </div>
-            </div>
-        </div>
-        <div class="hero-image"></div>
-    </section>
+// Detect touch device
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    <!-- Section 2: 3D Object -->
-    <section class="section three-section" id="three-d">
-        <div class="three-glow"></div>
-        <div class="three-text-above playfair fade-in-up">Digital</div>
-        <div class="three-text-below playfair fade-in-up">Alchemy</div>
-    </section>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
-    <!-- Section 3: Services -->
-    <section class="section services-section" id="services">
-        <div class="services-title">
-            <div class="services-letters">
-                <span class="service-letter playfair stagger-item">S</span>
-                <span class="service-letter playfair stagger-item">E</span>
-                <span class="service-letter playfair stagger-item">R</span>
-                <span class="service-letter playfair stagger-item">V</span>
-                <span class="service-letter playfair stagger-item">I</span>
-                <span class="service-letter playfair stagger-item">C</span>
-                <span class="service-letter playfair stagger-item">E</span>
-                <span class="service-letter playfair stagger-item">S</span>
-            </div>
-        </div>
+// Mobile menu
+const toggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// Enhanced scroll reveal with depth
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Stagger package reveals
+document.querySelectorAll('.packages-grid').forEach(grid => {
+  grid.querySelectorAll('.reveal').forEach((child, i) => {
+    child.style.transitionDelay = `${i * 0.15}s`;
+  });
+});
+
+// ═══════════════════════════════════════
+// VANILLA TILT CARDS (3D Perspective)
+// ═══════════════════════════════════════
+if (!isTouchDevice) {
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    let isTransitioning = false;
+    
+    card.addEventListener('mouseenter', () => {
+      isTransitioning = false;
+      card.style.transition = 'none';
+    });
+    
+    card.addEventListener('mousemove', e => {
+      if (isTransitioning) return;
+      
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      // Max 8 degrees rotation
+      const rotateX = (y - centerY) / centerY * -8;
+      const rotateY = (x - centerX) / centerX * 8;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(5px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      isTransitioning = true;
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+      card.style.transition = 'transform 0.5s ease';
+      
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
+    });
+  });
+}
+
+// ═══════════════════════════════════════
+// MOUSE PARALLAX on Geometric Particles
+// ═══════════════════════════════════════
+if (!isTouchDevice) {
+  let mouseX = 0, mouseY = 0;
+  let ticking = false;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+    mouseY = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+    
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  function updateParallax() {
+    // Hero particles parallax
+    const heroParticles = document.getElementById('heroParticles');
+    if (heroParticles) {
+      heroParticles.querySelectorAll('.geo-particle').forEach((p, i) => {
+        const speed = 0.01 + (i * 0.002); // Subtle movement
+        const moveX = -mouseX * speed * 100;
+        const moveY = -mouseY * speed * 100;
+        const currentTransform = p.style.transform;
         
-        <div class="service-cards">
-            <div class="service-card hover-target stagger-item">
-                <div class="service-number space-mono">01</div>
-                <h3 class="playfair">Websites</h3>
-                <p class="dm-sans">Award-winning digital experiences that captivate audiences and drive conversions. Every pixel crafted with obsessive attention to detail.</p>
-            </div>
-            <div class="service-card hover-target stagger-item">
-                <div class="service-number space-mono">02</div>
-                <h3 class="playfair">Marketing</h3>
-                <p class="dm-sans">Strategic campaigns that cut through the noise and reach your ideal customers. Data-driven creativity that delivers measurable results.</p>
-            </div>
-            <div class="service-card hover-target stagger-item">
-                <div class="service-number space-mono">03</div>
-                <h3 class="playfair">Strategy</h3>
-                <p class="dm-sans">Comprehensive digital roadmaps that position your brand for long-term success. Deep market insights combined with innovative thinking.</p>
-            </div>
-        </div>
-    </section>
+        // Preserve existing transforms and add parallax
+        if (currentTransform.includes('translateY')) {
+          const match = currentTransform.match(/translateY\(([^)]+)\)/);
+          if (match) {
+            const existingY = parseFloat(match[1]);
+            p.style.transform = currentTransform.replace(/translateY\([^)]+\)/, `translateY(${existingY + moveY}px)`) + ` translateX(${moveX}px)`;
+          }
+        } else {
+          p.style.transform = currentTransform + ` translate(${moveX}px, ${moveY}px)`;
+        }
+      });
+    }
+    
+    ticking = false;
+  }
+}
 
-    <!-- Section 4: Portfolio -->
-    <section class="section portfolio-section" id="portfolio">
-        <h2 class="portfolio-title playfair fade-in-up">Selected Work</h2>
+// ═══════════════════════════════════════
+// SCROLL PARALLAX on Geometric Particles
+// ═══════════════════════════════════════
+let scrollTicking = false;
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) {
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+      document.querySelectorAll('.geo-particle').forEach((p, i) => {
+        const speed = 0.02 + (i * 0.008);
+        const rotation = 45 + scrollY * 0.01;
+        const baseTransform = `translateY(${scrollY * speed}px) rotate(${rotation}deg)`;
         
-        <div class="portfolio-grid">
-            <div class="portfolio-card hover-target stagger-item">
-                <h3 class="portfolio-client playfair">Aurum Capital</h3>
-                <div class="portfolio-industry space-mono">FINANCE</div>
-                <p class="portfolio-description dm-sans">Complete digital transformation including brand identity, responsive website, and lead generation system that increased qualified leads by 340%.</p>
-                <a href="#" class="portfolio-link space-mono">VIEW PROJECT →</a>
-            </div>
-            <div class="portfolio-card hover-target stagger-item">
-                <h3 class="portfolio-client playfair">Vantage Labs</h3>
-                <div class="portfolio-industry space-mono">TECHNOLOGY</div>
-                <p class="portfolio-description dm-sans">Award-winning product launch campaign featuring interactive demos and immersive storytelling that generated $2.1M in pre-orders.</p>
-                <a href="#" class="portfolio-link space-mono">VIEW PROJECT →</a>
-            </div>
-            <div class="portfolio-card hover-target stagger-item">
-                <h3 class="portfolio-client playfair">Meridian Group</h3>
-                <div class="portfolio-industry space-mono">REAL ESTATE</div>
-                <p class="portfolio-description dm-sans">Luxury property showcase platform with virtual tours and AI-powered matching that increased sales velocity by 180%.</p>
-                <a href="#" class="portfolio-link space-mono">VIEW PROJECT →</a>
-            </div>
-        </div>
-        
-        <div class="portfolio-coming space-mono fade-in-up">More projects coming soon</div>
-    </section>
-
-    <!-- Section 5: Data -->
-    <section class="section data-section" id="data">
-        <div class="data-left">
-            <h2 class="data-title playfair fade-in-up">Numbers Don't Lie</h2>
-            <p class="data-subtitle dm-sans fade-in-up">Every pixel placed with purpose. Every interaction designed to convert.</p>
-        </div>
-        <div class="data-right">
-            <div class="data-stat stagger-item">
-                <div class="data-number space-mono counter" data-count="250">0</div>
-                <div class="data-label space-mono">Projects Delivered</div>
-            </div>
-            <div class="data-stat stagger-item">
-                <div class="data-number space-mono counter" data-count="98">0</div>
-                <div class="data-label space-mono">Client Satisfaction</div>
-            </div>
-            <div class="data-stat stagger-item">
-                <div class="data-number space-mono">4.2x</div>
-                <div class="data-label space-mono">Average ROI Increase</div>
-            </div>
-            <div class="data-stat stagger-item">
-                <div class="data-number space-mono">$12M+</div>
-                <div class="data-label space-mono">Revenue Generated</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 6: Contact -->
-    <section class="section contact-section" id="contact">
-        <h2 class="contact-title playfair fade-in-up">Let's Create Something</h2>
-        <h2 class="contact-subtitle playfair fade-in-up">Extraordinary</h2>
-        <div class="contact-divider fade-in-up"></div>
-        <a href="mailto:hello@amotive.io" class="contact-email space-mono hover-target fade-in-up">hello@amotive.io</a>
-        <div class="contact-cta fade-in-up">
-            <a href="#" class="pill-button space-mono hover-target">Start Your Project →</a>
-        </div>
-        <div class="contact-social space-mono fade-in-up">
-            <a href="#" class="hover-target">Instagram</a> / 
-            <a href="#" class="hover-target">LinkedIn</a> / 
-            <a href="#" class="hover-target">Twitter</a>
-        </div>
-        <div class="dm-sans fade-in-up" style="max-width: 600px; margin: 3rem auto 0; color: rgba(255,255,255,0.45); font-size: 0.85rem; line-height: 1.6; text-align: center;">
-            <strong style="color: rgba(255,255,255,0.6);">About Amotive</strong><br>
-            Amotive is a premium digital agency that designs and builds high-converting websites, manages social media marketing, runs paid advertising campaigns on Google and Meta, and delivers comprehensive growth strategy for businesses worldwide. We use integrated tools including email, calendar scheduling, and analytics to streamline client communication and project delivery.
-        </div>
-        <div class="contact-footer space-mono fade-in-up">© 2026 Amotive. All rights reserved. · <a href="/privacy" style="color: rgba(255,255,255,0.5); text-decoration: none;">Privacy Policy</a> · <a href="/terms" style="color: rgba(255,255,255,0.5); text-decoration: none;">Terms of Service</a></div>
-    </section>
-
-    <!-- CDN Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <script>
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Custom cursor removed — native cursor used
-
-        // Loading Gate Animation
-        const enterBtn = document.querySelector('.enter-btn');
-        const browseBtn = document.querySelector('.browse-btn');
-        const loadingGate = document.getElementById('loading-gate');
-
-        function hideLoadingGate() {
-            gsap.to(loadingGate, {
-                opacity: 0,
-                duration: 1,
-                ease: "power2.inOut",
-                onComplete: () => {
-                    loadingGate.style.display = 'none';
-                }
-            });
+        // If there's mouse parallax, preserve it
+        if (p.style.transform.includes('translateX')) {
+          const xMatch = p.style.transform.match(/translateX\(([^)]+)\)/);
+          if (xMatch) {
+            p.style.transform = baseTransform + ` translateX(${xMatch[1]})`;
+          }
+        } else {
+          p.style.transform = baseTransform;
         }
+      });
+      scrollTicking = false;
+    });
+    scrollTicking = true;
+  }
+}, { passive: true });
 
-        enterBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            hideLoadingGate();
-        });
+// ═══════════════════════════════════════
+// CTA BREATHE ANIMATION (when in view)
+// ═══════════════════════════════════════
+const ctaObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('btn-breathe');
+    } else {
+      entry.target.classList.remove('btn-breathe');
+    }
+  });
+}, { threshold: 0.3 });
 
-        browseBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            hideLoadingGate();
-        });
+document.querySelectorAll('.intake-section .btn').forEach(btn => {
+  ctaObserver.observe(btn);
+});
+</script>
 
-        // Three.js Scene
-        let scene, camera, renderer, icosahedron, particles;
-        let mouse = { x: 0, y: 0 };
-
-        function initThreeJS() {
-            const canvas = document.getElementById('three-canvas');
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setClearColor(0x000000, 0);
-
-            // Create icosahedron
-            const geometry = new THREE.IcosahedronGeometry(2, 0);
-            const material = new THREE.MeshPhysicalMaterial({
-                color: 0xC9A84C,
-                metalness: 0.95,
-                roughness: 0.05,
-                clearcoat: 1.0,
-                clearcoatRoughness: 0.1
-            });
-            icosahedron = new THREE.Mesh(geometry, material);
-            scene.add(icosahedron);
-
-            // Create particles
-            const particleGeometry = new THREE.BufferGeometry();
-            const particleCount = 500;
-            const positions = new Float32Array(particleCount * 3);
-            
-            for (let i = 0; i < particleCount * 3; i += 3) {
-                positions[i] = (Math.random() - 0.5) * 50;
-                positions[i + 1] = (Math.random() - 0.5) * 50;
-                positions[i + 2] = (Math.random() - 0.5) * 50;
-            }
-            
-            particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            
-            const particleMaterial = new THREE.PointsMaterial({
-                color: 0xC9A84C,
-                size: 0.05,
-                transparent: true,
-                opacity: 0.6
-            });
-            
-            particles = new THREE.Points(particleGeometry, particleMaterial);
-            scene.add(particles);
-
-            // Lighting
-            const pointLight = new THREE.PointLight(0xC9A84C, 1, 100);
-            pointLight.position.set(10, 10, 10);
-            scene.add(pointLight);
-
-            const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
-            scene.add(ambientLight);
-
-            camera.position.z = 5;
-
-            // Mouse movement
-            document.addEventListener('mousemove', (event) => {
-                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-            });
-
-            animate();
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            // Rotate icosahedron
-            if (icosahedron) {
-                icosahedron.rotation.y += 0.005;
-                icosahedron.rotation.x += 0.002;
-                
-                // Mouse parallax
-                icosahedron.rotation.x += mouse.y * 0.01;
-                icosahedron.rotation.y += mouse.x * 0.01;
-            }
-
-            // Animate particles
-            if (particles) {
-                particles.rotation.y += 0.001;
-                const positions = particles.geometry.attributes.position.array;
-                
-                for (let i = 1; i < positions.length; i += 3) {
-                    positions[i] += Math.sin(Date.now() * 0.001 + i) * 0.001;
-                }
-                
-                particles.geometry.attributes.position.needsUpdate = true;
-            }
-
-            renderer.render(scene, camera);
-        }
-
-        // Initialize Three.js when page loads
-        window.addEventListener('load', initThreeJS);
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            if (camera && renderer) {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            }
-        });
-
-        // Three.js canvas visibility based on scroll
-        ScrollTrigger.create({
-            trigger: "#three-d",
-            start: "top bottom",
-            end: "bottom top",
-            onUpdate: self => {
-                const canvas = document.getElementById('three-canvas');
-                const progress = self.progress;
-                const opacity = 1 - Math.abs(progress - 0.5) * 2;
-                canvas.style.opacity = Math.max(0, opacity);
-            }
-        });
-
-        // GSAP Animations
-        // Fade in up animations
-        gsap.utils.toArray('.fade-in-up').forEach(element => {
-            gsap.fromTo(element, {
-                opacity: 0,
-                y: 40
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-        });
-
-        // Stagger animations
-        gsap.utils.toArray('.stagger-item').forEach((element, index) => {
-            gsap.fromTo(element, {
-                opacity: 0,
-                y: 40
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: index * 0.15,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: element.parentNode,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-        });
-
-        // Counter animation
-        const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => {
-            const target = parseInt(counter.dataset.count);
-            
-            ScrollTrigger.create({
-                trigger: counter,
-                start: "top 80%",
-                onEnter: () => {
-                    gsap.to({ value: 0 }, {
-                        value: target,
-                        duration: 2,
-                        ease: "power2.out",
-                        onUpdate: function() {
-                            counter.textContent = Math.round(this.targets()[0].value) + "+";
-                        }
-                    });
-                }
-            });
-        });
-
-        // Scroll Progress Bar
-        gsap.to(".scroll-progress", {
-            scaleX: 1,
-            transformOrigin: "left center",
-            ease: "none",
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 0.3
-            }
-        });
-
-        // Hero text animation
-        const heroMassive = document.querySelector('.hero-massive');
-        if (heroMassive) {
-            gsap.fromTo(heroMassive, {
-                opacity: 0,
-                y: 100,
-                scale: 0.8
-            }, {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 1.5,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: heroMassive,
-                    start: "top 80%"
-                }
-            });
-        }
-
-        // Service cards hover effects
-        const serviceCards = document.querySelectorAll('.service-card');
-        serviceCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                gsap.to(card, {
-                    y: -4,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, {
-                    y: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            });
-        });
-
-        // Portfolio cards hover effects
-        const portfolioCards = document.querySelectorAll('.portfolio-card');
-        portfolioCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                gsap.to(card, {
-                    y: -8,
-                    duration: 0.4,
-                    ease: "power2.out"
-                });
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, {
-                    y: 0,
-                    duration: 0.4,
-                    ease: "power2.out"
-                });
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Auto-hide loading gate after 3 seconds if no interaction
-        setTimeout(() => {
-            if (loadingGate.style.display !== 'none') {
-                hideLoadingGate();
-            }
-        }, 3000);
-
-        // Parallax effect for hero section
-        ScrollTrigger.create({
-            trigger: "#hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: 1,
-            onUpdate: self => {
-                const heroLeft = document.querySelector('.hero-left');
-                const heroRight = document.querySelector('.hero-right');
-                
-                if (heroLeft && heroRight) {
-                    gsap.to(heroLeft, {
-                        y: self.progress * 100,
-                        duration: 0.3
-                    });
-                    
-                    gsap.to(heroRight, {
-                        y: self.progress * -50,
-                        duration: 0.3
-                    });
-                }
-            }
-        });
-
-        // Mobile optimizations
-        if (window.innerWidth <= 768) {
-            // Hide Three.js canvas on mobile
-            const canvas = document.getElementById('three-canvas');
-            if (canvas) {
-                canvas.style.display = 'none';
-            }
-            
-            // Reduce animation complexity on mobile
-            ScrollTrigger.config({
-                limitCallbacks: true
-            });
-        }
-
-        // Performance optimization: Reduce animations on low-performance devices
-        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) {
-            gsap.globalTimeline.timeScale(0.5);
-        }
-
-        // Console message for developers
-        console.log(`
-        ╔══════════════════════════════════════╗
-        ║                                      ║
-        ║            AMOTIVE v3.0              ║
-        ║     Premium Digital Experiences      ║
-        ║                                      ║
-        ║         hello@amotive.io             ║
-        ║                                      ║
-        ╚══════════════════════════════════════╝
-        
-        Built with:
-        • Three.js for 3D graphics
-        • GSAP for smooth animations
-        • Custom cursor interactions
-        • Scroll-triggered effects
-        • Premium typography system
-        
-        Performance optimized and mobile-ready.
-        `);
-    </script>
 </body>
 </html>
