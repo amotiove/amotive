@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amotive — Premium Digital Growth</title>
-<meta name="description" content="Premium websites, strategic marketing, and campaigns that deliver measurable growth. By Amotion.">
+<title>Marketing & Growth — Amotive</title>
+<meta name="description" content="Complete marketing ecosystem — social media, content, paid ads. €2,000/month. Real growth, real results.">
 <style>
 /* ═══════════════════════════════════════════════════
-   AMOTIVE — Enhanced V2 with Interactive 3D
-   Color Psychology + 3D Decorative System + Interactivity
+   MARKETING PAGE — Emerald Green World Enhanced V2
+   Growth, Energy, Results + Interactive 3D
    ═══════════════════════════════════════════════════ */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  /* Navy Foundation (Trust, Authority) */
+  /* Navy Foundation */
   --navy-deep: #050A12;
   --navy: #0A1628;
   --navy-light: #122038;
   --navy-mid: #1A2D4A;
   --navy-surface: #0E1A2E;
 
-  /* Gold (Premium, Prestige) */
+  /* Gold */
   --gold: #C9A84C;
   --gold-bright: #E2C36B;
   --gold-light: #F0DFA0;
@@ -30,25 +30,24 @@
   --gradient-gold: linear-gradient(135deg, #B8963E 0%, #E2C36B 45%, #C9A84C 100%);
   --gradient-gold-text: linear-gradient(135deg, #D4B85C 0%, #F0DFA0 50%, #C9A84C 100%);
 
-  /* Orange (Energy, Action — Amotion DNA) */
+  /* Orange */
   --orange: #E87A2F;
   --orange-bright: #FF8C42;
   --orange-dim: #B85E1E;
   --gradient-orange: linear-gradient(135deg, #D46A20 0%, #FF8C42 50%, #E87A2F 100%);
 
-  /* Emerald (Growth, Prosperity) */
-  --emerald: #2ECC71;
-  --emerald-bright: #45D988;
-  --emerald-dim: #27AE60;
-
-  /* Crimson (Urgency, Warning) */
-  --crimson: #C0392B;
-  --crimson-dim: #A93226;
-
-  /* Silver (Blue-tinted, Professional) */
+  /* Ice Blue */
   --ice-blue: #5B9BD5;
-  --ice-bright: #7BB3E0;
-  --ice-dim: #3A7BBF;
+  --ice-blue-bright: #7BB3E0;
+  --ice-blue-dim: #3A7BBF;
+
+  /* Emerald Green (Page Accent) */
+  --accent: #2ECC71;
+  --accent-bright: #45D988;
+  --accent-dim: #27AE60;
+  --accent-glow: rgba(46, 204, 113, 0.12);
+  --gradient-accent: linear-gradient(135deg, #27AE60 0%, #45D988 50%, #2ECC71 100%);
+  --gradient-accent-text: linear-gradient(135deg, #2ECC71 0%, #7DEFA5 50%, #2ECC71 100%);
 
   /* Neutral */
   --platinum: #E8EAEF;
@@ -57,7 +56,7 @@
   --graphite: #384456;
 
   /* Button shadow colors */
-  --btn-shadow-gold: 201, 168, 76;
+  --btn-shadow-emerald: 46, 204, 113;
   --btn-shadow-orange: 232, 122, 47;
 }
 
@@ -73,7 +72,7 @@ body {
   font-weight: 500;
 }
 
-/* ── Premium Grain Texture ─────────────── */
+/* Premium Grain Texture */
 body::after {
   content: '';
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
@@ -83,7 +82,7 @@ body::after {
   z-index: 10000;
 }
 
-/* ── Typography (BOLDER - No External Fonts) ───────────────── */
+/* Typography */
 h1, h2, h3, h4 {
   font-family: Georgia, 'Times New Roman', serif;
   font-weight: 800;
@@ -106,100 +105,30 @@ h3 {
   font-weight: 800;
 }
 
-.gold-text {
-  background: var(--gradient-gold-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.orange-text {
-  background: var(--gradient-orange);
+.accent-text {
+  background: var(--gradient-accent-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .dim { color: var(--steel); }
 
-/* ── Layout ────────────────────────────── */
+/* Layout */
 .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
 section { padding: 130px 0; position: relative; }
 .section-alt { background: var(--navy-surface); }
 
-/* ── Dividers ──────────────────────────── */
+/* Dividers */
 .divider {
   width: 48px; height: 2px;
   margin: 0 auto 24px;
   border-radius: 1px;
 }
-.divider-gold { background: var(--gradient-gold); }
-.divider-orange { background: var(--gradient-orange); }
-.divider-emerald { background: var(--emerald); }
-.divider-silver { background: linear-gradient(135deg, #5B9BD5, #7BB3E0, #5B9BD5); }
+.divider-emerald { background: linear-gradient(135deg, #2ECC71, #45D988, #2ECC71); }
 
 /* ═══════════════════════════════════════
    3D DECORATIVE SYSTEM
    ═══════════════════════════════════════ */
-
-/* ── Rotating Wireframe Cube ───────────── */
-.geo-scene {
-  perspective: 800px;
-  width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-}
-.wireframe-cube {
-  width: 220px; height: 220px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: spinCube 25s linear infinite;
-}
-.wireframe-cube .face {
-  position: absolute;
-  width: 220px; height: 220px;
-  border: 1px solid rgba(201, 168, 76, 0.18);
-  background: rgba(201, 168, 76, 0.008);
-  backface-visibility: visible;
-}
-.wireframe-cube .face:nth-child(1) { transform: translateZ(110px); }
-.wireframe-cube .face:nth-child(2) { transform: rotateY(180deg) translateZ(110px); }
-.wireframe-cube .face:nth-child(3) { transform: rotateY(90deg) translateZ(110px); }
-.wireframe-cube .face:nth-child(4) { transform: rotateY(-90deg) translateZ(110px); }
-.wireframe-cube .face:nth-child(5) { transform: rotateX(90deg) translateZ(110px); }
-.wireframe-cube .face:nth-child(6) { transform: rotateX(-90deg) translateZ(110px); }
-
-@keyframes spinCube {
-  0% { transform: rotateX(-15deg) rotateY(0deg); }
-  100% { transform: rotateX(-15deg) rotateY(360deg); }
-}
-
-/* Inner cube (smaller, offset rotation) */
-.wireframe-cube-inner {
-  width: 130px; height: 130px;
-  position: absolute;
-  top: 50%; left: 50%;
-  margin-top: -65px; margin-left: -65px;
-  transform-style: preserve-3d;
-  animation: spinCubeReverse 18s linear infinite;
-}
-.wireframe-cube-inner .face {
-  position: absolute;
-  width: 130px; height: 130px;
-  border: 1px solid rgba(232, 122, 47, 0.12);
-  background: transparent;
-  backface-visibility: visible;
-}
-.wireframe-cube-inner .face:nth-child(1) { transform: translateZ(65px); }
-.wireframe-cube-inner .face:nth-child(2) { transform: rotateY(180deg) translateZ(65px); }
-.wireframe-cube-inner .face:nth-child(3) { transform: rotateY(90deg) translateZ(65px); }
-.wireframe-cube-inner .face:nth-child(4) { transform: rotateY(-90deg) translateZ(65px); }
-.wireframe-cube-inner .face:nth-child(5) { transform: rotateX(90deg) translateZ(65px); }
-.wireframe-cube-inner .face:nth-child(6) { transform: rotateX(-90deg) translateZ(65px); }
-
-@keyframes spinCubeReverse {
-  0% { transform: rotateX(20deg) rotateY(360deg) rotateZ(10deg); }
-  100% { transform: rotateX(20deg) rotateY(0deg) rotateZ(10deg); }
-}
-
-/* ── Floating Geometric Particles ──────── */
 .geo-particles {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   pointer-events: none; overflow: hidden;
@@ -210,29 +139,25 @@ section { padding: 130px 0; position: relative; }
   animation: floatParticle var(--dur, 12s) ease-in-out infinite;
   animation-delay: var(--delay, 0s);
 }
-/* Diamond shape */
 .geo-diamond {
   width: var(--size, 12px); height: var(--size, 12px);
-  border: 1px solid var(--pcolor, var(--gold));
+  border: 1px solid var(--pcolor, var(--accent));
   transform: rotate(45deg);
 }
-/* Triangle shape */
 .geo-triangle {
   width: 0; height: 0;
   border-left: var(--half, 6px) solid transparent;
   border-right: var(--half, 6px) solid transparent;
-  border-bottom: var(--size, 12px) solid var(--pcolor, var(--gold));
+  border-bottom: var(--size, 12px) solid var(--pcolor, var(--accent));
   background: none;
   opacity: 0.08;
 }
-/* Circle dot */
 .geo-dot {
   width: var(--size, 4px); height: var(--size, 4px);
   border-radius: 50%;
-  background: var(--pcolor, var(--gold));
+  background: var(--pcolor, var(--accent));
   opacity: 0.12;
 }
-/* Cross shape */
 .geo-cross {
   width: var(--size, 14px); height: var(--size, 14px);
   position: relative;
@@ -240,7 +165,7 @@ section { padding: 130px 0; position: relative; }
 .geo-cross::before, .geo-cross::after {
   content: '';
   position: absolute;
-  background: var(--pcolor, var(--gold));
+  background: var(--pcolor, var(--accent));
 }
 .geo-cross::before {
   width: 100%; height: 1px;
@@ -256,7 +181,7 @@ section { padding: 130px 0; position: relative; }
   50% { transform: translateY(var(--drift, -25px)) rotate(calc(var(--rot, 45deg) + 15deg)); }
 }
 
-/* ── Corner Brackets (Art Deco accents) ── */
+/* Corner Brackets */
 .corner-decor {
   position: absolute;
   width: 60px; height: 60px;
@@ -266,7 +191,7 @@ section { padding: 130px 0; position: relative; }
 .corner-decor::after {
   content: '';
   position: absolute;
-  background: var(--corner-color, rgba(201, 168, 76, 0.12));
+  background: var(--corner-color, rgba(46, 204, 113, 0.12));
 }
 .corner-tl { top: 20px; left: 20px; }
 .corner-tl::before { width: 30px; height: 1px; top: 0; left: 0; }
@@ -284,7 +209,7 @@ section { padding: 130px 0; position: relative; }
 .corner-br::before { width: 30px; height: 1px; bottom: 0; right: 0; }
 .corner-br::after { width: 1px; height: 30px; bottom: 0; right: 0; }
 
-/* ── Animated Line Trace ───────────────── */
+/* Animated Line Trace */
 .line-trace {
   position: absolute;
   overflow: hidden;
@@ -296,7 +221,7 @@ section { padding: 130px 0; position: relative; }
   content: '';
   position: absolute;
   width: 40px; height: 1px;
-  background: var(--trace-color, var(--gold));
+  background: var(--trace-color, var(--accent));
   animation: traceH 4s ease-in-out infinite;
   opacity: 0.3;
 }
@@ -312,7 +237,7 @@ section { padding: 130px 0; position: relative; }
   content: '';
   position: absolute;
   width: 1px; height: 40px;
-  background: var(--trace-color, var(--gold));
+  background: var(--trace-color, var(--accent));
   animation: traceV 5s ease-in-out infinite;
   opacity: 0.3;
 }
@@ -370,16 +295,21 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
   left: 50%;
   width: 0;
   height: 2px;
-  background: var(--gold);
+  background: var(--accent);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateX(-50%);
 }
 .nav-links a:hover {
-  color: var(--gold);
+  color: var(--accent);
   transform: translateY(-1px);
 }
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* Active page styling */
+.nav-links a.active {
+  color: var(--accent);
 }
 
 .nav-toggle {
@@ -421,7 +351,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
   display: inline-flex; align-items: center; gap: 8px;
   padding: 16px 38px; border-radius: 3px;
   font-weight: 800; font-size: 0.85rem;
-  text-decoration: none; 
+  text-decoration: none;
   cursor: pointer; border: none;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   letter-spacing: 0.06em; text-transform: uppercase;
@@ -432,14 +362,14 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
   will-change: transform;
 }
 
-.btn-gold {
-  background: var(--gradient-gold);
-  color: var(--navy-deep);
-  box-shadow: 0 4px 24px rgba(201, 168, 76, 0.2);
+.btn-emerald {
+  background: var(--gradient-accent);
+  color: white;
+  box-shadow: 0 4px 24px rgba(46, 204, 113, 0.2);
 }
-.btn-gold:hover {
+.btn-emerald:hover {
   transform: translateY(-3px) translateZ(10px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(var(--btn-shadow-gold), 0.4);
+  box-shadow: 0 12px 40px rgba(var(--btn-shadow-emerald), 0.4);
 }
 .btn-orange {
   background: var(--gradient-orange);
@@ -450,30 +380,12 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
   transform: translateY(-3px) translateZ(10px) scale(1.03);
   box-shadow: 0 12px 40px rgba(var(--btn-shadow-orange), 0.4);
 }
-.btn-emerald {
-  background: linear-gradient(135deg, #27AE60, #2ECC71, #27AE60);
-  color: white;
-  box-shadow: 0 4px 24px rgba(46, 204, 113, 0.2);
-}
-.btn-emerald:hover {
-  transform: translateY(-3px) translateZ(10px) scale(1.03);
-  box-shadow: 0 8px 36px rgba(46, 204, 113, 0.35);
-}
-.btn-ice {
-  background: linear-gradient(135deg, #3A7BBF, #5B9BD5, #3A7BBF);
-  color: white;
-  box-shadow: 0 4px 24px rgba(91, 155, 213, 0.2);
-}
-.btn-ice:hover {
-  transform: translateY(-3px) translateZ(10px) scale(1.03);
-  box-shadow: 0 8px 36px rgba(91, 155, 213, 0.35);
-}
 .btn-outline {
   background: transparent; color: var(--platinum);
   border: 1px solid var(--graphite);
 }
 .btn-outline:hover { 
-  border-color: var(--gold); color: var(--gold);
+  border-color: var(--accent); color: var(--accent);
   transform: translateY(-3px) translateZ(10px) scale(1.03);
 }
 .btn-sm { padding: 12px 28px; font-size: 0.78rem; }
@@ -541,220 +453,188 @@ footer {
 .footer-bottom a { color: var(--gold-dim); text-decoration: none; }
 
 /* ═══════════════════════════════════════
-   LANDING PAGE SPECIFIC STYLES
+   MARKETING PAGE SPECIFIC STYLES
    ═══════════════════════════════════════ */
 
-/* ── Hero ────────────────────────────── */
+/* Hero */
 .hero {
   min-height: 100vh;
   display: flex; align-items: center;
   padding-top: 100px; padding-bottom: 60px;
   position: relative; overflow: hidden;
 }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px; align-items: center;
-}
+.hero-content { max-width: 720px; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 8px 20px; border-radius: 2px;
   font-size: 0.68rem; font-weight: 700;
-  color: var(--gold);
-  background: rgba(201, 168, 76, 0.05);
-  border: 1px solid rgba(201, 168, 76, 0.1);
+  color: var(--accent);
+  background: rgba(46, 204, 113, 0.05);
+  border: 1px solid rgba(46, 204, 113, 0.1);
   margin-bottom: 36px;
   letter-spacing: 0.18em; text-transform: uppercase;
 }
 .hero-eyebrow::before {
   content: ''; width: 6px; height: 6px;
-  background: var(--gold); border-radius: 50%;
+  background: var(--accent); border-radius: 50%;
 }
 .hero h1 { margin-bottom: 32px; }
 .hero h1 em {
   font-style: italic;
-  background: var(--gradient-gold-text);
+  background: var(--gradient-accent-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .hero-sub {
   font-size: 1.1rem; color: var(--silver);
-  margin-bottom: 52px; max-width: 520px; line-height: 1.85;
+  margin-bottom: 52px; max-width: 580px; line-height: 1.85;
 }
 .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* ── Hero 3D Scene ───────────────────── */
-.hero-3d {
-  position: relative;
-  display: flex; align-items: center; justify-content: center;
-  min-height: 500px;
+/* Stats Bar */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 64px;
+  border: 1px solid rgba(46, 204, 113, 0.08);
+  border-radius: 4px; overflow: hidden;
 }
-.hero-3d .geo-scene {
-  position: relative;
-  width: 340px; height: 340px;
+.stat-item {
+  padding: 36px 28px; text-align: center;
+  border-right: 1px solid rgba(46, 204, 113, 0.06);
+  background: var(--navy-light);
 }
+.stat-item:last-child { border-right: none; }
+.stat-value {
+  font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; font-weight: 900;
+  color: var(--accent-bright); margin-bottom: 6px;
+}
+.stat-label { font-size: 0.72rem; color: var(--steel); letter-spacing: 0.08em; text-transform: uppercase; }
 
-/* Glow behind cube */
-.cube-glow {
-  position: absolute;
-  width: 300px; height: 300px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
-  filter: blur(30px);
-  animation: gentlePulse 6s ease-in-out infinite alternate;
-}
-@keyframes gentlePulse {
-  0% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-/* Floating stat badges near the cube */
-.hero-badge {
-  position: absolute; padding: 18px 24px;
-  background: rgba(10, 22, 40, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(201, 168, 76, 0.1);
-  border-radius: 3px;
-  z-index: 5;
-}
-.hero-badge-1 { top: 5%; right: -10%; }
-.hero-badge-2 { bottom: 10%; left: -5%; }
-.badge-value {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.8rem; font-weight: 900;
-  color: var(--emerald);
-}
-.badge-label {
-  font-size: 0.7rem; color: var(--steel);
-  letter-spacing: 0.08em; text-transform: uppercase;
-  margin-top: 4px;
-}
-
-/* ── Flash Roll ──────────────────────── */
-.flash-roll {
-  padding: 100px 0;
-  position: relative;
-  border-top: 1px solid rgba(201, 168, 76, 0.04);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.04);
-}
-.flash-roll-inner {
-  max-width: 780px; margin: 0 auto; text-align: center;
-}
-.flash-roll blockquote {
-  font-size: 1.1rem; line-height: 1.9;
-  color: var(--silver);
-}
-.flash-roll blockquote strong {
-  color: #C8D2E0; font-weight: 700;
-}
-.flash-roll-source {
-  margin-top: 36px; font-size: 0.9rem;
-  color: var(--gold); font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-/* ── Package Teasers with TILT CARDS ─────────────────── */
-.packages-grid {
+/* Services Grid with TILT CARDS */
+.services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px; margin-top: 72px;
+  gap: 28px; margin-top: 64px;
 }
-.package-teaser {
-  padding: 48px 36px;
+.service-card {
+  padding: 40px 32px;
   background: var(--navy-light);
+  border: 1px solid rgba(46, 204, 113, 0.06);
   border-radius: 4px;
   transition: box-shadow 0.3s ease;
-  position: relative; overflow: hidden;
-  text-decoration: none;
-  display: flex; flex-direction: column;
   
   /* Tilt card properties */
   transform-style: preserve-3d;
   will-change: transform;
 }
-.package-teaser::before {
+.service-card:hover {
+  border-color: rgba(46, 204, 113, 0.18);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+.service-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(46, 204, 113, 0.15);
+  border-radius: 3px;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+.service-card h3 { margin-bottom: 12px; color: var(--platinum); }
+.service-card p { color: var(--silver); font-size: 0.9rem; line-height: 1.75; }
+
+/* Process */
+.process-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 64px; position: relative;
+}
+.process-track::before {
+  content: '';
+  position: absolute; top: 32px; left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.2), transparent);
+}
+.process-step { text-align: center; position: relative; }
+.step-num {
+  width: 64px; height: 64px; margin: 0 auto 24px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(46, 204, 113, 0.2);
+  border-radius: 50%;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 900; font-size: 1.3rem;
+  color: var(--accent);
+  background: var(--navy-deep);
+  position: relative; z-index: 2;
+}
+.process-step h3 { margin-bottom: 8px; }
+.process-step p { color: var(--steel); font-size: 0.85rem; max-width: 200px; margin: 0 auto; line-height: 1.65; }
+
+/* Pricing */
+.pricing-card {
+  max-width: 600px; margin: 64px auto 0;
+  padding: 56px 48px; text-align: center;
+  background: var(--navy-light);
+  border: 1px solid rgba(46, 204, 113, 0.1);
+  border-radius: 4px;
+  position: relative; overflow: hidden;
+}
+.pricing-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
-  height: 2px; opacity: 0;
-  transition: opacity 0.4s;
+  height: 2px;
+  background: var(--gradient-accent);
 }
-.package-teaser:hover::before { opacity: 1; }
-
-/* Silver accent — Website package */
-.teaser-silver {
-  border: 1px solid rgba(91, 155, 213, 0.08);
-}
-.teaser-silver::before { background: linear-gradient(90deg, #5B9BD5, #7BB3E0); }
-.teaser-silver:hover { border-color: rgba(91, 155, 213, 0.2); }
-.teaser-silver .teaser-label { color: var(--ice-blue); }
-.teaser-silver .teaser-price { color: var(--ice-bright); }
-
-/* Green accent — Marketing package */
-.teaser-green {
-  border: 1px solid rgba(46, 204, 113, 0.06);
-}
-.teaser-green::before { background: linear-gradient(90deg, #27AE60, #2ECC71); }
-.teaser-green:hover { border-color: rgba(46, 204, 113, 0.18); }
-.teaser-green .teaser-label { color: var(--emerald); }
-.teaser-green .teaser-price { color: var(--emerald-bright); }
-
-/* Orange accent — Full Growth package */
-.teaser-orange {
-  border: 1px solid rgba(232, 122, 47, 0.06);
-}
-.teaser-orange::before { background: var(--gradient-orange); }
-.teaser-orange:hover { border-color: rgba(232, 122, 47, 0.2); }
-.teaser-orange .teaser-label { color: var(--orange); }
-.teaser-orange .teaser-price { color: var(--orange-bright); }
-
-.teaser-label {
-  font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.teaser-title {
+.pricing-amount {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.6rem; font-weight: 900;
-  color: var(--platinum); margin-bottom: 14px;
+  font-size: 3.5rem; font-weight: 900;
+  color: var(--accent-bright);
+  margin-bottom: 8px;
 }
-.teaser-desc {
-  color: var(--silver); font-size: 0.92rem;
-  line-height: 1.75; margin-bottom: 28px;
-  flex-grow: 1;
+.pricing-period { color: var(--steel); font-size: 0.9rem; margin-bottom: 8px; }
+.pricing-note {
+  color: var(--silver); font-size: 0.95rem; margin-bottom: 36px;
 }
-.teaser-price {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 2rem; font-weight: 900;
-  margin-bottom: 4px;
+.pricing-list {
+  list-style: none; text-align: left;
+  max-width: 380px; margin: 0 auto 40px;
 }
-.teaser-period {
-  font-size: 0.78rem; color: var(--steel);
-  margin-bottom: 24px;
+.pricing-list li {
+  padding: 10px 0;
+  color: var(--silver); font-size: 0.9rem;
+  display: flex; align-items: center; gap: 12px;
 }
-.teaser-link {
-  font-size: 0.82rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--steel);
+.pricing-list li::before {
+  content: '✓'; color: var(--accent);
+  font-weight: 700; flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-list { max-width: 720px; margin: 64px auto 0; }
+.faq-item {
+  border-bottom: 1px solid rgba(46, 204, 113, 0.06);
+}
+.faq-q {
+  width: 100%; padding: 24px 0; background: none; border: none;
+  color: var(--platinum); font-size: 1rem; font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
   transition: color 0.3s;
 }
-.package-teaser:hover .teaser-link { color: var(--platinum); }
-.teaser-link::after { content: ' →'; }
-
-/* Tiny 3D shape inside each teaser */
-.teaser-geo {
-  position: absolute;
-  bottom: 20px; right: 20px;
-  opacity: 0.06;
-  pointer-events: none;
+.faq-q:hover { color: var(--accent); }
+.faq-q::after {
+  content: '+'; font-size: 1.4rem; color: var(--accent);
+  transition: transform 0.3s;
 }
-.teaser-geo .mini-diamond {
-  width: 40px; height: 40px;
-  border: 1px solid currentColor;
-  transform: rotate(45deg);
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
 }
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 24px; }
+.faq-a p { color: var(--silver); font-size: 0.9rem; line-height: 1.8; }
 
 /* ═══════════════════════════════════════
    INTAKE FORM SECTION (Glass Morphism)
@@ -768,7 +648,7 @@ footer {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 122, 47, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -779,7 +659,7 @@ footer {
   background: rgba(10, 22, 40, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.15);
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
@@ -837,8 +717,8 @@ footer {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
 }
 
 .form-group textarea {
@@ -854,12 +734,12 @@ footer {
   margin-top: 32px;
 }
 
-/* ── Landing Responsive ──────────────── */
+/* Responsive */
 @media (max-width: 1024px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-3d { display: none; }
-  .hero { min-height: auto; padding: 140px 0 100px; }
-  .packages-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .process-track { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .process-track::before { display: none; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .nav-toggle { display: block; }
@@ -868,11 +748,15 @@ footer {
   .line-trace { display: none; }
   
   /* Disable tilt on touch devices */
-  .package-teaser {
+  .service-card {
     transform: none !important;
   }
 }
 @media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .process-track { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: 1fr; }
+  .hero { min-height: auto; padding: 140px 0 80px; }
   section { padding: 90px 0; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -888,7 +772,7 @@ footer {
     <a href="/" class="logo"><span>am</span>otive</a>
     <ul class="nav-links">
       <li><a href="/websites">Websites</a></li>
-      <li><a href="/marketing">Marketing</a></li>
+      <li><a href="/marketing" class="active">Marketing</a></li>
       <li><a href="/premium">Full Growth</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#intake" class="btn btn-orange btn-sm">Start Your Project</a></li>
@@ -900,6 +784,7 @@ footer {
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
   <a href="/websites">Websites</a>
   <a href="/marketing">Marketing</a>
   <a href="/premium">Full Growth</a>
@@ -907,145 +792,205 @@ footer {
 </div>
 
 <!-- ═══════════════════════════════════════
-     HERO — Premium First Impression
-     3D Wireframe Cube + Inception Question
+     HERO
      ═══════════════════════════════════════ -->
 <section class="hero">
-  <!-- Floating geometric particles -->
   <div class="geo-particles" id="heroParticles">
-    <div class="geo-particle geo-diamond" style="top: 12%; left: 8%; --size: 10px; --dur: 14s; --delay: 0s; --drift: -30px; --pcolor: var(--gold);"></div>
-    <div class="geo-particle geo-dot" style="top: 25%; right: 15%; --size: 5px; --dur: 10s; --delay: 2s; --drift: -20px;"></div>
-    <div class="geo-particle geo-cross" style="bottom: 20%; left: 12%; --size: 16px; --dur: 16s; --delay: 1s; --drift: -35px;"></div>
-    <div class="geo-particle geo-diamond" style="top: 60%; left: 5%; --size: 8px; --dur: 12s; --delay: 3s; --drift: -25px;"></div>
-    <div class="geo-particle geo-triangle" style="bottom: 30%; right: 8%; --size: 10px; --half: 5px; --dur: 18s; --delay: 0.5s; --drift: -28px; --pcolor: var(--gold-dim);"></div>
-    <div class="geo-particle geo-dot" style="top: 40%; left: 20%; --size: 3px; --dur: 11s; --delay: 4s; --drift: -18px;"></div>
-    <div class="geo-particle geo-diamond" style="bottom: 15%; right: 20%; --size: 6px; --dur: 13s; --delay: 2.5s; --drift: -22px; --pcolor: var(--gold-bright);"></div>
+    <div class="geo-particle geo-diamond" style="top: 12%; left: 8%; --size: 10px; --dur: 14s; --delay: 0s; --drift: -30px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="top: 28%; right: 12%; --size: 5px; --dur: 10s; --delay: 2s; --drift: -20px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-cross" style="bottom: 22%; left: 15%; --size: 16px; --dur: 16s; --delay: 1s; --drift: -35px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-diamond" style="top: 55%; right: 6%; --size: 8px; --dur: 12s; --delay: 3s; --drift: -25px; --pcolor: var(--accent-bright);"></div>
+    <div class="geo-particle geo-triangle" style="bottom: 30%; right: 18%; --size: 10px; --half: 5px; --dur: 18s; --delay: 0.5s; --drift: -28px; --pcolor: var(--accent-dim);"></div>
+    <div class="geo-particle geo-dot" style="top: 42%; left: 22%; --size: 3px; --dur: 11s; --delay: 4s; --drift: -18px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-diamond" style="bottom: 15%; left: 5%; --size: 6px; --dur: 13s; --delay: 2.5s; --drift: -22px; --pcolor: var(--accent-dim);"></div>
   </div>
 
-  <!-- Corner accents -->
-  <div class="corner-decor corner-tl"></div>
-  <div class="corner-decor corner-br"></div>
+  <div class="corner-decor corner-tl" style="--corner-color: rgba(46, 204, 113, 0.12);"></div>
+  <div class="corner-decor corner-br" style="--corner-color: rgba(46, 204, 113, 0.12);"></div>
 
-  <!-- Animated line traces -->
-  <div class="line-trace line-trace-h" style="top: 15%; left: 3%;"></div>
-  <div class="line-trace line-trace-v" style="bottom: 10%; right: 5%;"></div>
+  <div class="line-trace line-trace-h" style="top: 18%; left: 3%; --trace-color: var(--accent);"></div>
+  <div class="line-trace line-trace-v" style="bottom: 12%; right: 4%; --trace-color: var(--accent);"></div>
 
   <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <div class="hero-eyebrow reveal">Premium Digital Growth</div>
-        <h1 class="reveal">Your business has a reputation.<br>Does your digital presence <em>match&nbsp;it?</em></h1>
-        <p class="hero-sub reveal">We craft digital experiences for businesses that refuse to settle&nbsp;— premium websites, strategic marketing, and campaigns that deliver measurable growth.</p>
-        <div class="hero-buttons reveal">
-          <a href="#packages" class="btn btn-gold">Explore Packages</a>
-          <a href="#intake" class="btn btn-outline">Start Your Project</a>
-        </div>
-      </div>
-
-      <!-- 3D Wireframe Scene -->
-      <div class="hero-3d">
-        <div class="cube-glow"></div>
-        <div class="geo-scene">
-          <div class="wireframe-cube">
-            <div class="face"></div>
-            <div class="face"></div>
-            <div class="face"></div>
-            <div class="face"></div>
-            <div class="face"></div>
-            <div class="face"></div>
-            <!-- Inner cube -->
-            <div class="wireframe-cube-inner">
-              <div class="face"></div>
-              <div class="face"></div>
-              <div class="face"></div>
-              <div class="face"></div>
-              <div class="face"></div>
-              <div class="face"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating badges -->
-        <div class="hero-badge hero-badge-1 reveal">
-          <div class="badge-value">4.2×</div>
-          <div class="badge-label">Average Return on Ad Spend</div>
-        </div>
-        <div class="hero-badge hero-badge-2 reveal">
-          <div class="badge-value">14 days</div>
-          <div class="badge-label">Average Delivery</div>
-        </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">Marketing & Growth</div>
+      <h1 class="reveal"><em>Fuel Your Growth</em> — while your competitors wonder what&nbsp;happened</h1>
+      <p class="hero-sub reveal">Complete marketing ecosystem — social media, content, paid ads. Your competitors are posting, advertising, and building audiences while you're figuring out what to say next&nbsp;Tuesday.</p>
+      <div class="hero-buttons reveal">
+        <a href="#intake" class="btn btn-emerald">Start Growing</a>
+        <a href="#process" class="btn btn-outline">See the Process</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════
-     FLASH ROLL — Clinical Silver
-     Dense expertise. No warm colors.
+     GROWTH STATS
      ═══════════════════════════════════════ -->
-<section class="flash-roll">
-  <div class="corner-decor corner-tl" style="--corner-color: rgba(168, 178, 196, 0.08);"></div>
-  <div class="corner-decor corner-br" style="--corner-color: rgba(168, 178, 196, 0.08);"></div>
-  <div class="container">
-    <div class="flash-roll-inner reveal">
-      <div class="divider divider-gold"></div>
-      <blockquote>
-        Instagram's organic reach has dropped to <strong>5.2%</strong> for business accounts. Google's top three results capture <strong>75.1%</strong> of all clicks. The average local business website loads in <strong>8.6 seconds</strong>&nbsp;— when 53% of visitors leave after three. Meta CPMs in Portugal average <strong>€8–12</strong>. A properly structured Google Ads campaign for local services should target a <strong>4:1 ROAS minimum</strong>. The businesses winning right now aren't spending more — they're spending smarter. Most agencies won't tell you these numbers because they don't track them.
-      </blockquote>
-      <div class="flash-roll-source">We do.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     PACKAGES — Three Doors with TILT CARDS
-     Each teaser hints at its page's color
-     ═══════════════════════════════════════ -->
-<section id="packages" class="section-alt">
+<section class="section-alt">
   <div class="geo-particles">
-    <div class="geo-particle geo-diamond" style="top: 15%; right: 10%; --size: 8px; --dur: 15s; --delay: 1s; --drift: -20px; --pcolor: var(--gold-dim);"></div>
-    <div class="geo-particle geo-cross" style="bottom: 20%; left: 8%; --size: 12px; --dur: 13s; --delay: 0s; --drift: -25px; --pcolor: var(--gold-dim);"></div>
+    <div class="geo-particle geo-cross" style="top: 10%; right: 8%; --size: 14px; --dur: 15s; --drift: -20px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 15%; left: 6%; --size: 4px; --dur: 12s; --delay: 1s; --drift: -18px; --pcolor: var(--accent);"></div>
   </div>
   <div class="container">
-    <div style="text-align: center;">
-      <div class="divider divider-gold reveal"></div>
-      <h2 class="reveal">Three paths to <span class="gold-text">growth</span></h2>
-      <p class="dim reveal" style="max-width: 520px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">Each works independently. Together, they compound.</p>
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>The opportunity you're <span class="accent-text">missing</span></h2>
+      <p class="dim" style="max-width: 520px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">Every day without a strategy is a day your competitors gain ground.</p>
+    </div>
+    <div class="stats-bar reveal">
+      <div class="stat-item"><div class="stat-value">5.2%</div><div class="stat-label">Avg. Organic Reach</div></div>
+      <div class="stat-item"><div class="stat-value">20+</div><div class="stat-label">Posts / Month</div></div>
+      <div class="stat-item"><div class="stat-value">4.2×</div><div class="stat-label">Target ROAS</div></div>
+      <div class="stat-item"><div class="stat-value">2</div><div class="stat-label">Platforms Managed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════ -->
+<section>
+  <div class="geo-particles">
+    <div class="geo-particle geo-cross" style="top: 8%; right: 6%; --size: 14px; --dur: 15s; --drift: -20px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 12%; left: 8%; --size: 4px; --dur: 12s; --delay: 1s; --drift: -18px; --pcolor: var(--accent);"></div>
+  </div>
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>What's <span class="accent-text">included</span></h2>
+      <p class="dim" style="max-width: 520px; margin: 20px auto 0; font-size: 1.05rem; line-height: 1.85;">Full-service marketing. You approve the strategy, we handle execution.</p>
     </div>
 
-    <div class="packages-grid">
-      <!-- SILVER — Website -->
-      <a href="website-v2.html" class="package-teaser teaser-silver tilt-card reveal">
-        <div class="teaser-label">Website Design</div>
-        <div class="teaser-title">Built to Convert</div>
-        <div class="teaser-desc">A modern, fast website that turns visitors into customers. Custom design, SEO built in, delivered in 2–3&nbsp;weeks.</div>
-        <div class="teaser-price">€2,500</div>
-        <div class="teaser-period">one-time</div>
-        <div class="teaser-link">View details</div>
-        <div class="teaser-geo" style="color: var(--ice-blue);"><div class="mini-diamond"></div></div>
-      </a>
+    <div class="services-grid">
+      <div class="service-card tilt-card reveal" style="transition-delay: 0s;">
+        <div class="service-icon">📱</div>
+        <h3>2 Platforms Managed</h3>
+        <p>Instagram, Facebook, LinkedIn, TikTok — pick two. We own the strategy, content calendar, and posting schedule.</p>
+      </div>
+      <div class="service-card tilt-card reveal" style="transition-delay: 0.1s;">
+        <div class="service-icon">🎬</div>
+        <h3>20+ Posts per Month</h3>
+        <p>Reels, carousels, Stories, static posts. A consistent, on-brand presence that builds authority and engagement.</p>
+      </div>
+      <div class="service-card tilt-card reveal" style="transition-delay: 0.2s;">
+        <div class="service-icon">💬</div>
+        <h3>Community Management</h3>
+        <p>Comments, DMs, mentions — we respond as your brand voice. Your audience feels heard, not ignored.</p>
+      </div>
+      <div class="service-card tilt-card reveal" style="transition-delay: 0.3s;">
+        <div class="service-icon">📊</div>
+        <h3>Paid Ads Management</h3>
+        <p>Google or Meta Ads, fully managed. Campaign setup, targeting, creative, optimization. Ad spend up to €3K in scope.</p>
+      </div>
+      <div class="service-card tilt-card reveal" style="transition-delay: 0.4s;">
+        <div class="service-icon">📞</div>
+        <h3>Monthly Strategy Call</h3>
+        <p>One call per month to review performance, adjust strategy, and plan next month. Plus a written performance report.</p>
+      </div>
+      <div class="service-card tilt-card reveal" style="transition-delay: 0.5s;">
+        <div class="service-icon">📈</div>
+        <h3>Performance Reports</h3>
+        <p>Clear, honest monthly reports. What worked, what didn't, what we're changing. No vanity metrics — real business impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- GREEN — Marketing -->
-      <a href="marketing-v2.html" class="package-teaser teaser-green tilt-card reveal">
-        <div class="teaser-label">Marketing &amp; Growth</div>
-        <div class="teaser-title">Fuel Your Growth</div>
-        <div class="teaser-desc">Social media, content, and paid ads managed end-to-end. You approve the strategy, we handle the execution.</div>
-        <div class="teaser-price">€2,000</div>
-        <div class="teaser-period">per month</div>
-        <div class="teaser-link">View details</div>
-        <div class="teaser-geo" style="color: var(--emerald);"><div class="mini-diamond"></div></div>
-      </a>
+<!-- ═══════════════════════════════════════
+     PROCESS
+     ═══════════════════════════════════════ -->
+<section id="process" class="section-alt">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>How we <span class="accent-text">grow</span> your business</h2>
+    </div>
 
-      <!-- ORANGE — Full Growth -->
-      <a href="premium-v2.html" class="package-teaser teaser-orange tilt-card reveal">
-        <div class="teaser-label">Full Growth Engine</div>
-        <div class="teaser-title">Everything. Done.</div>
-        <div class="teaser-desc">Website + marketing + ads + SEO. The complete growth engine. Website built&nbsp;free.</div>
-        <div class="teaser-price">€3,500</div>
-        <div class="teaser-period">per month</div>
-        <div class="teaser-link">View details</div>
-        <div class="teaser-geo" style="color: var(--orange);"><div class="mini-diamond"></div></div>
-      </a>
+    <div class="process-track">
+      <div class="process-step reveal" style="transition-delay: 0s;">
+        <div class="step-num">1</div>
+        <h3>Strategy</h3>
+        <p>We audit your current presence, study your competitors, and build a tailored growth plan.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.15s;">
+        <div class="step-num">2</div>
+        <h3>Create</h3>
+        <p>Content is produced in batches — visual, copy, video. You approve before anything goes live.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.3s;">
+        <div class="step-num">3</div>
+        <h3>Publish</h3>
+        <p>Scheduled posting at optimal times. Paid campaigns launched and monitored daily.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.45s;">
+        <div class="step-num">4</div>
+        <h3>Optimize</h3>
+        <p>Analyze results, double down on what works, cut what doesn't. Every month sharper than the last.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PRICING
+     ═══════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>Invest in <span class="accent-text">growth</span></h2>
+    </div>
+
+    <div class="pricing-card reveal">
+      <div class="pricing-amount">€2,000</div>
+      <div class="pricing-period">per month</div>
+      <div class="pricing-note">3-month minimum commitment</div>
+      <ul class="pricing-list">
+        <li>2 social platforms fully managed</li>
+        <li>20+ posts per month (Reels, carousels, Stories)</li>
+        <li>Community management</li>
+        <li>Google or Meta Ads management</li>
+        <li>Ad spend up to €3K in scope</li>
+        <li>Monthly strategy call + report</li>
+        <li>Content calendar with approval workflow</li>
+      </ul>
+      <a href="#intake" class="btn btn-emerald">Start Growing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════ */
+<section id="faq" class="section-alt">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <div class="divider divider-emerald"></div>
+      <h2>Common <span class="accent-text">questions</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">Why a 3-month minimum?</button>
+        <div class="faq-a"><p>Marketing compounds over time. Month one is setup and testing. Month two, we have data. Month three, real momentum. Anything less and we'd be selling you false promises.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What if my ad spend exceeds €3K?</button>
+        <div class="faq-a"><p>We can manage larger budgets — we'll just adjust the management fee to match the additional complexity. We'll always be transparent about costs before you commit.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you create all the content?</button>
+        <div class="faq-a"><p>Yes — copywriting, graphic design, and basic video editing are included. For complex video production (professional shoots, motion graphics), we can quote separately.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Can I choose which platforms?</button>
+        <div class="faq-a"><p>Absolutely. We'll recommend based on where your audience actually is, but the final call is always yours. Most clients choose Instagram + one other (Facebook, LinkedIn, or TikTok).</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What results can I realistically expect?</button>
+        <div class="faq-a"><p>It depends on your industry, budget, and starting point. We won't promise "10x growth in 30 days." We will promise clear reporting, honest assessments, and a strategy that improves every month.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1055,19 +1000,19 @@ footer {
      ═══════════════════════════════════════ -->
 <section id="intake" class="intake-section">
   <div class="geo-particles">
-    <div class="geo-particle geo-diamond" style="top: 20%; left: 10%; --size: 10px; --dur: 14s; --drift: -30px; --pcolor: var(--orange-dim);"></div>
-    <div class="geo-particle geo-dot" style="bottom: 25%; right: 12%; --size: 4px; --dur: 11s; --delay: 2s; --drift: -20px; --pcolor: var(--gold);"></div>
+    <div class="geo-particle geo-diamond" style="top: 20%; left: 10%; --size: 10px; --dur: 14s; --drift: -30px; --pcolor: var(--accent);"></div>
+    <div class="geo-particle geo-dot" style="bottom: 25%; right: 12%; --size: 4px; --dur: 11s; --delay: 2s; --drift: -20px; --pcolor: var(--accent);"></div>
   </div>
   <div class="container">
-    <div class="divider divider-orange reveal"></div>
-    <h2 class="reveal">You know your business<br>better than <span class="gold-text">anyone</span></h2>
+    <div class="divider divider-emerald reveal"></div>
+    <h2 class="reveal">Your audience is already<br>scrolling <span class="accent-text">right now</span></h2>
     
     <div class="intake-form-card reveal">
-      <h3>Start Your Project</h3>
-      <p>Tell us about your business and goals. We'll craft a strategy that fits your vision and budget.</p>
+      <h3>Start Your Growth Plan</h3>
+      <p>They're scrolling past your competitors' content right now. The only question is whether they'll see yours too. Let's make sure they do.</p>
       
-      <!-- Google Forms embed will be configured later -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform?embedded=true" 
+      <!-- Google Forms embed configured for Marketing & Growth service -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform?embedded=true&entry.SERVICE_FIELD_ID=Marketing & Growth" 
               width="100%" 
               height="800" 
               frameborder="0" 
@@ -1075,6 +1020,10 @@ footer {
               marginwidth="0">
         Loading form…
       </iframe>
+      
+      <p style="margin-top: 24px; font-size: 0.88rem;">Need a website first? <a href="/websites" style="color: var(--accent); text-decoration: none; font-weight: 600;">Start with Website Design →</a></p>
+      
+      <p style="margin-top: 24px; font-size: 0.88rem;">Want the website included free? <a href="premium-v2.html" style="color: var(--orange); text-decoration: none; font-weight: 600;">See Full Growth →</a></p>
     </div>
   </div>
 </section>
@@ -1166,13 +1115,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// Stagger package reveals
-document.querySelectorAll('.packages-grid').forEach(grid => {
-  grid.querySelectorAll('.reveal').forEach((child, i) => {
-    child.style.transitionDelay = `${i * 0.15}s`;
-  });
-});
 
 // ═══════════════════════════════════════
 // VANILLA TILT CARDS (3D Perspective)
@@ -1302,6 +1244,13 @@ const ctaObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.intake-section .btn').forEach(btn => {
   ctaObserver.observe(btn);
+});
+
+// FAQ toggles
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.parentElement.classList.toggle('open');
+  });
 });
 </script>
 
