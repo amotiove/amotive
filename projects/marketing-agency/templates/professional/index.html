@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{BUSINESS_NAME}} - Professional Services</title>
+    <meta name="description" content="{{BUSINESS_NAME}} - {{TAGLINE}}. Professional services in {{CITY}} since {{FOUNDING_YEAR}}. Contact us at {{PHONE}} for a consultation.">
+    <meta name="keywords" content="professional services, {{PRACTICE_AREAS}}, {{CITY}}, consultation, expertise">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="{{BUSINESS_NAME}} - Professional Services">
+    <meta property="og:description" content="{{TAGLINE}} - Professional services in {{CITY}} since {{FOUNDING_YEAR}}.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="{{BUSINESS_NAME}} - Professional Services">
+    <meta property="twitter:description" content="{{TAGLINE}} - Professional services in {{CITY}} since {{FOUNDING_YEAR}}.">
+    <meta property="twitter:image" content="">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #1a2332;
+            --navy-light: #2a3441;
+            --navy-dark: #0f1419;
+            --gold: #d4af37;
+            --gold-light: #e8c547;
+            --gold-dark: #b8941f;
+            --white: #ffffff;
+            --off-white: #fafafa;
+            --gray-light: #f5f5f5;
+            --gray: #666666;
+            --gray-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-dark);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(26, 35, 50, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--gold);
+            transition: 0.3s;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+            z-index: 999;
+            max-width: 250px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
+        }
+
+        .floating-cta h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+
+        .floating-cta .phone {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .floating-cta .form-link {
+            font-size: 0.9rem;
+            color: var(--navy-light);
+        }
+
+        /* Mobile Sticky CTA */
+        .mobile-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            padding: 15px 20px;
+            z-index: 999;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-sticky-cta .cta-button {
+            width: 100%;
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 16px;
+            margin: 0;
+        }
+
+        /* Trust Signals */
+        .trust-signals {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--gray);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .trust-signals span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .trust-signals span::before {
+            content: "✓";
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://placehold.co/1920x1080/1a2332/d4af37?text=Professional+Excellence') center/cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            color: var(--off-white);
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero-cta .cta-button {
+            font-size: 1.1rem;
+            padding: 16px 32px;
+        }
+
+        .hero-cta .secondary-button {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta .secondary-button:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* Practice Areas */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--gold);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: var(--navy);
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--gray-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-dark);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 300px;
+            background: url('https://placehold.co/400x300/e8e8e8/666666?text=Team+Member') center/cover;
+        }
+
+        .team-info {
+            padding: 30px;
+        }
+
+        .team-info h3 {
+            color: var(--navy);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Awards/Certifications Bar */
+        .awards {
+            background: var(--white);
+            padding: 60px 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .award-badge {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            max-height: 80px;
+        }
+
+        .award-badge:hover {
+            opacity: 1;
+        }
+
+        .award-badge img {
+            width: 100%;
+            height: auto;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        /* Results Section */
+        .results {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .results .section-header h2 {
+            color: var(--gold);
+        }
+
+        .results .section-header p {
+            color: var(--off-white);
+            opacity: 0.9;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .result-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold);
+        }
+
+        .result-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 10px;
+            counter-reset: none;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .result-description {
+            color: var(--off-white);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--off-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--gray-dark);
+            margin-bottom: 20px;
+            padding-left: 40px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-left: 40px;
+        }
+
+        .author-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: url('https://placehold.co/100x100/e8e8e8/666666?text=Client') center/cover;
+        }
+
+        .author-info h4 {
+            color: var(--navy);
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .author-title {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .faq .section-header h2 {
+            color: var(--gold);
+        }
+
+        .faq .section-header p {
+            color: var(--off-white);
+            opacity: 0.9;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-question h3 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+
+        .faq-answer p {
+            color: var(--off-white);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gray-light);
+            color: var(--gray-dark);
+        }
+
+        .contact .section-header h2 {
+            color: var(--navy);
+        }
+
+        .contact .section-header p {
+            color: var(--gray);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 20px;
+        }
+
+        .contact-details h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            color: var(--gray-dark);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--navy);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            padding: 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--off-white);
+            opacity: 0.9;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .accreditations {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .accreditation-badge {
+            width: 80px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: var(--off-white);
+            opacity: 0.7;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .floating-cta {
+                display: none;
+            }
+
+            .mobile-sticky-cta {
+                display: block;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-cta .cta-button,
+            .hero-cta .secondary-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-grid,
+            .team-grid,
+            .results-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .trust-signals {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .service-card,
+            .team-card,
+            .result-card,
+            .testimonial,
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-sticky-cta {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating CTA (Desktop) -->
+    <a href="#contact" class="floating-cta">
+        <h4>Schedule Your Free Consultation</h4>
+        <div class="phone">{{PHONE}}</div>
+        <div class="form-link">Or fill out our form below</div>
+    </a>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="#contact" class="cta-button">Free Consultation</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">{{BUSINESS_NAME}}</a>
+                <nav class="nav" id="nav">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#results">Results</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <a href="#contact" class="cta-button">Schedule Consultation</a>
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>{{BUSINESS_NAME}}</h1>
+                <p class="hero-tagline">{{TAGLINE}}</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="cta-button">Schedule a Consultation</a>
+                    <div class="trust-signals">
+                        <span>No obligation</span>
+                        <span>Confidential</span>
+                        <span>Response within 24 hours</span>
+                    </div>
+                    <a href="#services" class="secondary-button">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Practice Areas</h2>
+                <div class="accent-line"></div>
+                <p>We provide comprehensive professional services tailored to meet your unique needs with expertise built over decades of practice.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Legal Counsel</h3>
+                    <p>Expert legal guidance across corporate law, litigation, and regulatory compliance. We protect your interests with strategic counsel and proven expertise.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Financial Advisory</h3>
+                    <p>Comprehensive financial planning, investment strategies, and wealth management services designed to secure your financial future.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Strategic Consulting</h3>
+                    <p>Transform your business with data-driven insights, operational excellence, and strategic planning that delivers measurable results.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Tax & Compliance</h3>
+                    <p>Navigate complex tax regulations and compliance requirements with confidence. We ensure accuracy and optimize your tax position.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Corporate Services</h3>
+                    <p>From entity formation to governance consulting, we provide the corporate services that drive business success and growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Risk Management</h3>
+                    <p>Identify, assess, and mitigate business risks with our comprehensive risk management solutions and insurance advisory services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                        <h2>Excellence Since {{FOUNDING_YEAR}}</h2>
+                        <div class="accent-line" style="margin: 20px 0;"></div>
+                    </div>
+                    <div class="about-text">
+                        <p>For over {{FOUNDING_YEAR}} years, {{BUSINESS_NAME}} has been the trusted partner for individuals and businesses seeking exceptional professional services. Our team combines deep expertise with a commitment to personalized service that sets us apart.</p>
+                        
+                        <p>We understand that every client is unique, which is why we take the time to understand your specific needs and goals. Our comprehensive approach ensures that you receive not just expert advice, but solutions that are tailored to your situation.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <div class="stat-label">Clients Served</div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">25+</span>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">$2B+</span>
+                            <div class="stat-label">Assets Under Management</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/e8e8e8/666666?text=Professional+Excellence" alt="Our Office" style="width: 100%; border-radius: 12px;">
+                </div>
+            </div>
+            
+            <!-- Team Section -->
+            <div class="section-header" style="margin: 100px 0 60px;">
+                <h2>Meet Our Team</h2>
+                <div class="accent-line"></div>
+                <p>Our experienced professionals are dedicated to providing you with the highest level of service and expertise.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo" style="background-image: url('https://placehold.co/400x300/e8e8e8/666666?text=Managing+Partner');"></div>
+                    <div class="team-info">
+                        <h3>John Anderson</h3>
+                        <div class="team-role">Managing Partner</div>
+                        <p class="team-bio">With over 20 years of experience, John leads our firm with a focus on strategic growth and client satisfaction. He specializes in corporate law and business advisory services.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo" style="background-image: url('https://placehold.co/400x300/e8e8e8/666666?text=Senior+Associate');"></div>
+                    <div class="team-info">
+                        <h3>Sarah Mitchell</h3>
+                        <div class="team-role">Senior Associate</div>
+                        <p class="team-bio">Sarah brings expertise in financial planning and investment management, helping clients achieve their long-term financial goals through strategic planning.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo" style="background-image: url('https://placehold.co/400x300/e8e8e8/666666?text=Tax+Director');"></div>
+                    <div class="team-info">
+                        <h3>Michael Chen</h3>
+                        <div class="team-role">Tax Director</div>
+                        <p class="team-bio">Michael's deep understanding of tax law and regulations ensures our clients maximize their tax efficiency while maintaining full compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards/Certifications Section -->
+    <section class="awards">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <h2>Professional Credentials & Recognition</h2>
+                <div class="accent-line"></div>
+                <p>Our certifications and awards reflect our commitment to excellence and professional standards.</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-badge">
+                    <img src="https://placehold.co/120x80/d4af37/1a2332?text=BAR+ASSOC" alt="Bar Association Member">
+                </div>
+                <div class="award-badge">
+                    <img src="https://placehold.co/120x80/d4af37/1a2332?text=CPA+CERT" alt="CPA Certified">
+                </div>
+                <div class="award-badge">
+                    <img src="https://placehold.co/120x80/d4af37/1a2332?text=TOP+RATED" alt="Top Rated Professional">
+                </div>
+                <div class="award-badge">
+                    <img src="https://placehold.co/120x80/d4af37/1a2332?text=SUPER+LAWYERS" alt="Super Lawyers">
+                </div>
+                <div class="award-badge">
+                    <img src="https://placehold.co/120x80/d4af37/1a2332?text=BBB+A%2B" alt="BBB A+ Rating">
+                </div>
+                <div class="award-badge">
+                    <img src="https://placehold.co/120x80/d4af37/1a2332?text=ISO+CERT" alt="ISO Certified">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results" id="results">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proven Results</h2>
+                <div class="accent-line"></div>
+                <p>Our track record speaks for itself. We deliver measurable outcomes that drive success for our clients.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number" data-number="{{RESULT_1_NUMBER}}">{{RESULT_1_NUMBER}}</div>
+                    <div class="result-label">{{RESULT_1_LABEL}}</div>
+                    <p class="result-description">Through strategic legal counsel and financial optimization, we've helped clients recover significant compensation while achieving their business objectives.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number" data-number="{{RESULT_2_NUMBER}}">{{RESULT_2_NUMBER}}</div>
+                    <div class="result-label">{{RESULT_2_LABEL}}</div>
+                    <p class="result-description">Our comprehensive approach to legal matters and business consulting has resulted in successful outcomes for the vast majority of our cases.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number" data-number="{{RESULT_3_NUMBER}}">{{RESULT_3_NUMBER}}</div>
+                    <div class="result-label">{{RESULT_3_LABEL}}</div>
+                    <p class="result-description">We've guided hundreds of clients through successful legal resolutions, business formations, and strategic consulting engagements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <div class="accent-line"></div>
+                <p>Hear what our clients say about their experience working with us.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">{{BUSINESS_NAME}} transformed our business operations and helped us navigate complex regulatory requirements. Their expertise and dedication are unmatched.</p>
+                    <div class="testimonial-author">
+                        <div class="author-photo"></div>
+                        <div class="author-info">
+                            <h4>Robert Davis</h4>
+                            <div class="author-title">CEO, Davis Industries</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">The financial planning services provided by this team have secured our family's future. We couldn't be more satisfied with their professional approach.</p>
+                    <div class="testimonial-author">
+                        <div class="author-photo"></div>
+                        <div class="author-info">
+                            <h4>Jennifer Thompson</h4>
+                            <div class="author-title">Private Client</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">Their legal counsel during our merger was invaluable. They anticipated challenges and provided solutions that protected our interests throughout the process.</p>
+                    <div class="testimonial-author">
+                        <div class="author-photo"></div>
+                        <div class="author-info">
+                            <h4>Mark Wilson</h4>
+                            <div class="author-title">CFO, Wilson Corp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accent-line"></div>
+                <p>Get answers to the most common questions about our services and process.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{FAQ_1_Q}}</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{FAQ_1_A}}</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{FAQ_2_Q}}</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{FAQ_2_A}}</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{FAQ_3_Q}}</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{FAQ_3_A}}</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{FAQ_4_Q}}</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{FAQ_4_A}}</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>{{FAQ_5_Q}}</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>{{FAQ_5_A}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <div class="accent-line"></div>
+                <p>Ready to get started? Contact us today to schedule your consultation.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Office Location</h3>
+                            <p>{{ADDRESS}}<br>{{CITY}}</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>{{PHONE}}</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>{{EMAIL}}</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-details">
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="legal">Legal Counsel</option>
+                            <option value="financial">Financial Advisory</option>
+                            <option value="consulting">Strategic Consulting</option>
+                            <option value="tax">Tax & Compliance</option>
+                            <option value="corporate">Corporate Services</option>
+                            <option value="risk">Risk Management</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Please describe how we can help you..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Schedule a Consultation</button>
+                    <div class="trust-signals">
+                        <span>No obligation</span>
+                        <span>Confidential</span>
+                        <span>Response within 24 hours</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{BUSINESS_NAME}}</h3>
+                    <p>Professional services you can trust. Excellence in every engagement since {{FOUNDING_YEAR}}.</p>
+                    <div class="accreditations">
+                        <div class="accreditation-badge">ABA<br>Member</div>
+                        <div class="accreditation-badge">CPA<br>Certified</div>
+                        <div class="accreditation-badge">BBB<br>A+ Rating</div>
+                        <div class="accreditation-badge">ISO<br>Certified</div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="#services">Legal Counsel</a></p>
+                    <p><a href="#services">Financial Advisory</a></p>
+                    <p><a href="#services">Strategic Consulting</a></p>
+                    <p><a href="#services">Tax & Compliance</a></p>
+                    <p><a href="#services">Corporate Services</a></p>
+                    <p><a href="#services">Risk Management</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>{{ADDRESS}}<br>{{CITY}}</p>
+                    <p>Phone: {{PHONE}}</p>
+                    <p>Email: {{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <p><a href="#">Client Portal</a></p>
+                    <p><a href="#">Legal Updates</a></p>
+                    <p><a href="#">Tax Calendar</a></p>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Terms of Service</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 {{BUSINESS_NAME}}. All rights reserved. | Professional services since {{FOUNDING_YEAR}}.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const nav = document.getElementById('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                nav.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Animated number counters
+        const animateNumbers = () => {
+            document.querySelectorAll('.result-number').forEach(element => {
+                const targetText = element.getAttribute('data-number');
+                if (!targetText) return;
+                
+                // Extract number from text (e.g., "$2.3M" -> 2.3)
+                const match = targetText.match(/[\d.]+/);
+                if (!match) return;
+                
+                const targetNumber = parseFloat(match[0]);
+                const suffix = targetText.replace(/[\d.]+/, '');
+                const prefix = targetText.split(match[0])[0];
+                
+                let currentNumber = 0;
+                const increment = targetNumber / 50; // 50 steps for smooth animation
+                
+                const timer = setInterval(() => {
+                    currentNumber += increment;
+                    if (currentNumber >= targetNumber) {
+                        currentNumber = targetNumber;
+                        clearInterval(timer);
+                    }
+                    
+                    // Format the number
+                    let displayNumber = currentNumber.toFixed(1);
+                    if (displayNumber.endsWith('.0')) {
+                        displayNumber = displayNumber.slice(0, -2);
+                    }
+                    
+                    element.textContent = prefix + displayNumber + suffix;
+                }, 40);
+            });
+        };
+
+        // Trigger number animation when results section comes into view
+        const resultsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    resultsObserver.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const resultsSection = document.querySelector('#results');
+        if (resultsSection) {
+            resultsObserver.observe(resultsSection);
+        }
+
+        // Form submission handler
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            // For now, we'll show a simple alert
+            alert('Thank you for your inquiry! We will contact you within 24 hours to schedule your consultation.');
+            
+            // Reset the form
+            this.reset();
+        });
+
+        // Add loading state to CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.getAttribute('href') === '#contact') {
+                    // Scroll to contact form and focus on name field
+                    setTimeout(() => {
+                        const nameField = document.getElementById('name');
+                        if (nameField) {
+                            nameField.focus();
+                        }
+                    }, 800);
+                }
+            });
+        });
+
+        // Parallax effect for hero section (subtle)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

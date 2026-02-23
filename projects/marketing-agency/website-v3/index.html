@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amotive — We Build What Others Can't</title>
+    <meta name="description" content="Premium digital agency crafting award-worthy experiences for brands that refuse to blend in.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --bg-black: #0A0A0A;
+            --text-white: #FFFFFF;
+            --text-muted: #E0E0E0;
+            --text-gray: #666666;
+            --text-mono: #888888;
+            --near-black: #1A1A1A;
+            --light-gray: #E8E8E8;
+            --charcoal: #1A1A1A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor.hover {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* Three.js Canvas */
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        /* Typography */
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .space-mono {
+            font-family: 'Space Mono', monospace;
+        }
+
+        .dm-sans {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Section Base */
+        .section {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Section 0: Loading Gate */
+        .loading-gate {
+            background: var(--bg-black);
+            flex-direction: column;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .logo-massive {
+            font-size: clamp(80px, 12vw, 160px);
+            font-weight: 800;
+            margin-bottom: 40px;
+            line-height: 0.9;
+        }
+
+        .logo-massive .am {
+            color: var(--gold);
+        }
+
+        .logo-massive .otive {
+            color: var(--text-white);
+        }
+
+        .divider {
+            width: 120px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto 40px;
+        }
+
+        .experience-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+        }
+
+        .experience-cards {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .experience-card {
+            background: var(--bg-black);
+            border: 1px solid var(--gold);
+            padding: 40px 60px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card.classic {
+            background: transparent;
+            border: 1px solid var(--text-white);
+        }
+
+        .experience-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .pill-button {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            background: transparent;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .pill-button:hover {
+            background: var(--gold);
+            color: var(--near-black);
+        }
+
+        /* Section 1: Hero */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            padding: 0;
+        }
+
+        .hero-left {
+            width: 70%;
+            background: var(--gold);
+            padding: 120px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-massive {
+            font-size: clamp(120px, 15vw, 200px);
+            font-weight: 800;
+            color: var(--near-black);
+            line-height: 0.85;
+            margin-bottom: 40px;
+        }
+
+        .hero-massive .slash {
+            font-style: italic;
+            font-size: 1.1em;
+            font-weight: 900;
+        }
+
+        .hero-subline {
+            font-size: clamp(20px, 2.5vw, 32px);
+            color: var(--near-black);
+            max-width: 600px;
+            line-height: 1.3;
+        }
+
+        .hero-right {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-right-top {
+            flex: 1;
+            background: var(--light-gray);
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-right-top p {
+            font-size: clamp(20px, 2.2vw, 28px);
+            color: var(--near-black);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .hero-right-bottom {
+            flex: 1;
+            background: var(--charcoal);
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .services-label {
+            color: var(--gold);
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .service-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .hero-image {
+            height: 200px;
+            background: linear-gradient(45deg, #1A1A1A 0%, #333 50%, #1A1A1A 100%);
+        }
+
+        /* Section 2: 3D Object */
+        .three-section {
+            background: var(--bg-black);
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+        }
+
+        .three-text-above,
+        .three-text-below {
+            font-size: clamp(60px, 8vw, 120px);
+            font-weight: 100;
+            color: var(--text-white);
+            z-index: 10;
+            position: relative;
+        }
+
+        .three-text-above {
+            margin-bottom: 200px;
+        }
+
+        .three-text-below {
+            margin-top: 200px;
+        }
+
+        .three-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        /* Section 3: Services */
+        .services-section {
+            background: var(--bg-black);
+            flex-direction: column;
+            text-align: center;
+            padding: 120px 80px;
+        }
+
+        .services-title {
+            margin-bottom: 120px;
+        }
+
+        .services-letters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .service-letter {
+            font-size: clamp(60px, 8vw, 100px);
+            font-weight: 800;
+            color: var(--text-white);
+            text-shadow: 
+                0 0 20px var(--gold),
+                0 0 40px var(--gold),
+                0 0 60px rgba(201, 168, 76, 0.5);
+            position: relative;
+        }
+
+        .service-letter::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .service-cards {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--charcoal);
+            border: 1px solid var(--gold);
+            padding: 60px 40px;
+            flex: 1;
+            max-width: 350px;
+            text-align: left;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-number {
+            font-size: 12px;
+            color: var(--text-gray);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Section 4: Portfolio */
+        .portfolio-section {
+            background: var(--bg-black);
+            flex-direction: column;
+            padding: 120px 80px;
+            text-align: center;
+        }
+
+        .portfolio-title {
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 400;
+            margin-bottom: 100px;
+        }
+
+        .portfolio-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto 80px;
+        }
+
+        .portfolio-card {
+            background: linear-gradient(145deg, var(--charcoal) 0%, #111 100%);
+            padding: 50px 40px;
+            flex: 1;
+            max-width: 400px;
+            text-align: left;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .portfolio-client {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .portfolio-industry {
+            font-size: 12px;
+            color: var(--text-gray);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-description {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-link {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            color: var(--text-white);
+        }
+
+        .portfolio-coming {
+            color: var(--text-gray);
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        /* Section 5: Data */
+        .data-section {
+            height: 100vh;
+            display: flex;
+            padding: 0;
+        }
+
+        .data-left {
+            width: 60%;
+            padding: 120px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .data-title {
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+
+        .data-subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            line-height: 1.4;
+            max-width: 500px;
+        }
+
+        .data-right {
+            width: 40%;
+            background: var(--near-black);
+            padding: 120px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .data-stat {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .data-stat:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .data-number {
+            font-size: 56px;
+            color: var(--gold);
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .data-label {
+            font-size: 16px;
+            color: var(--text-gray);
+            letter-spacing: 1px;
+        }
+
+        /* Section 6: Contact */
+        .contact-section {
+            background: var(--bg-black);
+            flex-direction: column;
+            text-align: center;
+            padding: 120px 80px;
+        }
+
+        .contact-title {
+            font-size: clamp(60px, 8vw, 120px);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .contact-subtitle {
+            font-size: clamp(60px, 8vw, 120px);
+            font-weight: 400;
+            color: var(--gold);
+            margin-bottom: 60px;
+        }
+
+        .contact-divider {
+            width: 120px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto 60px;
+        }
+
+        .contact-email {
+            font-size: 24px;
+            color: var(--text-white);
+            text-decoration: none;
+            margin-bottom: 60px;
+            display: inline-block;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: var(--gold);
+        }
+
+        .contact-cta {
+            margin-bottom: 60px;
+        }
+
+        .contact-social {
+            margin-bottom: 100px;
+        }
+
+        .contact-social a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-social a:hover {
+            color: var(--gold);
+        }
+
+        .contact-footer {
+            color: var(--text-gray);
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .hero-left,
+            .hero-right {
+                width: 100%;
+            }
+
+            .hero-right {
+                flex-direction: column;
+            }
+
+            .data-section {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .data-left,
+            .data-right {
+                width: 100%;
+            }
+
+            .experience-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-cards,
+            .portfolio-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-letters {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            #three-canvas {
+                display: none;
+            }
+
+            .hero-massive {
+                font-size: 80px;
+            }
+
+            .contact-title,
+            .contact-subtitle {
+                font-size: 60px;
+            }
+        }
+
+        /* Hover Effects */
+        .hover-target {
+            cursor: pointer;
+        }
+
+        .hover-target:hover {
+            color: var(--gold);
+            transition: color 0.3s ease;
+        }
+
+        /* Loading Animation */
+        .loading-fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 1s ease;
+        }
+
+        /* Scroll Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gold);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <!-- cursor removed -->
+    
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Three.js Canvas -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Section 0: Loading Gate -->
+    <section class="section loading-gate" id="loading-gate">
+        <div class="logo-massive playfair">
+            <span class="am">am</span><span class="otive">otive</span>
+        </div>
+        <div class="divider"></div>
+        <div class="experience-text space-mono">Choose your experience</div>
+        <div class="experience-cards">
+            <div class="experience-card immersive">
+                <h3 class="playfair">Immersive</h3>
+                <a href="#" class="pill-button space-mono enter-btn">Enter</a>
+            </div>
+            <div class="experience-card classic">
+                <h3 class="playfair">Classic</h3>
+                <a href="#" class="pill-button space-mono browse-btn">Browse</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Hero -->
+    <section class="section hero-section" id="hero">
+        <div class="hero-left">
+            <div class="hero-massive playfair fade-in-up">
+                am<span class="slash">/</span><br>otive
+            </div>
+            <div class="hero-subline dm-sans fade-in-up">
+                Premium Digital Experiences for Brands That Refuse to Blend In.
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-right-top">
+                <p class="dm-sans fade-in-up">Crafting award-worthy digital experiences that convert visitors into believers.</p>
+            </div>
+            <div class="hero-right-bottom">
+                <div class="services-label space-mono fade-in-up">Services</div>
+                <div class="service-item space-mono stagger-item">
+                    <div class="service-dot"></div>
+                    01. WEBSITES
+                </div>
+                <div class="service-item space-mono stagger-item">
+                    <div class="service-dot"></div>
+                    02. BRANDING
+                </div>
+                <div class="service-item space-mono stagger-item">
+                    <div class="service-dot"></div>
+                    03. MARKETING
+                </div>
+                <div class="service-item space-mono stagger-item">
+                    <div class="service-dot"></div>
+                    04. STRATEGY
+                </div>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <!-- Section 2: 3D Object -->
+    <section class="section three-section" id="three-d">
+        <div class="three-glow"></div>
+        <div class="three-text-above playfair fade-in-up">Digital</div>
+        <div class="three-text-below playfair fade-in-up">Alchemy</div>
+    </section>
+
+    <!-- Section 3: Services -->
+    <section class="section services-section" id="services">
+        <div class="services-title">
+            <div class="services-letters">
+                <span class="service-letter playfair stagger-item">S</span>
+                <span class="service-letter playfair stagger-item">E</span>
+                <span class="service-letter playfair stagger-item">R</span>
+                <span class="service-letter playfair stagger-item">V</span>
+                <span class="service-letter playfair stagger-item">I</span>
+                <span class="service-letter playfair stagger-item">C</span>
+                <span class="service-letter playfair stagger-item">E</span>
+                <span class="service-letter playfair stagger-item">S</span>
+            </div>
+        </div>
+        
+        <div class="service-cards">
+            <div class="service-card hover-target stagger-item">
+                <div class="service-number space-mono">01</div>
+                <h3 class="playfair">Websites</h3>
+                <p class="dm-sans">Award-winning digital experiences that captivate audiences and drive conversions. Every pixel crafted with obsessive attention to detail.</p>
+            </div>
+            <div class="service-card hover-target stagger-item">
+                <div class="service-number space-mono">02</div>
+                <h3 class="playfair">Marketing</h3>
+                <p class="dm-sans">Strategic campaigns that cut through the noise and reach your ideal customers. Data-driven creativity that delivers measurable results.</p>
+            </div>
+            <div class="service-card hover-target stagger-item">
+                <div class="service-number space-mono">03</div>
+                <h3 class="playfair">Strategy</h3>
+                <p class="dm-sans">Comprehensive digital roadmaps that position your brand for long-term success. Deep market insights combined with innovative thinking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Portfolio -->
+    <section class="section portfolio-section" id="portfolio">
+        <h2 class="portfolio-title playfair fade-in-up">Selected Work</h2>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-card hover-target stagger-item">
+                <h3 class="portfolio-client playfair">Aurum Capital</h3>
+                <div class="portfolio-industry space-mono">FINANCE</div>
+                <p class="portfolio-description dm-sans">Complete digital transformation including brand identity, responsive website, and lead generation system that increased qualified leads by 340%.</p>
+                <a href="#" class="portfolio-link space-mono">VIEW PROJECT →</a>
+            </div>
+            <div class="portfolio-card hover-target stagger-item">
+                <h3 class="portfolio-client playfair">Vantage Labs</h3>
+                <div class="portfolio-industry space-mono">TECHNOLOGY</div>
+                <p class="portfolio-description dm-sans">Award-winning product launch campaign featuring interactive demos and immersive storytelling that generated $2.1M in pre-orders.</p>
+                <a href="#" class="portfolio-link space-mono">VIEW PROJECT →</a>
+            </div>
+            <div class="portfolio-card hover-target stagger-item">
+                <h3 class="portfolio-client playfair">Meridian Group</h3>
+                <div class="portfolio-industry space-mono">REAL ESTATE</div>
+                <p class="portfolio-description dm-sans">Luxury property showcase platform with virtual tours and AI-powered matching that increased sales velocity by 180%.</p>
+                <a href="#" class="portfolio-link space-mono">VIEW PROJECT →</a>
+            </div>
+        </div>
+        
+        <div class="portfolio-coming space-mono fade-in-up">More projects coming soon</div>
+    </section>
+
+    <!-- Section 5: Data -->
+    <section class="section data-section" id="data">
+        <div class="data-left">
+            <h2 class="data-title playfair fade-in-up">Numbers Don't Lie</h2>
+            <p class="data-subtitle dm-sans fade-in-up">Every pixel placed with purpose. Every interaction designed to convert.</p>
+        </div>
+        <div class="data-right">
+            <div class="data-stat stagger-item">
+                <div class="data-number space-mono counter" data-count="250">0</div>
+                <div class="data-label space-mono">Projects Delivered</div>
+            </div>
+            <div class="data-stat stagger-item">
+                <div class="data-number space-mono counter" data-count="98">0</div>
+                <div class="data-label space-mono">Client Satisfaction</div>
+            </div>
+            <div class="data-stat stagger-item">
+                <div class="data-number space-mono">4.2x</div>
+                <div class="data-label space-mono">Average ROI Increase</div>
+            </div>
+            <div class="data-stat stagger-item">
+                <div class="data-number space-mono">$12M+</div>
+                <div class="data-label space-mono">Revenue Generated</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Contact -->
+    <section class="section contact-section" id="contact">
+        <h2 class="contact-title playfair fade-in-up">Let's Create Something</h2>
+        <h2 class="contact-subtitle playfair fade-in-up">Extraordinary</h2>
+        <div class="contact-divider fade-in-up"></div>
+        <a href="mailto:hello@amotive.io" class="contact-email space-mono hover-target fade-in-up">hello@amotive.io</a>
+        <div class="contact-cta fade-in-up">
+            <a href="#" class="pill-button space-mono hover-target">Start Your Project →</a>
+        </div>
+        <div class="contact-social space-mono fade-in-up">
+            <a href="#" class="hover-target">Instagram</a> / 
+            <a href="#" class="hover-target">LinkedIn</a> / 
+            <a href="#" class="hover-target">Twitter</a>
+        </div>
+        <div class="contact-footer space-mono fade-in-up">© 2026 Amotive. All rights reserved.</div>
+    </section>
+
+    <!-- CDN Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom cursor removed — native cursor used
+
+        // Loading Gate Animation
+        const enterBtn = document.querySelector('.enter-btn');
+        const browseBtn = document.querySelector('.browse-btn');
+        const loadingGate = document.getElementById('loading-gate');
+
+        function hideLoadingGate() {
+            gsap.to(loadingGate, {
+                opacity: 0,
+                duration: 1,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    loadingGate.style.display = 'none';
+                }
+            });
+        }
+
+        enterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            hideLoadingGate();
+        });
+
+        browseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            hideLoadingGate();
+        });
+
+        // Three.js Scene
+        let scene, camera, renderer, icosahedron, particles;
+        let mouse = { x: 0, y: 0 };
+
+        function initThreeJS() {
+            const canvas = document.getElementById('three-canvas');
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+
+            // Create icosahedron
+            const geometry = new THREE.IcosahedronGeometry(2, 0);
+            const material = new THREE.MeshPhysicalMaterial({
+                color: 0xC9A84C,
+                metalness: 0.95,
+                roughness: 0.05,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.1
+            });
+            icosahedron = new THREE.Mesh(geometry, material);
+            scene.add(icosahedron);
+
+            // Create particles
+            const particleGeometry = new THREE.BufferGeometry();
+            const particleCount = 500;
+            const positions = new Float32Array(particleCount * 3);
+            
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 50;
+                positions[i + 1] = (Math.random() - 0.5) * 50;
+                positions[i + 2] = (Math.random() - 0.5) * 50;
+            }
+            
+            particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            
+            const particleMaterial = new THREE.PointsMaterial({
+                color: 0xC9A84C,
+                size: 0.05,
+                transparent: true,
+                opacity: 0.6
+            });
+            
+            particles = new THREE.Points(particleGeometry, particleMaterial);
+            scene.add(particles);
+
+            // Lighting
+            const pointLight = new THREE.PointLight(0xC9A84C, 1, 100);
+            pointLight.position.set(10, 10, 10);
+            scene.add(pointLight);
+
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+            scene.add(ambientLight);
+
+            camera.position.z = 5;
+
+            // Mouse movement
+            document.addEventListener('mousemove', (event) => {
+                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate icosahedron
+            if (icosahedron) {
+                icosahedron.rotation.y += 0.005;
+                icosahedron.rotation.x += 0.002;
+                
+                // Mouse parallax
+                icosahedron.rotation.x += mouse.y * 0.01;
+                icosahedron.rotation.y += mouse.x * 0.01;
+            }
+
+            // Animate particles
+            if (particles) {
+                particles.rotation.y += 0.001;
+                const positions = particles.geometry.attributes.position.array;
+                
+                for (let i = 1; i < positions.length; i += 3) {
+                    positions[i] += Math.sin(Date.now() * 0.001 + i) * 0.001;
+                }
+                
+                particles.geometry.attributes.position.needsUpdate = true;
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        // Initialize Three.js when page loads
+        window.addEventListener('load', initThreeJS);
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (camera && renderer) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+        });
+
+        // Three.js canvas visibility based on scroll
+        ScrollTrigger.create({
+            trigger: "#three-d",
+            start: "top bottom",
+            end: "bottom top",
+            onUpdate: self => {
+                const canvas = document.getElementById('three-canvas');
+                const progress = self.progress;
+                const opacity = 1 - Math.abs(progress - 0.5) * 2;
+                canvas.style.opacity = Math.max(0, opacity);
+            }
+        });
+
+        // GSAP Animations
+        // Fade in up animations
+        gsap.utils.toArray('.fade-in-up').forEach(element => {
+            gsap.fromTo(element, {
+                opacity: 0,
+                y: 40
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Stagger animations
+        gsap.utils.toArray('.stagger-item').forEach((element, index) => {
+            gsap.fromTo(element, {
+                opacity: 0,
+                y: 40
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: index * 0.15,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element.parentNode,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.count);
+            
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 80%",
+                onEnter: () => {
+                    gsap.to({ value: 0 }, {
+                        value: target,
+                        duration: 2,
+                        ease: "power2.out",
+                        onUpdate: function() {
+                            counter.textContent = Math.round(this.targets()[0].value) + "+";
+                        }
+                    });
+                }
+            });
+        });
+
+        // Scroll Progress Bar
+        gsap.to(".scroll-progress", {
+            scaleX: 1,
+            transformOrigin: "left center",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.3
+            }
+        });
+
+        // Hero text animation
+        const heroMassive = document.querySelector('.hero-massive');
+        if (heroMassive) {
+            gsap.fromTo(heroMassive, {
+                opacity: 0,
+                y: 100,
+                scale: 0.8
+            }, {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1.5,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: heroMassive,
+                    start: "top 80%"
+                }
+            });
+        }
+
+        // Service cards hover effects
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    y: -4,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Portfolio cards hover effects
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+        portfolioCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    y: -8,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    y: 0,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Auto-hide loading gate after 3 seconds if no interaction
+        setTimeout(() => {
+            if (loadingGate.style.display !== 'none') {
+                hideLoadingGate();
+            }
+        }, 3000);
+
+        // Parallax effect for hero section
+        ScrollTrigger.create({
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+            onUpdate: self => {
+                const heroLeft = document.querySelector('.hero-left');
+                const heroRight = document.querySelector('.hero-right');
+                
+                if (heroLeft && heroRight) {
+                    gsap.to(heroLeft, {
+                        y: self.progress * 100,
+                        duration: 0.3
+                    });
+                    
+                    gsap.to(heroRight, {
+                        y: self.progress * -50,
+                        duration: 0.3
+                    });
+                }
+            }
+        });
+
+        // Mobile optimizations
+        if (window.innerWidth <= 768) {
+            // Hide Three.js canvas on mobile
+            const canvas = document.getElementById('three-canvas');
+            if (canvas) {
+                canvas.style.display = 'none';
+            }
+            
+            // Reduce animation complexity on mobile
+            ScrollTrigger.config({
+                limitCallbacks: true
+            });
+        }
+
+        // Performance optimization: Reduce animations on low-performance devices
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) {
+            gsap.globalTimeline.timeScale(0.5);
+        }
+
+        // Console message for developers
+        console.log(`
+        ╔══════════════════════════════════════╗
+        ║                                      ║
+        ║            AMOTIVE v3.0              ║
+        ║     Premium Digital Experiences      ║
+        ║                                      ║
+        ║         hello@amotive.io             ║
+        ║                                      ║
+        ╚══════════════════════════════════════╝
+        
+        Built with:
+        • Three.js for 3D graphics
+        • GSAP for smooth animations
+        • Custom cursor interactions
+        • Scroll-triggered effects
+        • Premium typography system
+        
+        Performance optimized and mobile-ready.
+        `);
+    </script>
+</body>
+</html>

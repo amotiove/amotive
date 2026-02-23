@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <rect width="600" height="200" fill="#FFFFFF"/>
+  <text x="300" y="120" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="72" font-weight="700" letter-spacing="4">
+    <tspan fill="#C9A84C">am</tspan><tspan fill="#050A12">otive</tspan>
+  </text>
+</svg>

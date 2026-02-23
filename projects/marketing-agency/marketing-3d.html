@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing & Growth - Fuel Your Growth | amotive</title>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+    }
+    </script>
+    <style>
+        :root {
+            --navy-deep: #050A12;
+            --navy: #0A1628;
+            --navy-light: #122038;
+            --gold: #C9A84C;
+            --gold-bright: #E2C36B;
+            --gradient-gold: linear-gradient(135deg, #B8963E 0%, #E2C36B 45%, #C9A84C 100%);
+            --emerald: #2ECC71;
+            --gradient-emerald: linear-gradient(135deg, #27AE60 0%, #2ECC71 50%, #58D68D 100%);
+            --platinum: #E8EAEF;
+            --silver: #A8B2C4;
+            --steel: #6C7A8E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--navy-deep);
+            color: var(--platinum);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-weight: 800;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: Georgia, Times, serif;
+        }
+
+        .logo .am {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo .otive {
+            color: var(--platinum);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(5, 10, 18, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--emerald);
+        }
+
+        .cta-nav {
+            background: var(--gradient-emerald);
+            color: var(--navy-deep) !important;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            margin-bottom: 1.5rem;
+            background: var(--gradient-emerald);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 50px rgba(46, 204, 113, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-family: Georgia, serif;
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            color: var(--silver);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.8rem;
+            background: var(--gradient-emerald);
+            color: var(--navy-deep);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(46, 204, 113, 0.4);
+        }
+
+        /* Section Base */
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Channels Grid */
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .channel-card {
+            background: rgba(18, 32, 56, 0.3);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .channel-card:hover::before {
+            left: 100%;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--emerald);
+        }
+
+        .channel-icon {
+            font-size: 3rem;
+            color: var(--emerald);
+            margin-bottom: 1.5rem;
+        }
+
+        .channel-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--platinum);
+        }
+
+        /* Results Metrics */
+        .results-section {
+            background: var(--navy);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 6rem 0;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .metric {
+            padding: 2rem;
+            background: rgba(46, 204, 113, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .metric:hover {
+            transform: translateY(-10px);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-emerald);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            color: var(--silver);
+            margin-top: 0.5rem;
+        }
+
+        /* What's Included */
+        .included-section {
+            background: var(--navy);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 6rem 0;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .included-category {
+            background: rgba(46, 204, 113, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(46, 204, 113, 0.1);
+        }
+
+        .included-category h4 {
+            color: var(--emerald);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .included-item:hover {
+            transform: translateX(10px);
+        }
+
+        .included-icon {
+            color: var(--emerald);
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(18, 32, 56, 0.4);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--emerald);
+        }
+
+        .faq-question:hover {
+            background: rgba(46, 204, 113, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 2rem 2rem 2rem;
+            color: var(--silver);
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Intake Form */
+        .intake-section {
+            background: var(--navy);
+            border-top: 1px solid rgba(46, 204, 113, 0.2);
+            position: relative;
+        }
+
+        #form-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .form-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intake-form {
+            background: rgba(18, 32, 56, 0.8);
+            border: 2px solid rgba(46, 204, 113, 0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            backdrop-filter: blur(25px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--emerald);
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(5, 10, 18, 0.7);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: 10px;
+            color: var(--platinum);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--emerald);
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gradient-emerald);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(46, 204, 113, 0.2);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3D Hover Effects */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+            
+            .channels-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index-3d.html" class="logo">
+                <span class="am">am</span><span class="otive">otive</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="website-3d.html">Websites</a></li>
+                <li><a href="marketing-3d.html" class="active">Marketing</a></li>
+                <li><a href="premium-3d.html">Full Growth</a></li>
+                <li><a href="#intake-form" class="cta-nav">Start a Project</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1>Fuel Your Growth</h1>
+            <div class="hero-subtitle">€2,000/month</div>
+            <p>Complete marketing ecosystem that drives qualified leads and accelerates your business growth through data-driven strategies.</p>
+            <a href="#intake-form" class="cta-button">Accelerate Growth</a>
+        </div>
+    </section>
+
+    <!-- Channels Managed Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Channels We Manage</h2>
+            <p>Full-spectrum digital marketing across all major platforms</p>
+        </div>
+        <div class="channels-grid">
+            <div class="channel-card tilt-card fade-in">
+                <div class="channel-icon">🎯</div>
+                <h3>Google Ads</h3>
+                <p>Search, Display, and Shopping campaigns that capture high-intent prospects exactly when they're ready to buy.</p>
+            </div>
+            <div class="channel-card tilt-card fade-in">
+                <div class="channel-icon">📱</div>
+                <h3>Meta Advertising</h3>
+                <p>Facebook and Instagram campaigns with advanced targeting to reach your ideal audience and drive conversions.</p>
+            </div>
+            <div class="channel-card tilt-card fade-in">
+                <div class="channel-icon">📧</div>
+                <h3>Email Marketing</h3>
+                <p>Automated sequences and campaigns that nurture leads into customers and maximize lifetime value.</p>
+            </div>
+            <div class="channel-card tilt-card fade-in">
+                <div class="channel-icon">📝</div>
+                <h3>Content Strategy</h3>
+                <p>High-value content that positions you as the authority in your industry while driving organic traffic and leads.</p>
+            </div>
+            <div class="channel-card tilt-card fade-in">
+                <div class="channel-icon">🔍</div>
+                <h3>SEO Optimization</h3>
+                <p>Technical and content SEO that improves your search rankings and drives consistent organic traffic.</p>
+            </div>
+            <div class="channel-card tilt-card fade-in">
+                <div class="channel-icon">💼</div>
+                <h3>LinkedIn Growth</h3>
+                <p>Personal branding and B2B lead generation through strategic LinkedIn content and outreach campaigns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Metrics -->
+    <section class="section">
+        <div class="results-section">
+            <div class="section-header">
+                <h2>Proven Results</h2>
+                <p>Data-driven outcomes across our client portfolio</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric fade-in">
+                    <div class="metric-number">312%</div>
+                    <div class="metric-label">Average ROI Increase</div>
+                </div>
+                <div class="metric fade-in">
+                    <div class="metric-number">847</div>
+                    <div class="metric-label">Qualified Leads Generated</div>
+                </div>
+                <div class="metric fade-in">
+                    <div class="metric-number">€2.1M</div>
+                    <div class="metric-label">Revenue Generated</div>
+                </div>
+                <div class="metric fade-in">
+                    <div class="metric-number">48</div>
+                    <div class="metric-label">Hour Lead Response</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included */
+    <section class="section">
+        <div class="included-section">
+            <div class="section-header">
+                <h2>What's Included</h2>
+                <p>Complete marketing infrastructure and ongoing optimization</p>
+            </div>
+            <div class="included-grid">
+                <div class="included-category fade-in">
+                    <h4>Strategy & Planning</h4>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Comprehensive Marketing Audit</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Customer Journey Mapping</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Competitive Analysis</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Monthly Strategy Sessions</span>
+                    </div>
+                </div>
+                <div class="included-category fade-in">
+                    <h4>Paid Advertising</h4>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Google Ads Management</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Meta Ads (Facebook/Instagram)</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Landing Page Optimization</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Advanced Tracking Setup</span>
+                    </div>
+                </div>
+                <div class="included-category fade-in">
+                    <h4>Content & Email</h4>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Email Automation Sequences</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Content Calendar & Creation</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>SEO-Optimized Blog Posts</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Social Media Management</span>
+                    </div>
+                </div>
+                <div class="included-category fade-in">
+                    <h4>Analytics & Reporting</h4>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Custom Analytics Dashboard</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Weekly Performance Reports</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>ROI Tracking & Attribution</span>
+                    </div>
+                    <div class="included-item">
+                        <div class="included-icon">✅</div>
+                        <span>Conversion Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How quickly will we see results from marketing campaigns?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Most clients see initial results within 30-60 days, with significant improvements by month 3. We focus on quick wins while building sustainable long-term growth systems.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    What's included in the monthly retainer fee?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    The €2,000/month covers strategy, campaign management, content creation, reporting, and optimization across all channels. Ad spend is separate and based on your budget.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Do you work with our existing marketing team?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! We integrate seamlessly with in-house teams and can train your staff on new systems and processes. We're here to amplify your existing efforts.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    What makes your approach different from other agencies?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    We focus on profit, not just traffic. Every campaign is designed with ROI in mind, using advanced attribution modeling to track true business impact, not vanity metrics.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Can we adjust the scope of services based on results?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We regularly review performance and can scale successful channels up or pivot resources to better-performing areas. Flexibility is built into our approach.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intake Form Section -->
+    <section id="intake-form" class="intake-section section">
+        <canvas id="form-canvas"></canvas>
+        <div class="form-container">
+            <div class="section-header">
+                <h2>Accelerate Your Growth</h2>
+                <p>Tell us about your business goals</p>
+            </div>
+            <form class="intake-form" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-group">
+                    <label for="business-name">Business Name</label>
+                    <input type="text" id="business-name" name="business-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry / What You Do</label>
+                    <input type="text" id="industry" name="industry" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">Current Website URL (Optional)</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interest</label>
+                    <select id="service" name="service" required>
+                        <option value="website-design">Website Design</option>
+                        <option value="marketing-growth" selected>Marketing & Growth</option>
+                        <option value="full-growth-engine">Full Growth Engine</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Monthly Marketing Budget Range</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select budget range...</option>
+                        <option value="under-2000">Under €2,000</option>
+                        <option value="2000-5000" selected>€2,000 - €5,000</option>
+                        <option value="5000-10000">€5,000 - €10,000</option>
+                        <option value="10000-plus">€10,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="additional">Marketing Goals & Challenges (Current situation, targets, pain points)</label>
+                    <textarea id="additional" name="additional" placeholder="Tell us about your current marketing efforts, revenue goals, biggest challenges, and what success looks like..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Launch Growth Campaign</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="margin-bottom: 1rem;">
+                <span class="am">am</span><span class="otive">otive</span>
+            </div>
+            <p style="color: var(--silver);">Premium digital experiences for ambitious businesses.</p>
+            <p style="color: var(--steel); margin-top: 1rem;">&copy; 2024 amotive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // Global variables
+        let scene, camera, renderer, raycaster, mouse;
+        let heroObjects = [];
+        let formObjects = [];
+        let isHovering = false;
+        let frameCount = 0;
+
+        // Initialize Three.js scenes
+        function initThreeJS() {
+            initHeroScene();
+            initFormScene();
+            
+            mouse = new THREE.Vector2();
+            raycaster = new THREE.Raycaster();
+            
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('resize', onWindowResize);
+            
+            animate();
+        }
+
+        function initHeroScene() {
+            const canvas = document.getElementById('hero-canvas');
+            
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true 
+            });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+            
+            camera.position.z = 12;
+            
+            // Create emerald wireframe material
+            const emeraldMaterial = new THREE.MeshBasicMaterial({
+                color: 0x2ECC71,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            // Create floating chart wireframes and growth arrows
+            const chartGeometry = new THREE.BoxGeometry(2, 1.5, 0.1);
+            const arrowGeometry = new THREE.ConeGeometry(0.2, 1, 6);
+            
+            // Create multiple chart wireframes
+            for (let i = 0; i < 12; i++) {
+                const chart = new THREE.Mesh(chartGeometry, emeraldMaterial.clone());
+                
+                chart.position.x = (Math.random() - 0.5) * 25;
+                chart.position.y = (Math.random() - 0.5) * 15;
+                chart.position.z = (Math.random() - 0.5) * 12;
+                
+                chart.rotation.x = Math.random() * Math.PI;
+                chart.rotation.y = Math.random() * Math.PI;
+                chart.rotation.z = Math.random() * Math.PI;
+                
+                chart.userData.originalPosition = chart.position.clone();
+                chart.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.008,
+                    y: (Math.random() - 0.5) * 0.008,
+                    z: (Math.random() - 0.5) * 0.008
+                };
+                
+                scene.add(chart);
+                heroObjects.push(chart);
+                
+                // Add growth arrows
+                if (i % 2 === 0) {
+                    const arrow = new THREE.Mesh(arrowGeometry, emeraldMaterial.clone());
+                    arrow.position.copy(chart.position);
+                    arrow.position.y += 2;
+                    arrow.rotation.z = -Math.PI / 2; // Point right
+                    
+                    arrow.userData.originalPosition = arrow.position.clone();
+                    arrow.userData.rotationSpeed = {
+                        x: (Math.random() - 0.5) * 0.015,
+                        y: (Math.random() - 0.5) * 0.015,
+                        z: (Math.random() - 0.5) * 0.015
+                    };
+                    
+                    scene.add(arrow);
+                    heroObjects.push(arrow);
+                }
+            }
+            
+            // Add data visualization elements (spheres representing data points)
+            const dataGeometry = new THREE.SphereGeometry(0.1);
+            for (let i = 0; i < 50; i++) {
+                const dataPoint = new THREE.Mesh(dataGeometry, emeraldMaterial.clone());
+                
+                dataPoint.position.x = (Math.random() - 0.5) * 30;
+                dataPoint.position.y = (Math.random() - 0.5) * 20;
+                dataPoint.position.z = (Math.random() - 0.5) * 15;
+                
+                dataPoint.userData.originalPosition = dataPoint.position.clone();
+                dataPoint.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.02,
+                    y: (Math.random() - 0.5) * 0.02,
+                    z: (Math.random() - 0.5) * 0.02
+                };
+                
+                scene.add(dataPoint);
+                heroObjects.push(dataPoint);
+            }
+            
+            // Ambient lighting
+            const ambientLight = new THREE.AmbientLight(0x2ECC71, 0.3);
+            scene.add(ambientLight);
+        }
+
+        function initFormScene() {
+            const canvas = document.getElementById('form-canvas');
+            if (!canvas) return;
+            
+            const formScene = new THREE.Scene();
+            const formCamera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+            const formRenderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true 
+            });
+            
+            formRenderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+            formRenderer.setClearColor(0x000000, 0);
+            
+            formCamera.position.z = 8;
+            
+            const formMaterial = new THREE.MeshBasicMaterial({
+                color: 0x2ECC71,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.4
+            });
+            
+            // Create growth-themed form elements
+            for (let i = 0; i < 8; i++) {
+                const geometry = i % 2 === 0 ? 
+                    new THREE.ConeGeometry(0.5, 1, 6) : 
+                    new THREE.BoxGeometry(1, 0.6, 0.1);
+                const mesh = new THREE.Mesh(geometry, formMaterial);
+                
+                mesh.position.x = (Math.random() - 0.5) * 10;
+                mesh.position.y = (Math.random() - 0.5) * 8;
+                mesh.position.z = (Math.random() - 0.5) * 6;
+                
+                if (i % 2 === 0) {
+                    mesh.rotation.z = -Math.PI / 2; // Point arrows right
+                }
+                
+                mesh.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.01,
+                    y: (Math.random() - 0.5) * 0.01,
+                    z: (Math.random() - 0.5) * 0.01
+                };
+                
+                formScene.add(mesh);
+                formObjects.push({ mesh, renderer: formRenderer, scene: formScene, camera: formCamera });
+            }
+        }
+
+        function onMouseMove(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            const targetX = mouse.x * 0.5;
+            const targetY = mouse.y * 0.3;
+            
+            camera.position.x += (targetX - camera.position.x) * 0.05;
+            camera.position.y += (targetY - camera.position.y) * 0.05;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            frameCount++;
+            
+            if (frameCount % 1 === 0) {
+                heroObjects.forEach(object => {
+                    object.rotation.x += object.userData.rotationSpeed.x;
+                    object.rotation.y += object.userData.rotationSpeed.y;
+                    object.rotation.z += object.userData.rotationSpeed.z;
+                });
+                
+                formObjects.forEach(({ mesh, renderer, scene, camera }) => {
+                    mesh.rotation.x += mesh.userData.rotationSpeed.x;
+                    mesh.rotation.y += mesh.userData.rotationSpeed.y;
+                    mesh.rotation.z += mesh.userData.rotationSpeed.z;
+                    
+                    renderer.render(scene, camera);
+                });
+                
+                renderer.render(scene, camera);
+            }
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // 3D Tilt Effect for Cards
+        function init3DTilt() {
+            const cards = document.querySelectorAll('.tilt-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / centerY * -10;
+                    const rotateY = (x - centerX) / centerX * 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            });
+        }
+
+        // FAQ Functionality
+        function initFAQ() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = question.querySelector('span');
+                    
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.textContent = '+';
+                    } else {
+                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                            ans.classList.remove('active');
+                        });
+                        document.querySelectorAll('.faq-question span').forEach(ic => {
+                            ic.textContent = '+';
+                        });
+                        
+                        answer.classList.add('active');
+                        icon.textContent = '-';
+                    }
+                });
+            });
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Smooth scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initThreeJS();
+            init3DTilt();
+            initFAQ();
+            initScrollAnimations();
+            initSmoothScrolling();
+        });
+
+        // Handle form submission
+        document.querySelector('.intake-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you! We\'ll create a custom growth strategy and send it within 24 hours.');
+                this.reset();
+                document.getElementById('service').value = 'marketing-growth';
+                document.getElementById('budget').value = '2000-5000';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

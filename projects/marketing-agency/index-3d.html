@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amotive - Premium Digital Experiences</title>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+    }
+    </script>
+    <style>
+        :root {
+            --navy-deep: #050A12;
+            --navy: #0A1628;
+            --navy-light: #122038;
+            --gold: #C9A84C;
+            --gold-bright: #E2C36B;
+            --gradient-gold: linear-gradient(135deg, #B8963E 0%, #E2C36B 45%, #C9A84C 100%);
+            --orange: #E87A2F;
+            --gradient-orange: linear-gradient(135deg, #D46A20 0%, #FF8C42 50%, #E87A2F 100%);
+            --emerald: #2ECC71;
+            --ice-blue: #5B9BD5;
+            --platinum: #E8EAEF;
+            --silver: #A8B2C4;
+            --steel: #6C7A8E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--navy-deep);
+            color: var(--platinum);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-weight: 800;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: Georgia, Times, serif;
+        }
+
+        .logo .am {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo .otive {
+            color: var(--platinum);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(5, 10, 18, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1.5rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 50px rgba(201, 168, 76, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--silver);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-gold);
+            color: var(--navy-deep);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(201, 168, 76, 0.4);
+        }
+
+        /* Section Base */
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Flash Roll Stats */
+        .flash-roll {
+            background: var(--navy);
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 2rem;
+            background: rgba(18, 32, 56, 0.5);
+            border-radius: 20px;
+            border: 1px solid rgba(201, 168, 76, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--silver);
+            margin-top: 0.5rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: rgba(18, 32, 56, 0.3);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--gold);
+        }
+
+        .service-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--platinum);
+        }
+
+        .service-description {
+            color: var(--silver);
+            margin-bottom: 2rem;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: rgba(18, 32, 56, 0.4);
+            border: 1px solid rgba(201, 168, 76, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        /* Intake Form */
+        .intake-section {
+            background: var(--navy);
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            position: relative;
+        }
+
+        #form-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .form-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intake-form {
+            background: rgba(18, 32, 56, 0.8);
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            backdrop-filter: blur(25px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(5, 10, 18, 0.7);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 10px;
+            color: var(--platinum);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gradient-gold);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(201, 168, 76, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Floating 3D Elements */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .service-card {
+                min-width: auto;
+            }
+        }
+
+        /* 3D Hover Effects */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Particles background */
+        .particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles-bg" id="particles-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <span class="am">am</span><span class="otive">otive</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#intake">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1>Premium Digital Experiences</h1>
+            <p>Your business has a reputation. Does your digital presence match it?</p>
+            <a href="#intake" class="cta-button">Transform Your Presence</a>
+        </div>
+    </section>
+
+    <!-- Flash Roll Stats -->
+    <section class="flash-roll section">
+        <div class="stats-grid">
+            <div class="stat fade-in">
+                <div class="stat-number" data-target="127">0</div>
+                <div class="stat-label">Premium Brands Elevated</div>
+            </div>
+            <div class="stat fade-in">
+                <div class="stat-number" data-target="847">0</div>
+                <div class="stat-label">Growth Campaigns Launched</div>
+            </div>
+            <div class="stat fade-in">
+                <div class="stat-number" data-target="312">0</div>
+                <div class="stat-label">% Average ROI Increase</div>
+            </div>
+            <div class="stat fade-in">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">Hour Response Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="section-header">
+            <h2>Premium Packages</h2>
+            <p>Choose your transformation level</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card tilt-card fade-in">
+                <div class="service-price">€2,500</div>
+                <h3 class="service-title">Website Design</h3>
+                <p class="service-description">Premium website that converts visitors into customers. Custom design, mobile-optimized, lightning-fast performance.</p>
+                <div class="service-features">
+                    <p>• Custom Premium Design</p>
+                    <p>• Mobile Responsive</p>
+                    <p>• SEO Optimized</p>
+                    <p>• 30-Day Support</p>
+                </div>
+            </div>
+            <div class="service-card tilt-card fade-in">
+                <div class="service-price">€2,000<span style="font-size: 1rem;">/mo</span></div>
+                <h3 class="service-title">Marketing & Growth</h3>
+                <p class="service-description">Full-scale digital marketing to drive qualified leads and accelerate your business growth.</p>
+                <div class="service-features">
+                    <p>• Paid Advertising (Google/Meta)</p>
+                    <p>• Content Strategy</p>
+                    <p>• Email Marketing</p>
+                    <p>• Analytics & Reporting</p>
+                </div>
+            </div>
+            <div class="service-card tilt-card fade-in">
+                <div class="service-price">€3,500<span style="font-size: 1rem;">/mo</span></div>
+                <h3 class="service-title">Full Growth Engine</h3>
+                <p class="service-description">Complete digital ecosystem - website, marketing, automation, and growth systems working in perfect harmony.</p>
+                <div class="service-features">
+                    <p>• Everything in Marketing</p>
+                    <p>• Advanced Automation</p>
+                    <p>• Custom Integrations</p>
+                    <p>• Weekly Strategy Calls</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="section-header">
+            <h2>Case Studies</h2>
+            <p>Results that speak for themselves</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card fade-in">
+                <h3>Luxury Real Estate</h3>
+                <p>Transformed a boutique agency's digital presence, resulting in 340% increase in qualified leads and €2M in additional revenue within 6 months.</p>
+                <div style="margin-top: 1rem; color: var(--gold); font-weight: 700;">+340% Qualified Leads</div>
+            </div>
+            <div class="portfolio-card fade-in">
+                <h3>Premium Consulting</h3>
+                <p>Built a complete growth engine for a management consultancy, delivering €500K in new business through strategic digital positioning.</p>
+                <div style="margin-top: 1rem; color: var(--gold); font-weight: 700;">€500K New Business</div>
+            </div>
+            <div class="portfolio-card fade-in">
+                <h3>Tech Startup</h3>
+                <p>Launched a SaaS platform from concept to €1M ARR with integrated marketing automation and conversion optimization.</p>
+                <div style="margin-top: 1rem; color: var(--gold); font-weight: 700;">€1M ARR Achieved</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intake Form Section -->
+    <section id="intake" class="intake-section section">
+        <canvas id="form-canvas"></canvas>
+        <div class="form-container">
+            <div class="section-header">
+                <h2>Start Your Transformation</h2>
+                <p>Tell us about your vision</p>
+            </div>
+            <form class="intake-form" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-group">
+                    <label for="business-name">Business Name</label>
+                    <input type="text" id="business-name" name="business-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry / What You Do</label>
+                    <input type="text" id="industry" name="industry" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">Current Website URL (Optional)</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interest</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service...</option>
+                        <option value="website-design">Website Design</option>
+                        <option value="marketing-growth">Marketing & Growth</option>
+                        <option value="full-growth-engine">Full Growth Engine</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Monthly Budget Range</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select budget range...</option>
+                        <option value="under-1000">Under €1,000</option>
+                        <option value="1000-2500">€1,000 - €2,500</option>
+                        <option value="2500-5000">€2,500 - €5,000</option>
+                        <option value="5000-plus">€5,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="additional">Anything Else? (Goals, Timeline, Special Requirements)</label>
+                    <textarea id="additional" name="additional" placeholder="Tell us about your goals, timeline, or any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Begin Transformation</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="margin-bottom: 1rem;">
+                <span class="am">am</span><span class="otive">otive</span>
+            </div>
+            <p style="color: var(--silver);">Premium digital experiences for ambitious businesses.</p>
+            <p style="color: var(--steel); margin-top: 1rem;">&copy; 2024 amotive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // Global variables
+        let scene, camera, renderer, raycaster, mouse;
+        let heroObjects = [];
+        let formObjects = [];
+        let isHovering = false;
+        let frameCount = 0;
+
+        // Initialize Three.js scenes
+        function initThreeJS() {
+            // Initialize hero scene
+            initHeroScene();
+            initFormScene();
+            
+            // Mouse tracking
+            mouse = new THREE.Vector2();
+            raycaster = new THREE.Raycaster();
+            
+            // Event listeners
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('resize', onWindowResize);
+            
+            // Start animation loop
+            animate();
+        }
+
+        function initHeroScene() {
+            const canvas = document.getElementById('hero-canvas');
+            
+            // Scene setup
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true 
+            });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+            
+            camera.position.z = 8;
+            
+            // Create wireframe materials
+            const goldMaterial = new THREE.MeshBasicMaterial({
+                color: 0xC9A84C,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            // Create geometric shapes
+            const geometries = [
+                new THREE.BoxGeometry(1, 1, 1),
+                new THREE.IcosahedronGeometry(0.8),
+                new THREE.TorusGeometry(0.8, 0.3, 8, 16),
+                new THREE.OctahedronGeometry(0.9),
+                new THREE.TetrahedronGeometry(0.9)
+            ];
+            
+            // Create multiple objects
+            for (let i = 0; i < 15; i++) {
+                const geometry = geometries[Math.floor(Math.random() * geometries.length)];
+                const mesh = new THREE.Mesh(geometry, goldMaterial.clone());
+                
+                // Random positions
+                mesh.position.x = (Math.random() - 0.5) * 16;
+                mesh.position.y = (Math.random() - 0.5) * 10;
+                mesh.position.z = (Math.random() - 0.5) * 8;
+                
+                // Random rotations
+                mesh.rotation.x = Math.random() * Math.PI;
+                mesh.rotation.y = Math.random() * Math.PI;
+                mesh.rotation.z = Math.random() * Math.PI;
+                
+                // Store original position
+                mesh.userData.originalPosition = mesh.position.clone();
+                mesh.userData.originalScale = mesh.scale.clone();
+                mesh.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.02,
+                    y: (Math.random() - 0.5) * 0.02,
+                    z: (Math.random() - 0.5) * 0.02
+                };
+                
+                scene.add(mesh);
+                heroObjects.push(mesh);
+            }
+            
+            // Create particle system
+            createParticles();
+            
+            // Ambient lighting
+            const ambientLight = new THREE.AmbientLight(0xC9A84C, 0.3);
+            scene.add(ambientLight);
+        }
+
+        function initFormScene() {
+            const canvas = document.getElementById('form-canvas');
+            if (!canvas) return;
+            
+            // Form scene setup
+            const formScene = new THREE.Scene();
+            const formCamera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+            const formRenderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true 
+            });
+            
+            formRenderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+            formRenderer.setClearColor(0x000000, 0);
+            
+            formCamera.position.z = 6;
+            
+            // Create floating elements around form
+            const formMaterial = new THREE.MeshBasicMaterial({
+                color: 0xC9A84C,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.4
+            });
+            
+            for (let i = 0; i < 8; i++) {
+                const geometry = new THREE.TorusGeometry(0.5, 0.2, 6, 12);
+                const mesh = new THREE.Mesh(geometry, formMaterial);
+                
+                mesh.position.x = (Math.random() - 0.5) * 10;
+                mesh.position.y = (Math.random() - 0.5) * 6;
+                mesh.position.z = (Math.random() - 0.5) * 4;
+                
+                mesh.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.01,
+                    y: (Math.random() - 0.5) * 0.01,
+                    z: (Math.random() - 0.5) * 0.01
+                };
+                
+                formScene.add(mesh);
+                formObjects.push({ mesh, renderer: formRenderer, scene: formScene, camera: formCamera });
+            }
+        }
+
+        function createParticles() {
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particleCount = 200;
+            const positions = new Float32Array(particleCount * 3);
+            
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 50;     // x
+                positions[i + 1] = (Math.random() - 0.5) * 30; // y
+                positions[i + 2] = (Math.random() - 0.5) * 20; // z
+            }
+            
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            
+            const particlesMaterial = new THREE.PointsMaterial({
+                color: 0xC9A84C,
+                size: 0.05,
+                transparent: true,
+                opacity: 0.6
+            });
+            
+            const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particles);
+        }
+
+        function onMouseMove(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            // Camera parallax follow
+            const targetX = mouse.x * 0.5;
+            const targetY = mouse.y * 0.3;
+            
+            camera.position.x += (targetX - camera.position.x) * 0.05;
+            camera.position.y += (targetY - camera.position.y) * 0.05;
+            
+            // Raycasting for hover effects
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(heroObjects);
+            
+            if (intersects.length > 0) {
+                if (!isHovering) {
+                    isHovering = true;
+                    animateObjectsTowardCamera(intersects);
+                }
+            } else {
+                if (isHovering) {
+                    isHovering = false;
+                    resetObjectPositions();
+                }
+            }
+        }
+
+        function animateObjectsTowardCamera(intersects) {
+            intersects.forEach(intersect => {
+                const object = intersect.object;
+                
+                // Animate toward camera
+                const targetPosition = object.position.clone().lerp(camera.position, 0.3);
+                
+                // Smooth animation using GSAP-like easing
+                animateToPosition(object, targetPosition, 1.5);
+                
+                // Scale up
+                const targetScale = new THREE.Vector3(1.5, 1.5, 1.5);
+                animateScale(object, targetScale);
+                
+                // Increase opacity
+                object.material.opacity = 1.0;
+            });
+        }
+
+        function resetObjectPositions() {
+            heroObjects.forEach(object => {
+                animateToPosition(object, object.userData.originalPosition, 1.0);
+                animateScale(object, object.userData.originalScale);
+                object.material.opacity = 0.8;
+            });
+        }
+
+        function animateToPosition(object, targetPosition, scale = 1.0) {
+            const startPosition = object.position.clone();
+            const startTime = Date.now();
+            const duration = 800 * scale;
+            
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Cubic easing out
+                const eased = 1 - Math.pow(1 - progress, 3);
+                
+                object.position.lerpVectors(startPosition, targetPosition, eased);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        function animateScale(object, targetScale) {
+            const startScale = object.scale.clone();
+            const startTime = Date.now();
+            const duration = 600;
+            
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const eased = 1 - Math.pow(1 - progress, 3);
+                object.scale.lerpVectors(startScale, targetScale, eased);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            frameCount++;
+            
+            // Limit to ~60fps by skipping frames if needed
+            if (frameCount % 1 === 0) {
+                // Rotate hero objects
+                heroObjects.forEach(object => {
+                    object.rotation.x += object.userData.rotationSpeed.x;
+                    object.rotation.y += object.userData.rotationSpeed.y;
+                    object.rotation.z += object.userData.rotationSpeed.z;
+                });
+                
+                // Animate form objects
+                formObjects.forEach(({ mesh, renderer, scene, camera }) => {
+                    mesh.rotation.x += mesh.userData.rotationSpeed.x;
+                    mesh.rotation.y += mesh.userData.rotationSpeed.y;
+                    mesh.rotation.z += mesh.userData.rotationSpeed.z;
+                    
+                    renderer.render(scene, camera);
+                });
+                
+                renderer.render(scene, camera);
+            }
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // 3D Tilt Effect for Cards
+        function init3DTilt() {
+            const cards = document.querySelectorAll('.tilt-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / centerY * -10;
+                    const rotateY = (x - centerX) / centerX * 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            });
+        }
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const startTime = Date.now();
+                const startValue = 0;
+                
+                function updateCounter() {
+                    const elapsed = Date.now() - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.round(startValue + (target - startValue) * eased);
+                    
+                    counter.textContent = current;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+                
+                updateCounter();
+            });
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Trigger counter animation for stats
+                        if (entry.target.closest('.flash-roll')) {
+                            animateCounters();
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Smooth scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initThreeJS();
+            init3DTilt();
+            initScrollAnimations();
+            initSmoothScrolling();
+        });
+
+        // Handle form submission
+        document.querySelector('.intake-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Add loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual submission)
+            setTimeout(() => {
+                alert('Thank you! We\'ll be in touch within 24 hours.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

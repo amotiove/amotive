@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golden Fork - Fine dining with a golden touch</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The Golden Fork - Fine dining with a golden touch. Experience exceptional dining in Portland, OR with our carefully crafted menu and warm atmosphere.">
+    <meta name="keywords" content="restaurant, Portland, OR, dining, food, The Golden Fork, fine dining, local cuisine">
+    <meta name="author" content="The Golden Fork">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="The Golden Fork - Fine dining with a golden touch">
+    <meta property="og:description" content="Experience exceptional dining in Portland, OR with our carefully crafted menu and warm atmosphere.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://The Golden Fork.com">
+    <meta property="og:image" content="https://placehold.co/1200x630/d4af37/ffffff?text=The Golden Fork">
+    <meta property="og:site_name" content="The Golden Fork">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Golden Fork - Fine dining with a golden touch">
+    <meta name="twitter:description" content="Experience exceptional dining in Portland, OR with our carefully crafted menu and warm atmosphere.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/d4af37/ffffff?text=The Golden Fork">
+    
+    <!-- Restaurant Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "The Golden Fork",
+        "description": "Fine dining with a golden touch",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1234 NW Golden Street, Portland, OR 97210",
+            "addressLocality": "Portland, OR",
+            "addressCountry": "US"
+        },
+        "telephone": "555-123-4567",
+        "email": "info@thegoldenfork.com",
+        "url": "https://The Golden Fork.com",
+        "servesCuisine": "American Fine Dining",
+        "priceRange": "$$",
+        "openingHours": [
+            "Mo-Th 17:00-22:00",
+            "Fr-Sa 17:00-23:00",
+            "Su 17:00-21:00"
+        ],
+        "hasMenu": "https://The Golden Fork.com#menu",
+        "acceptsReservations": "True"
+    }
+    </script>
+    
+    <!-- Favicon Placeholder -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Warm Amber/Gold Color Palette */
+            --primary-gold: #d4af37;
+            --warm-amber: #f5b800;
+            --deep-gold: #b8860b;
+            --cream: #faf8f3;
+            --warm-white: #fefcf7;
+            --charcoal: #2c2c2c;
+            --dark-brown: #3e2723;
+            --light-gold: #f4e4bc;
+            --accent-orange: #cc8500;
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --section-padding: 4rem 0;
+            --container-padding: 0 1rem;
+            --max-width: 1200px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(254, 252, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 44, 44, 0.4), rgba(44, 44, 44, 0.4)), 
+                        url('https://placehold.co/1920x1080/d4af37/ffffff?text=Hero+Food+Image') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--light-gold);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-gold);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--primary-gold);
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        section {
+            padding: var(--section-padding);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Menu Section */
+        .menu {
+            background: var(--cream);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .menu-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-category h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gold);
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .menu-item-info h4 {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+        
+        .menu-item-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .menu-item-price {
+            color: var(--primary-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Online Ordering Section */
+        .order-online {
+            background: var(--primary-gold);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .order-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .order-button {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--primary-gold);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .order-button:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Photo Gallery Section */
+        .gallery {
+            background: var(--cream);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Hours & Location */
+        .hours-location {
+            background: var(--cream);
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .hours, .location {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hours h3, .location h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gold);
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: var(--light-gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--charcoal);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .address {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        /* Reviews Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .stars {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+        
+        .reviewer {
+            font-weight: 600;
+            color: var(--primary-gold);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--primary-gold);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact .section-title {
+            color: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-item {
+            padding: 1.5rem;
+        }
+        
+        .contact-item h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .reservation-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: white;
+            color: var(--primary-gold);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .reservation-button:hover {
+            background: var(--cream);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Floating Social Icons */
+        .floating-social {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .floating-social a {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gold);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .floating-social a:hover {
+            background: var(--deep-gold);
+            transform: scale(1.1);
+        }
+        
+        /* Sticky Mobile Button */
+        .sticky-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-gold);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: none;
+        }
+        
+        .sticky-button:hover {
+            background: var(--deep-gold);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--warm-white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .order-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .floating-social {
+                display: none;
+            }
+            
+            .sticky-button {
+                display: block;
+            }
+            
+            :root {
+                --section-padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .menu-category {
+                padding: 1.5rem;
+            }
+            
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">The Golden Fork</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order-online">Order Online</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>The Golden Fork</h1>
+            <p class="tagline">Fine dining with a golden touch</p>
+            <a href="#contact" class="cta-button">Reserve Your Table</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Menu</h2>
+                <p class="section-subtitle">Discover our carefully crafted dishes made with the finest ingredients and passion for excellence.</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-category">
+                    <h3>Appetizers</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Crispy Calamari</h4>
+                            <p>Golden fried squid rings with marinara and garlic aioli</p>
+                        </div>
+                        <span class="menu-item-price">$12</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Buffalo Chicken Dip</h4>
+                            <p>Creamy dip with tortilla chips and celery sticks</p>
+                        </div>
+                        <span class="menu-item-price">$10</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Bacon-Wrapped Scallops</h4>
+                            <p>Pan-seared scallops wrapped in crispy bacon</p>
+                        </div>
+                        <span class="menu-item-price">$14</span>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h3>Main Courses</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Grilled Salmon</h4>
+                            <p>Atlantic salmon with lemon herb butter and seasonal vegetables</p>
+                        </div>
+                        <span class="menu-item-price">$22</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>BBQ Ribs</h4>
+                            <p>Slow-cooked baby back ribs with house BBQ sauce and coleslaw</p>
+                        </div>
+                        <span class="menu-item-price">$26</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Chicken Parmesan</h4>
+                            <p>Breaded chicken breast with marinara and melted mozzarella</p>
+                        </div>
+                        <span class="menu-item-price">$19</span>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h3>Premium Selection</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Wagyu Ribeye</h4>
+                            <p>12oz prime cut with roasted vegetables and red wine jus</p>
+                        </div>
+                        <span class="menu-item-price">$65</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Lobster Tail</h4>
+                            <p>Fresh Maine lobster tail with drawn butter and lemon</p>
+                        </div>
+                        <span class="menu-item-price">$48</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Surf & Turf</h4>
+                            <p>8oz filet mignon with grilled lobster tail</p>
+                        </div>
+                        <span class="menu-item-price">$55</span>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h3>Desserts</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>New York Cheesecake</h4>
+                            <p>Classic cheesecake with berry compote</p>
+                        </div>
+                        <span class="menu-item-price">$9</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Chocolate Lava Cake</h4>
+                            <p>Warm chocolate cake with molten center and vanilla ice cream</p>
+                        </div>
+                        <span class="menu-item-price">$11</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Apple Pie à la Mode</h4>
+                            <p>Homemade apple pie with cinnamon ice cream</p>
+                        </div>
+                        <span class="menu-item-price">$8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Ordering Section -->
+    <section id="order-online" class="order-online">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Order Online</h2>
+            <p>Get your favorite dishes delivered right to your door!</p>
+            <div class="order-buttons">
+                OpenTable, Resy, Phone
+                <!-- Default placeholder buttons -->
+                <a href="#" class="order-button">DoorDash</a>
+                <a href="#" class="order-button">UberEats</a>
+                <a href="#" class="order-button">Direct Order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>For over two decades, The Golden Fork has been Portland, OR's premier destination for exceptional dining experiences. Our commitment to culinary excellence and warm hospitality has made us a beloved institution in the community.</p>
+                    
+                    <p>Our chef-driven menu showcases the finest seasonal ingredients, expertly prepared using both traditional techniques and innovative approaches. Every dish tells a story of passion, creativity, and respect for the craft of cooking.</p>
+                    
+                    <p>Whether you're celebrating a special occasion or simply enjoying an evening out, our dedicated team ensures every moment at The Golden Fork is memorable. We believe that great food brings people together, and we're honored to be part of your dining story.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/500x400/d4af37/ffffff?text=Restaurant+Interior" alt="The Golden Fork Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Food Gallery</h2>
+                <p class="section-subtitle">A visual feast of our most popular dishes and restaurant atmosphere.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x250/d4af37/ffffff?text=Signature+Dish" alt="Signature Dish">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x250/d4af37/ffffff?text=Appetizers" alt="Appetizers">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x250/d4af37/ffffff?text=Main+Course" alt="Main Course">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x250/d4af37/ffffff?text=Desserts" alt="Desserts">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x250/d4af37/ffffff?text=Bar+Area" alt="Bar Area">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x250/d4af37/ffffff?text=Dining+Room" alt="Dining Room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Location -->
+    <section id="location" class="hours-location">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visit Us</h2>
+                <p class="section-subtitle">We're open and ready to serve you exceptional dining experiences.</p>
+            </div>
+            <div class="location-grid">
+                <div class="hours">
+                    <h3>Hours of Operation</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Thursday</span><span>17:00-22:00</span></li>
+                        <li><span>Friday - Saturday</span><span>5:00 PM - 11:00 PM</span></li>
+                        <li><span>Sunday</span><span>5:00 PM - 9:00 PM</span></li>
+                    </ul>
+                </div>
+                <div class="location">
+                    <h3>Find Us</h3>
+                    <div class="map-placeholder">
+                        Google Maps Embed Placeholder<br>
+                        <!-- Replace with actual Google Maps embed code -->
+                        <!-- <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+                    </div>
+                    <div class="address">
+                        <p><strong>1234 NW Golden Street, Portland, OR 97210</strong></p>
+                        <p>Portland, OR</p>
+                        <p><a href="tel:555-123-4567">555-123-4567</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="section-subtitle">Don't just take our word for it - hear from our satisfied guests.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Absolutely exceptional dining experience! The attention to detail in every dish was remarkable, and the service was impeccable. The Golden Fork truly sets the standard for fine dining."</p>
+                    <p class="reviewer">- Sarah M.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The ambiance is perfect for special occasions, and the food exceeds all expectations. The BBQ ribs were fall-off-the-bone tender. We'll definitely be returning!"</p>
+                    <p class="reviewer">- Michael R.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"From the moment we walked in, we felt welcomed. The staff is knowledgeable, the wine selection is outstanding, and every course was a masterpiece. Highly recommended!"</p>
+                    <p class="reviewer">- Jessica L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Reserve Your Table</h2>
+                <p class="section-subtitle">Ready to experience exceptional dining? Get in touch with us today.</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Call Us</h4>
+                    <p><a href="tel:555-123-4567">555-123-4567</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email Us</h4>
+                    <p><a href="mailto:info@thegoldenfork.com">info@thegoldenfork.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Visit Us</h4>
+                    <p>1234 NW Golden Street, Portland, OR 97210, Portland, OR</p>
+                </div>
+            </div>
+            <a href="tel:555-123-4567" class="reservation-button">Make a Reservation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year">2026</span> The Golden Fork. All rights reserved.</p>
+            <p>1234 NW Golden Street, Portland, OR 97210, Portland, OR | 555-123-4567</p>
+            <div class="footer-links">
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#location">Location</a>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Yelp">⭐</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Social Icons -->
+    <div class="floating-social">
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Yelp">⭐</a>
+    </div>
+
+    <!-- Sticky Mobile Button -->
+    <a href="tel:555-123-4567" class="sticky-button">📞 Reserve a Table</a>
+
+    <script>
+        // Update footer year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(254, 252, 247, 0.98)';
+            } else {
+                header.style.background = 'rgba(254, 252, 247, 0.95)';
+            }
+        });
+
+        // Show/hide sticky button based on scroll position
+        window.addEventListener('scroll', function() {
+            const stickyButton = document.querySelector('.sticky-button');
+            const heroSection = document.querySelector('.hero');
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            
+            if (window.scrollY > heroBottom && window.innerWidth <= 768) {
+                stickyButton.style.display = 'block';
+            } else {
+                stickyButton.style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation (fade in sections on scroll)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Hero section should always be visible
+        document.querySelector('.hero').style.opacity = '1';
+        document.querySelector('.hero').style.transform = 'translateY(0)';
+    </script>
+</body>
+</html>

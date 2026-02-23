@@ -1,0 +1,28 @@
+{
+  "task": "Build amotive.io v2 refined pages with subtle interactive 3D",
+  "phase": 3,
+  "totalPhases": 4,
+  "completed": [
+    "index-v2.html — landing page with hero, wireframe cube, flash roll, packages, intake form, footer",
+    "website-v2.html — website design service page, ice blue accent, €2,500 one-time"
+  ],
+  "remaining": [
+    "marketing-v2.html — marketing & growth service page",
+    "premium-v2.html — full growth engine service page"
+  ],
+  "referenceFile": "/home/aiden/.openclaw/workspace/projects/marketing-agency/website-v2.html",
+  "originalContent": {
+    "marketing": "/home/aiden/.openclaw/workspace/projects/marketing-agency/marketing.html",
+    "premium": "/home/aiden/.openclaw/workspace/projects/marketing-agency/premium.html"
+  },
+  "designRules": {
+    "style": "Match website-v2.html EXACTLY — same structure, same JS, same CSS patterns",
+    "3d": "Subtle interactive only: button hover lift, card tilt on mousemove, scroll reveal with depth. NO Three.js. NO floating wireframes.",
+    "form": "Glass-morphism intake form at bottom, pre-select the relevant service",
+    "nav": "Links: Websites→website-v2.html, Marketing→marketing-v2.html, Full Growth→premium-v2.html",
+    "responsive": "Mobile-friendly, disable tilt on touch devices",
+    "fonts": "Georgia serif headings 900 weight, system sans body",
+    "allInline": "ALL CSS and JS inline in single file, no external dependencies"
+  },
+  "timestamp": "2026-02-19T00:20:00Z"
+}

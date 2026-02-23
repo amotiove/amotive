@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Growth Engine - Everything. Done. | amotive</title>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+    }
+    </script>
+    <style>
+        :root {
+            --navy-deep: #050A12;
+            --navy: #0A1628;
+            --navy-light: #122038;
+            --gold: #C9A84C;
+            --gold-bright: #E2C36B;
+            --gradient-gold: linear-gradient(135deg, #B8963E 0%, #E2C36B 45%, #C9A84C 100%);
+            --orange: #E87A2F;
+            --gradient-orange: linear-gradient(135deg, #D46A20 0%, #FF8C42 50%, #E87A2F 100%);
+            --platinum: #E8EAEF;
+            --silver: #A8B2C4;
+            --steel: #6C7A8E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--navy-deep);
+            color: var(--platinum);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-weight: 800;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: Georgia, Times, serif;
+        }
+
+        .logo .am {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo .otive {
+            color: var(--platinum);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(5, 10, 18, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange);
+        }
+
+        .cta-nav {
+            background: var(--gradient-orange);
+            color: var(--navy-deep) !important;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(232, 122, 47, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 10vw, 8rem);
+            margin-bottom: 1.5rem;
+            background: var(--gradient-orange);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px rgba(232, 122, 47, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+            font-weight: 900;
+        }
+
+        .hero-bonus {
+            font-size: 1.2rem;
+            color: var(--orange);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--silver);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--gradient-orange);
+            color: var(--navy-deep);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 15px 40px rgba(232, 122, 47, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(232, 122, 47, 0.5);
+        }
+
+        /* Section Base */
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Service Breakdown Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .service-card {
+            background: rgba(18, 32, 56, 0.3);
+            border: 2px solid rgba(232, 122, 47, 0.3);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(232, 122, 47, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-20px) rotateX(8deg) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+            border-color: var(--orange);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            color: var(--orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+        }
+
+        /* Value Comparison */
+        .comparison-section {
+            background: var(--navy);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 6rem 0;
+            border: 2px solid rgba(232, 122, 47, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(232, 122, 47, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comparison-item {
+            padding: 1.5rem;
+            background: rgba(232, 122, 47, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(232, 122, 47, 0.2);
+            text-align: center;
+        }
+
+        .comparison-item.header {
+            background: var(--gradient-orange);
+            color: var(--navy-deep);
+            font-weight: 900;
+        }
+
+        .comparison-item.total {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: rgba(232, 122, 47, 0.2);
+        }
+
+        .savings {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--gradient-orange);
+            color: var(--navy-deep);
+            border-radius: 20px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Everything Included */
+        .everything-section {
+            background: var(--navy);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 6rem 0;
+            border: 2px solid rgba(232, 122, 47, 0.3);
+        }
+
+        .everything-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .everything-category {
+            background: rgba(232, 122, 47, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(232, 122, 47, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .everything-category:hover {
+            transform: translateY(-10px);
+            border-color: var(--orange);
+            background: rgba(232, 122, 47, 0.15);
+        }
+
+        .everything-category h4 {
+            color: var(--orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .everything-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .everything-item:hover {
+            transform: translateX(15px);
+            color: var(--orange);
+        }
+
+        .everything-icon {
+            color: var(--orange);
+            font-size: 1.3rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(18, 32, 56, 0.4);
+            border: 1px solid rgba(232, 122, 47, 0.2);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        .faq-question:hover {
+            background: rgba(232, 122, 47, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 2rem 2rem 2rem;
+            color: var(--silver);
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Intake Form */
+        .intake-section {
+            background: var(--navy);
+            border-top: 1px solid rgba(232, 122, 47, 0.2);
+            position: relative;
+        }
+
+        #form-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .form-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intake-form {
+            background: rgba(18, 32, 56, 0.9);
+            border: 3px solid rgba(232, 122, 47, 0.4);
+            border-radius: 30px;
+            padding: 4rem;
+            backdrop-filter: blur(30px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(5, 10, 18, 0.7);
+            border: 1px solid rgba(232, 122, 47, 0.3);
+            border-radius: 10px;
+            color: var(--platinum);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 25px rgba(232, 122, 47, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: var(--gradient-orange);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(232, 122, 47, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(232, 122, 47, 0.2);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3D Hover Effects */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .everything-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index-3d.html" class="logo">
+                <span class="am">am</span><span class="otive">otive</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="website-3d.html">Websites</a></li>
+                <li><a href="marketing-3d.html">Marketing</a></li>
+                <li><a href="premium-3d.html" class="active">Full Growth</a></li>
+                <li><a href="#intake-form" class="cta-nav">Start a Project</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1>Everything. Done.</h1>
+            <div class="hero-subtitle">€3,500/month</div>
+            <div class="hero-bonus">Website Included FREE (€2,500+ Value)</div>
+            <p>The complete digital ecosystem. Website, marketing, automation, and growth systems working in perfect harmony to maximize your business potential.</p>
+            <a href="#intake-form" class="cta-button">Dominate Your Market</a>
+        </div>
+    </section>
+
+    <!-- Service Breakdown Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Complete Growth Engine</h2>
+            <p>Every service, every channel, every optimization</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card tilt-card fade-in">
+                <div class="service-icon">🚀</div>
+                <h3>Premium Website</h3>
+                <p>Custom-designed conversion machine included FREE. Mobile-optimized, lightning-fast, built to sell your services 24/7.</p>
+            </div>
+            <div class="service-card tilt-card fade-in">
+                <div class="service-icon">📈</div>
+                <h3>Full Marketing Suite</h3>
+                <p>Google Ads, Meta, email marketing, content strategy, SEO, and LinkedIn growth - all managed and optimized daily.</p>
+            </div>
+            <div class="service-card tilt-card fade-in">
+                <div class="service-icon">⚡</div>
+                <h3>Advanced Automation</h3>
+                <p>CRM integration, lead nurturing sequences, sales funnels, and automated follow-up systems that work while you sleep.</p>
+            </div>
+            <div class="service-card tilt-card fade-in">
+                <div class="service-icon">🎯</div>
+                <h3>Custom Integrations</h3>
+                <p>Connect all your business tools. Zapier automations, API integrations, and custom solutions for your specific workflow.</p>
+            </div>
+            <div class="service-card tilt-card fade-in">
+                <div class="service-icon">📊</div>
+                <h3>Advanced Analytics</h3>
+                <p>Real-time dashboards, ROI tracking, predictive analytics, and weekly strategy calls to optimize every aspect of your growth.</p>
+            </div>
+            <div class="service-card tilt-card fade-in">
+                <div class="service-icon">👥</div>
+                <h3>Dedicated Team</h3>
+                <p>Your personal growth squad: strategist, designer, developer, copywriter, and ads specialist - all focused on your success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Comparison -->
+    <section class="section">
+        <div class="comparison-section">
+            <div class="section-header">
+                <h2>Value Breakdown</h2>
+                <p>See how much you save with our complete package</p>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-item header">Service</div>
+                <div class="comparison-item header">Separate Cost</div>
+                <div class="comparison-item header">Our Package</div>
+                
+                <div class="comparison-item">Premium Website Design</div>
+                <div class="comparison-item">€2,500</div>
+                <div class="comparison-item">FREE</div>
+                
+                <div class="comparison-item">Marketing & Growth</div>
+                <div class="comparison-item">€2,000/mo</div>
+                <div class="comparison-item">Included</div>
+                
+                <div class="comparison-item">Advanced Automations</div>
+                <div class="comparison-item">€800/mo</div>
+                <div class="comparison-item">Included</div>
+                
+                <div class="comparison-item">Custom Integrations</div>
+                <div class="comparison-item">€600/mo</div>
+                <div class="comparison-item">Included</div>
+                
+                <div class="comparison-item">Weekly Strategy Calls</div>
+                <div class="comparison-item">€400/mo</div>
+                <div class="comparison-item">Included</div>
+                
+                <div class="comparison-item total">Total Value</div>
+                <div class="comparison-item total">€6,300/mo</div>
+                <div class="comparison-item total">€3,500/mo</div>
+            </div>
+            <div class="savings">
+                You Save €2,800+ Monthly + €2,500 Website FREE
+            </div>
+        </div>
+    </section>
+
+    <!-- Everything Included */
+    <section class="section">
+        <div class="everything-section">
+            <div class="section-header">
+                <h2>Everything Included</h2>
+                <p>The complete digital transformation package</p>
+            </div>
+            <div class="everything-grid">
+                <div class="everything-category fade-in">
+                    <h4>Website & Design</h4>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Premium Custom Website</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Mobile-First Responsive Design</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Brand Identity Enhancement</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Conversion Optimization</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>SSL & Secure Hosting</span>
+                    </div>
+                </div>
+                <div class="everything-category fade-in">
+                    <h4>Marketing & Advertising</h4>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Google Ads Management</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Meta Ads (Facebook/Instagram)</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>LinkedIn Lead Generation</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>SEO & Content Marketing</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Email Marketing Automation</span>
+                    </div>
+                </div>
+                <div class="everything-category fade-in">
+                    <h4>Automation & Systems</h4>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>CRM Integration & Setup</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Lead Scoring & Nurturing</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Sales Funnel Optimization</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Zapier Workflow Automation</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Custom API Integrations</span>
+                    </div>
+                </div>
+                <div class="everything-category fade-in">
+                    <h4>Analytics & Optimization</h4>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Advanced Analytics Dashboard</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>ROI & Attribution Tracking</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>A/B Testing & Optimization</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Predictive Analytics</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Weekly Performance Reports</span>
+                    </div>
+                </div>
+                <div class="everything-category fade-in">
+                    <h4>Support & Strategy</h4>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Dedicated Account Manager</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Weekly Strategy Calls</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Priority Support (24h Response)</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Quarterly Business Reviews</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Growth Strategy Planning</span>
+                    </div>
+                </div>
+                <div class="everything-category fade-in">
+                    <h4>Content & Creative</h4>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Content Strategy & Calendar</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Blog Posts & Articles</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Social Media Content</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Ad Creative & Copy</span>
+                    </div>
+                    <div class="everything-item">
+                        <div class="everything-icon">✅</div>
+                        <span>Email Templates & Sequences</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How is this different from your other packages?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    This is the complete ecosystem - everything integrated and working together. You get the website FREE plus advanced automations, custom integrations, and dedicated weekly strategy calls. It's like having an entire marketing department for less than one employee's salary.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    What kind of results should we expect?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Our Full Growth Engine clients typically see 300-500% ROI within 6 months. With all systems working together, we can generate qualified leads, nurture them automatically, and track every touchpoint for maximum optimization.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How much additional ad spend do we need to budget?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    We recommend €3,000-€10,000+ monthly ad spend for optimal results. The €3,500 retainer covers strategy, management, and optimization - ad spend goes directly to platforms and is additional to the management fee.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Can we start with this package, or do we need to build up?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    You can start directly with the Full Growth Engine - no need to build up. We'll implement everything systematically over the first 90 days while optimizing performance throughout the process.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    What's the minimum commitment period?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    We require a 6-month minimum commitment to allow proper implementation and optimization of all systems. Most clients see such strong results that they continue long-term to maintain their competitive advantage.
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Do you guarantee results?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    While we can't guarantee specific numbers (no ethical agency can), we do guarantee our commitment to your success. If you're not seeing positive ROI after 90 days, we'll extend the service at no charge until you do.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intake Form Section -->
+    <section id="intake-form" class="intake-section section">
+        <canvas id="form-canvas"></canvas>
+        <div class="form-container">
+            <div class="section-header">
+                <h2>Dominate Your Market</h2>
+                <p>Tell us about your business vision</p>
+            </div>
+            <form class="intake-form" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-group">
+                    <label for="business-name">Business Name</label>
+                    <input type="text" id="business-name" name="business-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry / What You Do</label>
+                    <input type="text" id="industry" name="industry" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">Current Website URL (Optional)</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interest</label>
+                    <select id="service" name="service" required>
+                        <option value="website-design">Website Design</option>
+                        <option value="marketing-growth">Marketing & Growth</option>
+                        <option value="full-growth-engine" selected>Full Growth Engine</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Total Monthly Budget Range (Management + Ad Spend)</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select budget range...</option>
+                        <option value="5000-10000">€5,000 - €10,000</option>
+                        <option value="10000-20000" selected>€10,000 - €20,000</option>
+                        <option value="20000-plus">€20,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="additional">Business Vision & Growth Goals (Where you are now, where you want to be)</label>
+                    <textarea id="additional" name="additional" placeholder="Tell us about your current business size, revenue goals, biggest growth challenges, and what market domination looks like for you..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Unleash Complete Growth Engine</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="margin-bottom: 1rem;">
+                <span class="am">am</span><span class="otive">otive</span>
+            </div>
+            <p style="color: var(--silver);">Premium digital experiences for ambitious businesses.</p>
+            <p style="color: var(--steel); margin-top: 1rem;">&copy; 2024 amotive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // Global variables
+        let scene, camera, renderer, raycaster, mouse;
+        let heroObjects = [];
+        let formObjects = [];
+        let isHovering = false;
+        let frameCount = 0;
+
+        // Initialize Three.js scenes
+        function initThreeJS() {
+            initHeroScene();
+            initFormScene();
+            
+            mouse = new THREE.Vector2();
+            raycaster = new THREE.Raycaster();
+            
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('resize', onWindowResize);
+            
+            animate();
+        }
+
+        function initHeroScene() {
+            const canvas = document.getElementById('hero-canvas');
+            
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true 
+            });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+            
+            camera.position.z = 15;
+            
+            // Create orange wireframe material
+            const orangeMaterial = new THREE.MeshBasicMaterial({
+                color: 0xE87A2F,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.9
+            });
+            
+            // Combine all elements from previous pages + more intense
+            
+            // Browser mockups (from website page)
+            const browserGeometry = new THREE.BoxGeometry(3, 2, 0.1);
+            for (let i = 0; i < 8; i++) {
+                const browser = new THREE.Mesh(browserGeometry, orangeMaterial.clone());
+                
+                browser.position.x = (Math.random() - 0.5) * 30;
+                browser.position.y = (Math.random() - 0.5) * 20;
+                browser.position.z = (Math.random() - 0.5) * 15;
+                
+                browser.rotation.x = Math.random() * Math.PI;
+                browser.rotation.y = Math.random() * Math.PI;
+                
+                browser.userData.originalPosition = browser.position.clone();
+                browser.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.012,
+                    y: (Math.random() - 0.5) * 0.012,
+                    z: (Math.random() - 0.5) * 0.012
+                };
+                
+                scene.add(browser);
+                heroObjects.push(browser);
+            }
+            
+            // Chart wireframes (from marketing page)
+            const chartGeometry = new THREE.BoxGeometry(2, 1.5, 0.1);
+            for (let i = 0; i < 10; i++) {
+                const chart = new THREE.Mesh(chartGeometry, orangeMaterial.clone());
+                
+                chart.position.x = (Math.random() - 0.5) * 25;
+                chart.position.y = (Math.random() - 0.5) * 15;
+                chart.position.z = (Math.random() - 0.5) * 12;
+                
+                chart.rotation.x = Math.random() * Math.PI;
+                chart.rotation.y = Math.random() * Math.PI;
+                
+                chart.userData.originalPosition = chart.position.clone();
+                chart.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.01,
+                    y: (Math.random() - 0.5) * 0.01,
+                    z: (Math.random() - 0.5) * 0.01
+                };
+                
+                scene.add(chart);
+                heroObjects.push(chart);
+            }
+            
+            // Growth arrows
+            const arrowGeometry = new THREE.ConeGeometry(0.3, 1.5, 6);
+            for (let i = 0; i < 15; i++) {
+                const arrow = new THREE.Mesh(arrowGeometry, orangeMaterial.clone());
+                
+                arrow.position.x = (Math.random() - 0.5) * 28;
+                arrow.position.y = (Math.random() - 0.5) * 18;
+                arrow.position.z = (Math.random() - 0.5) * 14;
+                
+                arrow.rotation.z = -Math.PI / 2; // Point right
+                arrow.rotation.x = (Math.random() - 0.5) * 0.5;
+                
+                arrow.userData.originalPosition = arrow.position.clone();
+                arrow.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.015,
+                    y: (Math.random() - 0.5) * 0.015,
+                    z: (Math.random() - 0.5) * 0.015
+                };
+                
+                scene.add(arrow);
+                heroObjects.push(arrow);
+            }
+            
+            // Premium geometric shapes for intensity
+            const geometries = [
+                new THREE.IcosahedronGeometry(1.2),
+                new THREE.TorusGeometry(1, 0.4, 8, 16),
+                new THREE.OctahedronGeometry(1.5),
+                new THREE.TetrahedronGeometry(1.3),
+                new THREE.DodecahedronGeometry(1.1)
+            ];
+            
+            for (let i = 0; i < 20; i++) {
+                const geometry = geometries[Math.floor(Math.random() * geometries.length)];
+                const mesh = new THREE.Mesh(geometry, orangeMaterial.clone());
+                
+                mesh.position.x = (Math.random() - 0.5) * 35;
+                mesh.position.y = (Math.random() - 0.5) * 25;
+                mesh.position.z = (Math.random() - 0.5) * 18;
+                
+                mesh.rotation.x = Math.random() * Math.PI;
+                mesh.rotation.y = Math.random() * Math.PI;
+                mesh.rotation.z = Math.random() * Math.PI;
+                
+                mesh.userData.originalPosition = mesh.position.clone();
+                mesh.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.02,
+                    y: (Math.random() - 0.5) * 0.02,
+                    z: (Math.random() - 0.5) * 0.02
+                };
+                
+                scene.add(mesh);
+                heroObjects.push(mesh);
+            }
+            
+            // Dense data points for premium feel
+            const dataGeometry = new THREE.SphereGeometry(0.08);
+            for (let i = 0; i < 80; i++) {
+                const dataPoint = new THREE.Mesh(dataGeometry, orangeMaterial.clone());
+                
+                dataPoint.position.x = (Math.random() - 0.5) * 40;
+                dataPoint.position.y = (Math.random() - 0.5) * 30;
+                dataPoint.position.z = (Math.random() - 0.5) * 20;
+                
+                dataPoint.userData.originalPosition = dataPoint.position.clone();
+                dataPoint.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.025,
+                    y: (Math.random() - 0.5) * 0.025,
+                    z: (Math.random() - 0.5) * 0.025
+                };
+                
+                scene.add(dataPoint);
+                heroObjects.push(dataPoint);
+            }
+            
+            // Ambient lighting
+            const ambientLight = new THREE.AmbientLight(0xE87A2F, 0.4);
+            scene.add(ambientLight);
+        }
+
+        function initFormScene() {
+            const canvas = document.getElementById('form-canvas');
+            if (!canvas) return;
+            
+            const formScene = new THREE.Scene();
+            const formCamera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+            const formRenderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true 
+            });
+            
+            formRenderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+            formRenderer.setClearColor(0x000000, 0);
+            
+            formCamera.position.z = 10;
+            
+            const formMaterial = new THREE.MeshBasicMaterial({
+                color: 0xE87A2F,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.5
+            });
+            
+            // Premium form elements combining all themes
+            for (let i = 0; i < 12; i++) {
+                let geometry;
+                if (i % 3 === 0) {
+                    geometry = new THREE.BoxGeometry(1.5, 1, 0.1); // Browser
+                } else if (i % 3 === 1) {
+                    geometry = new THREE.ConeGeometry(0.4, 1, 6); // Arrow
+                } else {
+                    geometry = new THREE.IcosahedronGeometry(0.6); // Geometric
+                }
+                
+                const mesh = new THREE.Mesh(geometry, formMaterial);
+                
+                mesh.position.x = (Math.random() - 0.5) * 12;
+                mesh.position.y = (Math.random() - 0.5) * 10;
+                mesh.position.z = (Math.random() - 0.5) * 8;
+                
+                if (i % 3 === 1) {
+                    mesh.rotation.z = -Math.PI / 2; // Point arrows right
+                }
+                
+                mesh.userData.rotationSpeed = {
+                    x: (Math.random() - 0.5) * 0.012,
+                    y: (Math.random() - 0.5) * 0.012,
+                    z: (Math.random() - 0.5) * 0.012
+                };
+                
+                formScene.add(mesh);
+                formObjects.push({ mesh, renderer: formRenderer, scene: formScene, camera: formCamera });
+            }
+        }
+
+        function onMouseMove(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            const targetX = mouse.x * 0.6;
+            const targetY = mouse.y * 0.4;
+            
+            camera.position.x += (targetX - camera.position.x) * 0.08;
+            camera.position.y += (targetY - camera.position.y) * 0.08;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            frameCount++;
+            
+            if (frameCount % 1 === 0) {
+                heroObjects.forEach(object => {
+                    object.rotation.x += object.userData.rotationSpeed.x;
+                    object.rotation.y += object.userData.rotationSpeed.y;
+                    object.rotation.z += object.userData.rotationSpeed.z;
+                });
+                
+                formObjects.forEach(({ mesh, renderer, scene, camera }) => {
+                    mesh.rotation.x += mesh.userData.rotationSpeed.x;
+                    mesh.rotation.y += mesh.userData.rotationSpeed.y;
+                    mesh.rotation.z += mesh.userData.rotationSpeed.z;
+                    
+                    renderer.render(scene, camera);
+                });
+                
+                renderer.render(scene, camera);
+            }
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // 3D Tilt Effect for Cards (more intense for premium)
+        function init3DTilt() {
+            const cards = document.querySelectorAll('.tilt-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / centerY * -15; // More intense
+                    const rotateY = (x - centerX) / centerX * 15;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(30px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            });
+        }
+
+        // FAQ Functionality
+        function initFAQ() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = question.querySelector('span');
+                    
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        icon.textContent = '+';
+                    } else {
+                        document.querySelectorAll('.faq-answer').forEach(ans => {
+                            ans.classList.remove('active');
+                        });
+                        document.querySelectorAll('.faq-question span').forEach(ic => {
+                            ic.textContent = '+';
+                        });
+                        
+                        answer.classList.add('active');
+                        icon.textContent = '-';
+                    }
+                });
+            });
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Smooth scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initThreeJS();
+            init3DTilt();
+            initFAQ();
+            initScrollAnimations();
+            initSmoothScrolling();
+        });
+
+        // Handle form submission
+        document.querySelector('.intake-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you! We\'ll create a comprehensive growth strategy and schedule a strategy call within 24 hours.');
+                this.reset();
+                document.getElementById('service').value = 'full-growth-engine';
+                document.getElementById('budget').value = '10000-20000';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

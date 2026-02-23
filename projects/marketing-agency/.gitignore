@@ -1,0 +1,7 @@
+# Workspace files to exclude
+../../*
+!./
+node_modules/
+.env
+.secrets/
+*.log
