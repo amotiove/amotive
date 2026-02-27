@@ -815,16 +815,16 @@ Create and sell educational content, courses, newsletters, and digital products 
 
 **Revenue Target:** $100,000+/month
 
-### SEASONAL CONSIDERATIONS FOR PORTUGUESE MARKET
+### SEASONAL CONSIDERATIONS FOR PACIFIC NORTHWEST MARKET
 
 **Q1 (Jan-Mar): Planning Season**
 - Focus on B2B services and yearly planning clients
-- Tourist businesses preparing for season
+- Landscaping and outdoor businesses preparing for spring
 - Strong conversion rates for new initiatives
 
 **Q2 (Apr-Jun): Implementation Season**
 - Best client acquisition period
-- Tourist business ramp-up
+- Outdoor service business ramp-up
 - Maximum conversion opportunity
 
 **Q3 (Jul-Sep): Maintenance Season**
@@ -990,26 +990,27 @@ Create and sell educational content, courses, newsletters, and digital products 
 - **Advantages:** No equity dilution, aligned incentives
 - **Use:** Aggressive scaling, international expansion
 
-### TAX OPTIMIZATION STRATEGY (PORTUGAL)
+### TAX OPTIMIZATION STRATEGY (USA / WASHINGTON STATE)
 
 **Business Structure:**
-- **Months 1-6:** Trabalhador Independiente (Freelancer status)
-- **Month 7+:** Transition to Lda (Limited Company) for tax efficiency
+- **Months 1-6:** Sole Proprietorship (simplest start)
+- **Month 7+:** Transition to LLC for liability protection and tax flexibility
 
 **Tax Rates:**
-- **Trabalhador Independiente:** 21.4% social security + 14.5-48% income tax
-- **Lda Corporate Tax:** 17% (first $25K), 21% (next $25K), 23% (above $50K)
+- **Washington State:** No state income tax (major advantage)
+- **Federal Self-Employment:** 15.3% (Social Security + Medicare)
+- **Federal Income Tax:** 10-37% progressive brackets
 
 **Optimization Strategies:**
-- **Expense Maximization:** All business equipment, software, education
-- **Timing:** Income smoothing across tax years
-- **Professional Advice:** Monthly accountant engagement
-- **Reinvestment:** Equipment purchases for tax deduction
+- **Expense Maximization:** All business equipment, software, education (Schedule C)
+- **Quarterly Estimated Taxes:** Avoid underpayment penalties
+- **S-Corp Election:** At $50K+ profit, elect S-Corp to reduce self-employment tax
+- **Reinvestment:** Equipment purchases for Section 179 deductions
 
 **Estimated Tax Burden:**
-- **$100K Annual:** ~$25K taxes (25% effective rate)
-- **$500K Annual:** ~$110K taxes (22% effective rate with optimization)
-- **$1M+ Annual:** ~$200K taxes (20% effective rate with proper structure)
+- **$100K Annual:** ~$28K taxes (28% effective rate)
+- **$500K Annual:** ~$145K taxes (29% effective rate, S-Corp optimized)
+- **$1M+ Annual:** ~$320K taxes (32% effective rate with proper structure)
 
 ---
 
