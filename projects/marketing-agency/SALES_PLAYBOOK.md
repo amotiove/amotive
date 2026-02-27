@@ -27,7 +27,7 @@
 
 #### Opening: Status Alignment (Minutes 0-3)
 
-**"Hi [Name], thanks for taking the time. I've been looking at [specific detail about their business] — I can see you're focused on [specific goal/challenge they've mentioned]. That resonates with a lot of the [industry] businesses I work with."**
+**"Hi [Name], thanks for taking the time. I've been looking at [specific detail about their business] and I can see you're focused on [specific goal/challenge they've mentioned]. That resonates with a lot of the [industry] businesses I work with."**
 
 *Status Tip-Off:*
 **"I noticed [specific insider observation]. In my experience working with [similar businesses], that usually indicates [insight that shows you understand their world]. Is that something you're seeing as well?"**
@@ -35,7 +35,7 @@
 **Examples:**
 - Restaurant: "I noticed your Google reviews are strong but your online ordering seems to go through a third-party platform. Most restaurant owners I work with are frustrated by those 30% commission fees cutting into already thin margins."
 - Gym: "I see you've got great equipment and programs, but your Instagram is mostly gym selfies. The fitness businesses that are thriving right now are the ones showing transformation stories and member success, not just equipment shots."
-- SaaS: "Your product looks solid, but I noticed your demo requests seem to come through a basic contact form. Most B2B SaaS companies I work with are struggling with lead qualification — getting lots of tire-kickers instead of qualified prospects."
+- SaaS: "Your product looks solid, but I noticed your demo requests seem to come through a basic contact form. Most B2B SaaS companies I work with are struggling with lead qualification, getting lots of tire-kickers instead of qualified prospects."
 
 #### Flash Roll: Demonstrating Expertise (Minutes 3-5)
 
@@ -44,7 +44,7 @@
 *Deliver 60-90 seconds of dense, specific expertise about their industry:*
 
 **Restaurant Example:**
-"The restaurant industry is facing a perfect storm right now. Labor costs are up 22% year-over-year, food costs are volatile, and third-party delivery platforms are taking 25-30% commission on top of that. Meanwhile, 73% of diners are researching restaurants online before they visit, but most local restaurants are invisible in search results because they're not optimizing for 'near me' searches or managing their Google Business Profile properly. The restaurants that are thriving aren't just hoping for foot traffic — they're building direct relationships with customers through email lists, loyalty programs, and social media that showcases their personality, not just their food. The smart ones are using retargeting ads to bring website visitors back, and they're capturing email addresses with simple lead magnets like 'Get our weekly specials delivered to your inbox.' But here's what most restaurant marketing agencies get wrong — they treat every restaurant the same. A family Italian place needs a completely different strategy than a trendy cocktail bar."
+"The restaurant industry is facing a perfect storm right now. Labor costs are up 22% year-over-year, food costs are volatile, and third-party delivery platforms are taking 25-30% commission on top of that. Meanwhile, 73% of diners are researching restaurants online before they visit, but most local restaurants are invisible in search results because they're not optimizing for 'near me' searches or managing their Google Business Profile properly. The restaurants that are thriving aren't just hoping for foot traffic, they're building direct relationships with customers through email lists, loyalty programs, and social media that showcases their personality, not just their food. The smart ones are using retargeting ads to bring website visitors back, and they're capturing email addresses with simple lead magnets like 'Get our weekly specials delivered to your inbox.' But here's what most restaurant marketing agencies get wrong, they treat every restaurant the same. A family Italian place needs a completely different strategy than a trendy cocktail bar."
 
 *End abruptly and redirect:*
 **"But that's the landscape — what I'm curious about is what's driving your decision to explore marketing help right now?"**
@@ -80,7 +80,7 @@
 **Q4: Authority Building Through Problem Diagnosis**
 *Based on their answers, position their problem in a larger context:*
 
-"What you're describing is actually really common in [industry]. I see this pattern a lot — [describe their situation back to them using professional terminology]. The challenge is [reframe their problem as a strategic issue]. Most businesses in your position try to solve this by [what they're probably doing], but what that actually does is [why their current approach isn't working]."
+"What you're describing is actually really common in [industry]. I see this pattern a lot [describe their situation back to them using professional terminology]. The challenge is [reframe their problem as a strategic issue]. Most businesses in your position try to solve this by [what they're probably doing], but what that actually does is [why their current approach isn't working]."
 
 **Q5: The Reframe**
 "Can I share what I've seen work for businesses in your situation?"
@@ -115,13 +115,13 @@
 **Pre-Wired Ideas Framework:**
 
 **W1: Winter Is Coming (Threat)**
-"Here's what I'm seeing across [industry] — businesses that don't adapt to how customers discover and choose [businesses like theirs] are getting left behind. Your competitors are building direct relationships with customers while others are still depending on word-of-mouth and hoping people walk by. The gap is widening."
+"Here's what I'm seeing across [industry], businesses that don't adapt to how customers discover and choose [businesses like theirs] are getting left behind. Your competitors are building direct relationships with customers while others are still depending on word-of-mouth and hoping people walk by. The gap is widening."
 
 **W2: 2X Reward (Opportunity)**
-"But here's the opportunity — most businesses in [industry] are doing marketing wrong. They're posting random content and hoping something sticks. When you do it strategically — when you understand your customer journey and create content that speaks to people at each stage — you don't just get more customers, you get better customers. The businesses I work with typically see [specific result] within [timeframe]."
+"But here's the opportunity, most businesses in [industry] are doing marketing wrong. They're posting random content and hoping something sticks. When you do it strategically, when you understand your customer journey and create content that speaks to people at each stage, you don't just get more customers, you get better customers. The businesses I work with typically see [specific result] within [timeframe]."
 
 **W3: Skin in the Game (Fairness)**
-"Look, I only work with businesses I believe I can get results for. I've been doing this for [time period], and I've learned that [what you've learned]. That's why I'm selective about who I partner with — I need to know you're committed to the process, because that's the only way this works."
+"Look, I only work with businesses I believe I can get results for. I've been developing cutting-edge marketing strategies with proven frameworks, and I've learned that [what you've learned]. That's why I'm selective about who I partner with, I need to know you're committed to the process, because that's the only way this works."
 
 #### Close: Buyer's Formula (Minutes 25-30)
 
@@ -132,16 +132,16 @@
 "There are really only three ways marketing fails for businesses like yours: either the strategy is wrong, the execution is inconsistent, or there's no system for measuring and improving results."
 
 **Step 3: Counterintuitive Failure**
-"But what most business owners don't realize is that the real risk isn't picking the wrong marketing channel — it's not having a systematic approach to building customer relationships. You can have the best website in the world, but if you're not capturing visitor information and nurturing those relationships, you're leaving money on the table."
+"But what most business owners don't realize is that the real risk isn't picking the wrong marketing channel, it's not having a systematic approach to building customer relationships. You can have the best website in the world, but if you're not capturing visitor information and nurturing those relationships, you're leaving money on the table."
 
 **Step 4: Clear Actions**
 "The way to succeed is to focus on three things: first, understanding exactly who your ideal customer is and where they spend time online. Second, creating content that adds value at each stage of their decision process. Third, building systems that turn website visitors into customers and customers into advocates."
 
 **Step 5: Insider Insight**
-"Here's something most marketing agencies won't tell you — tactics change constantly, but the fundamentals don't. Facebook might change its algorithm, but people still buy from businesses they trust. The businesses that thrive long-term aren't chasing the latest trend — they're building genuine relationships with their customers."
+"Here's something most marketing agencies won't tell you, tactics change constantly, but the fundamentals don't. Facebook might change its algorithm, but people still buy from businesses they trust. The businesses that thrive long-term aren't chasing the latest trend, they're building genuine relationships with their customers."
 
 **Step 6: Autonomy**
-"Look, this isn't for everyone. You need to be ready to invest not just money, but time and energy into the process. You need to trust the strategy even when you don't see immediate results, because relationship-building takes time. And you need to be committed to consistency — stopping and starting is worse than not starting at all."
+"Look, this isn't for everyone. You need to be ready to invest not just money, but time and energy into the process. You need to trust the strategy even when you don't see immediate results, because relationship-building takes time. And you need to be committed to consistency, stopping and starting is worse than not starting at all."
 
 **Step 7: Next Steps**
 "If this sounds like the kind of approach that makes sense for your business, the next step would be for me to put together a specific proposal for your situation. That would include a detailed strategy, timeline, and investment level. Would that be valuable for you?"
@@ -164,17 +164,17 @@
 
 **Acknowledge:** "I understand — price is always a factor in business decisions."
 
-**Reframe:** "But here's how I think about investment in marketing — it's not an expense, it's the one business investment that should pay for itself and then some. If spending €2,000 a month brings in €8,000 in new revenue, that's a 300% return. Most business investments don't even come close to that."
+**Reframe:** "But here's how I think about investment in marketing, it's not an expense, it's the one business investment that should pay for itself and then some. If spending $2,000 a month brings in $8,000 in new revenue, that's a 300% return. Most business investments don't even come close to that."
 
-**Evidence:** "I have a client, a local restaurant, who was hesitant about the investment. Six months later, they're doing €15,000 more in monthly revenue than before we started. The marketing investment became their most profitable business decision."
+**Evidence:** "I have a client, a local restaurant, who was hesitant about the investment. Six months later, they're doing $15,000 more in monthly revenue than before we started. The marketing investment became their most profitable business decision."
 
-**Redirect:** "What would an extra €10,000 in monthly revenue be worth to your business?"
+**Redirect:** "What would an extra $10,000 in monthly revenue be worth to your business?"
 
 #### Objection 2: "I have a nephew/friend who does websites/social media"
 
 **Acknowledge:** "That's great that you have someone who can help with the basics."
 
-**Reframe:** "But here's the difference — there's website building, and then there's marketing strategy. Anyone can put up a website or post on social media. What gets results is understanding your customer journey, conversion psychology, and how to build systems that turn visitors into customers and customers into repeat buyers. It's like the difference between someone who can change your oil and someone who can rebuild your engine."
+**Reframe:** "But here's the difference, there's website building, and then there's marketing strategy. Anyone can put up a website or post on social media. What gets results is understanding your customer journey, conversion psychology, and how to build systems that turn visitors into customers and customers into repeat buyers. It's like the difference between someone who can change your oil and someone who can rebuild your engine."
 
 **Evidence:** "I've taken over from several well-meaning friends and family members. The websites looked fine, but they weren't generating leads. Within 30 days of implementing proper lead capture and email sequences, my clients typically see their website inquiries double or triple."
 
@@ -184,9 +184,9 @@
 
 **Acknowledge:** "That's frustrating — I hear that a lot."
 
-**Reframe:** "But here's what I've learned — most marketing fails not because marketing doesn't work, but because there was no systematic approach. Random posting, inconsistent messaging, no follow-up system. It's like trying to lose weight by eating healthy for two weeks and then giving up. The businesses that get results from marketing treat it like a system, not a campaign."
+**Reframe:** "But here's what I've learned, most marketing fails not because marketing doesn't work, but because there was no systematic approach. Random posting, inconsistent messaging, no follow-up system. It's like trying to lose weight by eating healthy for two weeks and then giving up. The businesses that get results from marketing treat it like a system, not a campaign."
 
-**Evidence:** "I have a client who spent €5,000 on Facebook ads the year before we started working together and got almost nothing. We spent the same amount but with a proper funnel, targeted messaging, and follow-up sequences. They generated €45,000 in new business."
+**Evidence:** "I have a client who spent $5,000 on Facebook ads the year before we started working together and got almost nothing. We spent the same amount but with a proper funnel, targeted messaging, and follow-up sequences. They generated $45,000 in new business."
 
 **Redirect:** "What specifically didn't work about your previous marketing efforts?"
 
@@ -194,7 +194,7 @@
 
 **Acknowledge:** "I completely get that — you're focused on running your business."
 
-**Reframe:** "But here's the thing — you're already spending time on marketing, you're just not getting results from it. Every conversation with a potential customer, every time you explain what you do, every referral request — that's marketing. The question is whether you want to keep doing it ad hoc, or whether you want a system that works while you sleep."
+**Reframe:** "But here's the thing, you're already spending time on marketing, you're just not getting results from it. Every conversation with a potential customer, every time you explain what you do, every referral request, that's marketing. The question is whether you want to keep doing it ad hoc, or whether you want a system that works while you sleep."
 
 **Evidence:** "Most of my clients spend less time on marketing after we start working together than they did before, because we automate the repetitive stuff and systematize the rest. One client told me he used to spend 10 hours a week posting on social media and answering inquiries. Now he spends 2 hours a week reviewing reports and approving content."
 
@@ -204,7 +204,7 @@
 
 **Acknowledge:** "Of course — this is an important decision."
 
-**Reframe:** "And honestly, you should think about it. But here's what I've learned — the businesses that are most successful with marketing are the ones that make decisions quickly when they see a clear path forward. While you're thinking, your competitors are acting."
+**Reframe:** "And honestly, you should think about it. But here's what I've learned, the businesses that are most successful with marketing are the ones that make decisions quickly when they see a clear path forward. While you're thinking, your competitors are acting."
 
 **Evidence:** "I had two similar businesses reach out the same week last year. One said they needed to think about it and followed up three months later. The other started immediately. By the time the first one was ready, the second had already generated enough new business to pay for the entire year's investment."
 
@@ -214,7 +214,7 @@
 
 **Acknowledge:** "That's a fair concern — every industry has its nuances."
 
-**Reframe:** "But here's what I've found — every business has customers, and your customers are online. The question isn't whether digital marketing works for your industry, it's whether you're reaching your customers where they actually spend their time. Even the most traditional industries are evolving."
+**Reframe:** "But here's what I've found, every business has customers, and your customers are online. The question isn't whether digital marketing works for your industry, it's whether you're reaching your customers where they actually spend their time. Even the most traditional industries are evolving."
 
 **Evidence:** "I work with a 60-year-old plumbing company. The owner swore his customers didn't use the internet. Six months later, 40% of his new jobs were coming from people who found him online. Turns out, even people with plumbing emergencies Google 'emergency plumber near me' at 2 AM."
 
@@ -224,7 +224,7 @@
 
 **Acknowledge:** "That's fantastic — referrals are the best kind of business."
 
-**Reframe:** "But here's something to consider — what happens if your referral sources dry up? And what if you could multiply your referrals? Happy customers refer more when they're staying connected with you through email and social media. Plus, people who come through digital channels can become your best referral sources."
+**Reframe:** "But here's something to consider, what happens if your referral sources dry up? And what if you could multiply your referrals? Happy customers refer more when they're staying connected with you through email and social media. Plus, people who come through digital channels can become your best referral sources."
 
 **Evidence:** "I have a client who was getting 10 referrals a month from word-of-mouth. After we implemented an email nurture sequence and social media strategy, their referrals increased to 25 per month because existing customers were staying more engaged with the brand."
 
@@ -234,7 +234,7 @@
 
 **Acknowledge:** "I respect that — there's definitely a lot of noise online."
 
-**Reframe:** "But here's the reality — it's not about whether you believe in it. Your customers are there whether you are or not. They're researching businesses, reading reviews, and making decisions based on what they find online. You can either be part of that conversation or let your competitors control it."
+**Reframe:** "But here's the reality, it's not about whether you believe in it. Your customers are there whether you are or not. They're researching businesses, reading reviews, and making decisions based on what they find online. You can either be part of that conversation or let your competitors control it."
 
 **Evidence:** "73% of consumers research businesses online before visiting or calling. If you're not there, they're choosing someone else. I have a client who was philosophically opposed to social media, but when he saw his competitor's customer testimonial videos getting hundreds of views while his referrals were declining, he changed his mind quickly."
 
@@ -244,9 +244,9 @@
 
 **Acknowledge:** "I admire the DIY spirit — it shows you care about your business."
 
-**Reframe:** "And you absolutely could learn to do this yourself. But here's the question — what's your time worth? If you bill at €100 an hour, spending 20 hours a week learning marketing costs you €2,000 in opportunity cost, plus you might not get results for 6-12 months while you're learning. You could invest that same €2,000 in professional marketing and start seeing results in 30 days."
+**Reframe:** "And you absolutely could learn to do this yourself. But here's the question, what's your time worth? If you bill at $100 an hour, spending 20 hours a week learning marketing costs you $2,000 in opportunity cost, plus you might not get results for 6-12 months while you're learning. You could invest that same $2,000 in professional marketing and start seeing results in 30 days."
 
-**Evidence:** "I've seen business owners spend 6 months trying to figure out Facebook ads, spend €3,000 in the process, and get almost nothing. We spent the same €3,000 in one month and generated €15,000 in revenue."
+**Evidence:** "I've seen business owners spend 6 months trying to figure out Facebook ads, spend $3,000 in the process, and get almost nothing. We spent the same $3,000 in one month and generated $15,000 in revenue."
 
 **Redirect:** "What would you rather be spending those 20 hours a week on?"
 
@@ -269,11 +269,11 @@
 **Present the 3 tiers using Threat → Opportunity → Fairness:**
 
 #### Opening: Winter Is Coming (Threat)
-"Before we talk about investment levels, let me be direct about what I'm seeing in the market right now. Businesses that don't have a systematic approach to digital marketing are falling behind fast. Your competitors aren't just hoping for customers anymore — they're building relationships, capturing leads, and staying top-of-mind with people who aren't ready to buy yet. The gap between businesses with real marketing systems and those just 'winging it' is getting wider every month."
+"Before we talk about investment levels, let me be direct about what I'm seeing in the market right now. Businesses that don't have a systematic approach to digital marketing are falling behind fast. Your competitors aren't just hoping for customers anymore, they're building relationships, capturing leads, and staying top-of-mind with people who aren't ready to buy yet. The gap between businesses with real marketing systems and those just 'winging it' is getting wider every month."
 
 #### The 3-Tier Structure
 
-### Tier 1: Foundation Package — €2,500 (One-Time)
+### Tier 1: Foundation Package — $2,500 (One-Time)
 **"Website + Digital Presence Setup"**
 
 **What's Included:**
@@ -290,7 +290,7 @@
 **Plain Vanilla Frame:**
 "Think of this as your digital business card — professional, functional, but not actively bringing in new business."
 
-### Tier 2: Growth Partnership — €2,000/month
+### Tier 2: Growth Partnership — $2,000/month
 **"Marketing That Actually Works"**
 
 **What's Included:**
@@ -298,7 +298,7 @@
 - Social media management (2 platforms)
 - 20 posts per month + Stories
 - Email marketing setup + sequences
-- Google Ads OR Meta Ads management (up to €3K spend)
+- Google Ads OR Meta Ads management (up to $3K spend)
 - Monthly reporting + strategy call
 - Community management (respond to comments/DMs)
 
@@ -306,9 +306,9 @@
 "This is for businesses ready to grow systematically. You want consistent marketing activity that builds relationships and generates leads every month."
 
 **Plain Vanilla Frame:**
-"This is like having a marketing manager on your team, but without the €40K salary and benefits."
+"This is like having a marketing manager on your team, but without the $40K salary and benefits."
 
-### Tier 3: Full Growth System — €3,500/month
+### Tier 3: Full Growth System — $3,500/month
 **"Everything You Need to Dominate Your Market"**
 
 **What's Included:**
@@ -341,8 +341,8 @@ Most clients see their investment pay for itself within 90 days, then it's pure 
 #### Fairness Frame (Skin in the Game)
 "Look, I only work with businesses I believe I can get results for. Here's what I bring to the table:
 
-- **5+ years** building marketing systems for businesses like yours
-- **€2M+** in revenue generated for clients
+- **Fresh perspective** with cutting-edge marketing approaches
+- **Proven frameworks** that our strategies are built on
 - **Personal guarantee**: If you don't see measurable improvement in lead quality and quantity within 90 days, we'll work for free until you do
 - **My reputation** is on the line with every client — your success is my success"
 
@@ -352,7 +352,7 @@ Most clients see their investment pay for itself within 90 days, then it's pure 
 "These aren't costs — they're investments in your business growth. The question isn't what it costs, it's what it returns."
 
 **Value Anchoring:**
-"Most businesses spend 7-12% of their revenue on marketing. If you're doing €300K annually, that's €21-36K per year. We're talking about €24K annually for a complete marketing system that should generate significantly more than that in new business."
+"Most businesses spend 7-12% of their revenue on marketing. If you're doing $300K annually, that's $21-36K per year. We're talking about $24K annually for a complete marketing system that should generate significantly more than that in new business."
 
 **Scarcity (Honest):**
 "I only work with [X number] clients at a time because this is hands-on, strategic work. I have [X spots] available for new partnerships starting [timeframe]."
@@ -459,7 +459,7 @@ P.S. — If timing is the issue, I can hold your spot for another [timeframe], b
 
 Hi [Name],
 
-Excellent! Welcome to the [Agency Name] family.
+Excellent! Welcome to the Amotive family.
 
 You made the right call. I'm excited to get started and start generating some serious results for [business name].
 
@@ -669,7 +669,7 @@ P.S. — If you know any other [type of business] owners who might be interested
 "But what most business owners don't realize is that the real risk is [unexpected problem]..."
 
 **Example:**
-"But what most business owners don't realize is that the real risk isn't spending money on marketing that doesn't work — it's waiting too long to start building customer relationships. Every month you wait, your competitors are building stronger connections with your potential customers."
+"But what most business owners don't realize is that the real risk isn't spending money on marketing that doesn't work, it's waiting too long to start building customer relationships. Every month you wait, your competitors are building stronger connections with your potential customers."
 
 #### Step 4: Clear Success Actions
 "The way to succeed is to focus on [specific actions]..."
@@ -687,7 +687,7 @@ P.S. — If you know any other [type of business] owners who might be interested
 "Look, this isn't for everyone. You need to be [specific requirements]. Only you can decide if this makes sense for your situation."
 
 **Example:**
-"Look, this isn't for everyone. You need to be ready to invest not just money but time into the process. You need to trust the strategy even when you don't see immediate results. And you need to be committed to consistency — stopping and starting is worse than not starting. Only you can decide if this makes sense for your business."
+"Look, this isn't for everyone. You need to be ready to invest not just money but time into the process. You need to trust the strategy even when you don't see immediate results. And you need to be committed to consistency, stopping and starting is worse than not starting. Only you can decide if this makes sense for your business."
 
 #### Step 7: Decision Invitation
 "If this sounds like the kind of approach that aligns with your goals, [specific next step]. What do you think?"
@@ -795,4 +795,4 @@ P.S. — If you know any other [type of business] owners who might be interested
 
 ---
 
-*"Remember: You can't convince anyone of anything. They have to convince themselves. Your job is to create the conditions for that discovery."* — Sales Philosophy
+*"Remember: You can't convince anyone of anything. They have to convince themselves. Your job is to create the conditions for that discovery."* — A

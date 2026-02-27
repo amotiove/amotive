@@ -16,7 +16,7 @@
 Cascade Plumbing was a skilled service provider trapped in the stone age of marketing:
 
 ### Pain Points
-- **No Website At All:** Zero online presence in 2024
+- **No Website At All:** Zero online presence in 2025
 - **Invisible to Online Customers:** Missing out on 78% of customers who search online first
 - **Relying on Word-of-Mouth Only:** Limited growth potential, feast-or-famine cycles
 - **Craigslist Dependency:** Posting ads manually, competing with unlicensed competitors

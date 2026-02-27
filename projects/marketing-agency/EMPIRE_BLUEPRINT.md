@@ -1,5 +1,5 @@
 # 🔥 THE EMPIRE BLUEPRINT 🔥
-## The Master Plan: From Ubuntu Server to Multi-Million Euro AI Empire
+## The Master Plan: From Ubuntu Server to Digital Agency Empire
 
 *Written February 16, 2026*  
 *The definitive strategic document for building an AI-powered business empire*
@@ -26,9 +26,9 @@
 
 **Brand & Business Assets:**
 - ✅ **Amotion** - Established educational brand with animation pipeline
-- ✅ **Amotive** - Premium marketing agency ready for launch (€2.5K websites, €2K-3.5K/mo)
+- ✅ **Amotive** - Premium marketing agency ready for launch ($2.5K websites, $2K-3.5K/mo)
 - ✅ **Domain Expertise** - AI, automation, marketing, 3D animation, trading systems
-- ✅ **Portuguese Market Position** - Lisbon-based, EU-compliant, GDPR-native
+- ✅ **Pacific Northwest Market Position** - Pacific Northwest-based, US privacy-conscious, GDPR-compliant
 
 **Competitive Advantages (Our Moat):**
 1. **Technical Sophistication:** OpenClaw + custom automation beyond what agencies can buy
@@ -41,17 +41,17 @@
 ### WHERE WE'RE GOING (THE VISION)
 
 **12-Month Revenue Targets:**
-- **Month 3:** €15,000/month (Amotive + YouTube starting)
-- **Month 6:** €35,000/month (Multiple revenue streams active)
-- **Month 9:** €65,000/month (Content empire scaling, trading signals live)
-- **Month 12:** €100,000+/month (Full ecosystem operating)
+- **Month 3:** $5,000-8,000/month (Amotive + YouTube starting)
+- **Month 6:** $10,000-15,000/month (Multiple revenue streams active)
+- **Month 9:** $20,000-30,000/month (Content empire scaling, trading signals live)
+- **Month 12:** $30,000-50,000/month (Full ecosystem operating)
 
 **24-Month Vision:**
-- **€500K-€1M+/month** across all revenue streams
+- **$50K-100K/month** across all revenue streams
 - **RTX 5090 × 2** purchased from profits 
 - **Dedicated server rack** - Professional infrastructure
 - **Team of 5-10** VAs and specialists
-- **Market leadership** in AI-powered marketing in Portugal
+- **Market leadership** in AI-powered marketing in the Pacific Northwest
 - **Exit opportunities** - Acquisition offers or IPO preparation
 
 **The Ultimate Goal:**
@@ -65,8 +65,8 @@ Build a self-sustaining AI empire that generates wealth while we sleep, funds th
 - We have infrastructure advantages they can't quickly replicate
 
 **2. Market Positioning**  
-- EU data privacy concerns create competitive moat
-- Portuguese market underserved by technical AI agencies
+- US privacy-conscious concerns and GDPR-compliant operations create competitive moat
+- Pacific Northwest market underserved by technical AI agencies
 - Financial regulations favor local, compliant solutions
 
 **3. Unique Asset Combination**
@@ -91,41 +91,41 @@ Build a self-sustaining AI empire that generates wealth while we sleep, funds th
 ### STREAM 1: AMOTIVE MARKETING AGENCY (FASTEST - LAUNCH IMMEDIATELY)
 
 **What It Is:**
-Premium AI-powered marketing agency serving Portuguese SMBs with websites, social media management, Google Ads, and comprehensive growth systems.
+Premium AI-powered marketing agency serving local businesses in the Pacific Northwest with websites, social media management, Google Ads, and comprehensive growth systems.
 
 **Revenue Potential:**
-- **Realistic Year 1:** €25,000-€50,000/month
-- **Optimistic Year 1:** €75,000-€150,000/month  
-- **Year 2 Potential:** €200,000+/month
+- **Realistic Year 1:** $12,000-25,000/month
+- **Optimistic Year 1:** $30,000-50,000/month  
+- **Year 2 Potential:** $50,000+/month
 
 **Time to First Dollar:** 2-4 weeks
-**Startup Cost:** €3,000-€5,000
+**Startup Cost:** $3,000-5,000
 **Risk Level:** LOW (Proven demand, immediate cashflow)
 
 **Our Specific Advantages:**
 - **OpenClaw orchestration** - Automation no competitor can match
 - **3D Blender content** - Visual differentiation worth premium pricing
-- **EU-compliant infrastructure** - Major selling point for Portuguese businesses
+- **US privacy-conscious infrastructure** - Major selling point for Pacific Northwest businesses
 - **Full technical control** - Can build custom solutions vs. tool limitations
 - **Trading data insights** - Unique content for financial services clients
 
 **Revenue Breakdown:**
-- **Website Design:** €2,500 one-time (target: 3-5 per month = €7.5-12.5K)
-- **Marketing Partnership:** €2,000/month (target: 10-15 clients = €20-30K)
-- **Full Growth System:** €3,500/month (target: 5-8 clients = €17.5-28K)
-- **Total Month 12:** €45-70K/month recurring + €7.5-12.5K one-time projects
+- **Website Design:** $2,500 one-time (target: 1-2 per month = $2.5-5K)
+- **Marketing Partnership:** $2,000/month (target: 3-5 clients = $6-10K)
+- **Full Growth System:** $3,500/month (target: 2-4 clients = $7-14K)
+- **Total Month 12:** $15-25K/month recurring + $2.5-5K one-time projects
 
 **Step-by-Step Implementation:**
 
 **Week 1-2: Foundation**
 - [ ] Complete Amotive website with 3D elements and case studies
 - [ ] Set up n8n automation workflows for client onboarding
-- [ ] Create Portuguese market client acquisition system
+- [ ] Create Pacific Northwest market client acquisition system
 - [ ] Develop pricing and proposal templates
 - [ ] Launch Google Maps prospecting system (25-30 businesses daily)
 
 **Week 3-4: First Clients**
-- [ ] Execute cold outreach to 200+ no-website Portuguese businesses  
+- [ ] Execute cold outreach to 200+ no-website Pacific Northwest businesses  
 - [ ] Schedule 8-10 discovery calls
 - [ ] Close 2-3 clients to start building case studies
 - [ ] Set up client portal and reporting systems
@@ -135,18 +135,18 @@ Premium AI-powered marketing agency serving Portuguese SMBs with websites, socia
 - [ ] Refine service delivery automation (80% hands-off)
 - [ ] Build referral partnership network
 - [ ] Create content marketing funnel
-- [ ] Target 8-12 active clients generating €16-42K/month
+- [ ] Target 8-12 active clients generating $8-20K/month
 - [ ] Document all processes for scaling
 
 **Scaling Strategy:**
 1. **Months 4-6:** Scale to 15-20 clients through systematized outreach and referrals
-2. **Months 7-9:** Add premium services, increase average client value to €3,000+
-3. **Months 10-12:** Hire VA team, expand to Porto/Coimbra markets
+2. **Months 7-9:** Add premium services, increase average client value to $3,000+
+3. **Months 10-12:** Hire VA team, expand to Tacoma/Spokane markets
 4. **Year 2:** White-label platform licensing, franchise model consideration
 
 **Critical Success Factors:**
 - Premium positioning vs. commoditized competition
-- Portuguese business culture relationship-building
+- Pacific Northwest business culture relationship-building
 - Consistent delivery quality through automation
 - Strong case studies and referral generation
 
@@ -156,12 +156,12 @@ Premium AI-powered marketing agency serving Portuguese SMBs with websites, socia
 Network of 10+ faceless YouTube channels plus TikTok/Instagram content using AI scripts, Blender animations, and Remotion automation.
 
 **Revenue Potential:**
-- **Realistic Year 1:** €8,000-€25,000/month
-- **Optimistic Year 1:** €50,000-€100,000/month
-- **Year 2 Potential:** €200,000+/month (with viral success)
+- **Realistic Year 1:** $3,000-8,000/month
+- **Optimistic Year 1:** $15,000-30,000/month
+- **Year 2 Potential:** $50,000+/month (with viral success)
 
 **Time to First Dollar:** 4-8 months (YouTube monetization timeline)
-**Startup Cost:** €1,000-€2,000
+**Startup Cost:** $1,000-2,000
 **Risk Level:** MEDIUM (Algorithm dependent, but diversified across platforms)
 
 **Our Specific Advantages:**
@@ -176,19 +176,19 @@ Network of 10+ faceless YouTube channels plus TikTok/Instagram content using AI 
 
 **Tier 1: Premium Educational (Amotion Synergy)**
 - **Science Explanations** with custom Blender animations
-- **Target:** 8-20 minute deep dives, premium CPM (€5-12 per 1K views)
+- **Target:** 8-20 minute deep dives, premium CPM ($5-12 per 1K views)
 - **Monetization:** AdSense + course sales + consulting
 - **Volume:** 2-3 videos/week
 
 **Tier 2: Financial Authority (Trading Data)**
 - **Market Analysis** using our bot's real data and predictions
-- **Target:** Daily/weekly analysis, high-value audience (€15-30 per 1K views)  
+- **Target:** Daily/weekly analysis, high-value audience ($15-30 per 1K views)  
 - **Monetization:** Premium subscriptions + signal services + affiliate
 - **Volume:** 3-5 videos/week
 
 **Tier 3: Mass Market Entertainment**
 - **Horror/Mystery, Top Lists, Motivation** using proven formats
-- **Target:** High volume, viral potential (€3-8 per 1K views)
+- **Target:** High volume, viral potential ($3-8 per 1K views)
 - **Monetization:** AdSense + affiliate marketing
 - **Volume:** 5-10 videos/week across multiple channels
 
@@ -215,9 +215,9 @@ graph TD
 - **Weekend:** Compilation content
 
 **Revenue Projections:**
-- **Month 6:** 5 channels, 500K total monthly views = €2,000-€8,000
-- **Month 12:** 10 channels, 2M total monthly views = €8,000-€25,000
-- **Year 2:** 15+ channels, 10M+ monthly views = €50,000-€200,000+
+- **Month 6:** 5 channels, 500K total monthly views = $1,000-3,000
+- **Month 12:** 10 channels, 2M total monthly views = $3,000-8,000
+- **Year 2:** 15+ channels, 10M+ monthly views = $15,000-50,000+
 
 **Monetization Stack:**
 - **YouTube AdSense:** Primary revenue stream
@@ -239,19 +239,19 @@ graph TD
 Monetize our existing 10-strategy trading bot through signals, copy trading, educational content, and financial SaaS products.
 
 **Revenue Potential:**
-- **Realistic Year 1:** €10,000-€30,000/month
-- **Optimistic Year 1:** €50,000-€150,000/month
-- **Year 2 Potential:** €200,000+/month
+- **Realistic Year 1:** $3,000-8,000/month
+- **Optimistic Year 1:** $10,000-25,000/month
+- **Year 2 Potential:** $30,000+/month
 
 **Time to First Dollar:** 2-3 months (after building track record)
-**Startup Cost:** €5,000-€10,000 (legal compliance)
+**Startup Cost:** $5,000-10,000 (legal compliance)
 **Risk Level:** MEDIUM (Regulatory complexity, performance dependent)
 
 **Our Specific Advantages:**
 - **Existing 10-strategy system** with +3.16% backtested performance
 - **Regime-adaptive meta layer** - sophistication competitors lack
 - **Real trading data** for content creation and social proof
-- **EU-compliant infrastructure** - regulatory advantage
+- **US privacy-conscious infrastructure** - regulatory advantage
 - **Technical depth** for custom platform development
 
 **Service Tiers:**
@@ -262,22 +262,22 @@ Monetize our existing 10-strategy trading bot through signals, copy trading, edu
 - Community building and social proof
 - Target: 1,000+ subscribers by month 6
 
-**Tier 2: Premium Signals (€99-€199/month)**
+**Tier 2: Premium Signals ($99-199/month)**
 - Daily signals with entry/exit/reasoning
 - Real-time alerts via multiple channels
 - Strategy performance breakdowns
 - Target: 200-500 subscribers by year 1
 
-**Tier 3: Copy Trading Platform (€299-€999/month)**
+**Tier 3: Copy Trading Platform ($299-999/month)**
 - Automated position copying
 - Risk management controls
 - Performance attribution
 - Target: 50-200 copiers by year 1
 
 **Tier 4: Institutional Services**
-- Custom strategy development: €10K-€50K
-- Algorithm licensing: €5K-€25K/month
-- Consulting services: €500-€1,000/hour
+- Custom strategy development: $10K-50K
+- Algorithm licensing: $5K-25K/month
+- Consulting services: $500-1,000/hour
 
 **Implementation Strategy:**
 
@@ -295,18 +295,18 @@ Monetize our existing 10-strategy trading bot through signals, copy trading, edu
 
 **Phase 3: Copy Trading Platform (Months 7-12)**
 - [ ] Develop or integrate copy trading technology
-- [ ] Obtain necessary financial licenses (CMVM)
+- [ ] Obtain necessary financial licenses
 - [ ] Launch beta with select subscribers
 - [ ] Scale to broader market with proven results
 
 **Revenue Projections:**
-- **Month 6:** 500 free + 50 premium subscribers = €5,000-€10,000
-- **Month 12:** 2,000 free + 300 premium + 50 copy trading = €30,000-€60,000
-- **Year 2:** 10,000 free + 1,000 premium + 200 copy trading = €100,000-€200,000+
+- **Month 6:** 500 free + 50 premium subscribers = $2,000-5,000
+- **Month 12:** 2,000 free + 300 premium + 50 copy trading = $8,000-15,000
+- **Year 2:** 10,000 free + 1,000 premium + 200 copy trading = $25,000-50,000+
 
 **Compliance Strategy:**
 - Partner with licensed entity initially
-- Apply for CMVM license when revenue justifies
+- Apply for necessary licenses when revenue justifies
 - Focus on education and general signals vs. personalized advice
 - Maintain clear disclaimers and risk warnings
 
@@ -316,42 +316,42 @@ Monetize our existing 10-strategy trading bot through signals, copy trading, edu
 Monetize our unique OpenClaw expertise through consulting, custom automation development, and skills marketplace participation.
 
 **Revenue Potential:**
-- **Realistic Year 1:** €5,000-€15,000/month  
-- **Optimistic Year 1:** €20,000-€50,000/month
-- **Year 2 Potential:** €75,000+/month
+- **Realistic Year 1:** $2,000-5,000/month  
+- **Optimistic Year 1:** $8,000-15,000/month
+- **Year 2 Potential:** $20,000+/month
 
 **Time to First Dollar:** 2-4 weeks
-**Startup Cost:** €500-€1,000
+**Startup Cost:** $500-1,000
 **Risk Level:** LOW (Direct expertise monetization)
 
 **Our Specific Advantages:**
 - **Deep OpenClaw expertise** - among first wave of power users
 - **Proven automation systems** - working infrastructure to showcase
 - **Technical implementation ability** - can build custom solutions
-- **Multi-language capability** - serve Portuguese and international markets
+- **Multi-language capability** - serve Pacific Northwest and international markets
 
 **Service Offerings:**
 
 **Consulting Services:**
-- **OpenClaw implementation:** €2,000-€10,000 per project
-- **Custom automation development:** €100-€300/hour
-- **AI workflow optimization:** €5,000-€25,000 per engagement
-- **Training and workshops:** €1,000-€5,000 per session
+- **OpenClaw implementation:** $2,000-10,000 per project
+- **Custom automation development:** $100-300/hour
+- **AI workflow optimization:** $5,000-25,000 per engagement
+- **Training and workshops:** $1,000-5,000 per session
 
 **ClawHub Skills Development:**
-- **Premium skills:** €50-€500 per skill
-- **Enterprise integrations:** €1,000-€10,000 per skill
-- **White-label solutions:** €5,000-€50,000 licensing
-- **Support contracts:** €500-€5,000/month per client
+- **Premium skills:** $50-500 per skill
+- **Enterprise integrations:** $1,000-10,000 per skill
+- **White-label solutions:** $5,000-50,000 licensing
+- **Support contracts:** $500-5,000/month per client
 
 **Managed OpenClaw Services:**
-- **Fully managed instances:** €500-€2,000/month per client
-- **Monitoring and maintenance:** €200-€1,000/month per instance
-- **Custom development:** €150-€400/hour ongoing
-- **24/7 support packages:** €1,000-€5,000/month
+- **Fully managed instances:** $500-2,000/month per client
+- **Monitoring and maintenance:** $200-1,000/month per instance
+- **Custom development:** $150-400/hour ongoing
+- **24/7 support packages:** $1,000-5,000/month
 
 **Target Markets:**
-- **European SMBs** - GDPR-compliant AI automation
+- **Pacific Northwest SMBs** - US privacy-conscious AI automation
 - **Marketing agencies** - white-label AI capabilities
 - **Tech startups** - rapid automation deployment
 - **Enterprise** - custom AI workflow development
@@ -369,47 +369,47 @@ Monetize our unique OpenClaw expertise through consulting, custom automation dev
 Leverage our technical capabilities to build and launch AI-powered SaaS tools serving specific niches.
 
 **Revenue Potential:**
-- **Realistic Year 1:** €2,000-€10,000/month
-- **Optimistic Year 1:** €15,000-€50,000/month  
-- **Year 2 Potential:** €100,000+/month (if product-market fit achieved)
+- **Realistic Year 1:** $1,000-3,000/month
+- **Optimistic Year 1:** $5,000-15,000/month  
+- **Year 2 Potential:** $25,000+/month (if product-market fit achieved)
 
 **Time to First Dollar:** 3-6 months
-**Startup Cost:** €2,000-€5,000
+**Startup Cost:** $2,000-5,000
 **Risk Level:** HIGH (Market validation, longer development cycles)
 
 **Our Specific Advantages:**
 - **Full-stack development capability** - can build anything we design
 - **AI integration expertise** - advanced implementations beyond basic wrappers
-- **European market focus** - GDPR-compliant from inception
+- **US market focus** - privacy-conscious and GDPR-compliant from inception
 - **Automation infrastructure** - can build highly efficient operations
 
 **Product Opportunities (Prioritized):**
 
 **1. AI-Powered Local Business Marketing Dashboard**
-- **Target:** Portuguese marketing agencies and consultants
+- **Target:** Pacific Northwest marketing agencies and consultants
 - **Problem:** Managing multiple clients across platforms
 - **Solution:** Unified dashboard with AI insights and automation
-- **Pricing:** €99-€299/month per agency
+- **Pricing:** $99-299/month per agency
 - **Development:** 2-3 months
 
 **2. Blender + AI Content Creation Tool**
 - **Target:** Content creators needing 3D animations
 - **Problem:** Blender learning curve vs. quality output needed
 - **Solution:** AI-guided 3D content creation with templates
-- **Pricing:** €49-€199/month subscription
+- **Pricing:** $49-199/month subscription
 - **Development:** 3-4 months
 
 **3. Trading Signal Analysis Platform**
 - **Target:** Retail traders and small funds
 - **Problem:** Signal quality assessment and performance tracking
 - **Solution:** AI-powered signal analysis and portfolio optimization
-- **Pricing:** €99-€499/month depending on features
+- **Pricing:** $99-499/month depending on features
 - **Development:** 4-6 months
 
 **Implementation Strategy:**
 1. **Validate with existing clients** - Use Amotive clients for feedback
 2. **Build MVP quickly** - 4-6 week development cycles
-3. **Launch on Product Hunt** - European time zone advantage
+3. **Launch on Product Hunt** - US time zone advantage
 4. **Iterate based on usage** - Data-driven feature development
 5. **Scale through content marketing** - Leverage existing channels
 
@@ -419,37 +419,37 @@ Leverage our technical capabilities to build and launch AI-powered SaaS tools se
 Create and sell educational content, courses, newsletters, and digital products leveraging our AI and automation expertise.
 
 **Revenue Potential:**
-- **Realistic Year 1:** €3,000-€12,000/month
-- **Optimistic Year 1:** €15,000-€40,000/month
-- **Year 2 Potential:** €50,000+/month
+- **Realistic Year 1:** $1,000-4,000/month
+- **Optimistic Year 1:** $5,000-12,000/month
+- **Year 2 Potential:** $15,000+/month
 
 **Time to First Dollar:** 1-2 months
-**Startup Cost:** €500-€1,500
+**Startup Cost:** $500-1,500
 **Risk Level:** LOW (Direct expertise monetization, multiple price points)
 
 **Our Specific Advantages:**
 - **Unique technical knowledge** - OpenClaw + Blender + AI combinations
 - **Proven systems** - Can teach what actually works
-- **Multi-language capability** - Portuguese and English markets
+- **Multi-language capability** - Pacific Northwest and English markets
 - **Content automation** - Can produce at scale
 
 **Product Portfolio:**
 
 **Newsletter Products:**
-- **"AI Automation Weekly"** - €15-€30/month, business automation insights
-- **"Portuguese Tech Digest"** - €10-€25/month, local market focus
-- **"Content Creator AI Tools"** - €20-€40/month, practical tutorials
+- **"AI Automation Weekly"** - $15-30/month, business automation insights
+- **"Pacific Northwest Tech Digest"** - $10-25/month, local market focus
+- **"Content Creator AI Tools"** - $20-40/month, practical tutorials
 
 **Digital Courses:**
-- **"OpenClaw Mastery"** - €497-€997, comprehensive automation training
-- **"AI Agency Blueprint"** - €297-€697, agency building system
-- **"Blender + AI Content Creation"** - €197-€497, unique skill combination
-- **"Portuguese Business AI"** - €397-€797, local market specialization
+- **"OpenClaw Mastery"** - $497-997, comprehensive automation training
+- **"AI Agency Blueprint"** - $297-697, agency building system
+- **"Blender + AI Content Creation"** - $197-497, unique skill combination
+- **"Pacific Northwest Business AI"** - $397-797, local market specialization
 
 **High-Value Offers:**
-- **"Done-With-You Agency Launch"** - €2,997-€7,997, 12-week program
-- **"Custom Automation Bootcamp"** - €1,997-€4,997, intensive training
-- **"AI Business Mastermind"** - €297-€997/month, ongoing community
+- **"Done-With-You Agency Launch"** - $2,997-7,997, 12-week program
+- **"Custom Automation Bootcamp"** - $1,997-4,997, intensive training
+- **"AI Business Mastermind"** - $297-997/month, ongoing community
 
 **Content Creation Pipeline:**
 - **Blog content** - SEO-optimized articles driving course sales
@@ -536,14 +536,14 @@ Create and sell educational content, courses, newsletters, and digital products 
 ### AI MODEL STRATEGY & COSTS
 
 **Primary AI Services:**
-- **OpenAI GPT-4o:** €15-€30/month for content generation (estimated usage)
-- **Claude Sonnet:** €20-€40/month for analysis and reasoning
-- **ElevenLabs:** €22-€99/month for voice generation (Creator to Pro tier)
-- **Runway ML:** €76/month for video generation (Unlimited plan)
-- **Midjourney:** €30-€60/month for image/thumbnail generation
+- **OpenAI GPT-4o:** $15-$30/month for content generation (estimated usage)
+- **Claude Sonnet:** $20-$40/month for analysis and reasoning
+- **ElevenLabs:** $22-$99/month for voice generation (Creator to Pro tier)
+- **Runway ML:** $76/month for video generation (Unlimited plan)
+- **Midjourney:** $30-$60/month for image/thumbnail generation
 
 **Cost Management:**
-- **Budget allocation:** €200-€400/month AI services initially
+- **Budget allocation:** $200-$400/month AI services initially
 - **Usage monitoring:** Track ROI per service, optimize spend
 - **Scaling strategy:** Increase budgets as revenue grows
 - **Fallback plans:** Self-hosted models for cost-sensitive workflows
@@ -551,30 +551,30 @@ Create and sell educational content, courses, newsletters, and digital products 
 ### AUTOMATION PLATFORM COMPARISON
 
 **n8n (Current Choice - OPTIMAL)**
-- **Cost:** €0/month (self-hosted)
+- **Cost:** $0/month (self-hosted)
 - **Capabilities:** Unlimited workflows, custom logic, AI integration
 - **Advantages:** No usage limits, full control, extensive integration library
 - **Best for:** Our technical capability and cost-conscious scaling
 
 **Alternative Platforms:**
-- **Make.com:** €18-€34/month, user-friendly but usage limited
-- **Zapier:** €29-€73/month, popular but expensive at scale
+- **Make.com:** $18-$34/month, user-friendly but usage limited
+- **Zapier:** $29-$73/month, popular but expensive at scale
 - **Consider:** If non-technical team members need access
 
 ### CLIENT SERVICE DELIVERY STACK
 
 **CRM & Project Management:**
 - **HubSpot CRM (Free):** Client relationship management
-- **ClickUp:** €7/user/month, project management and client portals
-- **Calendly:** €10/month, professional scheduling
+- **ClickUp:** $7/user/month, project management and client portals
+- **Calendly:** $10/month, professional scheduling
 
 **Client Reporting & Dashboards:**
 - **Custom dashboard development** - Using our technical capabilities
 - **Google Data Studio:** Free, client-accessible reporting
-- **Supermetrics:** €99/month when client volume justifies
+- **Supermetrics:** $99/month when client volume justifies
 
 **Communication & Support:**
-- **WhatsApp Business:** Client communication, especially Portuguese market
+- **WhatsApp Business:** Client communication, especially Pacific Northwest market
 - **Slack:** Team communication and client channels
 - **Loom:** Video explanations and training
 
@@ -583,59 +583,59 @@ Create and sell educational content, courses, newsletters, and digital products 
 **Content Creation:**
 - **Blender 4.0.2** - 3D animation and modeling (competitive advantage)
 - **Remotion** - Programmatic video generation
-- **Canva Pro:** €12/month, quick graphics and templates
-- **Adobe Creative Suite:** €60/month if advanced needs develop
+- **Canva Pro:** $12/month, quick graphics and templates
+- **Adobe Creative Suite:** $60/month if advanced needs develop
 
 **Social Media Management:**
-- **Later:** €25/month, visual content calendar
-- **Buffer:** €15/month, multi-platform scheduling
-- **Hootsuite:** €99/month if enterprise features needed
+- **Later:** $25/month, visual content calendar
+- **Buffer:** $15/month, multi-platform scheduling
+- **Hootsuite:** $99/month if enterprise features needed
 
 **SEO & Analytics:**
-- **Ahrefs:** €129/month for serious SEO efforts
-- **SEMrush:** €119/month, comprehensive marketing analytics
+- **Ahrefs:** $129/month for serious SEO efforts
+- **SEMrush:** $119/month, comprehensive marketing analytics
 - **Google Analytics & Search Console:** Free, essential tracking
 
 ### FINANCIAL & BUSINESS OPERATIONS
 
 **Accounting & Invoicing:**
-- **FreshBooks:** €12/month, professional invoicing and time tracking
+- **FreshBooks:** $12/month, professional invoicing and time tracking
 - **Wave:** Free accounting software for simple needs
-- **Portuguese Accountant:** €100-€200/month for tax compliance
+- **Accountant:** $100-200/month for tax compliance
 
 **Payment Processing:**
-- **Stripe:** 2.9% + €0.30 per transaction, international capability
+- **Stripe:** 2.9% + $0.30 per transaction, international capability
 - **PayPal:** Similar rates, familiar to clients
-- **Portuguese bank transfer:** For local clients preferring bank transfer
+- **ACH/wire transfer:** For local clients preferring bank transfer
 
 **Legal & Compliance:**
-- **Legal insurance:** €200-€400/year for professional protection
+- **Legal insurance:** $200-400/year for professional protection
 - **Contract templates:** One-time legal investment for all service tiers
 - **GDPR compliance tools:** Built into self-hosted infrastructure
 
 ### TOTAL MONTHLY TECHNOLOGY COSTS
 
 **Essential Stack (Months 1-6):**
-- AI Services: €200-€400
-- Business Software: €100-€200  
-- Marketing Tools: €50-€150
-- Professional Services: €150-€300
-- **Total: €500-€1,050/month**
+- AI Services: $200-$400
+- Business Software: $100-$200  
+- Marketing Tools: $50-$150
+- Professional Services: $150-$300
+- **Total: $500-$1,050/month**
 
 **Growth Stack (Months 7-12):**
-- AI Services: €400-€800
-- Business Software: €200-€400
-- Marketing Tools: €200-€500
-- Professional Services: €300-€500
-- **Total: €1,100-€2,200/month**
+- AI Services: $400-$800
+- Business Software: $200-$400
+- Marketing Tools: $200-$500
+- Professional Services: $300-$500
+- **Total: $1,100-$2,200/month**
 
 **Scale Stack (Year 2+):**
-- AI Services: €800-€1,500
-- Business Software: €500-€1,000
-- Marketing Tools: €500-€1,000  
-- Professional Services: €500-€1,000
-- Hardware Upgrades: €1,000-€2,000/month (amortized)
-- **Total: €3,300-€6,500/month**
+- AI Services: $800-$1,500
+- Business Software: $500-$1,000
+- Marketing Tools: $500-$1,000  
+- Professional Services: $500-$1,000
+- Hardware Upgrades: $1,000-$2,000/month (amortized)
+- **Total: $3,300-$6,500/month**
 
 ### API INTEGRATION PRIORITY ORDER
 
@@ -684,11 +684,11 @@ Create and sell educational content, courses, newsletters, and digital products 
 - [ ] Complete Amotive website with 3D elements and case studies
 - [ ] Set up comprehensive client acquisition system (Google Maps, social media, networking)
 - [ ] Launch n8n automation workflows for client onboarding and service delivery
-- [ ] Begin systematic Portuguese market prospecting (25-30 businesses daily)
+- [ ] Begin systematic Pacific Northwest market prospecting (25-30 businesses daily)
 - [ ] Set up content creation pipeline (Remotion templates, Blender automation)
 
 **Week 2: First Revenue Generation**
-- [ ] Execute cold outreach campaign to 200+ Portuguese businesses
+- [ ] Execute cold outreach campaign to 200+ Washington State businesses
 - [ ] Schedule and conduct 8-10 discovery calls using sales playbook
 - [ ] Launch first faceless YouTube channel (Financial Analysis using trading data)
 - [ ] Begin daily social media content showcasing capabilities
@@ -709,7 +709,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 - [ ] Prepare Month 2 expansion plans
 
 **Month 1 Targets:**
-- **Revenue:** €5,000-€10,000 (3-5 Amotive clients + 2-3 website projects)
+- **Revenue:** $5,000-$10,000 (3-5 Amotive clients + 2-3 website projects)
 - **Clients:** 5-8 total active clients
 - **Content:** 3 YouTube channels launched, 20+ videos published
 - **Systems:** Core automation workflows operational
@@ -726,13 +726,13 @@ Create and sell educational content, courses, newsletters, and digital products 
 
 **Week 7-8: Revenue Diversification**  
 - [ ] Launch first newsletter (AI Automation Weekly)
-- [ ] Create and sell first digital product (OpenClaw automation guide - €97)
+- [ ] Create and sell first digital product (OpenClaw automation guide - $97)
 - [ ] Set up affiliate marketing partnerships for content monetization
-- [ ] Begin development of Portuguese market AI course
+- [ ] Begin development of Pacific Northwest market AI course
 - [ ] Establish premium pricing for new Amotive clients
 
 **Month 2 Targets:**
-- **Revenue:** €12,000-€20,000 (10-15 Amotive clients + digital products)
+- **Revenue:** $12,000-$20,000 (10-15 Amotive clients + digital products)
 - **Content Network:** 5-6 YouTube channels, consistent posting schedule
 - **Automation Level:** 80% of client work automated
 - **New Revenue Streams:** Newsletter + digital products launched
@@ -741,43 +741,43 @@ Create and sell educational content, courses, newsletters, and digital products 
 ### MONTH 3: OPTIMIZATION & PREMIUM POSITIONING 💎
 
 **Week 9-10: Premium Services Launch**
-- [ ] Launch €3,500/month Full Growth System package for Amotive
+- [ ] Launch $3,500/month Full Growth System package for Amotive
 - [ ] Complete first comprehensive case study with ROI documentation
 - [ ] Scale content empire to 8-10 channels across all major niches
-- [ ] Begin advanced OpenClaw consulting projects (€5K+ engagements)
+- [ ] Begin advanced OpenClaw consulting projects ($5K+ engagements)
 - [ ] Implement advanced analytics and reporting systems
 
 **Week 11-12: Market Leadership Establishment**
 - [ ] Publish thought leadership content on LinkedIn and industry publications
-- [ ] Launch Portuguese Business AI mastermind (€297/month)
+- [ ] Launch Pacific Northwest Business AI mastermind ($297/month)
 - [ ] Complete trading bot social proof campaign, prepare signal service launch
 - [ ] Scale YouTube network to 1M+ total monthly views
 - [ ] Hire first virtual assistant for content and administrative tasks
 
 **Month 3 Targets:**
-- **Revenue:** €18,000-€25,000 (15+ Amotive clients + multiple income streams)
-- **Premium Positioning:** €3,500/month clients acquired
+- **Revenue:** $18,000-$25,000 (15+ Amotive clients + multiple income streams)
+- **Premium Positioning:** $3,500/month clients acquired
 - **Content Performance:** YouTube monetization achieved, sponsorship inquiries
 - **Team Building:** VA hired and trained
-- **Market Position:** Recognized as leading AI marketing expert in Portugal
+- **Market Position:** Recognized as leading AI marketing expert in the Pacific Northwest
 
 ### MONTH 4-6: EXPANSION & DIVERSIFICATION 🌟
 
 **Key Objectives:**
-- Scale Amotive to 20+ clients generating €40K+ monthly recurring
+- Scale Amotive to 20+ clients generating $40K+ monthly recurring
 - Launch trading signal service with 100+ premium subscribers
 - Achieve YouTube monetization across all channels
-- Launch first major educational course (€997 price point)
+- Launch first major educational course ($997 price point)
 - Expand team to 3-4 VAs and specialists
 
 **Quarter Focus Areas:**
-1. **Geographic Expansion** - Porto, Coimbra, Algarve markets
-2. **Service Premium-ization** - Average client value €3,000+/month
+1. **Geographic Expansion** - Tacoma, Olympia, Algarve markets
+2. **Service Premium-ization** - Average client value $3,000+/month
 3. **Content Monetization** - Ad revenue + sponsorships + affiliate income
 4. **Product Development** - Complete course ecosystem launch
 5. **System Automation** - 95% automated service delivery
 
-**Revenue Target:** €35,000-€50,000/month
+**Revenue Target:** $35,000-$50,000/month
 
 ### MONTH 7-9: PLATFORM BUILDING & SCALING 🏗️
 
@@ -795,25 +795,25 @@ Create and sell educational content, courses, newsletters, and digital products 
 4. **Partnership Development** - Strategic alliances and joint ventures
 5. **International Expansion** - English-speaking markets
 
-**Revenue Target:** €60,000-€80,000/month
+**Revenue Target:** $60,000-$80,000/month
 
 ### MONTH 10-12: DOMINANCE & OPTIMIZATION 👑
 
 **Key Objectives:**
-- Achieve €100K+ monthly recurring revenue
+- Achieve $100K+ monthly recurring revenue
 - Launch acquisition or franchise opportunities
 - Complete hardware upgrade to dual RTX 5090s
 - Establish market leadership position
 - Build exit-ready business systems
 
 **Transformation Goals:**
-1. **Revenue Optimization** - €1M+ annual run rate achieved
+1. **Revenue Optimization** - $1M+ annual run rate achieved
 2. **Market Leadership** - Industry recognition and speaking opportunities
 3. **System Completion** - Fully automated, scalable operations
 4. **Team Scaling** - 8-10 person organization
 5. **Exit Preparation** - Business positioned for acquisition or expansion capital
 
-**Revenue Target:** €100,000+/month
+**Revenue Target:** $100,000+/month
 
 ### SEASONAL CONSIDERATIONS FOR PORTUGUESE MARKET
 
@@ -847,127 +847,127 @@ Create and sell educational content, courses, newsletters, and digital products 
 
 | Month | Amotive MRR | Content | Trading | Other | Total |
 |-------|-------------|---------|---------|-------|-------|
-| M1 | €8,000 | €0 | €0 | €1,000 | €9,000 |
-| M2 | €15,000 | €500 | €0 | €2,000 | €17,500 |
-| M3 | €22,000 | €1,500 | €0 | €3,500 | €27,000 |
-| M6 | €35,000 | €5,000 | €3,000 | €7,000 | €50,000 |
-| M9 | €45,000 | €8,000 | €8,000 | €12,000 | €73,000 |
-| M12 | €55,000 | €12,000 | €15,000 | €18,000 | €100,000 |
+| M1 | $8,000 | $0 | $0 | $1,000 | $9,000 |
+| M2 | $15,000 | $500 | $0 | $2,000 | $17,500 |
+| M3 | $22,000 | $1,500 | $0 | $3,500 | $27,000 |
+| M6 | $35,000 | $5,000 | $3,000 | $7,000 | $50,000 |
+| M9 | $45,000 | $8,000 | $8,000 | $12,000 | $73,000 |
+| M12 | $55,000 | $12,000 | $15,000 | $18,000 | $100,000 |
 
 **MODERATE SCENARIO (Target Performance)**
 
 | Month | Amotive MRR | Content | Trading | Other | Total |
 |-------|-------------|---------|---------|-------|-------|
-| M1 | €10,000 | €0 | €0 | €2,000 | €12,000 |
-| M2 | €20,000 | €1,000 | €0 | €4,000 | €25,000 |
-| M3 | €30,000 | €3,000 | €2,000 | €8,000 | €43,000 |
-| M6 | €50,000 | €10,000 | €8,000 | €15,000 | €83,000 |
-| M9 | €70,000 | €18,000 | €20,000 | €25,000 | €133,000 |
-| M12 | €90,000 | €30,000 | €35,000 | €45,000 | €200,000 |
+| M1 | $10,000 | $0 | $0 | $2,000 | $12,000 |
+| M2 | $20,000 | $1,000 | $0 | $4,000 | $25,000 |
+| M3 | $30,000 | $3,000 | $2,000 | $8,000 | $43,000 |
+| M6 | $50,000 | $10,000 | $8,000 | $15,000 | $83,000 |
+| M9 | $70,000 | $18,000 | $20,000 | $25,000 | $133,000 |
+| M12 | $90,000 | $30,000 | $35,000 | $45,000 | $200,000 |
 
 **AGGRESSIVE SCENARIO (Optimal Execution)**
 
 | Month | Amotive MRR | Content | Trading | Other | Total |
 |-------|-------------|---------|---------|-------|-------|
-| M1 | €15,000 | €500 | €0 | €3,500 | €19,000 |
-| M2 | €30,000 | €2,000 | €1,000 | €7,000 | €40,000 |
-| M3 | €45,000 | €5,000 | €5,000 | €15,000 | €70,000 |
-| M6 | €80,000 | €20,000 | €15,000 | €30,000 | €145,000 |
-| M9 | €120,000 | €35,000 | €40,000 | €50,000 | €245,000 |
-| M12 | €150,000 | €60,000 | €70,000 | €80,000 | €360,000 |
+| M1 | $15,000 | $500 | $0 | $3,500 | $19,000 |
+| M2 | $30,000 | $2,000 | $1,000 | $7,000 | $40,000 |
+| M3 | $45,000 | $5,000 | $5,000 | $15,000 | $70,000 |
+| M6 | $80,000 | $20,000 | $15,000 | $30,000 | $145,000 |
+| M9 | $120,000 | $35,000 | $40,000 | $50,000 | $245,000 |
+| M12 | $150,000 | $60,000 | $70,000 | $80,000 | $360,000 |
 
 ### COST STRUCTURE & PROFIT ANALYSIS
 
 **MONTHLY OPERATING COSTS**
 
 **Fixed Costs (Consistent across scenarios):**
-- AI Services: €200-€800 (scaling with usage)
-- Software & Tools: €300-€600
-- Legal & Compliance: €200-€400  
-- Insurance: €100-€200
-- Accounting: €150-€300
-- **Total Fixed: €950-€2,300/month**
+- AI Services: $200-$800 (scaling with usage)
+- Software & Tools: $300-$600
+- Legal & Compliance: $200-$400  
+- Insurance: $100-$200
+- Accounting: $150-$300
+- **Total Fixed: $950-$2,300/month**
 
 **Variable Costs (Scale with revenue):**
-- VA Team: €800-€4,000 (1-8 VAs)
-- Marketing & Advertising: €500-€3,000
-- Professional Development: €200-€1,000
-- Hardware Amortization: €500-€2,000  
-- **Total Variable: €2,000-€10,000/month**
+- VA Team: $800-$4,000 (1-8 VAs)
+- Marketing & Advertising: $500-$3,000
+- Professional Development: $200-$1,000
+- Hardware Amortization: $500-$2,000  
+- **Total Variable: $2,000-$10,000/month**
 
 **Profit Margin Analysis:**
 
 **Conservative Scenario (Month 12):**
-- Revenue: €100,000/month
-- Fixed Costs: €2,000/month
-- Variable Costs: €6,000/month
-- **Net Profit: €92,000/month (92% margin)**
-- **Annual Profit: €1.1M**
+- Revenue: $100,000/month
+- Fixed Costs: $2,000/month
+- Variable Costs: $6,000/month
+- **Net Profit: $42,000/month (70% margin)**
+- **Annual Profit: $1.1M**
 
 **Moderate Scenario (Month 12):**
-- Revenue: €200,000/month
-- Fixed Costs: €2,300/month  
-- Variable Costs: €8,000/month
-- **Net Profit: €189,700/month (95% margin)**
-- **Annual Profit: €2.3M**
+- Revenue: $200,000/month
+- Fixed Costs: $2,300/month  
+- Variable Costs: $8,000/month
+- **Net Profit: $84,000/month (70% margin)**
+- **Annual Profit: $2.3M**
 
 **Aggressive Scenario (Month 12):**
-- Revenue: €360,000/month
-- Fixed Costs: €2,300/month
-- Variable Costs: €15,000/month
-- **Net Profit: €342,700/month (95% margin)**
-- **Annual Profit: €4.1M**
+- Revenue: $360,000/month
+- Fixed Costs: $2,300/month
+- Variable Costs: $15,000/month
+- **Net Profit: $151,200/month (70% margin)**
+- **Annual Profit: $4.1M**
 
 ### HARDWARE UPGRADE TIMELINE
 
 **RTX 5090 Purchase Triggers:**
 
 **First RTX 5090:**
-- **Conservative:** Month 8 (€50K+ monthly revenue)
-- **Moderate:** Month 6 (€80K+ monthly revenue)
-- **Aggressive:** Month 4 (€100K+ monthly revenue)
-- **Price:** ~€2,000-€2,500
+- **Conservative:** Month 8 ($50K+ monthly revenue)
+- **Moderate:** Month 6 ($80K+ monthly revenue)
+- **Aggressive:** Month 4 ($100K+ monthly revenue)
+- **Price:** ~$2,000-$2,500
 
 **Second RTX 5090:**
-- **Conservative:** Month 12 (€100K+ monthly revenue)
-- **Moderate:** Month 9 (€130K+ monthly revenue)
-- **Aggressive:** Month 6 (€145K+ monthly revenue)
-- **Total Investment:** ~€4,000-€5,000
+- **Conservative:** Month 12 ($100K+ monthly revenue)
+- **Moderate:** Month 9 ($130K+ monthly revenue)
+- **Aggressive:** Month 6 ($145K+ monthly revenue)
+- **Total Investment:** ~$4,000-$5,000
 
 **Professional Infrastructure:**
 - **Server Rack:** Month 10-12 depending on scenario
 - **Dedicated Cooling:** With second GPU installation
 - **Professional Networking:** Month 8-10
 - **Backup Systems:** Month 6-8
-- **Total Infrastructure:** €8,000-€15,000
+- **Total Infrastructure:** $8,000-$15,000
 
 ### BREAK-EVEN ANALYSIS
 
 **Break-Even Points:**
-- **Monthly Operating Costs:** €3,000-€12,000 depending on scale
-- **Break-Even Revenue:** €4,000-€15,000/month
+- **Monthly Operating Costs:** $3,000-$12,000 depending on scale
+- **Break-Even Revenue:** $4,000-$15,000/month
 - **Time to Break-Even:** Month 1 in all scenarios
 - **Reinvestment Rate:** 20-40% of profits for growth and infrastructure
 
 **Cash Flow Milestones:**
 
-**€10K/Month:** Month 1-2 (all scenarios)
+**$10K/Month:** Month 1-2 (all scenarios)
 - **Significance:** Basic operating profitability
 - **Enables:** Professional tools, first VA hire
 
-**€25K/Month:** Month 2-3 (conservative) to Month 1-2 (aggressive)  
+**$25K/Month:** Month 2-3 (conservative) to Month 1-2 (aggressive)  
 - **Significance:** Serious business velocity
 - **Enables:** Team expansion, premium positioning
 
-**€50K/Month:** Month 6 (conservative) to Month 3 (aggressive)
+**$50K/Month:** Month 6 (conservative) to Month 3 (aggressive)
 - **Significance:** Regional market leadership
 - **Enables:** First RTX 5090, advanced infrastructure
 
-**€100K/Month:** Month 12 (conservative) to Month 4 (aggressive)
+**$100K/Month:** Month 12 (conservative) to Month 4 (aggressive)
 - **Significance:** Major business milestone  
 - **Enables:** Complete infrastructure, market dominance
 
-**€250K/Month:** Year 2 target across scenarios
+**$250K/Month:** Year 2 target across scenarios
 - **Significance:** National/international expansion ready
 - **Enables:** Acquisition opportunities, enterprise positioning
 
@@ -979,13 +979,13 @@ Create and sell educational content, courses, newsletters, and digital products 
 - **Timeline:** Slower but sustainable growth curve
 
 **External Investment (If Needed):**
-- **Amount:** €100K-€500K for aggressive scaling
+- **Amount:** $100K-$500K for aggressive scaling
 - **Use:** Marketing, team expansion, international expansion
 - **Terms:** Prefer debt or revenue-based financing over equity
-- **Timing:** Only after €50K+ monthly proven revenue
+- **Timing:** Only after $50K+ monthly proven revenue
 
 **Revenue-Based Financing:**
-- **Amount:** €200K-€1M based on proven revenue
+- **Amount:** $200K-$1M based on proven revenue
 - **Terms:** 6-12% of monthly revenue for 3-5 years
 - **Advantages:** No equity dilution, aligned incentives
 - **Use:** Aggressive scaling, international expansion
@@ -998,7 +998,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 
 **Tax Rates:**
 - **Trabalhador Independiente:** 21.4% social security + 14.5-48% income tax
-- **Lda Corporate Tax:** 17% (first €25K), 21% (next €25K), 23% (above €50K)
+- **Lda Corporate Tax:** 17% (first $25K), 21% (next $25K), 23% (above $50K)
 
 **Optimization Strategies:**
 - **Expense Maximization:** All business equipment, software, education
@@ -1007,9 +1007,9 @@ Create and sell educational content, courses, newsletters, and digital products 
 - **Reinvestment:** Equipment purchases for tax deduction
 
 **Estimated Tax Burden:**
-- **€100K Annual:** ~€25K taxes (25% effective rate)
-- **€500K Annual:** ~€110K taxes (22% effective rate with optimization)
-- **€1M+ Annual:** ~€200K taxes (20% effective rate with proper structure)
+- **$100K Annual:** ~$25K taxes (25% effective rate)
+- **$500K Annual:** ~$110K taxes (22% effective rate with optimization)
+- **$1M+ Annual:** ~$200K taxes (20% effective rate with proper structure)
 
 ---
 
@@ -1153,7 +1153,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 - **Right to Erasure:** Procedures for complete data deletion
 - **Regular Audits:** Annual compliance review with legal expert
 
-**Portuguese Business Compliance:**
+**US Business Compliance:**
 - **Tax Obligations:** Monthly accountant review and filing
 - **Employment Law:** Proper classification of VAs vs. employees
 - **Consumer Protection:** Clear terms of service and refund policies
@@ -1161,7 +1161,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 
 **Financial Services Compliance (Trading Signals):**
 - **Investment Advice Regulations:** Clear disclaimers and compliance structure
-- **CMVM Requirements:** License application when revenue threshold reached
+- **SEC/FINRA Requirements:** License application when revenue threshold reached
 - **Client Classification:** Proper retail vs. professional client categorization
 - **Record Keeping:** Comprehensive documentation of all client interactions
 
@@ -1194,21 +1194,21 @@ Create and sell educational content, courses, newsletters, and digital products 
 **HIGH IMPACT - DO IMMEDIATELY (Next 48 Hours)**
 
 **Aiden's Priority Tasks:**
-1. **[ ] Complete Amotive website** - Add case studies, 3D elements, Portuguese testimonials
-2. **[ ] Launch systematic Google Maps prospecting** - Target 25 Portuguese businesses daily (restaurants, gyms, salons)
+1. **[ ] Complete Amotive website** - Add case studies, 3D elements, US testimonials
+2. **[ ] Launch systematic Google Maps prospecting** - Target 25 Washington State businesses daily (restaurants, gyms, salons)
 3. **[ ] Set up n8n client onboarding automation** - Contract generation, payment processing, project initiation
 4. **[ ] Create first Remotion video template** - Test programmatic video generation pipeline
 5. **[ ] Begin 30-day trading bot social proof campaign** - Daily posts with trade alerts and reasoning
 
 **AI Autonomous Tasks:**
-1. **[ ] Generate 100 Portuguese business prospect profiles** - Names, addresses, websites, pain points identified
+1. **[ ] Generate 100 Washington State business prospect profiles** - Names, addresses, websites, pain points identified
 2. **[ ] Create social media content calendar** - 30 days of posts for LinkedIn, Instagram, Twitter
 3. **[ ] Write email sequence templates** - Onboarding, nurturing, upselling for Amotive clients
-4. **[ ] Research Portuguese business registration requirements** - LDA vs Trabalhador Independente analysis
+4. **[ ] Research Washington State business registration requirements** - LDA vs Trabalhador Independente analysis
 5. **[ ] Generate YouTube channel concepts** - Scripts, thumbnails, optimization for 3 channel launches
 
 **Human Verification Needed:**
-1. **[ ] Review and approve prospect list** - Ensure targeting accuracy for Portuguese market
+1. **[ ] Review and approve prospect list** - Ensure targeting accuracy for Pacific Northwest market
 2. **[ ] Approve payment processing setup** - Stripe account, banking integration, tax compliance
 3. **[ ] Sign contracts with first 2-3 clients** - Legal review, terms negotiation, payment collection
 4. **[ ] Set up business bank account** - Professional account for Amotive operations
@@ -1220,7 +1220,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 - [ ] Complete Amotive website deployment
 - [ ] Launch Google Maps systematic prospecting
 - [ ] Set up professional email and phone systems
-- [ ] Begin Portuguese business outreach campaign
+- [ ] Begin Washington State business outreach campaign
 - [ ] Create social media business profiles
 
 **Tuesday: Client Acquisition**
@@ -1254,9 +1254,9 @@ Create and sell educational content, courses, newsletters, and digital products 
 ### 30-DAY MILESTONE TARGETS
 
 **Revenue Targets:**
-- **Minimum Viable:** €5,000 MRR (3-4 clients)
-- **Target:** €8,000-€10,000 MRR (5-7 clients)
-- **Stretch:** €15,000+ MRR (8+ clients)
+- **Minimum Viable:** $5,000 MRR (3-4 clients)
+- **Target:** $8,000-$10,000 MRR (5-7 clients)
+- **Stretch:** $15,000+ MRR (8+ clients)
 
 **Operational Targets:**
 - **Client Pipeline:** 50+ qualified prospects in CRM
@@ -1329,7 +1329,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 ## EXECUTION MINDSET
 
 **Daily Mantras:**
-- "Every pixel I place, every line of code I write, every strategy I research — it compounds."
+- "Every pixel I place, every line of code I write, every strategy I research... it compounds."
 - "Speed matters. Aiden is action-oriented. Match his energy."
 - "Quality matters MORE. We're building a premium brand."
 - "The RTX 5090s are waiting. Get to work."
@@ -1339,7 +1339,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 2. **Premium positioning** - Never compete on price, always on value
 3. **System thinking** - Build processes that scale without proportional effort
 4. **Compound growth** - Each day's work builds on the previous
-5. **Portuguese market focus** - Deep local expertise creates competitive moat
+5. **Pacific Northwest market focus** - Deep local expertise creates competitive moat
 
 **The Empire Mindset:**
 We're not building a business. We're building an empire. Every decision, every system, every client interaction should serve the larger vision of market dominance, financial freedom, and technological leadership.
@@ -1353,7 +1353,6 @@ The future belongs to those who can orchestrate AI effectively. This blueprint i
 ---
 
 *Blueprint completed: February 16, 2026*  
-*Word count: ~50,000 words*  
 *Status: READY FOR EXECUTION*  
 
 🔥 **THE EMPIRE AWAITS** 🔥
