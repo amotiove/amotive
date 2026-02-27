@@ -9,9 +9,9 @@
 
 **We are consultants, not vendors.** We align status as peers, demonstrate expertise through results, and let prospects convince themselves they need our help. 
 
-**Voice**: Premium, confident, direct. Not salesy — consultative. We don't chase. We attract. We don't convince. We create conditions for discovery.
+**Voice**: Premium, confident, direct. Not salesy, consultative. We don't chase. We attract. We don't convince. We create conditions for discovery.
 
-**Core principle**: "You can't convince anyone of anything. They have to convince themselves." — Oren Klaff
+**Core principle**: "You can't convince anyone of anything. They have to convince themselves.". Oren Klaff
 
 ---
 
@@ -47,7 +47,7 @@
 "The restaurant industry is facing a perfect storm right now. Labor costs are up 22% year-over-year, food costs are volatile, and third-party delivery platforms are taking 25-30% commission on top of that. Meanwhile, 73% of diners are researching restaurants online before they visit, but most local restaurants are invisible in search results because they're not optimizing for 'near me' searches or managing their Google Business Profile properly. The restaurants that are thriving aren't just hoping for foot traffic, they're building direct relationships with customers through email lists, loyalty programs, and social media that showcases their personality, not just their food. The smart ones are using retargeting ads to bring website visitors back, and they're capturing email addresses with simple lead magnets like 'Get our weekly specials delivered to your inbox.' But here's what most restaurant marketing agencies get wrong, they treat every restaurant the same. A family Italian place needs a completely different strategy than a trendy cocktail bar."
 
 *End abruptly and redirect:*
-**"But that's the landscape — what I'm curious about is what's driving your decision to explore marketing help right now?"**
+**"But that's the landscape, what I'm curious about is what's driving your decision to explore marketing help right now?"**
 
 #### Inception Questions: Making Them Convince Themselves (Minutes 5-15)
 
@@ -57,7 +57,7 @@
 "What's the biggest challenge you're facing with getting new customers right now?"
 
 *Listen. Then dig deeper:*
-"Help me understand — when you say [their challenge], what does that actually cost you? Like, if you could solve that problem, what would that be worth to your business?"
+"Help me understand, when you say [their challenge], what does that actually cost you? Like, if you could solve that problem, what would that be worth to your business?"
 
 **Q2: Current Solution Audit**
 "What are you doing for marketing right now?"
@@ -96,7 +96,7 @@
 #### Qualification (Minutes 15-20)
 
 **Budget Discovery (Indirect):**
-"Help me understand your situation — are you at a point where you're ready to make a real investment in growing the business, or are you still in information-gathering mode?"
+"Help me understand your situation, are you at a point where you're ready to make a real investment in growing the business, or are you still in information-gathering mode?"
 
 *Listen. If they seem budget-conscious:*
 "I get it. What's your biggest concern about investing in marketing?"
@@ -162,7 +162,7 @@
 
 #### Objection 1: "Your prices are too expensive"
 
-**Acknowledge:** "I understand — price is always a factor in business decisions."
+**Acknowledge:** "I understand. price is always a factor in business decisions."
 
 **Reframe:** "But here's how I think about investment in marketing, it's not an expense, it's the one business investment that should pay for itself and then some. If spending $2,000 a month brings in $8,000 in new revenue, that's a 300% return. Most business investments don't even come close to that."
 
@@ -182,7 +182,7 @@
 
 #### Objection 3: "We tried marketing before and it didn't work"
 
-**Acknowledge:** "That's frustrating — I hear that a lot."
+**Acknowledge:** "That's frustrating. I hear that a lot."
 
 **Reframe:** "But here's what I've learned, most marketing fails not because marketing doesn't work, but because there was no systematic approach. Random posting, inconsistent messaging, no follow-up system. It's like trying to lose weight by eating healthy for two weeks and then giving up. The businesses that get results from marketing treat it like a system, not a campaign."
 
@@ -192,7 +192,7 @@
 
 #### Objection 4: "I don't have time for marketing"
 
-**Acknowledge:** "I completely get that — you're focused on running your business."
+**Acknowledge:** "I completely get that. you're focused on running your business."
 
 **Reframe:** "But here's the thing, you're already spending time on marketing, you're just not getting results from it. Every conversation with a potential customer, every time you explain what you do, every referral request, that's marketing. The question is whether you want to keep doing it ad hoc, or whether you want a system that works while you sleep."
 
@@ -202,7 +202,7 @@
 
 #### Objection 5: "I need to think about it"
 
-**Acknowledge:** "Of course — this is an important decision."
+**Acknowledge:** "Of course. this is an important decision."
 
 **Reframe:** "And honestly, you should think about it. But here's what I've learned, the businesses that are most successful with marketing are the ones that make decisions quickly when they see a clear path forward. While you're thinking, your competitors are acting."
 
@@ -212,7 +212,7 @@
 
 #### Objection 6: "I'm not sure digital marketing works for my industry"
 
-**Acknowledge:** "That's a fair concern — every industry has its nuances."
+**Acknowledge:** "That's a fair concern. every industry has its nuances."
 
 **Reframe:** "But here's what I've found, every business has customers, and your customers are online. The question isn't whether digital marketing works for your industry, it's whether you're reaching your customers where they actually spend their time. Even the most traditional industries are evolving."
 
@@ -222,7 +222,7 @@
 
 #### Objection 7: "We get enough business from referrals"
 
-**Acknowledge:** "That's fantastic — referrals are the best kind of business."
+**Acknowledge:** "That's fantastic. referrals are the best kind of business."
 
 **Reframe:** "But here's something to consider, what happens if your referral sources dry up? And what if you could multiply your referrals? Happy customers refer more when they're staying connected with you through email and social media. Plus, people who come through digital channels can become your best referral sources."
 
@@ -232,7 +232,7 @@
 
 #### Objection 8: "I don't believe in social media/online marketing"
 
-**Acknowledge:** "I respect that — there's definitely a lot of noise online."
+**Acknowledge:** "I respect that. there's definitely a lot of noise online."
 
 **Reframe:** "But here's the reality, it's not about whether you believe in it. Your customers are there whether you are or not. They're researching businesses, reading reviews, and making decisions based on what they find online. You can either be part of that conversation or let your competitors control it."
 
@@ -242,7 +242,7 @@
 
 #### Objection 9: "I want to try doing it myself first"
 
-**Acknowledge:** "I admire the DIY spirit — it shows you care about your business."
+**Acknowledge:** "I admire the DIY spirit. it shows you care about your business."
 
 **Reframe:** "And you absolutely could learn to do this yourself. But here's the question, what's your time worth? If you bill at $100 an hour, spending 20 hours a week learning marketing costs you $2,000 in opportunity cost, plus you might not get results for 6-12 months while you're learning. You could invest that same $2,000 in professional marketing and start seeing results in 30 days."
 
@@ -252,7 +252,7 @@
 
 #### Objection 10: "I need to talk to my partner/spouse first"
 
-**Acknowledge:** "Absolutely — this affects both of you."
+**Acknowledge:** "Absolutely. this affects both of you."
 
 **Reframe:** "And that conversation might be easier if you have all the information. Most partners want to know three things: what exactly are we getting, what results can we expect, and what happens if it doesn't work."
 
@@ -273,7 +273,7 @@
 
 #### The 3-Tier Structure
 
-### Tier 1: Foundation Package — $2,500 (One-Time)
+### Tier 1: Foundation Package: $2,500 (One-Time)
 **"Website + Digital Presence Setup"**
 
 **What's Included:**
@@ -288,9 +288,9 @@
 "This is for businesses that need the basics done right. You get a professional foundation that won't embarrass you, but you'll need to handle ongoing marketing yourself."
 
 **Plain Vanilla Frame:**
-"Think of this as your digital business card — professional, functional, but not actively bringing in new business."
+"Think of this as your digital business card, professional, functional, but not actively bringing in new business."
 
-### Tier 2: Growth Partnership — $2,000/month
+### Tier 2: Growth Partnership: $2,000/month
 **"Marketing That Actually Works"**
 
 **What's Included:**
@@ -308,7 +308,7 @@
 **Plain Vanilla Frame:**
 "This is like having a marketing manager on your team, but without the $40K salary and benefits."
 
-### Tier 3: Full Growth System — $3,500/month
+### Tier 3: Full Growth System: $3,500/month
 **"Everything You Need to Dominate Your Market"**
 
 **What's Included:**
@@ -326,7 +326,7 @@
 "This is for ambitious businesses that want to be the clear leader in their market. You're ready to invest seriously in growth and want every advantage."
 
 **Plain Vanilla Frame:**
-"This is like having an entire marketing department — strategist, designer, ad specialist, and content creator — for less than you'd pay for one senior hire."
+"This is like having an entire marketing department, strategist, designer, ad specialist, and content creator, for less than you'd pay for one senior hire."
 
 #### Opportunity Frame (2X Reward)
 "Here's what businesses typically see when they implement proper marketing systems:
@@ -344,12 +344,12 @@ Most clients see their investment pay for itself within 90 days, then it's pure 
 - **Fresh perspective** with cutting-edge marketing approaches
 - **Proven frameworks** that our strategies are built on
 - **Personal guarantee**: If you don't see measurable improvement in lead quality and quantity within 90 days, we'll work for free until you do
-- **My reputation** is on the line with every client — your success is my success"
+- **My reputation** is on the line with every client, your success is my success"
 
 ### Presenting the Investment
 
 **Reframe Price as Investment:**
-"These aren't costs — they're investments in your business growth. The question isn't what it costs, it's what it returns."
+"These aren't costs, they're investments in your business growth. The question isn't what it costs, it's what it returns."
 
 **Value Anchoring:**
 "Most businesses spend 7-12% of their revenue on marketing. If you're doing $300K annually, that's $21-36K per year. We're talking about $24K annually for a complete marketing system that should generate significantly more than that in new business."
@@ -363,7 +363,7 @@ Most clients see their investment pay for itself within 90 days, then it's pure 
 ### Closing the Presentation
 
 **Autonomy Handoff:**
-"Those are the three options. Each one works, but they're designed for different stages of business growth and different levels of commitment. You know your business better than anyone — which approach makes the most sense for where you are and where you want to go?"
+"Those are the three options. Each one works, but they're designed for different stages of business growth and different levels of commitment. You know your business better than anyone, which approach makes the most sense for where you are and where you want to go?"
 
 **Silent Close:**
 *Stop talking. Let them respond.*
@@ -374,7 +374,7 @@ Most clients see their investment pay for itself within 90 days, then it's pure 
 
 ### Email Template 1: Post-Discovery (Send within 24 hours)
 
-**Subject:** "Thanks for the call — here's what I'm thinking"
+**Subject:** "Thanks for the call: here's what I'm thinking"
 
 Hi [Name],
 
@@ -400,7 +400,7 @@ I'll have this to you by [specific day]. In the meantime, if any questions come 
 Talk soon,
 [Your name]
 
-P.S. — You mentioned [personal detail/concern they shared]. I have some thoughts on that too, which I'll include in the proposal.
+P.S.. You mentioned [personal detail/concern they shared]. I have some thoughts on that too, which I'll include in the proposal.
 
 ---
 
@@ -438,7 +438,7 @@ Hi [Name],
 
 I sent your marketing proposal last week but haven't heard back.
 
-I get it — you're busy running a business, and marketing decisions aren't made lightly.
+I get it, you're busy running a business, and marketing decisions aren't made lightly.
 
 **Quick question:** Are you still evaluating the proposal, or should I close your file and move on?
 
@@ -449,13 +449,13 @@ Either way, no hard feelings. I appreciate the time you took to explore this.
 Best,
 [Your name]
 
-P.S. — If timing is the issue, I can hold your spot for another [timeframe], but I wanted to check where your head's at.
+P.S.. If timing is the issue, I can hold your spot for another [timeframe], but I wanted to check where your head's at.
 
 ---
 
 ### Email Template 4: Won Deal (Send immediately after signing)
 
-**Subject:** "Welcome to the team — here's what happens next"
+**Subject:** "Welcome to the team: here's what happens next"
 
 Hi [Name],
 
@@ -485,13 +485,13 @@ I'll be in touch within 24 hours to schedule our onboarding call.
 Looking forward to working together,
 [Your name]
 
-P.S. — Expect to see initial results within [timeframe]. The real momentum builds after [timeframe].
+P.S.. Expect to see initial results within [timeframe]. The real momentum builds after [timeframe].
 
 ---
 
 ### Email Template 5: Lost Deal (Send within 48 hours of "no")
 
-**Subject:** "No worries — here's a free resource"
+**Subject:** "No worries: here's a free resource"
 
 Hi [Name],
 
@@ -506,7 +506,7 @@ Either way, best of luck with [their business/specific goal]. If your situation 
 Cheers,
 [Your name]
 
-P.S. — If you know any other [type of business] owners who might be interested in growing their customer base, I'd appreciate the referral. I'll take good care of them.
+P.S.. If you know any other [type of business] owners who might be interested in growing their customer base, I'd appreciate the referral. I'll take good care of them.
 
 ---
 
@@ -522,7 +522,7 @@ P.S. — If you know any other [type of business] owners who might be interested
 
 #### Budget (Reframed as Investment Capacity)
 **Instead of:** "What's your budget?"
-**Ask:** "Help me understand — are you at a point where you're ready to make a real investment in growing the business?"
+**Ask:** "Help me understand, are you at a point where you're ready to make a real investment in growing the business?"
 
 **Follow-up probes:**
 - "What's your biggest concern about investing in marketing?"
@@ -562,7 +562,7 @@ P.S. — If you know any other [type of business] owners who might be interested
 - Can commit to timeline for decision
 
 #### Need (Problem Recognition)
-**Status Alignment Addition:** Don't just identify the need — help them discover the real problem.
+**Status Alignment Addition:** Don't just identify the need, help them discover the real problem.
 
 **Ask:** "What's driving your decision to explore marketing help right now?"
 
@@ -638,10 +638,10 @@ P.S. — If you know any other [type of business] owners who might be interested
 | 1 | No budget | No authority | No clear problem | Just gathering info | Complete vendor treatment |
 
 **Qualification Thresholds:**
-- **20-25 points**: Ideal client — immediate follow-up
-- **15-19 points**: Good prospect — standard follow-up
-- **10-14 points**: Marginal — nurture sequence
-- **5-9 points**: Poor fit — polite decline
+- **20-25 points**: Ideal client, immediate follow-up
+- **15-19 points**: Good prospect, standard follow-up
+- **10-14 points**: Marginal, nurture sequence
+- **5-9 points**: Poor fit, polite decline
 
 **Minimum viable prospect:** Must score 3+ in Budget, Authority, and Need. Status and Timeline can be improved through your process.
 
@@ -681,7 +681,7 @@ P.S. — If you know any other [type of business] owners who might be interested
 "Here's something most marketing agencies won't tell you: [valuable insider knowledge]..."
 
 **Example:**
-"Here's something most marketing agencies won't tell you — consistency beats creativity every time. A simple email sent consistently will outperform a brilliant campaign that gets sent once. The businesses that win at marketing are the ones that show up reliably, not the ones that try to be clever."
+"Here's something most marketing agencies won't tell you, consistency beats creativity every time. A simple email sent consistently will outperform a brilliant campaign that gets sent once. The businesses that win at marketing are the ones that show up reliably, not the ones that try to be clever."
 
 #### Step 6: Autonomy Transfer
 "Look, this isn't for everyone. You need to be [specific requirements]. Only you can decide if this makes sense for your situation."
@@ -734,11 +734,11 @@ P.S. — If you know any other [type of business] owners who might be interested
 **Say:** "If we were to work together, what would the ideal timeline look like?"
 
 **Instead of:** "What's it going to take to earn your business?"
-**Say:** "Help me understand — what criteria are you using to evaluate this decision?"
+**Say:** "Help me understand, what criteria are you using to evaluate this decision?"
 
 ### Handling "I Need to Think About It"
 
-**Acknowledge:** "Of course — this is an important decision for your business."
+**Acknowledge:** "Of course. this is an important decision for your business."
 
 **Dig deeper:** "What specifically do you need to think through? Maybe I can help clarify."
 
@@ -746,7 +746,7 @@ P.S. — If you know any other [type of business] owners who might be interested
 
 **Offer structure:** "Would it be helpful if I followed up in [timeframe] to see where your thinking has landed?"
 
-**Alternative:** "What would make this a clearer decision for you — would seeing some case studies help, or talking to a current client, or is it more about the investment level?"
+**Alternative:** "What would make this a clearer decision for you, would seeing some case studies help, or talking to a current client, or is it more about the investment level?"
 
 ### When to Walk Away
 

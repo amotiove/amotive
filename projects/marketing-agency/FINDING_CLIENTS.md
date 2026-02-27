@@ -7,12 +7,12 @@
 
 ## Overview
 
-This guide provides step-by-step methods to find and convert local Portuguese businesses into Amotive clients. Target: 8-12 clients generating €306K annually in Year 1.
+This guide provides step-by-step methods to find and convert local businesses in the Pacific Northwest into Amotive clients. Target: 8-12 clients generating $306K annually in Year 1.
 
 **Our Services:**
-- Website Design: €2,500 one-time
-- Marketing Partnership: €2,000/month  
-- Full Growth System: €3,500/month
+- Website Design: $2,500 one-time
+- Marketing Partnership: $2,000/month  
+- Full Growth System: $3,500/month
 
 **Target Market:** Portuguese SMBs (5-50 employees) who either have NO website or terrible websites that aren't mobile-friendly and don't generate leads.
 
@@ -29,15 +29,15 @@ This is your #1 prospecting method. 70% of your leads should come from systemati
 **1. Daily Search Categories**
 Rotate through these high-opportunity categories:
 
-**Lisbon/Porto Focus:**
-- "restaurantes Lisboa" / "restaurantes Porto"
-- "ginásios Lisboa" / "ginásios Porto" 
-- "cabeleireiros Lisboa" / "cabeleireiros Porto"
-- "dentistas Lisboa" / "dentistas Porto"
-- "advogados Lisboa" / "advogados Porto"
-- "imobiliárias Lisboa" / "imobiliárias Porto"
-- "oficinas auto Lisboa" / "oficinas auto Porto"
-- "salões beleza Lisboa" / "salões beleza Porto"
+**Pacific Northwest Focus:**
+- "restaurants Seattle" / "restaurants Portland"
+- "gyms Tacoma" / "gyms Bellevue"
+- "hair salons Olympia" / "hair salons Spokane"
+- "dentists Seattle" / "dentists Portland"
+- "lawyers Bellevue" / "lawyers Tacoma"
+- "real estate agents Seattle" / "real estate agents Portland"
+- "auto repair Spokane" / "auto repair Olympia"
+- "beauty salons Seattle" / "beauty salons Portland"
 
 **Secondary Cities:**
 - "clínicas Coimbra"
@@ -207,7 +207,7 @@ However, I ran a quick test of your website and found some issues that might be 
 
 These might seem like small issues, but they have a big impact. When someone searches "[your service] [city]" and clicks on your listing, they're ready to call or book. If your website frustrates them, they'll click back and choose a competitor.
 
-I help [category] businesses in Portugal turn their websites into customer-generation tools. Last month, I fixed similar issues for [similar business type] and their online inquiries tripled.
+I help [category] businesses in the Pacific Northwest turn their websites into customer-generation tools. Last month, I fixed similar issues for [similar business type] and their online inquiries tripled.
 
 Would you be interested in a brief call to discuss how to fix these issues? I can share exactly what I'd recommend, even if we don't end up working together.
 
@@ -295,7 +295,7 @@ Cumprimentos,
 "That's fantastic - word of mouth is the best kind of business. But what happens when someone hears about you and wants to check you out online before calling? Right now, they can't find you, which might make them hesitate. A website doesn't replace word of mouth - it supports it."
 
 **"Websites are too expensive"**
-"I understand cost is a concern. But think about it this way - if a website brings you just one new customer per month, and that customer is worth €[average transaction value], the website pays for itself. Most of my clients see their investment returned within the first month."
+"I understand cost is a concern. But think about it this way - if a website brings you just one new customer per month, and that customer is worth $[average transaction value], the website pays for itself. Most of my clients see their investment returned within the first month."
 
 **"We don't need it"**
 "May I ask - when you need a [service like theirs], what's the first thing you do?" [They'll say Google it] "Exactly. Your customers are doing the same thing. They're searching '[your service] [your area]' and choosing businesses they can find online. You're invisible in that process right now."
@@ -343,7 +343,7 @@ Cumprimentos,
 ```
 Hi [Name]! Love following [Business Name]'s journey on here. Your [specific post/story] was really interesting - I had no idea that [specific detail they shared].
 
-I work in digital marketing here in Lisbon and I've been impressed with your content quality. Have you thought about adding a website link to your bio? I noticed people asking in your comments about booking/contact info and a simple landing page could capture those inquiries.
+I work in digital marketing here in the Pacific Northwest and I've been impressed with your content quality. Have you thought about adding a website link to your bio? I noticed people asking in your comments about booking/contact info and a simple landing page could capture those inquiries.
 
 Just a thought! Keep up the great work with the content 👏
 ```
@@ -360,12 +360,12 @@ No pressure either way - I just enjoy helping local businesses grow!
 ### Facebook Strategy
 
 #### Local Facebook Groups
-**Join these Lisbon business groups:**
-- "Empreendedores Lisboa"
-- "Negócios em Lisboa"
-- "Pequenas Empresas Portugal"
-- "Restauração Lisboa"
-- "Comércio Local Lisboa"
+**Join these Pacific Northwest business groups:**
+- "Entrepreneurs Pacific NW"
+- "Business in the Pacific Northwest"
+- "Small Business Pacific NW"
+- "Restaurant Industry PNW"
+- "Local Commerce PNW"
 
 **Engagement Strategy:**
 1. **Provide Value First:** Answer questions, share insights, help with marketing problems
@@ -397,17 +397,17 @@ No pressure either way - I just enjoy helping local businesses grow!
 ### Portuguese Business Groups
 
 #### BNI (Business Network International)
-**Lisbon Chapters:**
-- BNI Lisboa Central (meets weekly, likely Wednesday mornings)
-- BNI Lisboa Norte
-- BNI Lisboa Sul
+**Pacific Northwest Chapters:**
+- BNI Seattle (meets weekly)
+- BNI Tacoma
+- BNI Portland
 
 **Benefits:**
 - Weekly referrals from 20-30 business owners
 - Exclusive category membership (only one web designer/marketer per chapter)
 - Structured networking with accountability
 
-**Cost:** ~€600-800 annually + weekly time commitment
+**Cost:** ~$600-800 annually + weekly time commitment
 **ROI:** 1-2 good clients pays for entire year
 
 **How to Join:**
@@ -416,8 +416,8 @@ No pressure either way - I just enjoy helping local businesses grow!
 3. Apply for membership in "Website Design" or "Digital Marketing" category
 
 #### Chamber of Commerce (Câmara de Comércio e Indústria)
-- Lisbon Chamber: ccil.pt
-- Porto Chamber: cip.org.pt
+- Seattle Chamber: seattlechamber.com
+- Portland Chamber: portlandalliance.com
 
 **Benefits:**
 - Business mixers and events
@@ -432,7 +432,7 @@ No pressure either way - I just enjoy helping local businesses grow!
 
 #### Portuguese Business Associations
 - **ANJE** (Associação Nacional de Jovens Empresários) - Young entrepreneurs
-- **AEP** (Associação Empresarial de Portugal) - General business association
+- **SBA** (Small Business Administration) - General business support
 - **ACEPI** (Digital Economy Association) - Tech-focused businesses
 
 ### Complementary Business Partnerships
@@ -444,9 +444,9 @@ No pressure either way - I just enjoy helping local businesses grow!
 - Revenue split: 70/30 or flat referral fee
 
 **Where to Find Them:**
-- Lisbon tech meetups
+- Seattle/Portland tech meetups
 - Coworking spaces (Second Home, Outsite, Avila Spaces)
-- Facebook groups: "Web Developers Portugal", "Freelancers Lisboa"
+- Facebook groups: "Web Developers PNW", "Freelancers Seattle"
 
 #### Business Consultants & Accountants
 **Value Proposition:**
@@ -467,7 +467,7 @@ No pressure either way - I just enjoy helping local businesses grow!
 
 ### Coworking Space Networking
 
-**Top Lisbon Coworking Spaces:**
+**Top Pacific NW Coworking Spaces:**
 - **Second Home:** Cruz Quebrada (creative professionals)
 - **Avila Spaces:** Multiple locations (entrepreneurs and startups)  
 - **Outsite:** Príncipe Real (digital nomads and remote workers)
@@ -483,11 +483,11 @@ No pressure either way - I just enjoy helping local businesses grow!
 ### Local Facebook Groups for Business Owners
 
 **Join and Engage:**
-- "Empreendedores de Lisboa" (Lisbon Entrepreneurs)
-- "Pequenas Empresas Portugal" (Small Businesses Portugal)
-- "Negócios Lisboa" (Lisbon Business)
-- "Restauração Portugal" (Restaurant Industry)
-- "Comércio Local Lisboa" (Local Commerce Lisbon)
+- "PNW Entrepreneurs"
+- "Small Business Pacific NW" (Small Businesses the Pacific Northwest)
+- "Business Pacific NW"
+- "Restaurant Industry PNW"
+- "Local Commerce PNW" (Local Commerce Seattle)
 
 **Value-First Strategy:**
 1. Answer questions about marketing
@@ -503,8 +503,8 @@ No pressure either way - I just enjoy helping local businesses grow!
 ### Páginas Amarelas (Portuguese Yellow Pages)
 
 **Research Process:**
-- Browse by category: paginasamarelas.pt
-- Filter by location (Lisbon, Porto, etc.)
+- Browse by category: yelp.com
+- Filter by location (Seattle, Portland, etc.)
 - Look for listings with no website URL
 - Export contact information
 
@@ -529,7 +529,7 @@ No pressure either way - I just enjoy helping local businesses grow!
 1. Create detailed agency profile
 2. Upload case studies with client logos (with permission)
 3. Encourage client reviews
-4. Optimize for "digital marketing agency Lisbon" searches
+4. Optimize for "digital marketing agency Pacific Northwest" searches
 
 **Benefits:**
 - Inbound leads from businesses researching agencies
@@ -586,7 +586,7 @@ Best regards,
 ### Yelp/TripAdvisor for Tourist-Dependent Businesses
 
 **Research Strategy:**
-- Focus on restaurants, hotels, tours, activities in Lisbon/Portugal
+- Focus on restaurants, hotels, tours, activities in the Pacific Northwest
 - Look for businesses with good reviews but no website listed
 - Check if their website (if any) is mobile-friendly for tourists
 
@@ -619,22 +619,22 @@ Best regards,
 5. Add to master spreadsheet
 
 #### Paid Tools (When Revenue Justifies Cost)
-- **Local Citation Finder** (~€50/month): Automated local business data
-- **BrightLocal** (~€75/month): Local search and listing management
-- **SEMrush Local** (~€100/month): Local competitor research
+- **Local Citation Finder** (~$50/month): Automated local business data
+- **BrightLocal** (~$75/month): Local search and listing management
+- **SEMrush Local** (~$100/month): Local competitor research
 
 ### Google Alerts for Opportunity Monitoring
 
 **Set Up Alerts For:**
 - "procuro web designer" (looking for web designer)
 - "preciso de website" (need website)
-- "marketing digital Lisboa" (digital marketing Lisbon)
-- "website empresa Portugal" (business website Portugal)
+- "digital marketing Pacific Northwest" (digital marketing Pacific Northwest)
+- "business website Pacific Northwest" (business website Pacific Northwest)
 - "ajuda com redes sociais" (help with social media)
 
 **Portuguese Forum/Community Monitoring:**
-- alerts for Forum.sapo.pt business discussions
-- Reddit Portugal business communities
+- alerts for Reddit PNW business communities
+- Reddit PNW business communities
 - LinkedIn Portuguese business groups
 
 ### Email Discovery Tools
@@ -645,12 +645,12 @@ Best regards,
 - Verify email deliverability before sending
 - API integration for bulk email discovery
 
-**Cost:** €34/month for 1,000 searches
-**ROI:** If 1% of searches become clients, that's 10 clients per year = €20K+ revenue
+**Cost:** $34/month for 1,000 searches
+**ROI:** If 1% of searches become clients, that's 10 clients per year = $20K+ revenue
 
 #### Alternative Tools
-- **FindThatLead:** €39/month for email finding + verification
-- **Voila Norbert:** €49/month with higher accuracy rates
+- **FindThatLead:** $39/month for email finding + verification
+- **Voila Norbert:** $49/month with higher accuracy rates
 - **Clearbit Connect:** Free Gmail extension for basic email finding
 
 ### CRM Setup for Prospect Tracking
@@ -660,7 +660,7 @@ Best regards,
 - Spreadsheet simplicity with database power
 - Custom fields for lead scoring
 - Automation capabilities
-- Affordable (€20/month for advanced features)
+- Affordable ($20/month for advanced features)
 
 **Pipeline Setup:**
 1. **Cold Prospect:** Identified but not contacted
@@ -689,7 +689,7 @@ Best regards,
 ### Email Sequence Automation
 
 #### Tool: Mailchimp or ConvertKit
-**Cost:** €30-50/month for 1,000+ contacts
+**Cost:** $30-50/month for 1,000+ contacts
 **Value:** Automated follow-up without manual effort
 
 **Sequence 1: No Website Prospects**
@@ -707,7 +707,7 @@ Best regards,
 
 ---
 
-## 7. Portugal-Specific Tips
+## 7. Pacific Northwest-Specific Tips
 
 ### Portuguese Business Culture
 
@@ -733,10 +733,10 @@ Best regards,
 #### Common Objections from Portuguese SMB Owners
 
 **"Digital marketing is for big companies"**
-**Response:** "Actually, digital marketing gives small businesses an advantage. Large companies spend millions on TV ads, but you can reach your exact customers for €50/day on Facebook and Google. Your customers are searching '[your service] Lisboa' right now - you just need to be there when they search."
+**Response:** "Actually, digital marketing gives small businesses an advantage. Large companies spend millions on TV ads, but you can reach your exact customers for $50/day on Facebook and Google. Your customers are searching '[your service] Seattle' right now - you just need to be there when they search."
 
 **"Portuguese customers prefer personal recommendations"**
-**Response:** "You're absolutely right - word of mouth is crucial in Portugal. But what happens when someone gets a recommendation and wants to check you out online first? A professional online presence supports those recommendations and gives people confidence to call you."
+**Response:** "You're absolutely right - word of mouth is crucial for local businesses. But what happens when someone gets a recommendation and wants to check you out online first? A professional online presence supports those recommendations and gives people confidence to call you."
 
 **"The internet is too expensive/complicated"**
 **Response:** "It used to be, but not anymore. A professional website costs less than what you spend on one month of traditional advertising, and it works 24/7. I handle all the technical details - you just focus on serving customers."
@@ -789,7 +789,7 @@ Best regards,
 
 ### Popular Local Business Types by Region
 
-#### Lisbon Focus
+#### Seattle/Portland Focus
 **High Opportunity:**
 - **Restaurants/Tasca:** Traditional Portuguese restaurants modernizing
 - **Tourist Services:** Tours, accommodations, experiences  
@@ -803,11 +803,11 @@ Best regards,
 - August slowdown for family businesses
 - September excellent for B2B services (back to work mentality)
 
-#### Porto Focus
+#### Portland Focus
 **Characteristics:**
-- More traditional business culture than Lisbon
+- Growing market with strong community ties
 - Strong local loyalty (good for referral programs)
-- Growing tech scene but smaller than Lisbon
+- Growing tech scene with strong local business culture
 - Wine/food tourism opportunities
 
 **Business Types:**
@@ -921,10 +921,10 @@ Best regards,
 - **New clients per month:** 3-5 (Year 1 target)
 
 #### Revenue Tracking
-- **Monthly recurring revenue added:** €6,000-€15,000
-- **One-time project revenue:** €5,000-€15,000
-- **Average deal size:** €2,200 (mixed services)
-- **Customer lifetime value:** €8,000+ (based on 12-month average retention)
+- **Monthly recurring revenue added:** $6,000-$15,000
+- **One-time project revenue:** $5,000-$15,000
+- **Average deal size:** $2,200 (mixed services)
+- **Customer lifetime value:** $8,000+ (based on 12-month average retention)
 
 ### Pipeline Tracking Template
 
@@ -1010,10 +1010,10 @@ Best regards,
 - **Gmail labels/folders:** Organize outreach responses
 
 #### Paid Options (When Revenue Justifies)
-- **Airtable:** €20/month - Advanced pipeline management
-- **Pipedrive:** €15/month - CRM with automation
-- **Calendly:** €10/month - Professional call scheduling
-- **Mailchimp:** €30/month - Email sequence automation
+- **Airtable:** $20/month - Advanced pipeline management
+- **Pipedrive:** $15/month - CRM with automation
+- **Calendly:** $10/month - Professional call scheduling
+- **Mailchimp:** $30/month - Email sequence automation
 
 ---
 
@@ -1063,7 +1063,7 @@ If you need clients urgently, focus on these high-conversion activities:
 - **Daily follow-up:** Contact every prospect who responded positively
 - **Social proof:** Create urgency with "limited spots available"
 - **Partnerships:** Activate referral partnerships with complementary businesses
-- **Premium positioning:** Focus on higher-value prospects who can afford €3,500/month
+- **Premium positioning:** Focus on higher-value prospects who can afford $3,500/month
 
 ### Day 15-30: Close and Deliver
 - **Rapid proposals:** Same-day proposals for interested prospects

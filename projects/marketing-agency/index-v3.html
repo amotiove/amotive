@@ -39,8 +39,8 @@
   --orange: #E87A2F;
   --orange-soft: #f28c47;
   --text: #2c3040;
-  --text-light: #6b7084;
-  --text-faint: #9a9db0;
+  --text-light: #555872;
+  --text-faint: #7a7d94;
 }
 
 html {
@@ -217,7 +217,7 @@ h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
 }
 
 .text-small {
-  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   color: var(--text-faint);
   letter-spacing: 0.02em;
 }
@@ -367,12 +367,13 @@ section {
 
 /* ── Glass Cards ── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 20px;
   padding: clamp(1.5rem, 2.2vw, 2.2rem);
+  box-shadow: 0 8px 32px rgba(10, 22, 40, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   overflow: hidden;
@@ -391,8 +392,8 @@ section {
 
 .glass-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 24px 64px rgba(10, 22, 40, 0.08);
-  border-color: rgba(201, 168, 76, 0.25);
+  box-shadow: 0 24px 64px rgba(10, 22, 40, 0.10), 0 0 0 1px rgba(201, 168, 76, 0.15);
+  border-color: rgba(201, 168, 76, 0.3);
 }
 
 .glass-card:hover::before { opacity: 1; }
@@ -458,7 +459,7 @@ section {
 .s-opening .content { text-align: center; max-width: 750px; }
 
 .s-opening .tagline {
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-size: clamp(0.88rem, 1vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -526,11 +527,28 @@ section {
 
 .process-number {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  color: rgba(201, 168, 76, 0.18);
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.3), rgba(232, 122, 47, 0.15));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1;
   margin-bottom: 0.8rem;
 }
+
+.process-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--orange-soft));
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.glass-card:hover .process-card-accent { opacity: 1; }
 
 .process-title {
   font-weight: 600;
@@ -555,9 +573,10 @@ section {
 .work-grid {
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
-  grid-template-rows: 220px 260px;
+  grid-template-rows: 1fr 1fr;
   gap: clamp(1rem, 1.8vw, 1.4rem);
   margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  min-height: 480px;
 }
 
 .work-card {
@@ -711,16 +730,17 @@ section {
 .trust-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--text-faint);
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--text);
   letter-spacing: 0.02em;
+  font-weight: 450;
 }
 
 .trust-badge svg {
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
   flex-shrink: 0;
 }
 
@@ -942,18 +962,21 @@ section {
 
       <div class="process-grid">
         <div class="glass-card reveal delay-2">
+          <div class="process-card-accent"></div>
           <div class="process-number">01</div>
           <div class="process-title">We learn your business</div>
           <p class="process-desc">We sit down, listen, and understand what makes you different. The way your best customers see you.</p>
         </div>
 
         <div class="glass-card reveal delay-3">
+          <div class="process-card-accent"></div>
           <div class="process-number">02</div>
           <div class="process-title">We build what's missing</div>
           <p class="process-desc">Whether it's your online presence, your visibility, or your message, we create exactly what you need. Nothing more.</p>
         </div>
 
         <div class="glass-card reveal delay-4">
+          <div class="process-card-accent"></div>
           <div class="process-number">03</div>
           <div class="process-title">You get the calls</div>
           <p class="process-desc">New customers find you. Your phone rings. Your inbox fills up. That's how we measure success.</p>
@@ -1013,7 +1036,7 @@ section {
         <!-- LEFT: DIY Guide -->
         <div class="glass-card" style="padding:clamp(1.5rem, 2.5vw, 2.2rem); text-align:center; display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-            <p style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-faint); margin-bottom:0.8rem;">Do it yourself</p>
+            <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-faint); margin-bottom:0.8rem;">Do it yourself</p>
             <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.2rem, 1.8vw, 1.5rem); color:var(--navy); font-weight:500; margin-bottom:0.8rem; font-style:italic;">We wrote a short guide.</h3>
             <p class="text-small" style="color:var(--text-light); line-height:1.7; margin-bottom:1.2rem;">5 things your website is doing right now that are sending customers to your competitor. Takes 3 minutes. Might change everything.</p>
           </div>
@@ -1023,20 +1046,20 @@ section {
               <button type="submit" class="btn" style="width:100%; background:var(--navy); color:#fff; border:none;">Send me the guide</button>
             </form>
             <iframe name="hidden-form-iframe" style="display:none;"></iframe>
-            <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.6rem;">No spam. Just the guide.</p>
+            <p style="font-size:0.75rem; color:var(--text-faint); margin-top:0.6rem;">No spam. Just the guide.</p>
           </div>
         </div>
 
         <!-- RIGHT: Done for you -->
         <div class="glass-card" style="padding:clamp(1.5rem, 2.5vw, 2.2rem); text-align:center; display:flex; flex-direction:column; justify-content:space-between; border:1px solid rgba(201,168,76,0.3);">
           <div>
-            <p style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--gold); margin-bottom:0.8rem;">Done for you</p>
+            <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--gold); margin-bottom:0.8rem;">Done for you</p>
             <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.2rem, 1.8vw, 1.5rem); color:var(--navy); font-weight:500; margin-bottom:0.8rem; font-style:italic;">We'll just fix it for you.</h3>
             <p class="text-small" style="color:var(--text-light); line-height:1.7; margin-bottom:1.2rem;">Same problems. Same fixes. Except you don't lift a finger. We handle everything and you get back to running your business.</p>
           </div>
           <div>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_Zj3IBE3PVCOoXGN297vXqDMqUpumV4fNCJiCzD1xGjOH0g/viewform" target="_blank" rel="noopener" class="btn btn-breathe" style="display:block; width:100%; background:var(--navy); color:#fff; border:none; text-align:center;">Let's talk about your business</a>
-            <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.6rem;">30 second form. We reply within hours.</p>
+            <p style="font-size:0.75rem; color:var(--text-faint); margin-top:0.6rem;">30 second form. We reply within hours.</p>
           </div>
         </div>
 

@@ -22,6 +22,9 @@
 - **Backtested: 63.2% CAGR, Sharpe 2.41, max drawdown 10.6%** ✅
 - **Optimal portfolio:** Factor Momentum 40% + EMA Momentum 33% + Swing Percoco 26%
 - Risk framework: position sizer (Kelly), circuit breaker, correlation monitor, trade journal, risk reporter
+- **Executor v2:** `projects/alpaca-bot/executor.py` — `_check_risk_limits()`, ATR stop-losses, env var secrets
+- **Exposure issue (Feb 27):** 187% (8 positions, 5 at ~30% each) — needs reduction at market open
+- **Day trading pivot (Feb 26):** Scanned momentum candidates RGTI/IONQ/OCGN, executed ~30K in positions - shift toward active intraday vs pure quant
 - Backtest engine at `backtest/backtest_engine.py`, results in `backtest/results/`
 - Research: 400KB+ in `research/` (ALIEN_MATH_INDICATORS, EUREKA_BREAKTHROUGH, BEHAVIORAL_ALPHA_ENGINE, NATURE_PATTERNS_ALPHA, MICROSTRUCTURE_ALPHA, ADVANCED_STRATEGIES_2026, etc.)
 - Keys in `config.local.yaml`, IEX feed
@@ -41,6 +44,11 @@
 - Connected as @nuts_joe8094 (display: A)
 - Free tier blocks read endpoints (402 errors)
 - Social scanner (Reddit/Finviz/Google News) as workaround
+
+### 4. Website Design Templates
+- **Premium light theme system (Feb 26):** Glass morphism, curved designs, golden ratio spacing, floating animations
+- **Deployed:** amotive.io production site with conversion-focused aesthetics
+- **Reusable:** CSS token system, mobile-responsive, accessibility compliant
 
 ## Key Technical Notes
 - **Sudo password:** See SYSADMIN_RULES.md
@@ -214,9 +222,17 @@
 - `projects/marketing-agency/brand-kit/` — complete brand kit
 - `PROJECT_TODOS.md` — project task tracking
 
-## Amotive Website — v2 LIVE, v3 BROKEN
-- **Live:** amotive.io → v2 (commit `7e07260`), v3 loading gate broken, stays local only
-- **Legal:** `/privacy` and `/terms` pages live
+## Amotive Website — v3 LIVE (Klaff Inception)
+- **Live:** amotive.io → v3, commit `d18933e`+ on `main` branch
+- **Philosophy:** Klaff inception funnel — no prices, no jargon, no selling. Let them convince themselves.
+- **Funnel:** Free guide email capture (small ask) → Done-for-you Google Form (big ask) → Conversation → Pricing
+- **Layout:** Side-by-side "red pill/blue pill" — DIY guide vs done-for-you, gold border on premium
+- **Google Form:** ID `1EkMW3UGJZ-RTbIfonMTeLwQlTqXJYmbYutVDm_N1--g`
+- **Contact:** `hello@amotive.io` on site, `a@amotive.io` for outreach only (NOT on website)
+- **Portfolio names (PNW):** Pike Street Bakery, Cascade Legal, Rainier Fitness
+- **Legal:** `/privacy` and `/terms` pages live, restyled to match v3
+- **Git workflow:** `main` = live (GitHub Pages), `master` = dev. Push to `main` for deploys.
+- **QA scores (Feb 27):** 6→8.5/10 after overnight fixes (meta tags, form, footer, portfolio, favicon)
 
 ## ATrades — LIVE BUSINESS
 - **Domain:** atrades.io (Porkbun → Cloudflare DNS)
@@ -242,8 +258,16 @@
 ## Nickname
 - Aiden calls me **"Ace"** ⚡ (started Feb 20)
 
-## Cold Outreach — ACTIVE, FIRST EMAILS SENT FEB 23
-- 3 emails sent Feb 23, auto follow-up cron handles Day 3/7/14 sequence
+## Cold Outreach — ACTIVE, BATCHES 1+2
+- **Batch 1 (Feb 23):** 3 sent — Diamond Landscape, G&R Landscaping, Lederman DDS
+  - Day 3 follow-ups: SENT (Feb 26)
+  - Day 7 due: Mar 2 (Value Drop)
+  - Day 14 due: Mar 9 (Autonomy Close)
+- **Batch 2 (ready to send Feb 27-28):** 5 drafted — Environmental Construction, Economy Landscaping, Landcrafters, Mountain Goat Roofing, Pacific Garden Design
+  - Emails at `projects/outreach/EMAILS_READY_BATCH2.md`
+- **Follow-ups cleaned:** Em-dashes removed from Day 7/14 drafts in `FOLLOWUPS_READY.md`
+- **30-Day Sprint:** `projects/marketing-agency/30_DAY_SPRINT.md` — Day 1 is Feb 27
+- Auto follow-up cron handles Day 3/7/14 sequence
 - All details at `projects/outreach/` (sent log, leads, templates, follow-up engine)
 
 ## GUI Automation Bot
@@ -347,3 +371,26 @@
 ## HANDOFF.md — Multi-Bot Scaling Doc
 - 12.5KB comprehensive handoff doc for second bot
 - Covers architecture, credentials, operations, gotchas
+
+## Overnight Fix Sprint — Feb 27
+- 6 sub-agents deployed in parallel: website, trading, outreach, content, legal, empire-blueprint
+- 4 completed, 2 timed out (manually finished)
+- **Round 1 QA scores:** Website 6→8.5, Trading 5→7.5, Outreach 7→8.5, Content 7→8.5, Infra 8→8
+
+## Round 2 QA Audit — Feb 27 (~09:00 UTC)
+- 5 Opus sub-agents: infra-qa-10, content-qa-10, website-qa-10, outreach-qa-10, trading-qa-10
+- **ALL 5 COMPLETED** — reports at `projects/qa-reports/*-qa-10-10.md`
+- **Scores:** Content 10/10, Outreach 10/10, Website 9.2/10, Trading 8.5/10, Infra 8.5/10 (avg 9.2)
+- **Critical trading bugs fixed:** position_sizer.py AttributeError, duplicate scanners: YAML key, executor risk logic, ATR hardcode, main.py hardcoded defaults
+- **Critical outreach bugs fixed:** 12 em-dashes in live email bodies, Day 7/14 follow-ups never firing (status mismatch), send-batch.py regex broken, triple signature
+- **Website fixes:** trust badges, glass morphism, portfolio grid, process cards, hero CTA, accessibility
+- **Content:** 50+ localization fixes across 18 files
+- **Infra:** blackbox-api.yaml perms, service checks (6/6 up)
+- **Remaining to 10/10:** Trading needs unit tests + deprecate runner.py; Website needs legal font unification + real portfolio images; Infra needs gateway restart
+- **Still pending:** Push fixes to main, gateway restart, Notion case studies, compaction config
+
+## Compaction Config — NOT YET APPLIED
+- OpenClaw config at `~/.openclaw/openclaw.json`
+- Current: `compaction.mode: "safeguard"`, no token thresholds
+- Planned: Add `reserveTokensFloor`, `memoryFlush.enabled`, `memoryFlush.softThresholdTokens`
+- Autocompact at 50k tokens, memory flush to YAML at 100k — Aiden requested this

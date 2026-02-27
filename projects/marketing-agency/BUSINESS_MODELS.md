@@ -13,9 +13,9 @@
 Five complete, launch-ready business models designed for 80-95% automation using OpenClaw AI agents. Each business targets different revenue streams and market segments, creating a diversified portfolio with minimal human interaction required.
 
 **Total Portfolio Projections (Month 12):**
-- **Conservative:** €42K/month
-- **Moderate:** €78K/month  
-- **Aggressive:** €135K/month
+- **Conservative:** $42K/month
+- **Moderate:** $78K/month  
+- **Aggressive:** $135K/month
 
 ---
 
@@ -27,14 +27,14 @@ Five complete, launch-ready business models designed for 80-95% automation using
 - **Target Market:** Small-medium businesses globally (restaurants, dentists, lawyers, real estate, gyms)
 - **Revenue Model:** Per-qualified-lead + monthly retainers
 - **Pricing Tiers:**
-  - **Starter:** €250 per qualified lead (pay-per-lead)
-  - **Growth:** €2,500/month (10 leads guaranteed)
-  - **Scale:** €4,500/month (20 leads + priority support)
+  - **Starter:** $250 per qualified lead (pay-per-lead)
+  - **Growth:** $2,500/month (10 leads guaranteed)
+  - **Scale:** $4,500/month (20 leads + priority support)
 - **Automation Level:** 95%
 - **Monthly Revenue Target:**
-  - Conservative: €8K (32 leads/month)
-  - Moderate: €15K (6 retainer clients)
-  - Aggressive: €25K (10 retainer clients)
+  - Conservative: $8K (32 leads/month)
+  - Moderate: $15K (6 retainer clients)
+  - Aggressive: $25K (10 retainer clients)
 
 ### Startup Checklist
 **Domain Names:** (Check availability)
@@ -44,12 +44,12 @@ Five complete, launch-ready business models designed for 80-95% automation using
 
 **Tech Stack:**
 - OpenClaw (agent orchestration)
-- Apollo.io (lead scraping) - €99/month
-- Hunter.io (email verification) - €49/month
-- Lemlist (email sequences) - €79/month
-- Airtable (CRM) - €24/month
-- Typeform (intake forms) - €35/month
-- Calendly (scheduling) - €10/month
+- Apollo.io (lead scraping) - $99/month
+- Hunter.io (email verification) - $49/month
+- Lemlist (email sequences) - $79/month
+- Airtable (CRM) - $24/month
+- Typeform (intake forms) - $35/month
+- Calendly (scheduling) - $10/month
 
 **API Accounts Required:**
 - Google Maps API (business data)
@@ -58,7 +58,7 @@ Five complete, launch-ready business models designed for 80-95% automation using
 - WhatsApp Business API
 - business registry APIs
 
-**Monthly Tool Costs:** €296/month
+**Monthly Tool Costs:** $296/month
 **Time to First Revenue:** 14-21 days
 
 ### Automation Architecture
@@ -130,28 +130,28 @@ Lead Delivery Dashboard → Weekly Reports → Monthly Strategy Calls
 **Escalation Rules:**
 - Client complaint → Immediate human notification
 - Lead quality score <3/5 → Human review required
-- Monthly revenue <€5K → Strategy review with Aiden
+- Monthly revenue <$5K → Strategy review with Aiden
 - New client onboarding → Human involvement for first call
 
 ### Revenue Math
 **Cost per Lead:**
-- Prospecting tools: €2.50 per qualified lead
-- Verification/enrichment: €1.00 per lead
-- Outreach platform costs: €1.50 per lead
-- Server/infrastructure: €0.75 per lead
-- **Total Cost per Lead:** €5.75
+- Prospecting tools: $2.50 per qualified lead
+- Verification/enrichment: $1.00 per lead
+- Outreach platform costs: $1.50 per lead
+- Server/infrastructure: $0.75 per lead
+- **Total Cost per Lead:** $5.75
 
 **Margin Analysis:**
-- Selling price: €250 per lead
-- Cost to deliver: €5.75 per lead
-- **Gross margin:** €244.25 (97.7%)
+- Selling price: $250 per lead
+- Cost to deliver: $5.75 per lead
+- **Gross margin:** $244.25 (97.7%)
 
-**Break-Even Point:** 2 leads per month (€500 revenue)
-**Monthly Overhead:** €450 (tools + infrastructure)
+**Break-Even Point:** 2 leads per month ($500 revenue)
+**Monthly Overhead:** $450 (tools + infrastructure)
 **Scale Economics:**
-- At 10 leads/month: €1,942 profit (81% margin)
-- At 50 leads/month: €12,213 profit (97% margin) 
-- At 100 leads/month: €24,875 profit (99% margin)
+- At 10 leads/month: $1,942 profit (81% margin)
+- At 50 leads/month: $12,213 profit (97% margin) 
+- At 100 leads/month: $24,875 profit (99% margin)
 
 ### 30-Day Launch Plan
 
@@ -187,13 +187,13 @@ Lead Delivery Dashboard → Weekly Reports → Monthly Strategy Calls
 - **Revenue Model:** Freemium newsletter + premium subscriptions + affiliate revenue
 - **Pricing Tiers:**
   - **Free:** Daily newsletter with basic insights
-  - **Premium:** €19/month - Advanced analysis, portfolio recommendations
-  - **VIP:** €49/month - Daily calls, private Discord, early access
+  - **Premium:** $19/month - Advanced analysis, portfolio recommendations
+  - **VIP:** $49/month - Daily calls, private Discord, early access
 - **Automation Level:** 88%
 - **Monthly Revenue Target:**
-  - Conservative: €3K (200 premium, affiliate income)
-  - Moderate: €7K (400 premium + sponsorships)
-  - Aggressive: €15K (800 premium + high-value affiliates)
+  - Conservative: $3K (200 premium, affiliate income)
+  - Moderate: $7K (400 premium + sponsorships)
+  - Aggressive: $15K (800 premium + high-value affiliates)
 
 ### Startup Checklist
 **Domain Names:**
@@ -202,12 +202,12 @@ Lead Delivery Dashboard → Weekly Reports → Monthly Strategy Calls
 - CryptoPulseDaily.com (Alternative)
 
 **Tech Stack:**
-- ConvertKit (email marketing) - €29/month
-- Substack Pro (newsletter platform) - €50/month
-- TradingView (charts/analysis) - €59.95/month
-- Beehiiv (backup newsletter) - €39/month
-- Discord (community) - €0 (Nitro optional €9.99/month)
-- Canva Pro (graphics) - €12.99/month
+- ConvertKit (email marketing) - $29/month
+- Substack Pro (newsletter platform) - $50/month
+- TradingView (charts/analysis) - $59.95/month
+- Beehiiv (backup newsletter) - $39/month
+- Discord (community) - $0 (Nitro optional $9.99/month)
+- Canva Pro (graphics) - $12.99/month
 
 **API Accounts Required:**
 - CoinGecko API (crypto data)
@@ -216,7 +216,7 @@ Lead Delivery Dashboard → Weekly Reports → Monthly Strategy Calls
 - YouTube API (video content)
 - Affiliate networks (Binance, eToro, TradingView)
 
-**Monthly Tool Costs:** €201/month
+**Monthly Tool Costs:** $201/month
 **Time to First Revenue:** 30-45 days (subscriber growth phase)
 
 ### Automation Architecture
@@ -295,23 +295,23 @@ Upgrade Prompts → Premium Conversion → VIP Upsell → Community Access
 
 ### Revenue Math
 **Revenue Streams:**
-- Premium subscriptions: €19 × subscribers per month
-- VIP subscriptions: €49 × VIP subscribers per month
-- Affiliate commissions: €25-150 per conversion
-- Sponsorships: €500-2000 per newsletter (at scale)
+- Premium subscriptions: $19 × subscribers per month
+- VIP subscriptions: $49 × VIP subscribers per month
+- Affiliate commissions: $25-150 per conversion
+- Sponsorships: $500-2000 per newsletter (at scale)
 
 **Cost Structure:**
-- Tools and platforms: €201/month
-- Content creation: €50/month (images, resources)
-- Server costs: €25/month
-- **Total monthly costs:** €276
+- Tools and platforms: $201/month
+- Content creation: $50/month (images, resources)
+- Server costs: $25/month
+- **Total monthly costs:** $276
 
-**Break-Even Point:** 15 premium subscribers (€285 revenue)
+**Break-Even Point:** 15 premium subscribers ($285 revenue)
 
 **Scale Economics:**
-- At 100 premium: €1,624 profit (85% margin)
-- At 300 premium: €5,424 profit (95% margin)  
-- At 500 premium: €9,224 profit (97% margin)
+- At 100 premium: $1,624 profit (85% margin)
+- At 300 premium: $5,424 profit (95% margin)  
+- At 500 premium: $9,224 profit (97% margin)
 
 ### 30-Day Launch Plan
 
@@ -346,15 +346,15 @@ Upgrade Prompts → Premium Conversion → VIP Upsell → Community Access
 - **Target Market:** YouTube/TikTok audiences interested in finance, AI/tech, motivation, lifestyle
 - **Revenue Model:** AdSense + sponsorships + affiliate marketing + course sales
 - **Pricing Tiers:**
-  - **AdSense:** €2-5 per 1,000 views
-  - **Sponsorships:** €500-5,000 per video (10K+ subs)
-  - **Affiliates:** €50-500 per conversion
-  - **Courses:** €97-497 per sale
+  - **AdSense:** $2-5 per 1,000 views
+  - **Sponsorships:** $500-5,000 per video (10K+ subs)
+  - **Affiliates:** $50-500 per conversion
+  - **Courses:** $97-497 per sale
 - **Automation Level:** 90%
 - **Monthly Revenue Target:**
-  - Conservative: €4K (500K views + basic monetization)
-  - Moderate: €12K (1M views + sponsorships)
-  - Aggressive: €25K (2M+ views + premium monetization)
+  - Conservative: $4K (500K views + basic monetization)
+  - Moderate: $12K (1M views + sponsorships)
+  - Aggressive: $25K (2M+ views + premium monetization)
 
 ### Startup Checklist
 **Domain Names:**
@@ -363,13 +363,13 @@ Upgrade Prompts → Premium Conversion → VIP Upsell → Community Access
 - VaultMedia.co (Local version)
 
 **Tech Stack:**
-- Remotion (video generation) - €0 (open source)
-- ElevenLabs (AI voice) - €55/month
-- Midjourney (thumbnails/graphics) - €60/month
-- Final Cut Pro / DaVinci Resolve - €0 (one-time)
-- TubeBuddy (YouTube optimization) - €9/month
-- VidIQ (YouTube analytics) - €39/month
-- Canva Pro (graphics) - €12.99/month
+- Remotion (video generation) - $0 (open source)
+- ElevenLabs (AI voice) - $55/month
+- Midjourney (thumbnails/graphics) - $60/month
+- Final Cut Pro / DaVinci Resolve - $0 (one-time)
+- TubeBuddy (YouTube optimization) - $9/month
+- VidIQ (YouTube analytics) - $39/month
+- Canva Pro (graphics) - $12.99/month
 
 **API Accounts Required:**
 - YouTube Data API v3
@@ -379,7 +379,7 @@ Upgrade Prompts → Premium Conversion → VIP Upsell → Community Access
 - Trending topic APIs (Google Trends, etc.)
 - Stock footage APIs (Pexels, Unsplash)
 
-**Monthly Tool Costs:** €175.99/month
+**Monthly Tool Costs:** $175.99/month
 **Time to First Revenue:** 60-90 days (monetization thresholds)
 
 ### Automation Architecture
@@ -459,32 +459,32 @@ Course/Product Interest → Sale → Community → Repeat Purchases
 
 ### Revenue Math
 **Revenue Streams & Calculations:**
-- **AdSense:** €3 per 1,000 views average
-  - 500K views/month = €1,500
-  - 1M views/month = €3,000
-  - 2M views/month = €6,000
+- **AdSense:** $3 per 1,000 views average
+  - 500K views/month = $1,500
+  - 1M views/month = $3,000
+  - 2M views/month = $6,000
 
-- **Sponsorships:** €1 per 1,000 views (negotiated)
-  - 100K views/month = €500-1,000 per sponsor
-  - 500K views/month = €2,500-5,000 per sponsor
+- **Sponsorships:** $1 per 1,000 views (negotiated)
+  - 100K views/month = $500-1,000 per sponsor
+  - 500K views/month = $2,500-5,000 per sponsor
 
-- **Affiliate Marketing:** €100 average commission
-  - 50 conversions/month = €5,000
-  - 100 conversions/month = €10,000
+- **Affiliate Marketing:** $100 average commission
+  - 50 conversions/month = $5,000
+  - 100 conversions/month = $10,000
 
 **Cost Structure:**
-- Tools and software: €176/month
-- Voice synthesis: €55/month (included above)
-- Stock footage/music: €50/month
-- Server costs: €30/month
-- **Total monthly costs:** €256
+- Tools and software: $176/month
+- Voice synthesis: $55/month (included above)
+- Stock footage/music: $50/month
+- Server costs: $30/month
+- **Total monthly costs:** $256
 
-**Break-Even Point:** 85,000 views per month (€256 AdSense revenue)
+**Break-Even Point:** 85,000 views per month ($256 AdSense revenue)
 
 **Scale Economics:**
-- At 500K views: €4,244 profit (94% margin)
-- At 1M views: €9,244 profit (97% margin)
-- At 2M+ views: €24,244+ profit (99% margin)
+- At 500K views: $4,244 profit (94% margin)
+- At 1M views: $9,244 profit (97% margin)
+- At 2M+ views: $24,244+ profit (99% margin)
 
 ### 30-Day Launch Plan
 
@@ -519,15 +519,15 @@ Course/Product Interest → Sale → Community → Repeat Purchases
 - **Target Market:** Small/medium businesses globally with poor online presence
 - **Revenue Model:** Monthly retainers + performance bonuses + website packages
 - **Pricing Tiers:**
-  - **Local:** €599/month (basic SEO + Google My Business)
-  - **Growth:** €999/month (full SEO + content + local listings)
-  - **Dominate:** €1,499/month (enterprise SEO + competitor analysis)
-  - **Website Package:** €2,500 one-time (SEO-optimized site)
+  - **Local:** $599/month (basic SEO + Google My Business)
+  - **Growth:** $999/month (full SEO + content + local listings)
+  - **Dominate:** $1,499/month (enterprise SEO + competitor analysis)
+  - **Website Package:** $2,500 one-time (SEO-optimized site)
 - **Automation Level:** 80%
 - **Monthly Revenue Target:**
-  - Conservative: €6K (10 Local clients)
-  - Moderate: €12K (8 Growth + 4 Dominate)
-  - Aggressive: €24K (16 mixed clients + website packages)
+  - Conservative: $6K (10 Local clients)
+  - Moderate: $12K (8 Growth + 4 Dominate)
+  - Aggressive: $24K (16 mixed clients + website packages)
 
 ### Startup Checklist
 **Domain Names:**
@@ -536,13 +536,13 @@ Course/Product Interest → Sale → Community → Repeat Purchases
 - RankForge.co (International backup)
 
 **Tech Stack:**
-- Ahrefs (SEO analysis) - €179/month
-- SEMrush (competitor research) - €119.95/month
-- Screaming Frog (technical SEO) - €149/year
-- WordPress/Elementor - €59/month
-- Google Analytics/Search Console - €0
-- Rank tracking software - €89/month
-- Project management (Monday.com) - €39/month
+- Ahrefs (SEO analysis) - $179/month
+- SEMrush (competitor research) - $119.95/month
+- Screaming Frog (technical SEO) - $149/year
+- WordPress/Elementor - $59/month
+- Google Analytics/Search Console - $0
+- Rank tracking software - $89/month
+- Project management (Monday.com) - $39/month
 
 **API Accounts Required:**
 - Google Search Console API
@@ -552,7 +552,7 @@ Course/Product Interest → Sale → Community → Repeat Purchases
 - Bright Local API (for local citations)
 - business directory APIs
 
-**Monthly Tool Costs:** €485/month
+**Monthly Tool Costs:** $485/month
 **Time to First Revenue:** 30-45 days
 
 ### Automation Architecture
@@ -645,22 +645,22 @@ Performance Reviews → Upsell Opportunities
 - Ongoing maintenance: 4 hours/month per client (automated)
 
 **Cost Structure Per Client:**
-- Tools (allocated): €48/month per client
-- Content creation: €75/month per client
-- Technical maintenance: €25/month per client
-- **Total cost per client:** €148/month
+- Tools (allocated): $48/month per client
+- Content creation: $75/month per client
+- Technical maintenance: $25/month per client
+- **Total cost per client:** $148/month
 
 **Margin Analysis:**
-- Local plan (€599): €451 profit (75% margin)
-- Growth plan (€999): €851 profit (85% margin)
-- Dominate plan (€1,499): €1,351 profit (90% margin)
+- Local plan ($599): $451 profit (75% margin)
+- Growth plan ($999): $851 profit (85% margin)
+- Dominate plan ($1,499): $1,351 profit (90% margin)
 
-**Break-Even Point:** 4 Local clients (€2,396 revenue vs €2,085 costs)
+**Break-Even Point:** 4 Local clients ($2,396 revenue vs $2,085 costs)
 
 **Scale Economics:**
-- At 10 clients: €6,510 profit (78% margin)
-- At 20 clients: €15,520 profit (84% margin)  
-- At 30 clients: €24,530 profit (87% margin)
+- At 10 clients: $6,510 profit (78% margin)
+- At 20 clients: $15,520 profit (84% margin)  
+- At 30 clients: $24,530 profit (87% margin)
 
 ### 30-Day Launch Plan
 
@@ -696,13 +696,13 @@ Performance Reviews → Upsell Opportunities
 - **Revenue Model:** Freemium SaaS with usage-based upgrades
 - **Pricing Tiers:**
   - **Free:** 10 tasks/month, basic AI organization
-  - **Pro:** €19/month (unlimited tasks, advanced AI, integrations)
-  - **Team:** €49/month (collaboration, team analytics, priority support)
+  - **Pro:** $19/month (unlimited tasks, advanced AI, integrations)
+  - **Team:** $49/month (collaboration, team analytics, priority support)
 - **Automation Level:** 85%
 - **Monthly Revenue Target:**
-  - Conservative: €2K (100 Pro users, 20 Team users)
-  - Moderate: €5K (200 Pro, 40 Team users)
-  - Aggressive: €12K (400 Pro, 100 Team users)
+  - Conservative: $2K (100 Pro users, 20 Team users)
+  - Moderate: $5K (200 Pro, 40 Team users)
+  - Aggressive: $12K (400 Pro, 100 Team users)
 
 ### Startup Checklist
 **Domain Names:**
@@ -711,13 +711,13 @@ Performance Reviews → Upsell Opportunities
 - FlowTasks.co (Backup)
 
 **Tech Stack:**
-- Next.js/React (frontend) - €0
-- Supabase (database/auth) - €25/month
-- Vercel (hosting) - €20/month
-- Stripe (payments) - 2.9% + €0.30 per transaction
-- OpenAI API (task processing) - €150/month estimated
-- Resend (email) - €20/month
-- PostHog (analytics) - €0 (generous free tier)
+- Next.js/React (frontend) - $0
+- Supabase (database/auth) - $25/month
+- Vercel (hosting) - $20/month
+- Stripe (payments) - 2.9% + $0.30 per transaction
+- OpenAI API (task processing) - $150/month estimated
+- Resend (email) - $20/month
+- PostHog (analytics) - $0 (generous free tier)
 
 **API Accounts Required:**
 - OpenAI API (GPT-4 for task intelligence)
@@ -727,7 +727,7 @@ Performance Reviews → Upsell Opportunities
 - Slack API (notifications)
 - Zapier API (workflow automation)
 
-**Monthly Tool Costs:** €215 + transaction fees
+**Monthly Tool Costs:** $215 + transaction fees
 **Time to First Revenue:** 30-45 days
 
 ### Automation Architecture
@@ -814,15 +814,15 @@ Upgrade Prompts → Paid Conversion → Feature Education → Expansion Revenue
 **SaaS Metrics & Projections:**
 
 **Monthly Recurring Revenue (MRR):**
-- Pro plan: €19 × subscribers
-- Team plan: €49 × team subscribers
-- Average revenue per user (ARPU): €24
+- Pro plan: $19 × subscribers
+- Team plan: $49 × team subscribers
+- Average revenue per user (ARPU): $24
 
 **Customer Acquisition Cost (CAC):**
-- Organic (content marketing): €15 per user
-- Paid ads: €45 per user  
-- Referrals: €8 per user
-- **Blended CAC:** €25 per user
+- Organic (content marketing): $15 per user
+- Paid ads: $45 per user  
+- Referrals: $8 per user
+- **Blended CAC:** $25 per user
 
 **Churn Rates:**
 - Free users: 40% monthly churn
@@ -830,22 +830,22 @@ Upgrade Prompts → Paid Conversion → Feature Education → Expansion Revenue
 - Team users: 5% monthly churn
 
 **Unit Economics:**
-- Average Customer Lifetime Value (LTV): €312
+- Average Customer Lifetime Value (LTV): $312
 - LTV:CAC ratio: 12.5:1 (excellent)
 - Payback period: 1.3 months
 
 **Cost Structure:**
-- Infrastructure: €215/month base + €2 per user
-- Customer acquisition: €25 per new user
-- Support: €5 per user per month (automated)
+- Infrastructure: $215/month base + $2 per user
+- Customer acquisition: $25 per new user
+- Support: $5 per user per month (automated)
 - **Gross margin:** 85% at scale
 
-**Break-Even Point:** 9 Pro users + 2 Team users (€269 MRR)
+**Break-Even Point:** 9 Pro users + 2 Team users ($269 MRR)
 
 **Scale Economics:**
-- At 100 Pro + 20 Team users: €2,685 profit (92% margin)
-- At 200 Pro + 40 Team users: €5,585 profit (94% margin)
-- At 400 Pro + 100 Team users: €11,385 profit (95% margin)
+- At 100 Pro + 20 Team users: $2,685 profit (92% margin)
+- At 200 Pro + 40 Team users: $5,585 profit (94% margin)
+- At 400 Pro + 100 Team users: $11,385 profit (95% margin)
 
 ### 30-Day Launch Plan
 
@@ -876,7 +876,7 @@ Upgrade Prompts → Paid Conversion → Feature Education → Expansion Revenue
 
 ### Scoring Methodology
 Each business rated 1-5 on:
-- **Speed to Revenue** (how quickly can we make first €1000)
+- **Speed to Revenue** (how quickly can we make first $1000)
 - **Effort Required** (setup complexity and ongoing management) 
 - **Automation Level** (% of work that can be automated)
 - **Revenue Potential** (12-month revenue ceiling)
@@ -897,43 +897,43 @@ Each business rated 1-5 on:
 **Launch:** Apex Leads (Lead Generation)
 - **Why First:** Fastest revenue, highest automation, immediate market demand
 - **Key Success Factors:** Local market knowledge, strong outreach templates
-- **Revenue Target:** €3K by end of month 1
+- **Revenue Target:** $3K by end of month 1
 - **Resource Allocation:** 80% focus, Sonnet model for core operations
 
 #### **PHASE 2: Content Engine (Days 31-60)**  
 **Launch:** Crypto Pulse (Newsletter)
 - **Why Second:** Leverages Aiden's trading knowledge, builds audience asset
 - **Synergy:** Can cross-promote lead generation services to newsletter audience
-- **Revenue Target:** €1K by end of month 2
+- **Revenue Target:** $1K by end of month 2
 - **Resource Allocation:** 60% focus, can batch content creation
 
 #### **PHASE 3: Authority Building (Days 61-90)**
 **Launch:** RankForge (Local SEO)
 - **Why Third:** Complements lead generation, higher-value services
 - **Synergy:** Cross-sell SEO to lead generation clients, content for newsletter
-- **Revenue Target:** €4K by end of month 3
+- **Revenue Target:** $4K by end of month 3
 - **Resource Allocation:** 70% focus, established systems can support
 
 #### **PHASE 4: Product Expansion (Days 91-120)**
 **Launch:** TaskFlow AI (SaaS Tool)
 - **Why Fourth:** Requires more development, but builds long-term asset
 - **Synergy:** Use for internal productivity, case study for other businesses
-- **Revenue Target:** €1K by end of month 4
+- **Revenue Target:** $1K by end of month 4
 - **Resource Allocation:** 50% focus, development-heavy initially
 
 #### **PHASE 5: Content Scaling (Days 121-150)**
 **Launch:** Viral Vault (Content Factory)
 - **Why Last:** Longest time to monetization, but highest long-term potential
 - **Synergy:** Promotes all other businesses, ultimate marketing engine
-- **Revenue Target:** €2K by end of month 5
+- **Revenue Target:** $2K by end of month 5
 - **Resource Allocation:** 40% focus, systems-dependent
 
 ### Portfolio Revenue Projection
 
-**Month 3 (3 businesses active):** €8K
-**Month 6 (5 businesses active):** €18K
-**Month 12 (all optimized):** €42K
-**Month 18 (scaled versions):** €78K
+**Month 3 (3 businesses active):** $8K
+**Month 6 (5 businesses active):** $18K
+**Month 12 (all optimized):** $42K
+**Month 18 (scaled versions):** $78K
 
 ### Risk Mitigation Strategy
 
@@ -951,12 +951,12 @@ Each business rated 1-5 on:
 
 **Portfolio KPIs to Track Daily:**
 ```
-Total MRR: €X (target growth 15%/month)
+Total MRR: $X (target growth 15%/month)
 Active Businesses: X/5 (target all profitable by month 6)
 Automation Level: X% (target 90%+ average)
 Human Hours/Week: X (target <15 hours across all businesses)
-Customer Acquisition Cost: €X (target <€50 blended)
-Customer Lifetime Value: €X (target >€300 average)
+Customer Acquisition Cost: $X (target <$50 blended)
+Customer Lifetime Value: $X (target >$300 average)
 ```
 
 ---

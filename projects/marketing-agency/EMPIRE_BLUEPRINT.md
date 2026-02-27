@@ -1122,7 +1122,7 @@ Create and sell educational content, courses, newsletters, and digital products 
 - **Expense Control:** Regular review and optimization of all recurring costs
 
 **Currency & Market Risk:**
-- **Multiple Currency Exposure:** USD (AI services), EUR (local clients)
+- **Multiple Currency Exposure:** USD (all services and clients)
 - **Mitigation:** Natural hedging through cost/revenue matching
 - **Market Risk:** Diversified revenue streams across different economic sectors
 
