@@ -39,8 +39,8 @@
   --orange: #E87A2F;
   --orange-soft: #f28c47;
   --text: #2c3040;
-  --text-light: #6b7084;
-  --text-faint: #9a9db0;
+  --text-light: #555872;
+  --text-faint: #7a7d94;
 }
 
 html {
@@ -217,7 +217,7 @@ h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
 }
 
 .text-small {
-  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   color: var(--text-faint);
   letter-spacing: 0.02em;
 }
@@ -458,7 +458,7 @@ section {
 .s-opening .content { text-align: center; max-width: 750px; }
 
 .s-opening .tagline {
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-size: clamp(0.88rem, 1vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -712,15 +712,15 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--text-faint);
+  font-size: 0.85rem;
+  color: var(--text-light);
   letter-spacing: 0.02em;
 }
 
 .trust-badge svg {
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
+  width: 18px;
+  height: 18px;
+  opacity: 0.65;
   flex-shrink: 0;
 }
 
@@ -1013,7 +1013,7 @@ section {
         <!-- LEFT: DIY Guide -->
         <div class="glass-card" style="padding:clamp(1.5rem, 2.5vw, 2.2rem); text-align:center; display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-            <p style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-faint); margin-bottom:0.8rem;">Do it yourself</p>
+            <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-faint); margin-bottom:0.8rem;">Do it yourself</p>
             <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.2rem, 1.8vw, 1.5rem); color:var(--navy); font-weight:500; margin-bottom:0.8rem; font-style:italic;">We wrote a short guide.</h3>
             <p class="text-small" style="color:var(--text-light); line-height:1.7; margin-bottom:1.2rem;">5 things your website is doing right now that are sending customers to your competitor. Takes 3 minutes. Might change everything.</p>
           </div>
@@ -1023,20 +1023,20 @@ section {
               <button type="submit" class="btn" style="width:100%; background:var(--navy); color:#fff; border:none;">Send me the guide</button>
             </form>
             <iframe name="hidden-form-iframe" style="display:none;"></iframe>
-            <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.6rem;">No spam. Just the guide.</p>
+            <p style="font-size:0.75rem; color:var(--text-faint); margin-top:0.6rem;">No spam. Just the guide.</p>
           </div>
         </div>
 
         <!-- RIGHT: Done for you -->
         <div class="glass-card" style="padding:clamp(1.5rem, 2.5vw, 2.2rem); text-align:center; display:flex; flex-direction:column; justify-content:space-between; border:1px solid rgba(201,168,76,0.3);">
           <div>
-            <p style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--gold); margin-bottom:0.8rem;">Done for you</p>
+            <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--gold); margin-bottom:0.8rem;">Done for you</p>
             <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.2rem, 1.8vw, 1.5rem); color:var(--navy); font-weight:500; margin-bottom:0.8rem; font-style:italic;">We'll just fix it for you.</h3>
             <p class="text-small" style="color:var(--text-light); line-height:1.7; margin-bottom:1.2rem;">Same problems. Same fixes. Except you don't lift a finger. We handle everything and you get back to running your business.</p>
           </div>
           <div>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_Zj3IBE3PVCOoXGN297vXqDMqUpumV4fNCJiCzD1xGjOH0g/viewform" target="_blank" rel="noopener" class="btn btn-breathe" style="display:block; width:100%; background:var(--navy); color:#fff; border:none; text-align:center;">Let's talk about your business</a>
-            <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.6rem;">30 second form. We reply within hours.</p>
+            <p style="font-size:0.75rem; color:var(--text-faint); margin-top:0.6rem;">30 second form. We reply within hours.</p>
           </div>
         </div>
 
