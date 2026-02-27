@@ -1,0 +1,33 @@
+# Secrets - NEVER commit
+.secrets/
+*.pem
+*.key
+
+# OpenClaw internals
+.openclaw/
+.clawhub/
+
+# Embedded repos
+atrades-website/
+projects/atrades-site/
+projects/atrades-api/
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# OS
+.DS_Store
+*.swp
+*.swo
+
+# Config with tokens
+config.local.yaml
+
+# Temp
+*.tmp
+*.bak

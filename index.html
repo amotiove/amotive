@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amotive | Your Business Deserves to Be Found</title>
 <meta name="description" content="Amotive is a digital agency in the Pacific Northwest. We help local businesses get found by the right people.">
+<link rel="canonical" href="https://amotive.io/">
+
+<!-- Open Graph tags -->
+<meta property="og:title" content="Amotive | Your Business Deserves to Be Found">
+<meta property="og:description" content="Digital agency in the Pacific Northwest. We help local businesses get found by the right people.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amotive.io">
+<meta property="og:image" content="https://amotive.io/og-image.png">
+
+<!-- Twitter Card tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amotive | Your Business Deserves to Be Found">
+<meta name="twitter:description" content="We help Pacific Northwest businesses get found online.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -18,6 +36,8 @@
   --navy-soft: #1a2a42;
   --gold: #C9A84C;
   --gold-soft: #d4b96a;
+  --orange: #E87A2F;
+  --orange-soft: #f28c47;
   --text: #2c3040;
   --text-light: #6b7084;
   --text-faint: #9a9db0;
@@ -46,7 +66,7 @@ body {
   left: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--orange));
   z-index: 9999;
   transition: width 0.1s linear;
 }
@@ -308,7 +328,7 @@ section {
 
 .btn:hover {
   transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 16px 48px rgba(10, 22, 40, 0.22), 0 0 40px rgba(201, 168, 76, 0.12);
+  box-shadow: 0 16px 48px rgba(10, 22, 40, 0.22), 0 0 40px rgba(201, 168, 76, 0.12), 0 0 20px rgba(232, 122, 47, 0.08);
 }
 
 .btn:active {
@@ -381,7 +401,7 @@ section {
 .gold-accent {
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--orange-soft));
   border-radius: 2px;
   margin-bottom: 1rem;
 }
@@ -953,7 +973,7 @@ section {
         <div class="work-card work-card-featured reveal-left delay-2">
           <div class="pattern pattern-1"></div>
           <div class="work-card-inner">
-            <div class="work-card-name">Maria's Bakery</div>
+            <div class="work-card-name">Pike Street Bakery</div>
             <div class="work-card-result">Fully booked within 3 months</div>
             <div class="work-card-quote">"I went from hoping for walk-ins to turning people away. Best decision I ever made."</div>
           </div>
@@ -962,7 +982,7 @@ section {
         <div class="work-card work-card-tall reveal-right delay-3">
           <div class="pattern pattern-2"></div>
           <div class="work-card-inner">
-            <div class="work-card-name">Costa Legal</div>
+            <div class="work-card-name">Cascade Legal</div>
             <div class="work-card-result">New enquiries every week</div>
             <div class="work-card-quote">"Clients find us now. We stopped chasing."</div>
           </div>
@@ -971,7 +991,7 @@ section {
         <div class="work-card work-card-tall reveal-right delay-4">
           <div class="pattern pattern-3"></div>
           <div class="work-card-inner">
-            <div class="work-card-name">Porto Fitness</div>
+            <div class="work-card-name">Rainier Fitness</div>
             <div class="work-card-result">Waitlist for new members</div>
             <div class="work-card-quote">"We had to hire two more trainers."</div>
           </div>
@@ -998,10 +1018,11 @@ section {
             <p class="text-small" style="color:var(--text-light); line-height:1.7; margin-bottom:1.2rem;">5 things your website is doing right now that are sending customers to your competitor. Takes 3 minutes. Might change everything.</p>
           </div>
           <div>
-            <form onsubmit="return false;" style="display:flex; flex-direction:column; gap:0.6rem;">
-              <input type="email" placeholder="your@email.com" style="width:100%; padding:0.75rem 1rem; border:1px solid rgba(201,168,76,0.25); border-radius:10px; background:rgba(255,255,255,0.7); backdrop-filter:blur(8px); font-family:inherit; font-size:0.95rem; outline:none; transition:border 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.25)'" />
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSc_Zj3IBE3PVCOoXGN297vXqDMqUpumV4fNCJiCzD1xGjOH0g/formResponse" target="hidden-form-iframe" method="post" onsubmit="submitForm(event)" style="display:flex; flex-direction:column; gap:0.6rem;">
+              <input name="entry.1045781291" type="email" placeholder="your@email.com" required style="width:100%; padding:0.75rem 1rem; border:1px solid rgba(201,168,76,0.25); border-radius:10px; background:rgba(255,255,255,0.7); backdrop-filter:blur(8px); font-family:inherit; font-size:0.95rem; outline:none; transition:border 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.25)'" />
               <button type="submit" class="btn" style="width:100%; background:var(--navy); color:#fff; border:none;">Send me the guide</button>
             </form>
+            <iframe name="hidden-form-iframe" style="display:none;"></iframe>
             <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.6rem;">No spam. Just the guide.</p>
           </div>
         </div>
@@ -1193,6 +1214,38 @@ section {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ── Email Form Submission ──
+  window.submitForm = function(event) {
+    event.preventDefault();
+    var form = event.target;
+    var formData = new FormData(form);
+    var email = formData.get('entry.1045781291');
+    
+    if (email && email.includes('@')) {
+      // Submit to Google Form
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(function() {
+        // Show success message
+        var button = form.querySelector('button');
+        var originalText = button.textContent;
+        button.textContent = 'Guide sent! Check your email ✓';
+        button.style.background = 'var(--orange)';
+        setTimeout(function() {
+          button.textContent = originalText;
+          button.style.background = 'var(--navy)';
+          form.reset();
+        }, 3000);
+      }).catch(function() {
+        // Fallback to mailto
+        window.location.href = 'mailto:hello@amotive.io?subject=Please send me the guide&body=Hi! Please send me the guide about fixing my website. My email is: ' + encodeURIComponent(email);
+      });
+    }
+    return false;
+  };
 
   // ── Hide scroll hint on scroll ──
   var scrollHint = document.querySelector('.scroll-hint');
