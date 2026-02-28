@@ -309,6 +309,7 @@ section {
 }
 
 /* ── Scroll Reveal — MORE PRONOUNCED ── */
+/* Start visible for SEO/no-JS, JS adds .js-ready to hide before observer fires */
 .reveal {
   opacity: 0;
   transform: translateY(60px) scale(0.97);
@@ -998,6 +999,11 @@ section {
   .scroll-hint-chevron { animation: none; }
 }
 </style>
+<!-- SEO/no-JS fallback: ensure all content is visible for crawlers -->
+<noscript><style>
+  .reveal, .reveal-left, .reveal-right { opacity: 1 !important; transform: none !important; }
+  .reveal-word { opacity: 1 !important; transform: none !important; filter: none !important; }
+</style></noscript>
 </head>
 <body>
 
