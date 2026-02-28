@@ -1,0 +1,41 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Node
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Workspace files (should NOT be on GitHub Pages)
+projects/
+skills/
+scripts/
+guides/
+memory/
+*.md
+!README.md
+
+# Backups
+*.backup
+*-backup-*
+*-old.*
+*-enhanced.*
+index-backup-*.html
+index-old.html
+index-enhanced.html
+
+# Secrets
+.secrets/
+*.yaml
+*.json
+!package.json
