@@ -41,6 +41,7 @@
   --text: #2c3040;
   --text-light: #555872;
   --text-faint: #7a7d94;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
@@ -58,6 +59,65 @@ body {
   line-height: 1.6;
   cursor: default;
 }
+
+/* ── Noise texture utility ── */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: repeating-conic-gradient(rgba(0,0,0,0.06) 0% 25%, transparent 0% 50%);
+  background-size: 3px 3px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Hero ambient glow ── */
+@keyframes heroGlow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.8; }
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+  top: 60%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  animation: heroGlow 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-glow-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100,130,180,0.08) 0%, transparent 70%);
+  top: 20%;
+  right: 10%;
+  transform: translate(50%, -50%);
+  filter: blur(80px);
+  animation: heroGlow 15s ease-in-out infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Hero fadeUp stagger ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-stagger-1 { animation: fadeUp 0.8s var(--ease-premium) 0.2s both; }
+.hero-stagger-2 { animation: fadeUp 0.8s var(--ease-premium) 0.4s both; }
+.hero-stagger-3 { animation: fadeUp 0.8s var(--ease-premium) 0.6s both; }
+.hero-stagger-4 { animation: fadeUp 0.8s var(--ease-premium) 0.8s both; }
 
 /* ── Scroll Progress ── */
 .scroll-progress {
@@ -181,10 +241,13 @@ body {
 h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
 
 .text-display {
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(3.2rem, 5.5vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   color: var(--navy);
+  max-width: 14ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text-headline {
@@ -195,10 +258,10 @@ h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
 }
 
 .text-subhead {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
   line-height: 1.5;
   font-weight: 300;
-  color: var(--text-light);
+  color: rgba(30,40,55,0.55);
 }
 
 .text-body {
@@ -309,7 +372,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.95rem 2.4rem;
+  padding: 1.1rem 2.8rem;
   font-family: 'Inter Tight', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
@@ -318,21 +381,21 @@ section {
   border-radius: 100px;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.5s var(--ease-premium);
   position: relative;
   overflow: hidden;
-  background: var(--navy);
+  background: linear-gradient(135deg, var(--navy) 0%, #060d1a 100%);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.10);
+  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.15), 0 1px 3px rgba(10, 22, 40, 0.1);
 }
 
 .btn:hover {
-  transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 16px 48px rgba(10, 22, 40, 0.22), 0 0 40px rgba(201, 168, 76, 0.12), 0 0 20px rgba(232, 122, 47, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(10, 22, 40, 0.25), 0 0 40px rgba(201, 168, 76, 0.12), 0 0 20px rgba(232, 122, 47, 0.08);
 }
 
 .btn:active {
-  transform: translateY(-1px) scale(1.01);
+  transform: translateY(0);
 }
 
 .btn-breathe {
@@ -413,7 +476,7 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  opacity: 0.5;
+  opacity: 0.3;
   margin-top: 2rem;
   animation: scrollHintPulse 2.5s ease-in-out infinite;
 }
@@ -444,54 +507,128 @@ section {
   50% { transform: rotate(45deg) translateY(6px); }
 }
 
-/* ═══════ SECTIONS — unified bg, tighter padding, fluid flow ═══════ */
+/* ═══════ SECTIONS — unified bg, premium padding rhythm ═══════ */
 
 .s-opening {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(100,130,180,0.05) 0%, transparent 50%),
+              transparent;
   padding: clamp(3rem, 8vh, 6rem) 0 clamp(4rem, 10vh, 7rem);
   position: relative;
 }
 
-.s-opening .content { text-align: center; max-width: 750px; }
+.s-opening .content { text-align: center; max-width: 750px; position: relative; z-index: 2; }
 
 .s-opening .tagline {
   font-size: clamp(0.88rem, 1vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: rgba(201,168,76,0.85);
   margin-bottom: 1.5rem;
 }
 
 .s-opening .question {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 /* Questions */
 .s-questions {
-  padding: clamp(3rem, 6vh, 5rem) 0;
+  padding: clamp(8rem, 14vh, 12rem) 0;
   background: transparent;
   position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ambient glow behind questions */
+.s-questions::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06), transparent 70%);
+  top: 20%;
+  right: -10%;
+  pointer-events: none;
+  animation: ambient-drift 16s ease-in-out infinite;
+}
+
+@keyframes ambient-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.06; }
+  50% { transform: translate(-30px, 20px) scale(1.1); opacity: 0.10; }
 }
 
 .question-block {
-  margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
   max-width: 700px;
+  position: relative;
+  padding-left: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Progressive size escalation — crescendo effect */
+.question-block:nth-child(1) .text-question {
+  font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+  line-height: 1.35;
+}
+.question-block:nth-child(3) .text-question {
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+  padding-left: 48px;
+  line-height: 1.3;
+  border-left: 4px solid #C9A84C;
+}
+.question-block:nth-child(5) .text-question {
+  font-size: clamp(1.85rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 .question-block:last-child { margin-bottom: 0; }
-.question-block .text-question { margin-bottom: 0.4rem; }
+.question-block .text-question {
+  margin-bottom: 0.4rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.question-closer {
+  padding-top: 2.5rem;
+  margin-top: 2rem;
+  max-width: 700px;
+  position: relative;
+}
+
+.question-closer::before {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, #C9A84C, rgba(201, 168, 76, 0.2));
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1px;
+}
+
+.question-closer .text-small {
+  font-style: italic;
+  font-size: 1.15rem !important;
+  color: #B8962E !important;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
 
 .question-separator {
-  width: 1px;
-  height: 35px;
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.3), transparent);
-  margin: 0 auto clamp(1.5rem, 3vh, 2.5rem);
+  width: 72px;
+  height: 2px;
+  background: linear-gradient(90deg, #C9A84C, rgba(201, 168, 76, 0.2));
+  margin: 0 0 clamp(2.5rem, 5vh, 4rem);
+  border-radius: 1px;
 }
 
 /* Believe */
@@ -782,12 +919,12 @@ section {
   right: 0;
   z-index: 100;
   padding: 1rem 0;
-  background: rgba(247, 248, 252, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(10, 22, 40, 0.04);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid rgba(10, 22, 40, 0.06);
   transform: translateY(-100%);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.5s var(--ease-premium);
 }
 
 .nav.visible { transform: translateY(0); }
@@ -813,6 +950,16 @@ section {
 .nav-cta {
   padding: 0.6rem 1.4rem;
   font-size: 0.85rem;
+  background: transparent !important;
+  color: var(--navy) !important;
+  border: 1.5px solid rgba(10, 22, 40, 0.15) !important;
+  box-shadow: none !important;
+}
+
+.nav-cta:hover {
+  border-color: var(--gold) !important;
+  box-shadow: 0 4px 16px rgba(201, 168, 76, 0.1) !important;
+  background: rgba(201, 168, 76, 0.04) !important;
 }
 
 /* ── Responsive ── */
@@ -908,25 +1055,25 @@ section {
     <div class="container-narrow">
 
       <div class="question-block reveal">
-        <p class="text-question word-reveal-target">How many customers drove past your competitor today because they showed up first online?</p>
+        <p class="text-question">How many customers drove past your competitor today because they showed up first online?</p>
       </div>
 
       <div class="question-separator reveal delay-1"></div>
 
       <div class="question-block reveal delay-2">
-        <p class="text-question word-reveal-target">When was the last time your website brought you a new client?</p>
+        <p class="text-question">When was the last time your website brought you a new client?</p>
       </div>
 
       <div class="question-separator reveal delay-1"></div>
 
       <div class="question-block reveal delay-3">
-        <p class="text-question word-reveal-target">What happens when someone searches for your business and finds someone else?</p>
+        <p class="text-question">What happens when someone searches for your business and finds someone else?</p>
       </div>
 
       <div class="question-separator reveal delay-1"></div>
 
-      <div class="question-block reveal delay-4">
-        <p class="text-small" style="color: var(--text-faint); font-style: italic;">You already know the answers.</p>
+      <div class="question-closer reveal delay-4">
+        <p class="text-small">You already know the answers.</p>
       </div>
 
     </div>
