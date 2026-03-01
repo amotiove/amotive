@@ -262,7 +262,7 @@ h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
   font-size: clamp(1.15rem, 2.2vw, 1.55rem);
   line-height: 1.5;
   font-weight: 300;
-  color: rgba(30,40,55,0.55);
+  color: rgba(30,40,55,0.72);
 }
 
 .text-body {
@@ -374,9 +374,9 @@ section {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1.1rem 2.8rem;
+  padding: 1.15rem 3rem;
   font-family: 'Inter Tight', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   border: none;
@@ -438,7 +438,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 20px;
   padding: clamp(1.5rem, 2.2vw, 2.2rem);
-  box-shadow: 0 8px 32px rgba(10, 22, 40, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(10, 22, 40, 0.08), 0 2px 8px rgba(10, 22, 40, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   overflow: hidden;
@@ -558,7 +558,7 @@ section {
 /* Believe gets a subtle warm→cool top gradient */
 .s-believe::after {
   background: linear-gradient(to bottom,
-    rgba(201, 168, 76, 0.03) 0%,
+    rgba(201, 168, 76, 0.05) 0%,
     transparent 100%
   );
 }
@@ -566,7 +566,7 @@ section {
 /* Process gets a subtle cool fade-in */
 .s-process::after {
   background: linear-gradient(to bottom,
-    rgba(10, 22, 40, 0.025) 0%,
+    rgba(10, 22, 40, 0.04) 0%,
     transparent 100%
   );
 }
@@ -574,7 +574,7 @@ section {
 /* Work gets a warm accent top */
 .s-work::after {
   background: linear-gradient(to bottom,
-    rgba(201, 168, 76, 0.02) 0%,
+    rgba(201, 168, 76, 0.035) 0%,
     transparent 100%
   );
 }
@@ -584,11 +584,11 @@ section {
   height: 100%;
   background: linear-gradient(to bottom,
     transparent 0%,
-    transparent 40%,
-    rgba(10, 22, 40, 0.03) 55%,
-    rgba(10, 22, 40, 0.06) 70%,
-    rgba(10, 22, 40, 0.10) 85%,
-    rgba(10, 22, 40, 0.15) 100%
+    transparent 30%,
+    rgba(10, 22, 40, 0.05) 50%,
+    rgba(10, 22, 40, 0.10) 65%,
+    rgba(10, 22, 40, 0.16) 80%,
+    rgba(10, 22, 40, 0.24) 100%
   );
 }
 
@@ -689,7 +689,7 @@ section {
 /* Believe */
 .s-believe {
   padding: clamp(3rem, 6vh, 5rem) 0;
-  background: linear-gradient(180deg, rgba(10,22,40,0.015) 0%, rgba(201,168,76,0.015) 100%);
+  background: linear-gradient(180deg, rgba(10,22,40,0.03) 0%, rgba(201,168,76,0.025) 100%);
   position: relative;
 }
 
@@ -706,7 +706,7 @@ section {
 /* Process */
 .s-process {
   padding: clamp(3rem, 6vh, 5rem) 0;
-  background: linear-gradient(180deg, rgba(10,22,40,0.025) 0%, rgba(10,22,40,0.04) 100%);
+  background: linear-gradient(180deg, rgba(10,22,40,0.04) 0%, rgba(10,22,40,0.065) 100%);
   position: relative;
 }
 
@@ -758,7 +758,7 @@ section {
 /* Work / Portfolio — STAGGERED GRID */
 .s-work {
   padding: clamp(3rem, 6vh, 5rem) 0;
-  background: linear-gradient(180deg, rgba(201,168,76,0.02) 0%, rgba(10,22,40,0.02) 100%);
+  background: linear-gradient(180deg, rgba(201,168,76,0.035) 0%, rgba(10,22,40,0.04) 100%);
   position: relative;
 }
 
@@ -850,10 +850,10 @@ section {
   padding: clamp(3rem, 6vh, 5rem) 0;
   padding-bottom: clamp(5rem, 10vh, 8rem);
   background: linear-gradient(180deg,
-    rgba(10,22,40,0.02) 0%,
-    rgba(10,22,40,0.04) 40%,
-    rgba(10,22,40,0.08) 70%,
-    rgba(10,22,40,0.14) 100%
+    rgba(10,22,40,0.04) 0%,
+    rgba(10,22,40,0.07) 40%,
+    rgba(10,22,40,0.12) 70%,
+    rgba(10,22,40,0.20) 100%
   );
   position: relative;
 }
@@ -867,12 +867,12 @@ section {
   padding: clamp(5rem, 10vh, 9rem) 0;
   padding-top: clamp(16rem, 24vh, 22rem);
   background: linear-gradient(to bottom,
-    rgba(10, 22, 40, 0.18) 0%,
-    rgba(10, 22, 40, 0.3) 6%,
-    rgba(10, 22, 40, 0.45) 12%,
-    rgba(10, 22, 40, 0.6) 18%,
-    rgba(10, 22, 40, 0.75) 25%,
-    rgba(10, 22, 40, 0.88) 33%,
+    rgba(10, 22, 40, 0.24) 0%,
+    rgba(10, 22, 40, 0.36) 6%,
+    rgba(10, 22, 40, 0.50) 12%,
+    rgba(10, 22, 40, 0.65) 18%,
+    rgba(10, 22, 40, 0.78) 25%,
+    rgba(10, 22, 40, 0.90) 33%,
     var(--navy) 42%,
     var(--navy) 100%
   );
@@ -964,8 +964,8 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.92rem;
-  color: rgba(247, 248, 252, 0.65);
+  font-size: 0.95rem;
+  color: rgba(247, 248, 252, 0.75);
   letter-spacing: 0.02em;
   font-weight: 450;
 }
