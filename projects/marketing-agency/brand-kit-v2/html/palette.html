@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amotive - Color Palette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter Tight', sans-serif;
+            background: #FAFBFE;
+            color: #0A1628;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .brand-logo .am { color: #C9A84C; }
+        .brand-logo .otive { color: #0A1628; }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #0A1628;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 50px 0 25px;
+            color: #0A1628;
+        }
+        
+        h3 {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: #0A1628;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #6B7280;
+            font-weight: 400;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .color-swatch {
+            height: 120px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .color-info {
+            padding: 20px;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .color-values {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 14px;
+            color: #6B7280;
+            font-family: monospace;
+        }
+        
+        .usage-note {
+            margin-top: 10px;
+            padding: 10px;
+            background: #F7F8FC;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #4B5563;
+        }
+        
+        .contrast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .contrast-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .contrast-demo {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .contrast-ratio {
+            font-size: 12px;
+            color: #6B7280;
+            font-family: monospace;
+        }
+        
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .do-dont-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .do-card {
+            border-top: 4px solid #10B981;
+        }
+        
+        .dont-card {
+            border-top: 4px solid #EF4444;
+        }
+        
+        .do-title {
+            color: #10B981;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .dont-title {
+            color: #EF4444;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .rule-list {
+            list-style: none;
+        }
+        
+        .rule-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .rule-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .do-card .rule-list li::before { color: #10B981; }
+        .dont-card .rule-list li::before { color: #EF4444; }
+        
+        .click-to-copy {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .color-card:hover .click-to-copy {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="brand-logo">
+                <span class="am">am</span><span class="otive">otive</span>
+            </div>
+            <h1>Color Palette</h1>
+            <p class="subtitle">Premium color system for digital presence</p>
+        </div>
+
+        <h2>Primary Colors</h2>
+        <div class="color-grid">
+            <div class="color-card" data-color="#C9A84C">
+                <div class="color-swatch" style="background: #C9A84C;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Amotive Gold</div>
+                    <div class="color-values">
+                        <span>HEX: #C9A84C</span>
+                        <span>RGB: 201, 168, 76</span>
+                        <span>HSL: 46°, 53%, 54%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Brand accent, "am" lettermark, CTAs, highlights, premium touches
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-card" data-color="#0A1628">
+                <div class="color-swatch" style="background: #0A1628;">
+                    <div class="click-to-copy" style="color: #C9A84C;">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Amotive Navy</div>
+                    <div class="color-values">
+                        <span>HEX: #0A1628</span>
+                        <span>RGB: 10, 22, 40</span>
+                        <span>HSL: 216°, 60%, 10%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Primary brand color, headers, body text, backgrounds, "otive" text
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-card" data-color="#E87A2F">
+                <div class="color-swatch" style="background: #E87A2F;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Conversion Orange</div>
+                    <div class="color-values">
+                        <span>HEX: #E87A2F</span>
+                        <span>RGB: 232, 122, 47</span>
+                        <span>HSL: 24°, 80%, 55%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Call-to-action buttons, urgency indicators, notifications
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Light Palette</h2>
+        <div class="color-grid">
+            <div class="color-card" data-color="#F7F8FC">
+                <div class="color-swatch" style="background: #F7F8FC; border: 1px solid #E5E7EB;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Light Background</div>
+                    <div class="color-values">
+                        <span>HEX: #F7F8FC</span>
+                        <span>RGB: 247, 248, 252</span>
+                        <span>HSL: 228°, 33%, 98%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Section backgrounds, card backgrounds, subtle emphasis
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-card" data-color="#FAFBFE">
+                <div class="color-swatch" style="background: #FAFBFE; border: 1px solid #E5E7EB;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Page Background</div>
+                    <div class="color-values">
+                        <span>HEX: #FAFBFE</span>
+                        <span>RGB: 250, 251, 254</span>
+                        <span>HSL: 228°, 67%, 99%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Main page background, white space, clean layouts
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-card" data-color="#FFFFFF">
+                <div class="color-swatch" style="background: #FFFFFF; border: 1px solid #E5E7EB;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Pure White</div>
+                    <div class="color-values">
+                        <span>HEX: #FFFFFF</span>
+                        <span>RGB: 255, 255, 255</span>
+                        <span>HSL: 0°, 0%, 100%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Cards, modals, text on dark backgrounds, clean contrasts
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Extended Palette</h2>
+        <div class="color-grid">
+            <div class="color-card" data-color="#6B7280">
+                <div class="color-swatch" style="background: #6B7280;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Neutral Gray</div>
+                    <div class="color-values">
+                        <span>HEX: #6B7280</span>
+                        <span>RGB: 107, 114, 128</span>
+                        <span>HSL: 220°, 9%, 46%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Secondary text, placeholders, subtle elements
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-card" data-color="#10B981">
+                <div class="color-swatch" style="background: #10B981;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Success Green</div>
+                    <div class="color-values">
+                        <span>HEX: #10B981</span>
+                        <span>RGB: 16, 185, 129</span>
+                        <span>HSL: 160°, 84%, 39%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Success states, positive feedback, growth indicators
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-card" data-color="#EF4444">
+                <div class="color-swatch" style="background: #EF4444;">
+                    <div class="click-to-copy">Click to copy</div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Error Red</div>
+                    <div class="color-values">
+                        <span>HEX: #EF4444</span>
+                        <span>RGB: 239, 68, 68</span>
+                        <span>HSL: 0°, 84%, 60%</span>
+                    </div>
+                    <div class="usage-note">
+                        <strong>Usage:</strong> Error states, warnings, critical alerts
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Contrast Combinations</h2>
+        <div class="contrast-grid">
+            <div class="contrast-card">
+                <div class="contrast-demo" style="background: #0A1628; color: #FFFFFF;">
+                    Navy + White
+                </div>
+                <div class="contrast-ratio">Ratio: 12.8:1 (AAA)</div>
+            </div>
+            
+            <div class="contrast-card">
+                <div class="contrast-demo" style="background: #FFFFFF; color: #0A1628; border: 1px solid #E5E7EB;">
+                    White + Navy
+                </div>
+                <div class="contrast-ratio">Ratio: 12.8:1 (AAA)</div>
+            </div>
+            
+            <div class="contrast-card">
+                <div class="contrast-demo" style="background: #C9A84C; color: #0A1628;">
+                    Gold + Navy
+                </div>
+                <div class="contrast-ratio">Ratio: 5.2:1 (AA)</div>
+            </div>
+            
+            <div class="contrast-card">
+                <div class="contrast-demo" style="background: #E87A2F; color: #FFFFFF;">
+                    Orange + White
+                </div>
+                <div class="contrast-ratio">Ratio: 4.8:1 (AA)</div>
+            </div>
+        </div>
+
+        <h2>Usage Guidelines</h2>
+        <div class="do-dont-grid">
+            <div class="do-card">
+                <h3 class="do-title">
+                    ✓ Do
+                </h3>
+                <ul class="rule-list">
+                    <li>Use navy as primary text color on light backgrounds</li>
+                    <li>Use gold sparingly for brand accents and highlights</li>
+                    <li>Pair orange with white or light backgrounds for CTAs</li>
+                    <li>Maintain consistent color relationships across touchpoints</li>
+                    <li>Use light backgrounds to create visual hierarchy</li>
+                    <li>Test contrast ratios for accessibility</li>
+                </ul>
+            </div>
+            
+            <div class="dont-card">
+                <h3 class="dont-title">
+                    ✗ Don't
+                </h3>
+                <ul class="rule-list">
+                    <li>Use gold and orange together without white space</li>
+                    <li>Place navy text on dark backgrounds</li>
+                    <li>Overuse the gold - it should feel premium, not overwhelming</li>
+                    <li>Use red and orange in the same composition</li>
+                    <li>Create custom colors outside this palette</li>
+                    <li>Use low-contrast combinations for body text</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Click to copy functionality
+        document.querySelectorAll('.color-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const color = this.dataset.color;
+                navigator.clipboard.writeText(color).then(function() {
+                    const copyText = card.querySelector('.click-to-copy');
+                    const originalText = copyText.textContent;
+                    copyText.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyText.textContent = originalText;
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

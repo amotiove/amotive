@@ -290,6 +290,28 @@ h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
 .page-wrapper {
   position: relative;
   z-index: 1;
+  /* Master gradient — one continuous flow mapped to actual section positions
+     opening:0-16% | questions:16-33% | believe:33-41% | process:41-52%
+     work:52-65% | investment:65-79% | final:79-96% | footer:96-100% */
+  background: linear-gradient(180deg,
+    transparent 0%,                       /* hero top */
+    transparent 10%,                      /* hero mid */
+    rgba(201, 168, 76, 0.015) 14%,       /* hero bottom: pick up gold warmth */
+    rgba(201, 168, 76, 0.025) 20%,       /* questions: warm gold */
+    rgba(10, 22, 40, 0.025) 30%,         /* questions: warm→cool */
+    rgba(10, 22, 40, 0.04) 33%,          /* believe starts */
+    rgba(10, 22, 40, 0.06) 41%,          /* process starts */
+    rgba(10, 22, 40, 0.10) 52%,          /* work starts */
+    rgba(10, 22, 40, 0.15) 58%,          /* mid-work */
+    rgba(10, 22, 40, 0.20) 65%,          /* investment starts */
+    rgba(10, 22, 40, 0.32) 72%,          /* mid-investment */
+    rgba(10, 22, 40, 0.46) 79%,          /* final starts */
+    rgba(10, 22, 40, 0.62) 83%,          /* early final */
+    rgba(10, 22, 40, 0.78) 87%,          /* mid-final */
+    rgba(10, 22, 40, 0.92) 91%,          /* late final */
+    var(--navy) 94%,                      /* solid navy */
+    var(--navy) 100%                      /* footer */
+  );
 }
 
 section {
@@ -539,58 +561,11 @@ section {
   margin-bottom: 2rem;
 }
 
-/* ── Section Transitions — smooth gradient blends ── */
-/* Top-of-section gradient overlays for seamless flow */
-.s-believe::after,
-.s-process::after,
-.s-work::after,
-.s-investment::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  pointer-events: none;
-  z-index: 0;
-}
+/* ── Section Transitions — continuous gradient flow ── */
+/* Each section's bg starts where the previous ended, creating one seamless page-long gradient.
+   Chain: transparent → warm gold → cool navy tint → deeper → slight lift → deep → solid navy */
 
-/* Believe gets a subtle warm→cool top gradient */
-.s-believe::after {
-  background: linear-gradient(to bottom,
-    rgba(201, 168, 76, 0.03) 0%,
-    transparent 100%
-  );
-}
-
-/* Process gets a subtle cool fade-in */
-.s-process::after {
-  background: linear-gradient(to bottom,
-    rgba(10, 22, 40, 0.025) 0%,
-    transparent 100%
-  );
-}
-
-/* Work gets a warm accent top */
-.s-work::after {
-  background: linear-gradient(to bottom,
-    rgba(201, 168, 76, 0.02) 0%,
-    transparent 100%
-  );
-}
-
-/* Investment deepens gradually toward navy */
-.s-investment::after {
-  height: 100%;
-  background: linear-gradient(to bottom,
-    transparent 0%,
-    transparent 40%,
-    rgba(10, 22, 40, 0.03) 55%,
-    rgba(10, 22, 40, 0.06) 70%,
-    rgba(10, 22, 40, 0.10) 85%,
-    rgba(10, 22, 40, 0.15) 100%
-  );
-}
+/* Per-section backgrounds removed — master gradient on .page-wrapper handles all transitions */
 
 /* Questions */
 .s-questions {
@@ -689,7 +664,7 @@ section {
 /* Believe */
 .s-believe {
   padding: clamp(3rem, 6vh, 5rem) 0;
-  background: linear-gradient(180deg, rgba(10,22,40,0.015) 0%, rgba(201,168,76,0.015) 100%);
+  background: transparent;
   position: relative;
 }
 
@@ -706,7 +681,7 @@ section {
 /* Process */
 .s-process {
   padding: clamp(3rem, 6vh, 5rem) 0;
-  background: linear-gradient(180deg, rgba(10,22,40,0.025) 0%, rgba(10,22,40,0.04) 100%);
+  background: transparent;
   position: relative;
 }
 
@@ -758,7 +733,7 @@ section {
 /* Work / Portfolio — STAGGERED GRID */
 .s-work {
   padding: clamp(3rem, 6vh, 5rem) 0;
-  background: linear-gradient(180deg, rgba(201,168,76,0.02) 0%, rgba(10,22,40,0.02) 100%);
+  background: transparent;
   position: relative;
 }
 
@@ -849,12 +824,7 @@ section {
 .s-investment {
   padding: clamp(3rem, 6vh, 5rem) 0;
   padding-bottom: clamp(5rem, 10vh, 8rem);
-  background: linear-gradient(180deg,
-    rgba(10,22,40,0.02) 0%,
-    rgba(10,22,40,0.04) 40%,
-    rgba(10,22,40,0.08) 70%,
-    rgba(10,22,40,0.14) 100%
-  );
+  background: transparent;
   position: relative;
 }
 
@@ -862,20 +832,17 @@ section {
 .invest-cta { text-align: center; }
 .invest-note { margin-top: 1rem; }
 
+/* Text adapts to darkening backgrounds */
+.s-work .text-headline,
+.s-investment .text-headline { color: var(--navy); }
+.s-work .text-subhead { color: var(--text-light); }
+.s-investment .text-subhead { color: rgba(30, 45, 70, 0.85); }
+
 /* Final */
 .s-final {
   padding: clamp(5rem, 10vh, 9rem) 0;
-  padding-top: clamp(16rem, 24vh, 22rem);
-  background: linear-gradient(to bottom,
-    rgba(10, 22, 40, 0.18) 0%,
-    rgba(10, 22, 40, 0.3) 6%,
-    rgba(10, 22, 40, 0.45) 12%,
-    rgba(10, 22, 40, 0.6) 18%,
-    rgba(10, 22, 40, 0.75) 25%,
-    rgba(10, 22, 40, 0.88) 33%,
-    var(--navy) 42%,
-    var(--navy) 100%
-  );
+  padding-top: clamp(8rem, 12vh, 10rem);
+  background: transparent;
   text-align: center;
   position: relative;
   color: var(--bg);
@@ -910,7 +877,7 @@ section {
 /* ── Footer with trust signals ── */
 .s-footer {
   padding: clamp(2.5rem, 4vh, 3.5rem) 0;
-  background: var(--navy);
+  background: transparent;
   border-top: none;
   color: rgba(247, 248, 252, 0.7);
 }

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amotive - Typography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter Tight', sans-serif;
+            background: #FAFBFE;
+            color: #0A1628;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .brand-logo .am { color: #C9A84C; }
+        .brand-logo .otive { color: #0A1628; }
+        
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #0A1628;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #6B7280;
+            font-weight: 400;
+        }
+        
+        .section {
+            margin: 60px 0;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            color: #0A1628;
+            border-bottom: 3px solid #C9A84C;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .font-showcase {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+            margin: 30px 0;
+            padding: 30px;
+            background: #F7F8FC;
+            border-radius: 12px;
+        }
+        
+        .font-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .font-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0A1628;
+        }
+        
+        .font-details {
+            color: #6B7280;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        
+        .font-usage {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #4B5563;
+        }
+        
+        .font-example {
+            font-size: 32px;
+            line-height: 1.3;
+            color: #0A1628;
+        }
+        
+        .playfair-example {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .inter-example {
+            font-family: 'Inter Tight', sans-serif;
+        }
+        
+        .dm-sans-example {
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .hierarchy-demo {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px 0;
+        }
+        
+        .h1-demo {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #0A1628;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .h2-demo {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #0A1628;
+            margin: 35px 0 15px;
+        }
+        
+        .h3-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #0A1628;
+            margin: 25px 0 10px;
+        }
+        
+        .h4-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #0A1628;
+            margin: 20px 0 8px;
+        }
+        
+        .h5-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #0A1628;
+            margin: 15px 0 5px;
+        }
+        
+        .h6-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #6B7280;
+            margin: 10px 0 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .body-text-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #0A1628;
+            margin: 15px 0;
+        }
+        
+        .body-small-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #6B7280;
+            margin: 10px 0;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .spec-card {
+            background: #F7F8FC;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .spec-title {
+            font-weight: 600;
+            color: #0A1628;
+            margin-bottom: 10px;
+        }
+        
+        .spec-value {
+            font-family: monospace;
+            font-size: 14px;
+            color: #6B7280;
+        }
+        
+        .button-styles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Inter Tight', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: #E87A2F;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #d66a25;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #0A1628;
+            border: 2px solid #C9A84C;
+        }
+        
+        .btn-secondary:hover {
+            background: #C9A84C;
+            color: #0A1628;
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            color: #0A1628;
+            border: 2px solid #0A1628;
+        }
+        
+        .btn-ghost:hover {
+            background: #0A1628;
+            color: white;
+        }
+        
+        .caption-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .label-demo {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A1628;
+        }
+        
+        .pairing-demo {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .pairing-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #0A1628;
+            margin-bottom: 15px;
+        }
+        
+        .pairing-body {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4B5563;
+        }
+        
+        .quote-demo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 400;
+            font-style: italic;
+            color: #0A1628;
+            margin: 30px 0;
+            padding: 30px;
+            background: #F7F8FC;
+            border-left: 4px solid #C9A84C;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .responsive-note {
+            background: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #0369A1;
+        }
+        
+        @media (max-width: 768px) {
+            .font-showcase {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .h1-demo { font-size: 36px; }
+            .h2-demo { font-size: 28px; }
+            .font-example { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="brand-logo">
+                <span class="am">am</span><span class="otive">otive</span>
+            </div>
+            <h1 class="page-title">Typography</h1>
+            <p class="subtitle">Professional type system for premium digital experiences</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Font Family System</h2>
+            
+            <div class="font-showcase">
+                <div class="font-info">
+                    <div class="font-name">Playfair Display</div>
+                    <div class="font-details">
+                        Weights: 400, 500, 600, 700<br>
+                        Style: Serif, High-contrast
+                    </div>
+                    <div class="font-usage">
+                        <strong>Primary use:</strong> Headlines, brand elements, elegant emphasis. The same font used in our logo mark.
+                    </div>
+                </div>
+                <div class="font-example playfair-example">
+                    The quick brown fox jumps over the lazy dog.
+                </div>
+            </div>
+
+            <div class="font-showcase">
+                <div class="font-info">
+                    <div class="font-name">Inter Tight</div>
+                    <div class="font-details">
+                        Weights: 300, 400, 500, 600, 700<br>
+                        Style: Sans-serif, Modern
+                    </div>
+                    <div class="font-usage">
+                        <strong>Primary use:</strong> Body text, UI elements, captions. Optimized for screen reading and digital interfaces.
+                    </div>
+                </div>
+                <div class="font-example inter-example">
+                    The quick brown fox jumps over the lazy dog.
+                </div>
+            </div>
+
+            <div class="font-showcase">
+                <div class="font-info">
+                    <div class="font-name">DM Sans</div>
+                    <div class="font-details">
+                        Weights: 300, 400, 500, 600, 700<br>
+                        Style: Sans-serif, Geometric
+                    </div>
+                    <div class="font-usage">
+                        <strong>Alternative use:</strong> When Inter Tight feels too dense. Good for longer-form content and softer messaging.
+                    </div>
+                </div>
+                <div class="font-example dm-sans-example">
+                    The quick brown fox jumps over the lazy dog.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Type Hierarchy</h2>
+            
+            <div class="hierarchy-demo">
+                <h1 class="h1-demo">H1: Your growth. Engineered.</h1>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Font</div>
+                        <div class="spec-value">Playfair Display</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">48px / 3rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Weight</div>
+                        <div class="spec-value">600</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Line Height</div>
+                        <div class="spec-value">1.2</div>
+                    </div>
+                </div>
+
+                <h2 class="h2-demo">H2: Strategic Digital Solutions</h2>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Font</div>
+                        <div class="spec-value">Playfair Display</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">36px / 2.25rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Weight</div>
+                        <div class="spec-value">500</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Line Height</div>
+                        <div class="spec-value">1.3</div>
+                    </div>
+                </div>
+
+                <h3 class="h3-demo">H3: Service Categories & Features</h3>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Font</div>
+                        <div class="spec-value">Inter Tight</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">24px / 1.5rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Weight</div>
+                        <div class="spec-value">600</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Line Height</div>
+                        <div class="spec-value">1.4</div>
+                    </div>
+                </div>
+
+                <h4 class="h4-demo">H4: Subsections & Card Titles</h4>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">20px / 1.25rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Weight</div>
+                        <div class="spec-value">600</div>
+                    </div>
+                </div>
+
+                <h5 class="h5-demo">H5: Small Headlines</h5>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">18px / 1.125rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Weight</div>
+                        <div class="spec-value">500</div>
+                    </div>
+                </div>
+
+                <h6 class="h6-demo">H6: Overlines & Labels</h6>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">16px / 1rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Transform</div>
+                        <div class="spec-value">uppercase</div>
+                    </div>
+                </div>
+
+                <p class="body-text-demo">
+                    <strong>Body Text:</strong> This is standard paragraph text used throughout the site. We help Pacific Northwest businesses build digital presence that converts. No fluff, no false promises—just strategic solutions that work.
+                </p>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">16px / 1rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Line Height</div>
+                        <div class="spec-value">1.6</div>
+                    </div>
+                </div>
+
+                <p class="body-small-demo">
+                    Small text: Used for captions, disclaimers, and secondary information.
+                </p>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-title">Size</div>
+                        <div class="spec-value">14px / 0.875rem</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-title">Line Height</div>
+                        <div class="spec-value">1.5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Font Pairings in Action</h2>
+            
+            <div class="pairing-demo">
+                <h3 class="pairing-title">Strategic Web Development</h3>
+                <p class="pairing-body">
+                    We build websites that convert visitors into customers. Every element is designed with intention—from the first impression to the final click. Our approach combines conversion psychology with technical excellence.
+                </p>
+            </div>
+
+            <div class="quote-demo">
+                "We don't build websites. We engineer digital experiences that drive growth."
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Interactive Elements</h2>
+            
+            <h3>Button Styles</h3>
+            <div class="button-styles">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-secondary">Learn More</button>
+                <button class="btn btn-ghost">View Portfolio</button>
+            </div>
+
+            <h3 style="margin-top: 40px;">Labels & Captions</h3>
+            <div style="margin: 20px 0;">
+                <p class="label-demo">Form Label:</p>
+                <p class="body-text-demo">Regular input field text</p>
+                <p class="caption-demo">Caption or Helper Text</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Best Practices</h2>
+            
+            <div class="responsive-note">
+                <strong>📱 Responsive Typography:</strong> All sizes scale down by 25% on mobile devices. H1 becomes 36px, H2 becomes 28px, etc.
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+                <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #15803D; margin-bottom: 15px;">✓ Do</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">• Use Playfair Display for brand personality</li>
+                        <li style="margin-bottom: 8px;">• Stick to Inter Tight for most UI text</li>
+                        <li style="margin-bottom: 8px;">• Maintain consistent line heights</li>
+                        <li style="margin-bottom: 8px;">• Use proper contrast ratios</li>
+                        <li style="margin-bottom: 8px;">• Scale typography for mobile</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #FEF2F2; border: 1px solid #FECACA; border-radius: 12px; padding: 25px;">
+                    <h3 style="color: #DC2626; margin-bottom: 15px;">✗ Don't</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">• Mix more than 2 fonts in one design</li>
+                        <li style="margin-bottom: 8px;">• Use Playfair Display for long-form text</li>
+                        <li style="margin-bottom: 8px;">• Go below 14px for body text</li>
+                        <li style="margin-bottom: 8px;">• Use too many font weights</li>
+                        <li style="margin-bottom: 8px;">• Ignore mobile typography needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

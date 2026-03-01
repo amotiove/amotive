@@ -31,3 +31,88 @@ config.local.yaml
 # Temp
 *.tmp
 *.bak
+
+# Screenshots and temp images
+*.png
+!favicon*.png
+!apple-touch-icon.png
+!og-image.png
+
+# Project directories (separate repos or private)
+projects/alpaca-bot/
+projects/GoogleRecaptchaBypass/
+projects/faceless-content/
+projects/animation-pipeline/
+projects/outreach/
+projects/web-studio/
+projects/x-bot/
+projects/edits-pipeline/
+projects/crypto-sniper/
+
+# Workspace management files
+AGENTS.md
+FULL_AUTONOMY.md
+HEARTBEAT.md
+IDENTITY.md
+MEMORY.md
+MOTIVATION.md
+PERSONALITY.md
+PROJECT_TODOS.md
+SOUL.md
+SYSADMIN_RULES.md
+TOOLS.md
+USER.md
+CONTEXT.yaml
+memory/
+
+# Virtual environments
+venv/
+**/venv/
+.venv/
+
+# Brand kit venv
+projects/marketing-agency/brand-kit-v2/venv/
+
+# Build outputs
+logs/
+scripts/
+
+# Skills (managed separately)
+skills/
+
+# Additional project dirs
+projects/airllm/
+projects/apex-leads/
+projects/atrades-content/
+projects/books/
+projects/calendar-planner/
+projects/camoufox/
+projects/client-templates/
+projects/dashboard/
+projects/design-system/
+projects/gui-bot/
+projects/llm-bot/
+projects/marketing-research/
+projects/openclaw-tutorial/
+projects/public-apis/
+projects/qa-reports/
+projects/research/
+projects/skill-consolidation/
+projects/text-to-3d/
+projects/wp-client-template/
+projects/wp-templates/
+
+# Misc workspace files
+guides/
+learning/
+obsidian-export/
+pipelines/
+package.json
+package-lock.json
+yaml-memory.skill
+projects/*.md
+projects/*.docx
+projects/prompt-expander-instructions.md
+projects/AI_Profit_Boardroom_Reverse_Engineered.docx
+projects/CAPTCHA_BYPASS_RESEARCH.md
+projects/marketing-agency/brand-kit-v2/venv/

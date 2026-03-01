@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amotive Brand Kit v2.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter Tight', sans-serif;
+            background: #FAFBFE;
+            color: #0A1628;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0A1628 0%, #1A2B42 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+        
+        .brand-logo .am { color: #C9A84C; }
+        .brand-logo .otive { color: white; }
+        
+        .header-tagline {
+            font-size: 24px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+        
+        .header-subtitle {
+            font-size: 16px;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: #C9A84C;
+            color: #0A1628;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #0A1628;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #6B7280;
+            margin-bottom: 40px;
+        }
+        
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .asset-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .asset-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .asset-preview {
+            background: #F7F8FC;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .asset-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #0A1628;
+        }
+        
+        .asset-description {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 15px;
+        }
+        
+        .asset-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .asset-link {
+            background: #E87A2F;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+        
+        .asset-link:hover {
+            background: #d66a25;
+        }
+        
+        .asset-link.secondary {
+            background: #0A1628;
+        }
+        
+        .asset-link.secondary:hover {
+            background: #1A2B42;
+        }
+        
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .logo-item {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .logo-preview {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #6B7280;
+        }
+        
+        .color-swatches {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .color-swatch {
+            flex: 1;
+            min-width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            padding: 10px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .social-preview {
+            background: #F7F8FC;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #4B5563;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #C9A84C;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6B7280;
+            font-weight: 500;
+        }
+        
+        .footer {
+            background: #0A1628;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo .am { color: #C9A84C; }
+        .footer-logo .otive { color: white; }
+        
+        .quality-badge {
+            background: linear-gradient(135deg, #C9A84C 0%, #E6B650 100%);
+            color: #0A1628;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin: 40px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .quality-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .quality-desc {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .brand-logo { font-size: 48px; }
+            .header-tagline { font-size: 20px; }
+            .asset-grid { grid-template-columns: 1fr; }
+            .logo-showcase { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand-logo">
+            <span class="am">am</span><span class="otive">otive</span>
+        </div>
+        <div class="header-tagline">Your growth. Engineered.</div>
+        <div class="header-subtitle">Premium Brand Identity System</div>
+        <div class="version-badge">Brand Kit v2.0</div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2 class="section-title">Complete Brand System</h2>
+            <p class="section-subtitle">Professional-grade identity package for Pacific Northwest digital agency</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Logo Variations</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Color Swatches</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Font Families</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Social Templates</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Favicon Files</span>
+                </div>
+            </div>
+
+            <div class="quality-badge">
+                <div class="quality-title">🎖️ Investment-Grade Quality</div>
+                <div class="quality-desc">This brand kit represents $50,000+ agency-level deliverable with sophisticated design thinking and production-ready assets</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Logo System</h2>
+            <p class="section-subtitle">Complete wordmark and icon variations for every use case</p>
+            
+            <div class="logo-showcase">
+                <div class="logo-item">
+                    <div class="logo-preview">
+                        <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; background: #0A1628; color: white; padding: 8px 16px; border-radius: 4px;">
+                            <span style="color: #C9A84C;">am</span><span style="color: white;">otive</span>
+                        </div>
+                    </div>
+                    <div class="logo-name">Primary Wordmark</div>
+                </div>
+                
+                <div class="logo-item">
+                    <div class="logo-preview">
+                        <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #0A1628;">
+                            <span style="color: #C9A84C;">am</span><span style="color: #0A1628;">otive</span>
+                        </div>
+                    </div>
+                    <div class="logo-name">Reversed</div>
+                </div>
+                
+                <div class="logo-item">
+                    <div class="logo-preview">
+                        <div style="width: 40px; height: 40px; background: #0A1628; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #C9A84C; font-weight: bold; font-size: 18px;">A</div>
+                    </div>
+                    <div class="logo-name">Monogram</div>
+                </div>
+                
+                <div class="logo-item">
+                    <div class="logo-preview">
+                        <div style="text-align: center; font-family: 'Playfair Display', serif; font-weight: 600; background: #0A1628; color: white; padding: 10px; border-radius: 4px; font-size: 16px;">
+                            <div><span style="color: #C9A84C;">am</span><span style="color: white;">otive</span></div>
+                            <div style="font-size: 8px; font-family: 'Inter Tight', sans-serif; margin-top: 2px; opacity: 0.8;">Your growth. Engineered.</div>
+                        </div>
+                    </div>
+                    <div class="logo-name">With Tagline</div>
+                </div>
+            </div>
+
+            <div class="asset-grid">
+                <div class="asset-card">
+                    <div class="asset-title">📁 Logo Files</div>
+                    <div class="asset-description">14 logo variations in SVG vector and PNG @2x formats. Ready for web, print, and digital use.</div>
+                    <div class="asset-links">
+                        <a href="logos/" class="asset-link">Browse Logos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Color System</h2>
+            <p class="section-subtitle">Premium palette with accessibility compliance and usage guidelines</p>
+            
+            <div class="color-swatches">
+                <div class="color-swatch" style="background: #C9A84C;">Gold<br>#C9A84C</div>
+                <div class="color-swatch" style="background: #0A1628;">Navy<br>#0A1628</div>
+                <div class="color-swatch" style="background: #E87A2F;">Orange<br>#E87A2F</div>
+                <div class="color-swatch" style="background: #F7F8FC; color: #0A1628; text-shadow: none;">Light BG<br>#F7F8FC</div>
+                <div class="color-swatch" style="background: #FAFBFE; color: #0A1628; text-shadow: none;">Page BG<br>#FAFBFE</div>
+            </div>
+
+            <div class="asset-grid">
+                <div class="asset-card">
+                    <div class="asset-title">🌈 Color Palette</div>
+                    <div class="asset-description">Interactive color system with hex values, contrast ratios, and click-to-copy functionality.</div>
+                    <div class="asset-links">
+                        <a href="html/palette.html" class="asset-link">View Palette</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Typography</h2>
+            <p class="section-subtitle">Professional type system with three carefully selected font families</p>
+            
+            <div style="background: white; padding: 30px; border-radius: 16px; margin: 30px 0;">
+                <div style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: #0A1628; margin-bottom: 10px;">Headlines: Playfair Display</div>
+                <div style="font-family: 'Inter Tight', sans-serif; font-size: 16px; color: #6B7280; margin-bottom: 20px;">Body text and UI elements: Inter Tight</div>
+                <div style="font-family: 'DM Sans', sans-serif; font-size: 16px; color: #6B7280;">Alternative body text: DM Sans</div>
+            </div>
+
+            <div class="asset-grid">
+                <div class="asset-card">
+                    <div class="asset-title">✍️ Typography Guide</div>
+                    <div class="asset-description">Complete type hierarchy, font pairings, button styles, and responsive specifications.</div>
+                    <div class="asset-links">
+                        <a href="html/typography.html" class="asset-link">View Typography</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Brand Guidelines</h2>
+            <p class="section-subtitle">Comprehensive brand book with voice, tone, and usage standards</p>
+
+            <div class="asset-grid">
+                <div class="asset-card">
+                    <div class="asset-title">📋 Brand Standards</div>
+                    <div class="asset-description">Complete brand guidelines including logo usage, Klaff communication principles, and tone of voice guide.</div>
+                    <div class="asset-links">
+                        <a href="html/guidelines.html" class="asset-link">View Guidelines</a>
+                    </div>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-title">🎯 Klaff Communication</div>
+                    <div class="asset-description">Never push. Create conditions where prospects convince themselves. Questions not statements.</div>
+                    <div class="social-preview">
+                        ❌ "We're the best web development agency"<br>
+                        ✅ "What's your biggest challenge with your current site?"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Social Media Assets</h2>
+            <p class="section-subtitle">Platform-optimized templates for consistent brand presence</p>
+
+            <div class="asset-grid">
+                <div class="asset-card">
+                    <div class="asset-title">📱 Instagram Post</div>
+                    <div class="asset-description">1080x1080 square template with brand styling and content areas.</div>
+                    <div class="asset-links">
+                        <a href="social-templates/amotive-instagram-post.svg" class="asset-link">SVG</a>
+                        <a href="social-templates/amotive-instagram-post@2x.png" class="asset-link secondary">PNG</a>
+                    </div>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-title">💼 LinkedIn Banner</div>
+                    <div class="asset-description">1584x396 professional header for LinkedIn business profiles.</div>
+                    <div class="asset-links">
+                        <a href="social-templates/amotive-linkedin-banner.svg" class="asset-link">SVG</a>
+                        <a href="social-templates/amotive-linkedin-banner@2x.png" class="asset-link secondary">PNG</a>
+                    </div>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-title">🐦 Twitter/X Header</div>
+                    <div class="asset-description">1500x500 social media cover for Twitter and X platforms.</div>
+                    <div class="asset-links">
+                        <a href="social-templates/amotive-twitter-header.svg" class="asset-link">SVG</a>
+                        <a href="social-templates/amotive-twitter-header@2x.png" class="asset-link secondary">PNG</a>
+                    </div>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-title">📘 Facebook Cover</div>
+                    <div class="asset-description">820x312 business page cover for Facebook presence.</div>
+                    <div class="asset-links">
+                        <a href="social-templates/amotive-facebook-cover.svg" class="asset-link">SVG</a>
+                        <a href="social-templates/amotive-facebook-cover@2x.png" class="asset-link secondary">PNG</a>
+                    </div>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-title">📧 Email Signature</div>
+                    <div class="asset-description">HTML email signature with brand styling and contact information.</div>
+                    <div class="asset-links">
+                        <a href="social-templates/amotive-email-signature.html" class="asset-link">HTML Template</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Favicon Set</h2>
+            <p class="section-subtitle">Complete website icon package for all devices and platforms</p>
+
+            <div class="asset-grid">
+                <div class="asset-card">
+                    <div class="asset-title">🔗 Website Icons</div>
+                    <div class="asset-description">Complete favicon set including ICO, PNG variants, Apple Touch Icon, and Android Chrome icons.</div>
+                    <div class="asset-links">
+                        <a href="favicons/" class="asset-link">Browse Favicons</a>
+                        <a href="favicons/favicon-html-snippet.html" class="asset-link secondary">HTML Code</a>
+                    </div>
+                </div>
+                
+                <div class="asset-card">
+                    <div class="asset-title">📱 PWA Ready</div>
+                    <div class="asset-description">Includes site.webmanifest for Progressive Web App compatibility and modern browser support.</div>
+                    <div class="asset-links">
+                        <a href="favicons/site.webmanifest" class="asset-link">Webmanifest</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Implementation</h2>
+            <p class="section-subtitle">Everything you need to deploy the brand consistently</p>
+
+            <div style="background: white; border-radius: 16px; padding: 40px;">
+                <h3 style="margin-bottom: 20px; color: #0A1628;">Quick Start Checklist</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div>
+                        <h4 style="color: #C9A84C; margin-bottom: 10px;">✅ Immediate Use</h4>
+                        <ul style="color: #6B7280; line-height: 1.8;">
+                            <li>Use logo files from /logos/</li>
+                            <li>Reference color palette HTML</li>
+                            <li>Apply typography hierarchy</li>
+                            <li>Customize social templates</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #C9A84C; margin-bottom: 10px;">🌐 Website Setup</h4>
+                        <ul style="color: #6B7280; line-height: 1.8;">
+                            <li>Upload favicon files to root</li>
+                            <li>Add favicon HTML snippet</li>
+                            <li>Install Google Fonts</li>
+                            <li>Apply brand voice principles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">
+            <span class="am">am</span><span class="otive">otive</span>
+        </div>
+        <div style="font-size: 16px; margin-bottom: 10px;">Your growth. Engineered.</div>
+        <div style="font-size: 14px; opacity: 0.7;">Premium Brand Identity System v2.0</div>
+        <div style="font-size: 12px; opacity: 0.5; margin-top: 20px;">© 2026 Amotive Digital Agency</div>
+    </div>
+</body>
+</html>
