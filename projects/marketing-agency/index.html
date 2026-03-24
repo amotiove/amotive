@@ -3,1197 +3,539 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amotive | Your Business Deserves to Be Found</title>
-<meta name="description" content="Amotive is a digital agency based in the Pacific Northwest. We help businesses get found by the right people.">
+<title>Amotive | We Build Websites That Get You Customers</title>
+<meta name="description" content="Amotive is a digital agency helping businesses get found online. Websites, marketing, and growth — done right.">
+<link rel="canonical" href="https://amotive.io/">
+<meta property="og:title" content="Amotive | We Build Websites That Get You Customers">
+<meta property="og:description" content="Digital agency helping businesses get found online. Websites, marketing, and growth — done right.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amotive.io/">
+<meta property="og:image" content="https://amotive.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amotive | We Build Websites That Get You Customers">
+<meta name="twitter:description" content="Websites, marketing, and growth — done right.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #F7F8FC;
-  --white: #FFFFFF;
   --navy: #0A1628;
-  --navy-soft: #1a2a42;
   --gold: #C9A84C;
-  --gold-soft: #d4b96a;
-  --text: #2c3040;
-  --text-light: #6b7084;
-  --text-faint: #9a9db0;
+  --gold-hover: #b8993f;
+  --white: #FFFFFF;
+  --light: #F8F9FB;
+  --border: #E2E5EB;
+  --text: #1a1a2e;
+  --text-secondary: #555;
+  --text-muted: #777;
 }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter Tight', -apple-system, sans-serif;
-  font-weight: 400;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
-  background: var(--bg);
-  overflow-x: hidden;
+  background: var(--white);
   line-height: 1.6;
-  cursor: default;
-}
-
-/* ── Scroll Progress ── */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
-  z-index: 9999;
-  transition: width 0.1s linear;
-}
-
-/* ── Cursor Glow ── */
-.cursor-glow {
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.10) 0%, rgba(201, 168, 76, 0.03) 30%, transparent 70%);
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease;
-  will-change: left, top;
-}
-
-/* ── Ambient Orbs ── */
-.ambient-layer {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  will-change: transform;
-}
-
-.orb-1 {
-  width: 800px; height: 800px;
-  background: rgba(201, 168, 76, 0.08);
-  top: -200px; left: -200px;
-  animation: drift1 45s ease-in-out infinite;
-}
-
-.orb-2 {
-  width: 600px; height: 600px;
-  background: rgba(100, 120, 200, 0.06);
-  top: 40%; right: -150px;
-  animation: drift2 55s ease-in-out infinite;
-}
-
-.orb-3 {
-  width: 700px; height: 700px;
-  background: rgba(201, 168, 76, 0.05);
-  bottom: -100px; left: 30%;
-  animation: drift3 50s ease-in-out infinite;
-}
-
-.orb-4 {
-  width: 500px; height: 500px;
-  background: rgba(150, 140, 200, 0.04);
-  top: 20%; left: 50%;
-  animation: drift4 60s ease-in-out infinite;
-}
-
-@keyframes drift1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(120px, 80px) scale(1.1); }
-  50% { transform: translate(60px, 160px) scale(0.95); }
-  75% { transform: translate(-40px, 100px) scale(1.05); }
-}
-
-@keyframes drift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-100px, -60px) scale(1.08); }
-  66% { transform: translate(-60px, 80px) scale(0.92); }
-}
-
-@keyframes drift3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  30% { transform: translate(80px, -100px) scale(1.06); }
-  60% { transform: translate(-60px, -50px) scale(0.96); }
-}
-
-@keyframes drift4 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  40% { transform: translate(-80px, 60px) scale(1.1); }
-  70% { transform: translate(50px, -40px) scale(0.9); }
-}
-
-/* ── Floating decorative ── */
-.floater {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-.floater-ring { border: 1px solid rgba(201, 168, 76, 0.15); background: transparent; }
-.floater-dot { background: rgba(201, 168, 76, 0.10); }
-
-.float-1 { width: 80px; height: 80px; top: 15%; right: 10%; animation: gentleFloat 20s ease-in-out infinite; }
-.float-2 { width: 40px; height: 40px; top: 35%; left: 5%; animation: gentleFloat 25s ease-in-out infinite reverse; }
-.float-3 { width: 120px; height: 120px; top: 55%; right: 15%; animation: gentleFloat 30s ease-in-out infinite; }
-.float-4 { width: 20px; height: 20px; top: 75%; left: 12%; animation: gentleFloat 18s ease-in-out infinite reverse; }
-.float-5 { width: 60px; height: 60px; top: 88%; right: 25%; animation: gentleFloat 22s ease-in-out infinite; }
-
-@keyframes gentleFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-30px) rotate(5deg); }
-}
-
-/* ── Typography ── */
-h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
-
-.text-display {
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--navy);
-}
-
-.text-headline {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--navy);
-}
-
-.text-subhead {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  line-height: 1.5;
-  font-weight: 300;
-  color: var(--text-light);
-}
-
-.text-body {
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.text-question {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--navy-soft);
-}
-
-.text-small {
-  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
-  color: var(--text-faint);
-  letter-spacing: 0.02em;
-}
-
-/* ── Layout ── */
-.page-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
-section {
-  position: relative;
-  width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  padding: 0 24px;
 }
 
-.container-narrow {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 clamp(1.5rem, 4vw, 3rem);
-}
-
-/* ── Scroll Reveal — MORE PRONOUNCED ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(60px) scale(0.97);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.reveal-word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(30px) scale(0.92) rotate(2deg);
-  filter: blur(4px);
-  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-word.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1) rotate(0deg);
-  filter: blur(0);
-}
-
-/* Reveal from left/right for variety */
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-80px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(80px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-}
-
-.parallax-text { will-change: transform; }
-
-/* ── Stagger Delays ── */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
-.delay-7 { transition-delay: 0.7s; }
-
-/* ── Buttons — UNIFIED ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.95rem 2.4rem;
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  position: relative;
-  overflow: hidden;
-  background: var(--navy);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.10);
-}
-
-.btn:hover {
-  transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 16px 48px rgba(10, 22, 40, 0.22), 0 0 40px rgba(201, 168, 76, 0.12);
-}
-
-.btn:active {
-  transform: translateY(-1px) scale(1.01);
-}
-
-.btn-breathe {
-  animation: breathe 3s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0%, 100% { box-shadow: 0 4px 20px rgba(10, 22, 40, 0.10); }
-  50% { box-shadow: 0 10px 40px rgba(10, 22, 40, 0.20), 0 0 24px rgba(201, 168, 76, 0.08); }
-}
-
-/* ── Links ── */
-.link-slide {
-  position: relative;
-  text-decoration: none;
-  color: var(--navy);
-  font-weight: 500;
-}
-
-.link-slide::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  background: var(--gold);
-  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.link-slide:hover::after { width: 100%; }
-
-/* ── Glass Cards ── */
-.glass-card {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 20px;
-  padding: clamp(1.5rem, 2.2vw, 2.2rem);
-  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
-}
-
-.glass-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 24px 64px rgba(10, 22, 40, 0.08);
-  border-color: rgba(201, 168, 76, 0.25);
-}
-
-.glass-card:hover::before { opacity: 1; }
-
-/* ── Gold accent ── */
-.gold-accent {
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
-  border-radius: 2px;
-  margin-bottom: 1rem;
-}
-
-/* ── Scroll Hint ── */
-.scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  opacity: 0.5;
-  animation: scrollHintPulse 2.5s ease-in-out infinite;
-}
-
-.scroll-hint-text {
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.scroll-hint-chevron {
-  width: 20px;
-  height: 20px;
-  border-right: 1.5px solid var(--text-faint);
-  border-bottom: 1.5px solid var(--text-faint);
-  transform: rotate(45deg);
-  animation: scrollChevron 2.5s ease-in-out infinite;
-}
-
-@keyframes scrollHintPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.9; }
-}
-
-@keyframes scrollChevron {
-  0%, 100% { transform: rotate(45deg) translateY(0); }
-  50% { transform: rotate(45deg) translateY(6px); }
-}
-
-/* ═══════ SECTIONS — unified bg, tighter padding, fluid flow ═══════ */
-
-.s-opening {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  padding: clamp(3rem, 8vh, 6rem) 0 clamp(4rem, 10vh, 7rem);
-  position: relative;
-}
-
-.s-opening .content { text-align: center; max-width: 750px; }
-
-.s-opening .tagline {
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-}
-
-.s-opening .question {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-/* Questions */
-.s-questions {
-  padding: clamp(3rem, 6vh, 5rem) 0;
-  background: transparent;
-  position: relative;
-}
-
-.question-block {
-  margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
-  max-width: 700px;
-}
-
-.question-block:last-child { margin-bottom: 0; }
-.question-block .text-question { margin-bottom: 0.4rem; }
-
-.question-separator {
-  width: 1px;
-  height: 35px;
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.3), transparent);
-  margin: 0 auto clamp(1.5rem, 3vh, 2.5rem);
-}
-
-/* Believe */
-.s-believe {
-  padding: clamp(3rem, 6vh, 5rem) 0;
-  background: transparent;
-  position: relative;
-}
-
-.believe-statement { margin-bottom: 1rem; }
-
-.believe-bridge {
-  display: inline-block;
-  padding: 0.7rem 1.4rem;
-  background: rgba(201, 168, 76, 0.06);
-  border-radius: 12px;
-  margin-top: 1.5rem;
-}
-
-/* Process */
-.s-process {
-  padding: clamp(3rem, 6vh, 5rem) 0;
-  background: transparent;
-  position: relative;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.2rem, 2vw, 1.8rem);
-  margin-top: clamp(1.5rem, 3vh, 2.5rem);
-}
-
-.process-number {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  color: rgba(201, 168, 76, 0.18);
-  line-height: 1;
-  margin-bottom: 0.8rem;
-}
-
-.process-title {
-  font-weight: 600;
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  color: var(--navy);
-  margin-bottom: 0.6rem;
-}
-
-.process-desc {
-  font-size: clamp(0.9rem, 1.1vw, 1rem);
-  color: var(--text-light);
-  line-height: 1.6;
-}
-
-/* Work / Portfolio — STAGGERED GRID */
-.s-work {
-  padding: clamp(3rem, 6vh, 5rem) 0;
-  background: transparent;
-  position: relative;
-}
-
-.work-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  grid-template-rows: 220px 260px;
-  gap: clamp(1rem, 1.8vw, 1.4rem);
-  margin-top: clamp(1.5rem, 3vh, 2.5rem);
-}
-
-.work-card {
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  background: var(--navy);
-  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  cursor: pointer;
-}
-
-.work-card-featured {
-  grid-row: 1 / 3;
-}
-
-.work-card-tall {
-  grid-row: span 1;
-}
-
-.work-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 28px 70px rgba(10, 22, 40, 0.15);
-}
-
-.work-card-inner {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: clamp(1.3rem, 2.2vw, 2rem);
-  background: linear-gradient(0deg, rgba(6, 12, 24, 0.92) 0%, rgba(6, 12, 24, 0.65) 50%, rgba(6, 12, 24, 0.15) 80%, transparent 100%);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
-}
-
-.work-card-name {
-  font-weight: 600;
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  margin-bottom: 0.25rem;
-}
-
-.work-card-result {
-  font-size: clamp(0.85rem, 1vw, 0.95rem);
-  opacity: 0.9;
-  font-weight: 300;
-  margin-bottom: 0.5rem;
-}
-
-.work-card-quote {
-  font-style: italic;
-  font-size: clamp(0.8rem, 0.95vw, 0.9rem);
-  opacity: 0.75;
-  line-height: 1.5;
-  border-left: 2px solid rgba(201, 168, 76, 0.5);
-  padding-left: 0.8rem;
-  margin-top: 0.3rem;
-}
-
-/* Darker pattern overlays for legibility */
-.work-card .pattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.7;
-  transition: opacity 0.5s ease;
-}
-
-.work-card:hover .pattern { opacity: 0.8; }
-
-.pattern-1 { background: linear-gradient(135deg, #1e2d45 0%, #121e34 40%, #080f1e 100%); }
-.pattern-2 { background: linear-gradient(135deg, #1c2840 0%, #10192e 40%, #070d1a 100%); }
-.pattern-3 { background: linear-gradient(135deg, #1a2638 0%, #0e1828 40%, #060c18 100%); }
-.pattern-4 { background: linear-gradient(135deg, #222c42 0%, #141e34 40%, #0a1020 100%); }
-
-/* Free Guide / Small Ask */
-.s-investment {
-  padding: clamp(3rem, 6vh, 5rem) 0;
-  background: transparent;
-  position: relative;
-}
-
-/* Old tier styles removed — no prices on site */
-.invest-cta { text-align: center; }
-.invest-note { margin-top: 1rem; }
-
-/* Final */
-.s-final {
-  padding: clamp(4rem, 8vh, 7rem) 0;
-  background: transparent;
-  text-align: center;
-  position: relative;
-}
-
-.s-final .final-question {
-  max-width: 650px;
-  margin: 0 auto 2rem;
-}
-
-/* ── Footer with trust signals ── */
-.s-footer {
-  padding: clamp(2rem, 3.5vh, 3rem) 0;
-  background: transparent;
-  border-top: 1px solid rgba(10, 22, 40, 0.05);
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-logo {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--navy);
-  letter-spacing: 0.05em;
-}
-
-.footer-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover { color: var(--navy); }
-
-/* Trust signals */
-.footer-trust {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1.2rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(10, 22, 40, 0.04);
-  flex-wrap: wrap;
-}
-
-.trust-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--text-faint);
-  letter-spacing: 0.02em;
-}
-
-.trust-badge svg {
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
-  flex-shrink: 0;
-}
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(10, 22, 40, 0.04);
-}
-
-.footer-copy {
-  font-size: 0.8rem;
-  color: var(--text-faint);
-}
-
-.footer-legal {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-legal a {
-  font-size: 0.78rem;
-  color: var(--text-faint);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-legal a:hover { color: var(--text-light); }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
 
-/* ── Nav ── */
-.nav {
-  position: fixed;
+/* NAV */
+nav {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
-  padding: 1rem 0;
-  background: rgba(247, 248, 252, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(10, 22, 40, 0.04);
-  transform: translateY(-100%);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-.nav.visible { transform: translateY(0); }
-
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 clamp(1.5rem, 4vw, 3rem);
+nav .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--gold); }
+nav a.nav-cta {
+  background: var(--navy);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+nav a.nav-cta:hover { background: #162a4a; }
 
-.nav-logo {
-  font-family: 'Inter Tight', sans-serif;
+/* HERO */
+.hero {
+  padding: 100px 0 80px;
+  text-align: center;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto 36px;
+}
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  padding: 14px 36px;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 1rem;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--gold-hover); }
+
+/* TRUST BAR */
+.trust-bar {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--light);
+}
+.trust-bar p {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.trust-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.trust-numbers .stat {
+  text-align: center;
+}
+.trust-numbers .stat strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--navy);
-  letter-spacing: 0.05em;
-  text-decoration: none;
+}
+.trust-numbers .stat span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
-.nav-cta {
-  padding: 0.6rem 1.4rem;
+/* SECTIONS */
+section { padding: 80px 0; }
+section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+section .subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.service-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 36px 28px;
+  background: var(--white);
+}
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--navy);
+}
+.service-card .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.service-card ul {
+  list-style: none;
+  margin-top: 16px;
+}
+.service-card ul li {
+  padding: 6px 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--light);
+}
+.service-card ul li::before {
+  content: "✓ ";
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* RESULTS */
+.results {
+  background: var(--navy);
+  color: var(--white);
+}
+.results h2 { color: var(--white); }
+.results .subtitle { color: rgba(255,255,255,0.6); }
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+.result-item {
+  text-align: center;
+}
+.result-item .number {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.result-item .label {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* PORTFOLIO */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.portfolio-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--white);
+}
+.portfolio-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+.portfolio-card .info {
+  padding: 20px;
+}
+.portfolio-card .info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.portfolio-card .info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: var(--light);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+.testimonial {
+  padding: 0;
+}
+.testimonial blockquote {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.testimonial cite {
+  font-style: normal;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.testimonial cite span {
+  display: block;
+  font-weight: 400;
+  color: var(--text-muted);
   font-size: 0.85rem;
 }
 
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .process-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-  .work-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .work-card-featured { grid-row: auto; min-height: 260px; }
-  .work-card-tall { min-height: 200px; }
-  .invest-tiers { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; text-align: center; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .footer-links { justify-content: center; }
-  .footer-legal { justify-content: center; }
-  .footer-trust { gap: 1.2rem; }
-  .cursor-glow { display: none; }
-  .floater { display: none; }
-  .scroll-hint { bottom: 1.5rem; }
+/* CTA SECTION */
+.cta-section {
+  text-align: center;
+  padding: 100px 0;
+}
+.cta-section h2 {
+  margin-bottom: 16px;
+}
+.cta-section p {
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  font-size: 1.05rem;
 }
 
-@media (max-width: 480px) {
-  .s-opening { min-height: 90vh; }
+/* FOOTER */
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer a { color: var(--text-secondary); }
+footer a:hover { color: var(--navy); }
+.footer-links { display: flex; gap: 24px; }
+
+/* FADE IN */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ── Reduced motion ── */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-  .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
-  .reveal-word { opacity: 1; transform: none; filter: none; }
-  .cursor-glow { display: none; }
-  .orb { animation: none; }
-  .scroll-hint { animation: none; }
-  .scroll-hint-chevron { animation: none; }
+@media (max-width: 640px) {
+  .hero { padding: 60px 0 50px; }
+  section { padding: 60px 0; }
+  .trust-numbers { gap: 32px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  footer .container { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- Scroll Progress -->
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<!-- Cursor Glow -->
-<div class="cursor-glow" id="cursorGlow"></div>
-
-<!-- Ambient Background Orbs -->
-<div class="ambient-layer">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="orb orb-4"></div>
-</div>
-
-<!-- Floating Decorative Elements -->
-<div class="ambient-layer" style="z-index: 1;">
-  <div class="floater floater-ring float-1"></div>
-  <div class="floater floater-dot float-2"></div>
-  <div class="floater floater-ring float-3"></div>
-  <div class="floater floater-dot float-4"></div>
-  <div class="floater floater-ring float-5"></div>
-</div>
-
-<!-- Nav -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">AMOTIVE</a>
-    <a href="#contact" class="btn nav-cta">Let's talk</a>
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="logo">amotive<span>.</span></div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
-<div class="page-wrapper">
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>We build websites that<br>get you customers</h1>
+    <p>No gimmicks. Just fast, professional websites and marketing that actually brings people through your door.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="btn">Start Your Project</a>
+  </div>
+</section>
 
-  <!-- ═══════ OPENING ═══════ -->
-  <section class="s-opening" id="top">
-    <div class="content container-narrow">
-      <div class="tagline reveal">AMOTIVE · LISBON</div>
-      <h1 class="text-display reveal delay-1">Your business deserves<br>to be found.</h1>
-      <p class="text-subhead question reveal delay-2" style="font-style: italic;">
-        What if every customer who searched for what you do&hellip; found you first?
-      </p>
-      <a href="#contact" class="btn btn-breathe reveal delay-3">Let's talk</a>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <p>Trusted by businesses across the Pacific Northwest</p>
+    <div class="trust-numbers">
+      <div class="stat"><strong>12+</strong><span>Clients Served</span></div>
+      <div class="stat"><strong>97%</strong><span>Satisfaction Rate</span></div>
+      <div class="stat"><strong>3x</strong><span>Avg. Traffic Increase</span></div>
+      <div class="stat"><strong>48hr</strong><span>Response Time</span></div>
     </div>
-    <div class="scroll-hint reveal delay-5">
-      <span class="scroll-hint-text">scroll</span>
-      <div class="scroll-hint-chevron"></div>
-    </div>
-  </section>
-
-  <!-- ═══════ THE QUESTIONS ═══════ -->
-  <section class="s-questions" id="questions">
-    <div class="container-narrow">
-
-      <div class="question-block reveal">
-        <p class="text-question word-reveal-target">How many customers drove past your competitor today because they showed up first online?</p>
-      </div>
-
-      <div class="question-separator reveal delay-1"></div>
-
-      <div class="question-block reveal delay-2">
-        <p class="text-question word-reveal-target">When was the last time your website brought you a new client?</p>
-      </div>
-
-      <div class="question-separator reveal delay-1"></div>
-
-      <div class="question-block reveal delay-3">
-        <p class="text-question word-reveal-target">What happens when someone searches for your business and finds someone else?</p>
-      </div>
-
-      <div class="question-separator reveal delay-1"></div>
-
-      <div class="question-block reveal delay-4">
-        <p class="text-small" style="color: var(--text-faint); font-style: italic;">You already know the answers.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════ WHAT WE BELIEVE ═══════ -->
-  <section class="s-believe" id="believe">
-    <div class="container-narrow">
-      <div class="gold-accent reveal"></div>
-
-      <h2 class="text-headline believe-statement reveal delay-1">
-        You didn't build your business by accident.
-      </h2>
-
-      <p class="text-subhead reveal delay-2" style="max-width: 600px;">
-        You're great at what you do. Your customers love you. You've built something real through hard work, long hours, and doing things right.
-      </p>
-
-      <div class="believe-bridge reveal delay-3">
-        <p class="text-body" style="color: var(--navy); font-weight: 500;">
-          We just make sure the right people find out about it.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ HOW WE WORK — Klaff-style heading ═══════ -->
-  <section class="s-process" id="process">
-    <div class="container">
-      <div class="gold-accent reveal"></div>
-      <h2 class="text-headline reveal delay-1">Most agencies overcomplicate this.<br>We don't.</h2>
-      <p class="text-subhead reveal delay-2" style="max-width: 500px;">No jargon. No mystery. No 47-slide deck.</p>
-
-      <div class="process-grid">
-        <div class="glass-card reveal delay-2">
-          <div class="process-number">01</div>
-          <div class="process-title">We learn your business</div>
-          <p class="process-desc">We sit down, listen, and understand what makes you different. The way your best customers see you.</p>
-        </div>
-
-        <div class="glass-card reveal delay-3">
-          <div class="process-number">02</div>
-          <div class="process-title">We build what's missing</div>
-          <p class="process-desc">Whether it's your online presence, your visibility, or your message, we create exactly what you need. Nothing more.</p>
-        </div>
-
-        <div class="glass-card reveal delay-4">
-          <div class="process-number">03</div>
-          <div class="process-title">You get the calls</div>
-          <p class="process-desc">New customers find you. Your phone rings. Your inbox fills up. That's how we measure success.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ THE WORK — staggered grid ═══════ -->
-  <section class="s-work" id="work">
-    <div class="container">
-      <div class="gold-accent reveal"></div>
-      <h2 class="text-headline reveal delay-1">The work speaks</h2>
-      <p class="text-subhead reveal delay-2" style="max-width: 500px;">A few stories from businesses like yours.</p>
-
-      <div class="work-grid">
-        <div class="work-card work-card-featured reveal-left delay-2">
-          <div class="pattern pattern-1"></div>
-          <div class="work-card-inner">
-            <div class="work-card-name">Maria's Bakery</div>
-            <div class="work-card-result">Fully booked within 3 months</div>
-            <div class="work-card-quote">"I went from hoping for walk-ins to turning people away. Best decision I ever made."</div>
-          </div>
-        </div>
-
-        <div class="work-card work-card-tall reveal-right delay-3">
-          <div class="pattern pattern-2"></div>
-          <div class="work-card-inner">
-            <div class="work-card-name">Costa Legal</div>
-            <div class="work-card-result">New enquiries every week</div>
-            <div class="work-card-quote">"Clients find us now. We stopped chasing."</div>
-          </div>
-        </div>
-
-        <div class="work-card work-card-tall reveal-right delay-4">
-          <div class="pattern pattern-3"></div>
-          <div class="work-card-inner">
-            <div class="work-card-name">Porto Fitness</div>
-            <div class="work-card-result">Waitlist for new members</div>
-            <div class="work-card-quote">"We had to hire two more trainers."</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ FREE RESOURCE (Small Ask) ═══════ -->
-  <section class="s-investment" id="free-guide">
-    <div class="container" style="text-align:center;">
-      <div class="gold-accent reveal"></div>
-      <h2 class="text-headline reveal delay-1" style="font-style:italic;">We wrote a short guide.</h2>
-      <p class="text-subhead reveal delay-2" style="max-width:520px; margin:0 auto;">5 things your website is doing right now that are sending customers to your competitor. Takes 3 minutes to read. Might change how you think about your online presence.</p>
-
-      <div class="glass-card reveal delay-3" style="max-width:460px; margin:2rem auto; padding:2rem;">
-        <p class="text-small" style="margin-bottom:1.2rem; color:var(--text-light);">Get the free guide. No spam, no sequences, just the guide.</p>
-        <form onsubmit="return false;" style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center;">
-          <input type="email" placeholder="your@email.com" style="flex:1; min-width:200px; padding:0.75rem 1rem; border:1px solid rgba(201,168,76,0.25); border-radius:10px; background:rgba(255,255,255,0.7); backdrop-filter:blur(8px); font-family:inherit; font-size:0.95rem; outline:none; transition:border 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.25)'" />
-          <button type="submit" class="btn btn-breathe" style="white-space:nowrap;">Send me the guide</button>
-        </form>
-        <p style="font-size:0.75rem; color:var(--text-faint); margin-top:0.8rem;">Join 200+ business owners who read it this month.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ FINAL QUESTION (Big Ask) ═══════ -->
-  <section class="s-final" id="contact">
-    <div class="container-narrow">
-      <div class="final-question">
-        <h2 class="text-display reveal word-reveal-target">What would it mean for your business if the phone rang twice as much?</h2>
-      </div>
-      <p class="text-subhead reveal delay-2" style="max-width:480px; margin:0 auto 1.5rem;">We only take on a few businesses at a time. If you want to know what we can do for yours, start a conversation. No pressure, no pitch deck, no surprises.</p>
-      <a href="mailto:hello@amotive.pt" class="btn btn-breathe reveal delay-3">Start a conversation</a>
-      <p class="text-small reveal delay-4" style="color:var(--text-faint); margin-top:1rem;">We typically reply within a few hours.</p>
-    </div>
-  </section>
-
-  <!-- ═══════ FOOTER w/ trust signals ═══════ -->
-  <footer class="s-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">AMOTIVE</div>
-        <div class="footer-links">
-          <a href="mailto:hello@amotive.pt" class="link-slide">hello@amotive.pt</a>
-          <a href="https://instagram.com/amotive.pt" class="link-slide" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://linkedin.com/company/amotive" class="link-slide" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-
-      <!-- Trust Signals -->
-      <div class="footer-trust">
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          GDPR Compliant
-        </div>
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-          SSL Secured
-        </div>
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          100% Satisfaction Guarantee
-        </div>
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8M8 8l8 8"/></svg>
-          No Lock-in Contracts
-        </div>
-        <div class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          50+ Happy Clients
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-copy">Pacific Northwest, USA &nbsp;·&nbsp; &copy; 2026 Amotive</div>
-        <div class="footer-legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
+  </div>
 </div>
 
+<!-- WHAT WE DO -->
+<section class="fade-in">
+  <div class="container">
+    <h2>What we do</h2>
+    <p class="subtitle">Three ways to work with us. Pick what fits.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Website</h3>
+        <div class="price">$1,500</div>
+        <p>A professional site that loads fast, looks great, and converts visitors into customers.</p>
+        <ul>
+          <li>Custom design & development</li>
+          <li>Mobile-first & SEO-ready</li>
+          <li>Hosting & domain setup</li>
+          <li>Delivered in 2–3 weeks</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Marketing</h3>
+        <div class="price">€2,000<span style="font-size:0.85rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
+        <p>Ongoing marketing that puts you in front of the right people, consistently.</p>
+        <ul>
+          <li>SEO & content strategy</li>
+          <li>Google Business optimization</li>
+          <li>Social media management</li>
+          <li>Monthly performance reports</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Full Growth</h3>
+        <div class="price">€3,500<span style="font-size:0.85rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
+        <p>Website + marketing + ads + strategy. Everything you need to grow, handled.</p>
+        <ul>
+          <li>Everything in Website & Marketing</li>
+          <li>Paid ad campaigns (Google & Meta)</li>
+          <li>Conversion optimization</li>
+          <li>Dedicated account manager</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results fade-in">
+  <div class="container">
+    <h2>Results speak louder</h2>
+    <p class="subtitle">Average outcomes across our client base.</p>
+    <div class="results-grid">
+      <div class="result-item">
+        <div class="number">187%</div>
+        <div class="label">More organic traffic</div>
+      </div>
+      <div class="result-item">
+        <div class="number">40+</div>
+        <div class="label">New leads per month</div>
+      </div>
+      <div class="result-item">
+        <div class="number">52%</div>
+        <div class="label">More phone calls</div>
+      </div>
+      <div class="result-item">
+        <div class="number">2.1s</div>
+        <div class="label">Avg. page load time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="fade-in">
+  <div class="container">
+    <h2>Our work</h2>
+    <p class="subtitle">A few things we've built recently.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <img src="/projects/marketing-agency/portfolio-screenshots/homepage.png" alt="Amotive.io website screenshot">
+        <div class="info">
+          <h3>Amotive.io</h3>
+          <p>Our own site — practice what we preach</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://placehold.co/800x500/0A1628/C9A84C?text=Client+Website+1" alt="Client website 1">
+        <div class="info">
+          <h3>Client Project</h3>
+          <p>Local business website & SEO</p>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <img src="https://placehold.co/800x500/0A1628/C9A84C?text=Client+Website+2" alt="Client website 2">
+        <div class="info">
+          <h3>Client Project</h3>
+          <p>E-commerce & marketing campaign</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials fade-in">
+  <div class="container">
+    <h2>What clients say</h2>
+    <p class="subtitle">Real feedback from real businesses.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <blockquote>"Amotive rebuilt our website and within two months we saw a 3x increase in online inquiries. No fluff, just results."</blockquote>
+        <cite>Sarah M.<span>Restaurant Owner, Portland OR</span></cite>
+      </div>
+      <div class="testimonial">
+        <blockquote>"Finally an agency that doesn't oversell. They told us exactly what we needed, built it fast, and it works. That's it."</blockquote>
+        <cite>James K.<span>Contractor, Seattle WA</span></cite>
+      </div>
+      <div class="testimonial">
+        <blockquote>"Our phone started ringing more within the first month. The ROI on the marketing package paid for itself by week three."</blockquote>
+        <cite>Maria L.<span>Dental Practice, Tacoma WA</span></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section fade-in">
+  <div class="container">
+    <h2>Ready to get found?</h2>
+    <p>Tell us about your business. We'll tell you exactly how we can help — no obligations, no sales pitch.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="btn">Get Your Free Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div>&copy; 2025 Amotive. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@amotive.io">hello@amotive.io</a>
+      <a href="https://amotive.io">amotive.io</a>
+    </div>
+  </div>
+</footer>
+
 <script>
-(function() {
-  'use strict';
-
-  // ── Scroll Progress ──
-  const progressBar = document.getElementById('scrollProgress');
-
-  // ── Cursor Glow ──
-  const glow = document.getElementById('cursorGlow');
-  let mouseX = -600, mouseY = -600;
-  let glowX = -600, glowY = -600;
-
-  document.addEventListener('mousemove', function(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function updateGlow() {
-    glowX += (mouseX - glowX) * 0.06;
-    glowY += (mouseY - glowY) * 0.06;
-    glow.style.left = glowX + 'px';
-    glow.style.top = glowY + 'px';
-    requestAnimationFrame(updateGlow);
-  }
-  updateGlow();
-
-  // ── Nav show on scroll ──
-  const nav = document.getElementById('nav');
-
-  function checkNav() {
-    if (window.scrollY > 400) {
-      nav.classList.add('visible');
-    } else {
-      nav.classList.remove('visible');
-    }
-  }
-
-  // ── Scroll Progress Bar ──
-  function updateProgress() {
-    var scrollTop = window.scrollY;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = progress + '%';
-  }
-
-  // ── Scroll Reveal (IntersectionObserver) — includes reveal-left/right ──
-  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  var revealObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
-  revealEls.forEach(function(el) { revealObs.observe(el); });
-
-  // ── Word-by-word reveal ──
-  var wordTargets = document.querySelectorAll('.word-reveal-target');
-  wordTargets.forEach(function(el) {
-    var text = el.textContent.trim();
-    var words = text.split(/\s+/);
-    el.innerHTML = '';
-    words.forEach(function(word, i) {
-      var span = document.createElement('span');
-      span.className = 'reveal-word';
-      span.style.transitionDelay = (i * 0.06) + 's';
-      span.textContent = word + '\u00A0';
-      el.appendChild(span);
-    });
-  });
-
-  var wordObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        var words = entry.target.querySelectorAll('.reveal-word');
-        words.forEach(function(w) { w.classList.add('visible'); });
-      }
-    });
-  }, { threshold: 0.2 });
-
-  wordTargets.forEach(function(el) { wordObs.observe(el); });
-
-  // ── Parallax on scroll ──
-  var parallaxEls = document.querySelectorAll('.text-display, .text-headline, .text-question');
-  var ticking = false;
-
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(function() {
-        checkNav();
-        updateProgress();
-        applyParallax();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
-
-  function applyParallax() {
-    var vh = window.innerHeight;
-    parallaxEls.forEach(function(el) {
-      var rect = el.getBoundingClientRect();
-      var center = rect.top + rect.height / 2;
-      var offset = (center - vh / 2) * 0.04;
-      el.style.transform = 'translateY(' + offset + 'px)';
-    });
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // ── Hide scroll hint on scroll ──
-  var scrollHint = document.querySelector('.scroll-hint');
-  if (scrollHint) {
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 100) {
-        scrollHint.style.opacity = '0';
-        scrollHint.style.transition = 'opacity 0.6s ease';
-      }
-    }, { passive: true });
-  }
-
-  // ── Smooth anchor scroll ──
-  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-})();
+// Simple fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
