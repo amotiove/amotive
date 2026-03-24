@@ -41,7 +41,7 @@
   --orange-soft: #f28c47;
   --text: #2c3040;
   --text-light: #555872;
-  --text-faint: #7a7d94;
+  --text-faint: #6b6e84;
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -400,6 +400,20 @@ section {
   transform: translateY(0);
 }
 
+.btn-hero {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--navy) !important;
+  font-weight: 600;
+  padding: 1.2rem 3.2rem;
+  font-size: 1rem;
+  box-shadow: 0 6px 28px rgba(201, 168, 76, 0.3), 0 2px 8px rgba(10, 22, 40, 0.1);
+  letter-spacing: 0.04em;
+}
+.btn-hero:hover {
+  box-shadow: 0 16px 48px rgba(201, 168, 76, 0.4), 0 0 40px rgba(201, 168, 76, 0.15);
+  background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 100%);
+}
+
 .btn-breathe {
   animation: breathe 3s ease-in-out infinite;
 }
@@ -485,15 +499,15 @@ section {
 
 /* Glass card in LIGHT sections (investment) */
 .s-investment .glass-card {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 32px rgba(10, 22, 40, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(24px) saturate(1.3);
+  -webkit-backdrop-filter: blur(24px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 32px rgba(10, 22, 40, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 .s-investment .glass-card:hover {
-  box-shadow: 0 24px 64px rgba(10, 22, 40, 0.10), 0 0 0 1px rgba(201, 168, 76, 0.2);
-  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 24px 64px rgba(10, 22, 40, 0.12), 0 0 0 1px rgba(201, 168, 76, 0.25), 0 0 30px rgba(201, 168, 76, 0.06);
+  background: rgba(255, 255, 255, 0.72);
   transform: translateY(-6px) scale(1.01);
 }
 
@@ -801,9 +815,9 @@ section {
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
   grid-template-rows: 1fr 1fr;
-  gap: clamp(1.2rem, 2vw, 1.6rem);
+  gap: clamp(1rem, 1.8vw, 1.4rem);
   margin-top: clamp(2rem, 4vh, 3rem);
-  min-height: 560px;
+  min-height: 520px;
 }
 
 .work-card {
@@ -1035,16 +1049,16 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.92rem;
-  color: rgba(247, 248, 252, 0.65);
+  font-size: 0.95rem;
+  color: rgba(247, 248, 252, 0.88);
   letter-spacing: 0.02em;
-  font-weight: 450;
+  font-weight: 500;
 }
 
 .trust-badge svg {
   width: 20px;
   height: 20px;
-  opacity: 0.7;
+  opacity: 0.9;
   flex-shrink: 0;
   color: var(--gold);
 }
@@ -1062,7 +1076,7 @@ section {
 
 .footer-copy {
   font-size: 0.8rem;
-  color: rgba(247, 248, 252, 0.4);
+  color: rgba(247, 248, 252, 0.55);
 }
 
 .footer-legal {
@@ -1072,7 +1086,7 @@ section {
 
 .footer-legal a {
   font-size: 0.78rem;
-  color: rgba(247, 248, 252, 0.4);
+  color: rgba(247, 248, 252, 0.55);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1131,8 +1145,68 @@ section {
   background: rgba(201, 168, 76, 0.04) !important;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+.nav-link:hover { color: var(--gold-dark); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem clamp(1.5rem, 4vw, 3rem) 1rem;
+  gap: 0.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.nav-mobile.open { display: flex; }
+
+.nav-mobile-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(10, 22, 40, 0.06);
+  transition: color 0.3s ease;
+}
+.nav-mobile-link:hover { color: var(--gold-dark); }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
   .process-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   .work-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
   .work-card-featured { grid-row: auto; min-height: 280px; }
@@ -1147,6 +1221,7 @@ section {
   .cursor-glow { display: none; }
   .floater { display: none; }
   .scroll-hint { bottom: 1.5rem; }
+  .btn-hero { padding: 1rem 2.4rem; font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
@@ -1202,7 +1277,21 @@ section {
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">AMOTIVE</a>
-    <a href="#contact" class="btn nav-cta">Let's talk</a>
+    <div class="nav-links">
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="btn nav-cta">Let's talk</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#process" class="nav-mobile-link">Process</a>
+    <a href="#work" class="nav-mobile-link">Work</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <a href="#contact" class="btn nav-cta" style="margin-top:0.5rem; width:100%; text-align:center;">Let's talk</a>
   </div>
 </nav>
 
@@ -1216,7 +1305,7 @@ section {
       <p class="text-subhead question reveal delay-2" style="font-style: italic;">
         What if every customer who searched for what you do&hellip; found you first?
       </p>
-      <a href="#contact" class="btn btn-breathe reveal delay-3">Let's talk</a>
+      <a href="#contact" class="btn btn-hero btn-breathe reveal delay-3">Start a conversation →</a>
       <div class="scroll-hint reveal delay-5">
         <span class="scroll-hint-text">scroll</span>
         <div class="scroll-hint-chevron"></div>
@@ -1453,6 +1542,22 @@ section {
 <script>
 (function() {
   'use strict';
+
+  // ── Mobile Nav Hamburger ──
+  const hamburger = document.getElementById('navHamburger');
+  const mobileNav = document.getElementById('navMobile');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  }
 
   // ── Scroll Progress ──
   const progressBar = document.getElementById('scrollProgress');

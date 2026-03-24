@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | Amotive</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <style>
-        :root { --gold: #C9A84C; --bg: #0A0A0A; --text: #E0E0E0; --muted: #888; }
+        :root { --gold: #C9A84C; --gold-dark: #9E8339; --bg: #F7F8FC; --text: #2c3040; --text-light: #555872; --navy: #0A1628; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+        body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
         .container { max-width: 800px; margin: 0 auto; padding: 80px 24px; }
-        h1 { font-size: 48px; color: #fff; margin-bottom: 8px; }
-        .date { font-family: 'Space Mono', monospace; color: var(--muted); font-size: 14px; margin-bottom: 60px; }
-        h2 { font-size: 24px; color: var(--gold); margin: 48px 0 16px; }
+        h1 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: clamp(36px, 5vw, 48px); color: var(--navy); margin-bottom: 8px; }
+        .date { font-family: 'DM Sans', sans-serif; color: var(--text-light); font-size: 14px; margin-bottom: 60px; font-weight: 500; letter-spacing: 0.02em; }
+        h2 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 22px; color: var(--navy); margin: 48px 0 16px; }
         p, li { font-size: 16px; margin-bottom: 16px; color: var(--text); }
         ul { padding-left: 24px; }
-        a { color: var(--gold); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .back { font-family: 'Space Mono', monospace; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; }
-        .footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid #222; text-align: center; }
-        .footer p { color: var(--muted); font-size: 14px; }
+        a { color: var(--gold-dark); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--gold); }
+        .back { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--text-light); }
+        .back:hover { color: var(--gold-dark); }
+        .footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(10, 22, 40, 0.08); text-align: center; }
+        .footer p { color: var(--text-light); font-size: 14px; }
+        strong { color: var(--navy); }
     </style>
 </head>
 <body>
@@ -98,7 +104,7 @@
         <strong>Website:</strong> <a href="https://amotive.io">amotive.io</a></p>
 
         <div class="footer">
-            <p>© 2026 Amotive. All rights reserved.</p>
+            <p>&copy; 2026 Amotive. All rights reserved.</p>
         </div>
     </div>
 </body>
