@@ -3,543 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amotive | We Build Websites That Get You Customers</title>
-<meta name="description" content="Amotive is a digital agency helping businesses get found online. Websites, marketing, and growth — done right.">
+<title>Amotive</title>
+<meta name="description" content="Websites and marketing for local businesses.">
 <link rel="canonical" href="https://amotive.io/">
-<meta property="og:title" content="Amotive | We Build Websites That Get You Customers">
-<meta property="og:description" content="Digital agency helping businesses get found online. Websites, marketing, and growth — done right.">
+<meta property="og:title" content="Amotive">
+<meta property="og:description" content="Websites and marketing for local businesses.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amotive.io/">
-<meta property="og:image" content="https://amotive.io/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Amotive | We Build Websites That Get You Customers">
-<meta name="twitter:description" content="Websites, marketing, and growth — done right.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-  --navy: #0A1628;
-  --gold: #C9A84C;
-  --gold-hover: #b8993f;
-  --white: #FFFFFF;
-  --light: #F8F9FB;
-  --border: #E2E5EB;
-  --text: #1a1a2e;
-  --text-secondary: #555;
-  --text-muted: #777;
-}
-
-html { scroll-behavior: smooth; }
-
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text);
-  background: var(--white);
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #0B1120;
+  color: rgba(255,255,255,0.85);
   -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  max-width: 1080px;
+a { color: inherit; text-decoration: none; }
+
+.page {
+  max-width: 640px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; display: block; }
-
 /* NAV */
 nav {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border);
-  background: var(--white);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 32px 0;
 }
-nav .container {
+nav .page {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--navy);
+  font-weight: 600;
+  font-size: 1.1rem;
   letter-spacing: -0.5px;
 }
-.logo span { color: var(--gold); }
-nav a.nav-cta {
-  background: var(--navy);
-  color: var(--white);
-  padding: 10px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background 0.2s;
+.logo span { color: #C9A84C; }
+nav a.cta {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
 }
-nav a.nav-cta:hover { background: #162a4a; }
+nav a.cta:hover { color: #C9A84C; }
 
 /* HERO */
 .hero {
-  padding: 100px 0 80px;
-  text-align: center;
+  padding: 140px 0 160px;
 }
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.15;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.3;
   letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+.hero h1 strong {
+  font-weight: 600;
+  color: #fff;
 }
 .hero p {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  max-width: 540px;
-  margin: 0 auto 36px;
-}
-.btn {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--white);
-  padding: 14px 36px;
-  border-radius: 6px;
-  font-weight: 600;
   font-size: 1rem;
-  transition: background 0.2s;
-}
-.btn:hover { background: var(--gold-hover); }
-
-/* TRUST BAR */
-.trust-bar {
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--light);
-}
-.trust-bar p {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 28px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 500;
-}
-.trust-numbers {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-.trust-numbers .stat {
-  text-align: center;
-}
-.trust-numbers .stat strong {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--navy);
-}
-.trust-numbers .stat span {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* SECTIONS */
-section { padding: 80px 0; }
-section h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-section .subtitle {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
   margin-bottom: 48px;
+  max-width: 420px;
+}
+.hero a.start {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #C9A84C;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+.hero a.start:hover { border-color: #C9A84C; }
+
+/* LINE */
+.line {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 /* SERVICES */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+.services {
+  padding: 80px 0;
 }
-.service-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 36px 28px;
-  background: var(--white);
+.services h2 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 48px;
 }
-.service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--navy);
+.service {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.service-card .price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-.service-card p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-.service-card ul {
-  list-style: none;
-  margin-top: 16px;
-}
-.service-card ul li {
-  padding: 6px 0;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  border-bottom: 1px solid var(--light);
-}
-.service-card ul li::before {
-  content: "✓ ";
-  color: var(--gold);
-  font-weight: 700;
-}
-
-/* RESULTS */
-.results {
-  background: var(--navy);
-  color: var(--white);
-}
-.results h2 { color: var(--white); }
-.results .subtitle { color: rgba(255,255,255,0.6); }
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 32px;
-}
-.result-item {
-  text-align: center;
-}
-.result-item .number {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.result-item .label {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
-}
-
-/* PORTFOLIO */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-.portfolio-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--white);
-}
-.portfolio-card img {
-  width: 100%;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-}
-.portfolio-card .info {
-  padding: 20px;
-}
-.portfolio-card .info h3 {
+.service:first-of-type { border-top: 1px solid rgba(255,255,255,0.05); }
+.service-name {
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-.portfolio-card .info p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* TESTIMONIALS */
-.testimonials {
-  background: var(--light);
-}
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-}
-.testimonial {
-  padding: 0;
-}
-.testimonial blockquote {
-  font-size: 1.05rem;
-  color: var(--text);
-  line-height: 1.7;
-  margin-bottom: 16px;
-  font-style: italic;
-}
-.testimonial cite {
-  font-style: normal;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--navy);
-}
-.testimonial cite span {
-  display: block;
   font-weight: 400;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+}
+.service-price {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
 }
 
-/* CTA SECTION */
-.cta-section {
-  text-align: center;
-  padding: 100px 0;
+/* CONTACT */
+.contact {
+  padding: 80px 0 120px;
 }
-.cta-section h2 {
-  margin-bottom: 16px;
+.contact p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 32px;
+  line-height: 1.7;
 }
-.cta-section p {
-  color: var(--text-secondary);
-  max-width: 480px;
-  margin: 0 auto 36px;
-  font-size: 1.05rem;
+.contact a.email {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #C9A84C;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
 }
+.contact a.email:hover { border-color: #C9A84C; }
 
 /* FOOTER */
 footer {
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
-footer .container {
+footer .page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
 }
-footer a { color: var(--text-secondary); }
-footer a:hover { color: var(--navy); }
-.footer-links { display: flex; gap: 24px; }
-
-/* FADE IN */
-.fade-in {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+footer span { font-size: 0.8rem; color: rgba(255,255,255,0.15); }
+footer a { font-size: 0.8rem; color: rgba(255,255,255,0.15); }
+footer a:hover { color: rgba(255,255,255,0.4); }
+.footer-links { display: flex; gap: 20px; }
 
 @media (max-width: 640px) {
-  .hero { padding: 60px 0 50px; }
-  section { padding: 60px 0; }
-  .trust-numbers { gap: 32px; }
-  .portfolio-grid { grid-template-columns: 1fr; }
-  footer .container { flex-direction: column; text-align: center; }
+  .hero { padding: 80px 0 100px; }
+  .service { flex-direction: column; gap: 4px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="container">
+  <div class="page">
     <div class="logo">amotive<span>.</span></div>
-    <a href="#services" style="color:var(--text-light);text-decoration:none;font-size:0.95rem;">Services</a>
-      <a href="#results" style="color:var(--text-light);text-decoration:none;font-size:0.95rem;">Results</a>
-      <a href="#work" style="color:var(--text-light);text-decoration:none;font-size:0.95rem;">Work</a>
-      <a href="#contact" style="color:var(--text-light);text-decoration:none;font-size:0.95rem;">Contact</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="nav-cta">Get Started</a>
+    <a href="mailto:a@amotive.io" class="cta">a@amotive.io</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <h1>We build websites that<br>get you customers</h1>
-    <p>No gimmicks. Just fast, professional websites and marketing that actually brings people through your door.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="btn">Start Your Project</a>
+  <div class="page">
+    <h1>We build <strong>websites</strong> and run <strong>marketing</strong> for local businesses.</h1>
+    <p>Fixed pricing. Fast delivery. No contracts.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="start">Start a project →</a>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="container">
-    <p>Trusted by businesses across the Pacific Northwest</p>
-    <div class="trust-numbers">
-      <div class="stat"><strong>12+</strong><span>Clients Served</span></div>
-      <div class="stat"><strong>97%</strong><span>Satisfaction Rate</span></div>
-      <div class="stat"><strong>3x</strong><span>Avg. Traffic Increase</span></div>
-      <div class="stat"><strong>48hr</strong><span>Response Time</span></div>
-    </div>
-  </div>
-</div>
+<hr class="line">
 
-<!-- WHAT WE DO -->
-<section class="fade-in">
-  <div class="container">
-    <h2>What we do</h2>
-    <p class="subtitle">Three ways to work with us. Pick what fits.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Website</h3>
-        <div class="price">$1,500</div>
-        <p>A professional site that loads fast, looks great, and converts visitors into customers.</p>
-        <ul>
-          <li>Custom design & development</li>
-          <li>Mobile-first & SEO-ready</li>
-          <li>Hosting & domain setup</li>
-          <li>Delivered in 2–3 weeks</li>
-        </ul>
-      </div>
-      <div class="service-card">
-        <h3>Marketing</h3>
-        <div class="price">$2,000<span style="font-size:0.85rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
-        <p>Ongoing marketing that puts you in front of the right people, consistently.</p>
-        <ul>
-          <li>SEO & content strategy</li>
-          <li>Google Business optimization</li>
-          <li>Social media management</li>
-          <li>Monthly performance reports</li>
-        </ul>
-      </div>
-      <div class="service-card">
-        <h3>Full Growth</h3>
-        <div class="price">$3,500<span style="font-size:0.85rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
-        <p>Website + marketing + ads + strategy. Everything you need to grow, handled.</p>
-        <ul>
-          <li>Everything in Website & Marketing</li>
-          <li>Paid ad campaigns (Google & Meta)</li>
-          <li>Conversion optimization</li>
-          <li>Dedicated account manager</li>
-        </ul>
-      </div>
+<section class="services">
+  <div class="page">
+    <h2>Services</h2>
+    <div class="service">
+      <span class="service-name">Website</span>
+      <span class="service-price">$1,500</span>
+    </div>
+    <div class="service">
+      <span class="service-name">Marketing</span>
+      <span class="service-price">$2,000 /mo</span>
+    </div>
+    <div class="service">
+      <span class="service-name">Full Growth</span>
+      <span class="service-price">$3,500 /mo</span>
     </div>
   </div>
 </section>
 
-<!-- RESULTS -->
-<section class="results fade-in">
-  <div class="container">
-    <h2>Results speak louder</h2>
-    <p class="subtitle">Average outcomes across our client base.</p>
-    <div class="results-grid">
-      <div class="result-item">
-        <div class="number">187%</div>
-        <div class="label">More organic traffic</div>
-      </div>
-      <div class="result-item">
-        <div class="number">40+</div>
-        <div class="label">New leads per month</div>
-      </div>
-      <div class="result-item">
-        <div class="number">52%</div>
-        <div class="label">More phone calls</div>
-      </div>
-      <div class="result-item">
-        <div class="number">2.1s</div>
-        <div class="label">Avg. page load time</div>
-      </div>
-    </div>
+<hr class="line">
+
+<section class="contact">
+  <div class="page">
+    <p>Tell us about your business. We'll tell you how we can help.</p>
+    <a href="mailto:a@amotive.io" class="email">a@amotive.io</a>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="fade-in">
-  <div class="container">
-    <h2>Our work</h2>
-    <p class="subtitle">A few things we've built recently.</p>
-    <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <img src="https://amotive.io/og-image.png" alt="Amotive.io website screenshot">
-        <div class="info">
-          <h3>Amotive.io</h3>
-          <p>Our own site — practice what we preach</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <img src="https://placehold.co/800x500/0A1628/C9A84C?text=Restaurant+Website+Demo" alt="Client website 1">
-        <div class="info">
-          <h3>Client Project</h3>
-          <p>Local business website & SEO</p>
-        </div>
-      </div>
-      <div class="portfolio-card">
-        <img src="https://placehold.co/800x500/0A1628/C9A84C?text=Law+Firm+Website+Demo" alt="Client website 2">
-        <div class="info">
-          <h3>Client Project</h3>
-          <p>E-commerce & marketing campaign</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials fade-in">
-  <div class="container">
-    <h2>What clients say</h2>
-    <p class="subtitle">Real feedback from real businesses.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <blockquote>"Amotive rebuilt our website and within two months we saw a 3x increase in online inquiries. No fluff, just results."</blockquote>
-        <cite>Sarah M.<span>Restaurant Owner, Portland OR</span></cite>
-      </div>
-      <div class="testimonial">
-        <blockquote>"Finally an agency that doesn't oversell. They told us exactly what we needed, built it fast, and it works. That's it."</blockquote>
-        <cite>James K.<span>Contractor, Seattle WA</span></cite>
-      </div>
-      <div class="testimonial">
-        <blockquote>"Our phone started ringing more within the first month. The ROI on the marketing package paid for itself by week three."</blockquote>
-        <cite>Maria L.<span>Dental Practice, Tacoma WA</span></cite>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section fade-in">
-  <div class="container">
-    <h2>Ready to get found?</h2>
-    <p>Tell us about your business. We'll tell you exactly how we can help — no obligations, no sales pitch.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="btn">Get Your Free Consultation</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div>&copy; 2025 Amotive. All rights reserved.</div>
+  <div class="page">
+    <span>&copy; 2026 Amotive</span>
     <div class="footer-links">
-      <a href="mailto:hello@amotive.io">hello@amotive.io</a>
-      <a href="https://amotive.io">amotive.io</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
     </div>
   </div>
 </footer>
 
-<script>
-// Simple fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
