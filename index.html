@@ -3,222 +3,587 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amotive</title>
-<meta name="description" content="Websites and marketing for local businesses.">
-<link rel="canonical" href="https://amotive.io/">
-<meta property="og:title" content="Amotive">
-<meta property="og:description" content="Websites and marketing for local businesses.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://amotive.io/">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Amotive — Premium Web & Marketing for Bainbridge Island</title>
+<meta name="description" content="State of the art websites at a deal cost. Web design, marketing, and growth for Bainbridge Island businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: #0B1120;
-  color: rgba(255,255,255,0.85);
-  -webkit-font-smoothing: antialiased;
+:root {
+  --navy: #0B1120;
+  --navy-light: #111827;
+  --navy-mid: #0f172a;
+  --gold: #C9A84C;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --gold-glow: rgba(201, 168, 76, 0.3);
+  --white: #f8fafc;
+  --gray: #94a3b8;
+  --gray-light: #cbd5e1;
+  --border: rgba(255,255,255,0.06);
 }
 
-a { color: inherit; text-decoration: none; }
+html { scroll-behavior: smooth; }
 
-.page {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 24px;
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Animated gradient background */
+.bg-gradient {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: 
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(201,168,76,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(59,130,246,0.03) 0%, transparent 60%),
+    var(--navy);
+  z-index: -1;
+  animation: bgShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* NAV */
 nav {
-  padding: 32px 0;
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  padding: 1.25rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(11, 17, 32, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
 }
-nav .page {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: -0.02em;
 }
-.logo {
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: -0.5px;
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: var(--gray); text-decoration: none; font-size: 0.875rem;
+  font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase;
+  transition: color 0.3s;
 }
-.logo span { color: #C9A84C; }
-nav a.cta {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.4);
-  transition: color 0.2s;
-}
-nav a.cta:hover { color: #C9A84C; }
+.nav-links a:hover { color: var(--gold); }
+.nav-mobile { display: none; background: none; border: none; cursor: pointer; }
+.nav-mobile svg { width: 24px; height: 24px; stroke: var(--white); }
 
 /* HERO */
 .hero {
-  padding: 140px 0 160px;
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  position: relative;
 }
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(transparent, var(--navy));
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--gold-dim);
+  border-radius: 100px;
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+  animation: fadeInDown 1s 0.2s both;
+  background: rgba(201,168,76,0.05);
+}
+.hero-badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--gold-glow); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 8px transparent; }
+}
+
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 300;
-  line-height: 1.3;
-  letter-spacing: -0.5px;
-  margin-bottom: 24px;
-}
-.hero h1 strong {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 600;
-  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 800px;
+  animation: heroIn 1s 0.4s both;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--gold), #e8d48b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero p {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.35);
-  line-height: 1.7;
-  margin-bottom: 48px;
-  max-width: 420px;
+  color: var(--gray);
+  font-size: 1.15rem;
+  max-width: 520px;
+  margin-top: 1.5rem;
+  animation: heroIn 1s 0.6s both;
 }
-.hero a.start {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #C9A84C;
-  border-bottom: 1px solid rgba(201,168,76,0.3);
-  padding-bottom: 2px;
-  transition: border-color 0.2s;
+.hero-cta {
+  display: flex; gap: 1rem; margin-top: 2.5rem;
+  animation: heroIn 1s 0.8s both;
 }
-.hero a.start:hover { border-color: #C9A84C; }
 
-/* LINE */
-.line {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.06);
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 0.9rem; font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer; border: none;
+}
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), #b8952f);
+  color: var(--navy);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* SECTIONS */
+section { padding: 6rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600; line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.section-sub {
+  color: var(--gray); font-size: 1.05rem; max-width: 600px;
+  margin-bottom: 3.5rem;
 }
 
 /* SERVICES */
-.services {
-  padding: 80px 0;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
-.services h2 {
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: rgba(255,255,255,0.25);
-  margin-bottom: 48px;
+.service-card {
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
 }
-.service {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
 }
-.service:first-of-type { border-top: 1px solid rgba(255,255,255,0.05); }
-.service-name {
-  font-size: 1rem;
-  font-weight: 400;
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201,168,76,0.25);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px var(--gold-dim);
+}
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--gold-dim);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+.service-card h3 {
+  font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem;
+}
+.service-card p {
+  color: var(--gray); font-size: 0.9rem; line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 .service-price {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.3);
-  font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem; font-weight: 600;
+  color: var(--gold);
+}
+.service-price span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem; font-weight: 400; color: var(--gray);
 }
 
-/* CONTACT */
-.contact {
-  padding: 80px 0 120px;
+/* WHY AMOTIVE */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
-.contact p {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 32px;
-  line-height: 1.7;
+.why-item {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.3s;
 }
-.contact a.email {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #C9A84C;
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-  padding-bottom: 2px;
-  transition: border-color 0.2s;
+.why-item:hover {
+  border-color: rgba(201,168,76,0.2);
+  background: rgba(201,168,76,0.03);
 }
-.contact a.email:hover { border-color: #C9A84C; }
+.why-icon {
+  font-size: 1.5rem; margin-bottom: 1rem;
+}
+.why-item h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.why-item p { color: var(--gray); font-size: 0.875rem; }
+
+/* PRICING COMPARISON */
+.pricing-compare {
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  overflow: hidden;
+  position: relative;
+}
+.compare-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-name { font-size: 1rem; color: var(--gray); flex: 1; }
+.compare-price {
+  font-size: 1.1rem; font-weight: 500;
+  color: var(--gray);
+  text-decoration: line-through;
+  text-decoration-color: rgba(239,68,68,0.5);
+  opacity: 0.6;
+}
+.compare-row.highlight {
+  background: var(--gold-dim);
+  margin: 1rem -3rem -3rem;
+  padding: 1.75rem 3rem;
+  border-bottom: none;
+  border-radius: 0 0 20px 20px;
+}
+.compare-row.highlight .compare-name {
+  color: var(--white); font-weight: 600; font-size: 1.1rem;
+}
+.compare-row.highlight .compare-price {
+  text-decoration: none;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 600;
+  opacity: 1;
+}
+
+/* SECURITY */
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.security-item {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+}
+.security-icon {
+  font-size: 2rem; margin-bottom: 1rem;
+  display: inline-block;
+  animation: secPulse 3s ease-in-out infinite;
+}
+.security-item:nth-child(2) .security-icon { animation-delay: 0.5s; }
+.security-item:nth-child(3) .security-icon { animation-delay: 1s; }
+.security-item:nth-child(4) .security-icon { animation-delay: 1.5s; }
+@keyframes secPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.security-item h4 { font-size: 0.95rem; margin-bottom: 0.35rem; }
+.security-item p { color: var(--gray); font-size: 0.8rem; }
+
+/* CTA / CONTACT */
+.cta-section {
+  text-align: center;
+  padding: 8rem 2rem;
+}
+.cta-section .section-title {
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+.cta-section p {
+  color: var(--gray); font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+.cta-section .btn { margin: 0 0.5rem; }
+.cta-email {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+.cta-email a {
+  color: var(--gold); text-decoration: none;
+  transition: opacity 0.3s;
+}
+.cta-email a:hover { opacity: 0.8; }
+
+/* DIVIDER */
+.divider {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 3rem;
+}
 
 /* FOOTER */
 footer {
-  padding: 32px 0;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.8rem;
 }
-footer .page {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-footer span { font-size: 0.8rem; color: rgba(255,255,255,0.15); }
-footer a { font-size: 0.8rem; color: rgba(255,255,255,0.15); }
-footer a:hover { color: rgba(255,255,255,0.4); }
-.footer-links { display: flex; gap: 20px; }
+footer a { color: var(--gray); text-decoration: none; margin: 0 1rem; transition: color 0.3s; }
+footer a:hover { color: var(--gold); }
 
-@media (max-width: 640px) {
-  .hero { padding: 80px 0 100px; }
-  .service { flex-direction: column; gap: 4px; }
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(11,17,32,0.95); backdrop-filter: blur(20px);
+    padding: 2rem; gap: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .services-grid, .why-grid { grid-template-columns: 1fr; }
+  .security-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .pricing-compare { padding: 1.5rem; }
+  .compare-row.highlight { margin: 1rem -1.5rem -1.5rem; padding: 1.5rem; border-radius: 0 0 20px 20px; }
+  section { padding: 4rem 1.25rem; }
 }
+
+/* SELECTION */
+::selection { background: var(--gold); color: var(--navy); }
 </style>
 </head>
 <body>
+<div class="bg-gradient"></div>
 
 <nav>
-  <div class="page">
-    <div class="logo">amotive<span>.</span></div>
-    <a href="mailto:a@amotive.io" class="cta">a@amotive.io</a>
-  </div>
+  <a href="#" class="nav-logo">amotive<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <!-- pricing removed -->
+    <li><a href="#security">Security</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-mobile" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="page">
-    <h1>We build <strong>websites</strong> and run <strong>marketing</strong> for local businesses.</h1>
-    <p>Fixed pricing. Fast delivery. No contracts.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="start">Start a project →</a>
+  <div class="hero-badge">Bainbridge Island</div>
+  <h1>State of the art websites.<br><em>At a deal cost.</em></h1>
+  <p>Premium web design, marketing, and growth — built with the craft your business deserves, priced like it shouldn't be.</p>
+  <div class="hero-cta">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="btn btn-gold" target="_blank">Free Consultation →</a>
+    <a href="#services" class="btn btn-outline">See Services</a>
   </div>
 </section>
 
-<hr class="line">
-
-<section class="services">
-  <div class="page">
-    <h2>Services</h2>
-    <div class="service">
-      <span class="service-name">Website</span>
-      <span class="service-price">$1,500</span>
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Services</p>
+      <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+      <p class="section-sub">Custom solutions tailored to your business. No templates, no shortcuts.</p>
     </div>
-    <div class="service">
-      <span class="service-name">Marketing</span>
-      <span class="service-price">$2,000 /mo</span>
-    </div>
-    <div class="service">
-      <span class="service-name">Full Growth</span>
-      <span class="service-price">$3,500 /mo</span>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🌐</div>
+        <h3>Website Design</h3>
+        <p>Custom-designed, hand-coded, blazing fast. Responsive across every device. SEO-ready from day one. Your digital storefront, done right.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📈</div>
+        <h3>Marketing</h3>
+        <p>SEO, content strategy, local search optimization, and analytics. We put your business in front of the right people, consistently.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🚀</div>
+        <h3>Full Growth</h3>
+        <p>Website + marketing + ongoing optimization. The complete package for businesses ready to scale. Strategy, execution, and results — all included.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<hr class="line">
+<!-- WHY AMOTIVE -->
+<section id="why">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Why Amotive</p>
+      <h2 class="section-title">Built different. On purpose.</h2>
+      <p class="section-sub">We're not a template factory. We're engineers who build things properly.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon">🔒</div>
+        <h3>Security-First</h3>
+        <p>Enterprise-grade protection standard on every site. Your data and your customers' data — locked down.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">⚡</div>
+        <h3>Performance</h3>
+        <p>Hand-coded, no bloat. Sub-second load times that keep visitors engaged and Google happy.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">📍</div>
+        <h3>Local</h3>
+        <p>We know the island. We know the market. Your neighbors trust us because we're one of them.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">🛠️</div>
+        <h3>No Vendor Lock-in</h3>
+        <p>You own everything. Code, domain, content. Walk away anytime with all your assets.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">🎯</div>
+        <h3>Direct Access</h3>
+        <p>No account managers, no ticket queues. Talk directly to the person building your site.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">📊</div>
+        <h3>Transparent</h3>
+        <p>Real metrics, real results. Monthly reports you can actually understand. No vanity metrics.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="contact">
-  <div class="page">
-    <p>Tell us about your business. We'll tell you how we can help.</p>
-    <a href="mailto:a@amotive.io" class="email">a@amotive.io</a>
+
+
+<!-- SECURITY -->
+<section id="security">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Security</p>
+      <h2 class="section-title">Protected by default.</h2>
+      <p class="section-sub">Every site ships with enterprise-grade security. No add-ons, no upsells.</p>
+    </div>
+    <div class="security-grid">
+      <div class="security-item reveal">
+        <div class="security-icon">🛡️</div>
+        <h4>Bot Protection</h4>
+        <p>Advanced threat filtering</p>
+      </div>
+      <div class="security-item reveal">
+        <div class="security-icon">🔐</div>
+        <h4>SSL Encryption</h4>
+        <p>HTTPS everywhere</p>
+      </div>
+      <div class="security-item reveal">
+        <div class="security-icon">⏱️</div>
+        <h4>99.9% Uptime</h4>
+        <p>Always on, always fast</p>
+      </div>
+      <div class="security-item reveal">
+        <div class="security-icon">💾</div>
+        <h4>Daily Backups</h4>
+        <p>Never lose your data</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="container reveal">
+    <div class="divider"></div>
+    <p class="section-label">Get Started</p>
+    <h2 class="section-title">Ready to build something worth visiting?</h2>
+    <p>Book a free Google Meet — no strings attached. We'll talk about your goals, audit your current presence, and map out a plan. Zero obligation.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeAQijd2W0QmRU6OsceMzMWf_ka0HqYqJK09gn0NayguHCFw/viewform" class="btn btn-gold" target="_blank">Book Your Free Consultation →</a>
+    <div class="cta-email">or email us directly at <a href="mailto:a@amotive.io">a@amotive.io</a></div>
   </div>
 </section>
 
 <footer>
-  <div class="page">
-    <span>&copy; 2026 Amotive</span>
-    <div class="footer-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-    </div>
-  </div>
+  <p>&copy; 2025 Amotive. All rights reserved.</p>
+  <p style="margin-top:0.5rem;">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+  </p>
 </footer>
 
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Close mobile nav on link click
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
 </body>
 </html>
