@@ -45,8 +45,11 @@
 .text-hollow {
   -webkit-text-stroke: 1.5px var(--white);
   color: transparent;
-  transition: color var(--duration-slow) var(--ease-out-expo),
-              -webkit-text-stroke-color var(--duration-slow) var(--ease-out-expo);
+}
+
+.text-hollow .char-animate {
+  -webkit-text-stroke: 1.5px var(--white);
+  color: transparent;
 }
 
 .text-hollow-gold {
@@ -55,6 +58,13 @@
 }
 
 .text-gradient {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient .char-animate {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
