@@ -1,0 +1,264 @@
+/* ============================================
+   AMOTIVE — Effects & Animations
+   ============================================ */
+
+/* === SCROLL REVEAL === */
+[data-animate] {
+  opacity: 0;
+  transition-property: opacity, transform, filter;
+  transition-duration: var(--duration-slower);
+  transition-timing-function: var(--ease-out-expo);
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(40px);
+}
+
+[data-animate="fade-down"] {
+  transform: translateY(-40px);
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(-60px);
+}
+
+[data-animate="fade-right"] {
+  transform: translateX(60px);
+}
+
+[data-animate="blur-in"] {
+  filter: blur(8px);
+  transform: translateY(10px);
+}
+
+[data-animate="scale-in"] {
+  transform: scale(0.92);
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* === HOLLOW TEXT === */
+.text-hollow {
+  -webkit-text-stroke: 1.5px var(--white);
+  color: transparent;
+  transition: color var(--duration-slow) var(--ease-out-expo),
+              -webkit-text-stroke-color var(--duration-slow) var(--ease-out-expo);
+}
+
+.text-hollow-gold {
+  -webkit-text-stroke: 1.5px var(--gold);
+  color: transparent;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === SHINY TEXT === */
+.shiny-text {
+  background: linear-gradient(
+    110deg,
+    var(--white) 0%,
+    var(--white) 40%,
+    var(--gold-light) 50%,
+    var(--white) 60%,
+    var(--white) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shineText 4s ease-in-out infinite;
+}
+
+@keyframes shineText {
+  0% { background-position: 100% 0; }
+  50% { background-position: -50% 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* === STAR BORDER === */
+.star-border {
+  position: relative;
+}
+
+.star-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--star-angle, 0deg),
+    transparent 0%,
+    var(--gold) 10%,
+    transparent 20%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--duration-normal);
+  pointer-events: none;
+}
+
+.star-border:hover::after {
+  opacity: 1;
+  animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+  to { --star-angle: 360deg; }
+}
+
+@property --star-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* === HERO ANIMATIONS === */
+.char-animate {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.char-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s var(--ease-out-expo),
+              transform 0.6s var(--ease-out-expo);
+}
+
+.word-blur {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(8px);
+}
+
+.word-blur.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: opacity 0.5s var(--ease-out-expo),
+              filter 0.5s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo);
+}
+
+/* === SCROLL CHEVRON === */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-400);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-ultra);
+  animation: floatChevron 2.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+.scroll-indicator svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  opacity: 0.6;
+}
+
+@keyframes floatChevron {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50% { transform: translateX(-50%) translateY(8px); opacity: 0.5; }
+}
+
+/* === PULSE DOT === */
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--gold-glow); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 8px transparent; }
+}
+
+/* === ICON BOX === */
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+  color: var(--gold);
+}
+
+.icon-box svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* === PARTICLE CANVAS === */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* === FOCUS STYLES === */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .char-animate, .word-blur {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .scroll-indicator { display: none; }
+}

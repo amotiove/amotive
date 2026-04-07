@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security — Amotive</title>
+<meta name="description" content="Enterprise-grade security on every site. SSL, bot protection, 99.9% uptime, daily backups — no add-ons required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/effects.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  /* === HERO === */
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem var(--space-xl) var(--space-4xl);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-hero);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-lg);
+    position: relative;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    color: var(--gray-400);
+    font-size: var(--text-xl);
+    max-width: 560px;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .hero-shield {
+    width: 120px;
+    height: 120px;
+    stroke: var(--gold);
+    opacity: 0.15;
+    position: absolute;
+    bottom: 2rem;
+  }
+
+  /* === FEATURE SECTIONS === */
+  .feature-section {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+  }
+
+  .feature-block {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+    padding: var(--space-3xl) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .feature-block:last-child {
+    border-bottom: none;
+  }
+
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    stroke: var(--gold);
+    padding: var(--space-md);
+    background: var(--gold-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  .feature-block h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature-block p {
+    color: var(--gray-300);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    max-width: 640px;
+  }
+
+  /* === STATS === */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    max-width: var(--container-xl);
+    margin: 0 auto;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: var(--space-xs);
+  }
+
+  .stat-label {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-weight: 500;
+  }
+
+  /* === CTA === */
+  .cta-section {
+    text-align: center;
+    padding: var(--space-5xl) var(--space-xl);
+  }
+
+  .cta-section h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .feature-block {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">amotive<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/security/">Security</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <a href="/contact/" class="nav-cta">Free Consultation</a>
+  <button class="nav-mobile-toggle" aria-label="Menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+<div class="nav-overlay">
+  <a href="/services/">Services</a>
+  <a href="/about/">About</a>
+  <a href="/security/">Security</a>
+  <a href="/contact/">Contact</a>
+  <a href="/contact/" class="nav-cta" style="margin-top:1rem;">Free Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 data-animate="fade-up">Protected by <span class="text-gradient">default.</span></h1>
+  <p class="hero-sub" data-animate="fade-up">Enterprise-grade security ships standard. No add-ons. No upsells.</p>
+  <svg class="hero-shield" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-animate="scale-in">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    <polyline points="9 12 11 14 15 10"/>
+  </svg>
+</section>
+
+<!-- SECURITY FEATURES -->
+<section>
+  <div class="feature-section">
+    <span class="section-label" data-animate="fade-up">What's Included</span>
+    <h2 class="section-title" data-animate="fade-up">Four layers of protection.</h2>
+
+    <div class="feature-block" data-animate="fade-left">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <div>
+        <h3>Bot Protection</h3>
+        <p>Advanced threat filtering stops malicious bots, scrapers, and automated attacks before they reach your site. Our multi-layered defense includes DDoS mitigation, rate limiting, and intelligent pattern detection that adapts to evolving threats — keeping your site safe without slowing it down for real visitors.</p>
+      </div>
+    </div>
+
+    <div class="feature-block" data-animate="fade-right">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+      </svg>
+      <div>
+        <h3>SSL Encryption</h3>
+        <p>HTTPS everywhere with TLS 1.3 — the latest encryption standard. Every connection between your visitors and your site is encrypted end-to-end. Certificates renew automatically so your protection never lapses. That padlock icon in the browser bar isn't optional — it's standard.</p>
+      </div>
+    </div>
+
+    <div class="feature-block" data-animate="fade-left">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+      <div>
+        <h3>99.9% Uptime</h3>
+        <p>Your site stays online because your business depends on it. Redundant infrastructure across multiple regions, global CDN distribution, and instant failover mean your site is always available — even during traffic spikes or infrastructure issues. Downtime isn't a risk we accept.</p>
+      </div>
+    </div>
+
+    <div class="feature-block" data-animate="fade-right">
+      <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      <div>
+        <h3>Daily Backups</h3>
+        <p>Automated daily snapshots of your entire site — code, content, databases, everything. Stored securely offsite with point-in-time recovery so we can restore your site to any moment in the last 30 days. Accidents happen. With daily backups, they don't become disasters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section>
+  <div class="container">
+    <div class="stats-grid" data-stagger>
+      <div class="glass-card stat-card" data-animate="fade-up">
+        <div class="stat-number" data-count="99.9">99.9%</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+      <div class="glass-card stat-card" data-animate="fade-up">
+        <div class="stat-number" data-count="256">256-bit</div>
+        <div class="stat-label">Encryption</div>
+      </div>
+      <div class="glass-card stat-card" data-animate="fade-up">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Monitoring</div>
+      </div>
+      <div class="glass-card stat-card" data-animate="fade-up">
+        <div class="stat-number">Daily</div>
+        <div class="stat-label">Backups</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="divider" data-animate="scale-in"></div>
+  <h2 data-animate="fade-up">Security questions? Let's talk.</h2>
+  <a href="/contact/" class="btn btn-gold btn-lg" data-animate="fade-up" data-magnetic>Get in touch</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">amotive<span>.</span></div>
+    <div class="footer-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="mailto:a@amotive.io">a@amotive.io</a>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2025 Amotive. All rights reserved.</p>
+</footer>
+
+<script src="/js/effects.js"></script>
+<script src="/js/animations.js"></script>
+<script src="/js/nav.js"></script>
+<script>
+  AmotiveEffects.initMagneticButtons();
+  AmotiveEffects.initGlareCards();
+</script>
+<script src="https://intelflow.amotive.io/intelflow.js" data-key="if_amotive_ac004149fe4f7d7b"></script>
+</body>
+</html>
