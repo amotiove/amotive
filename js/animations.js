@@ -44,26 +44,39 @@
   function initTextSplit() {
     if (prefersReducedMotion) return;
 
-    document.querySelectorAll('[data-split-chars]').forEach(el => {
-      const text = el.textContent;
+    const splitElements = document.querySelectorAll('[data-split-chars]');
+    let globalCharOffset = 0;
+
+    splitElements.forEach(el => {
+      const text = el.textContent.trim();
       const delay = parseInt(el.dataset.splitDelay) || 40;
+      const offset = globalCharOffset;
+
+      // Track chars for staggering across sibling elements
+      globalCharOffset += text.replace(/\s/g, '').length + 5;
 
       // Clear and set accessible label
       el.setAttribute('aria-label', text);
 
-      // Build spans using DOM API (no innerHTML)
+      // Build spans using DOM API — split by words to preserve wrapping
       const fragment = document.createDocumentFragment();
-      const lines = text.split('\n');
-      lines.forEach((line, lineIdx) => {
-        for (let i = 0; i < line.length; i++) {
+      const words = text.split(' ');
+      words.forEach((word, wIdx) => {
+        // Wrap each word in a span to keep characters together
+        const wordWrap = document.createElement('span');
+        wordWrap.style.display = 'inline-block';
+        wordWrap.style.whiteSpace = 'nowrap';
+        for (let i = 0; i < word.length; i++) {
           const span = document.createElement('span');
           span.className = 'char-animate';
-          span.textContent = line[i] === ' ' ? '\u00A0' : line[i];
+          span.textContent = word[i];
           span.setAttribute('aria-hidden', 'true');
-          fragment.appendChild(span);
+          wordWrap.appendChild(span);
         }
-        if (lineIdx < lines.length - 1) {
-          fragment.appendChild(document.createElement('br'));
+        fragment.appendChild(wordWrap);
+        // Add a real space between words (allows line break)
+        if (wIdx < words.length - 1) {
+          fragment.appendChild(document.createTextNode(' '));
         }
       });
       el.textContent = '';
@@ -73,7 +86,7 @@
         if (!entry.isIntersecting) return;
         const chars = el.querySelectorAll('.char-animate');
         chars.forEach((ch, i) => {
-          setTimeout(() => ch.classList.add('visible'), i * delay);
+          setTimeout(() => ch.classList.add('visible'), (i + offset) * delay);
         });
         observer.unobserve(el);
       }, { threshold: 0.2 });
