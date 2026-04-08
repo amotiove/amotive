@@ -29,7 +29,7 @@
           children.forEach((child, i) => {
             setTimeout(() => child.classList.add('visible'), i * delay);
           });
-        } else if (!parent) {
+        } else {
           el.classList.add('visible');
         }
 
@@ -38,6 +38,13 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    // Safety net: force all elements visible after 3s if observer fails
+    setTimeout(() => {
+      document.querySelectorAll('[data-animate]:not(.visible)').forEach(el => {
+        el.classList.add('visible');
+      });
+    }, 3000);
   }
 
   /* === TEXT SPLIT (character stagger) === */
