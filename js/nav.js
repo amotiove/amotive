@@ -17,6 +17,14 @@
       if (!ticking) {
         requestAnimationFrame(() => {
           nav.classList.toggle('scrolled', window.scrollY > 80);
+
+          const progressBar = document.querySelector('.scroll-progress');
+          if (progressBar) {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+            progressBar.style.transform = 'scaleX(' + progress + ')';
+          }
+
           ticking = false;
         });
         ticking = true;

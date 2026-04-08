@@ -95,6 +95,13 @@
   --duration-slow: 600ms;
   --duration-slower: 800ms;
 
+  /* === 3D === */
+  --perspective-card: 1000px;
+  --tilt-max: 8deg;
+  --tilt-transition: 600ms var(--ease-spring);
+  --spotlight-size: 600px;
+  --spotlight-opacity: 0.04;
+
   /* === LAYOUT === */
   --container-sm: 640px;
   --container-md: 800px;
