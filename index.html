@@ -548,15 +548,15 @@
   // Init aurora (fallback to particles if WebGL unavailable)
   var auroraCanvas = document.getElementById('auroraCanvas');
   var particleFallback = document.getElementById('heroParticles');
+  var auroraOk = false;
   if (auroraCanvas && window.AmotiveAurora) {
-    try {
-      AmotiveAurora.init(auroraCanvas);
-    } catch(e) {
-      auroraCanvas.style.display = 'none';
-      if (particleFallback) {
-        particleFallback.style.display = '';
-        AmotiveEffects.initParticles(particleFallback, { count: 70 });
-      }
+    try { auroraOk = !!AmotiveAurora.init(auroraCanvas); } catch(e) { auroraOk = false; }
+  }
+  if (!auroraOk) {
+    if (auroraCanvas) auroraCanvas.style.display = 'none';
+    if (particleFallback) {
+      particleFallback.style.display = '';
+      AmotiveEffects.initParticles(particleFallback, { count: 70 });
     }
   }
 

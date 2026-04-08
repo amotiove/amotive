@@ -326,7 +326,7 @@
 
     if (!gl) {
       console.warn('AmotiveAurora: WebGL not supported');
-      return function noop() {};
+      return null;
     }
 
     // ---- Compile shaders ----
@@ -338,7 +338,7 @@
       program = createProgram(gl, vertSrc, fragSrc);
     } catch (e) {
       console.error('AmotiveAurora:', e.message);
-      return function noop() {};
+      return null;
     }
 
     gl.useProgram(program);
