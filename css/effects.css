@@ -43,12 +43,13 @@
 
 /* === HOLLOW TEXT === */
 .text-hollow {
-  -webkit-text-stroke: 1.5px var(--white);
+  -webkit-text-stroke: 2.5px var(--white);
   color: transparent;
+  text-shadow: 0 0 20px rgba(240, 242, 248, 0.15);
 }
 
 .text-hollow .char-animate {
-  -webkit-text-stroke: 1.5px var(--white);
+  -webkit-text-stroke: 2.5px var(--white);
   color: transparent;
 }
 
