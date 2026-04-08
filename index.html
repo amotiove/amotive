@@ -298,6 +298,9 @@
 </head>
 <body>
 
+<div class="scroll-progress"></div>
+<div class="cursor-spotlight"></div>
+
 <!-- NAV -->
 <nav class="nav">
   <a href="/" class="nav-logo">amotive<span>.</span></a>
@@ -324,21 +327,22 @@
 
   <!-- HERO -->
   <section class="hero">
-    <canvas class="particle-canvas" id="heroParticles"></canvas>
+    <canvas class="aurora-canvas" id="auroraCanvas"></canvas>
+    <canvas class="particle-canvas" id="heroParticles" style="display:none;"></canvas>
 
-    <div class="hero-badge">
+    <div class="hero-badge" data-parallax="0.4">
       <span class="pulse-dot"></span>
       Puget Sound, WA
     </div>
 
-    <h1>
+    <h1 data-parallax="0.5">
       <span class="text-hollow" data-split-chars data-split-delay="40">State of the art websites.</span><br>
       <span class="text-gradient" data-split-chars data-split-delay="40">At a deal cost.</span>
     </h1>
 
-    <p class="hero-subtitle" data-blur-words>Premium web design, marketing, and growth — built with the craft your business deserves, priced like it shouldn't be.</p>
+    <p class="hero-subtitle" data-blur-words data-parallax="0.6">Premium web design, marketing, and growth — built with the craft your business deserves, priced like it shouldn't be.</p>
 
-    <div class="hero-cta">
+    <div class="hero-cta" data-parallax="0.7">
       <a href="/contact/" class="btn btn-gold btn-lg">Free Consultation &rarr;</a>
       <a href="/services/" class="btn btn-outline btn-lg">See Services</a>
     </div>
@@ -355,7 +359,7 @@
   <section>
     <div class="container">
       <p class="section-label" data-animate="fade-up">Services</p>
-      <h2 class="section-title" data-animate="fade-up">Everything you need.<br>Nothing you don't.</h2>
+      <h2 class="section-title" data-scroll-float>Everything you need. Nothing you don't.</h2>
       <p class="section-sub" data-animate="fade-up">Custom solutions tailored to your business. No templates, no shortcuts.</p>
 
       <div class="services-grid" data-stagger="150">
@@ -407,7 +411,7 @@
   <section class="why-section">
     <div class="container">
       <p class="section-label" data-animate="fade-up">Why Amotive</p>
-      <h2 class="section-pullquote" data-animate="fade-up">Built different. On purpose.</h2>
+      <h2 class="section-pullquote" data-scroll-float>Built different. On purpose.</h2>
 
       <!-- Row 1: Security-First + Performance -->
       <div class="why-row">
@@ -455,7 +459,7 @@
   <section>
     <div class="container">
       <p class="section-label" data-animate="fade-up">Security</p>
-      <h2 class="section-title" data-animate="fade-up">Protected by default.</h2>
+      <h2 class="section-title" data-scroll-float>Protected by default.</h2>
       <p class="section-sub" data-animate="fade-up">Every site ships with enterprise-grade security. No add-ons, no upsells.</p>
 
       <div class="security-grid" data-stagger="150">
@@ -515,7 +519,7 @@
     <canvas class="particle-canvas" id="ctaParticles"></canvas>
     <div class="divider"></div>
     <p class="section-label">Get Started</p>
-    <h2 class="shiny-text section-title">Ready to build something worth visiting?</h2>
+    <h2 class="shiny-text section-title" data-scroll-float>Ready to build something worth visiting?</h2>
     <p class="cta-subtitle">Book a free consultation — no strings attached. We'll talk about your goals, audit your current presence, and map out a plan.</p>
     <a href="/contact/" class="btn btn-gold btn-lg">Book Your Free Consultation &rarr;</a>
     <span class="cta-email">or email us directly at <a href="mailto:a@amotive.io">a@amotive.io</a></span>
@@ -539,17 +543,31 @@
 <script src="/js/effects.js"></script>
 <script src="/js/animations.js"></script>
 <script src="/js/nav.js"></script>
+<script src="/js/aurora.js"></script>
 <script>
-  // Init particles
-  const heroCanvas = document.getElementById('heroParticles');
-  if (heroCanvas) AmotiveEffects.initParticles(heroCanvas, { count: 70 });
+  // Init aurora (fallback to particles if WebGL unavailable)
+  var auroraCanvas = document.getElementById('auroraCanvas');
+  var particleFallback = document.getElementById('heroParticles');
+  if (auroraCanvas && window.AmotiveAurora) {
+    try {
+      AmotiveAurora.init(auroraCanvas);
+    } catch(e) {
+      auroraCanvas.style.display = 'none';
+      if (particleFallback) {
+        particleFallback.style.display = '';
+        AmotiveEffects.initParticles(particleFallback, { count: 70 });
+      }
+    }
+  }
 
-  const ctaCanvas = document.getElementById('ctaParticles');
+  // CTA particles
+  var ctaCanvas = document.getElementById('ctaParticles');
   if (ctaCanvas) AmotiveEffects.initParticles(ctaCanvas, { count: 30 });
 
   // Init effects
   AmotiveEffects.initMagneticButtons();
-  AmotiveEffects.initGlareCards();
+  AmotiveEffects.initTiltCards();
+  AmotiveEffects.initSpotlightCursor();
 </script>
 <script src="https://intelflow.amotive.io/intelflow.js" data-key="if_amotive_ac004149fe4f7d7b"></script>
 </body>

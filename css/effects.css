@@ -243,6 +243,93 @@
   pointer-events: none;
 }
 
+/* === CURSOR SPOTLIGHT === */
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    var(--spotlight-size) circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(201, 168, 76, var(--spotlight-opacity)),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-slow);
+}
+
+.cursor-spotlight.active {
+  opacity: 1;
+}
+
+/* === BUTTON RIPPLE === */
+.btn {
+  overflow: hidden;
+}
+
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.25);
+  transform: scale(0);
+  animation: rippleOut 500ms var(--ease-out-expo) forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleOut {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* === 3D TILT CARDS === */
+.tilt-perspective {
+  perspective: var(--perspective-card);
+}
+
+.glass-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* === PARALLAX === */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* === SCROLL FLOAT TEXT === */
+.scroll-float-char {
+  display: inline-block;
+  will-change: transform, opacity;
+  transition: none;
+}
+
+/* === SCROLL PROGRESS === */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 1001;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* === AURORA CANVAS === */
+.aurora-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* === FOCUS STYLES === */
 :focus-visible {
   outline: 2px solid var(--gold);
@@ -271,4 +358,8 @@
   }
 
   .scroll-indicator { display: none; }
+  .cursor-spotlight { display: none; }
+  .btn-ripple { display: none; }
+  [data-parallax] { transform: none !important; }
+  .scroll-float-char { transform: none !important; opacity: 1 !important; }
 }

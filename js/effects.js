@@ -1,6 +1,6 @@
 /* ============================================
    AMOTIVE — Effects Engine
-   Particles, Magnetic Buttons, Glare, Cursor
+   Particles, Magnetic Buttons, Tilt Cards, Spotlight, Cursor
    ============================================ */
 
 (function () {
@@ -126,11 +126,25 @@
         btn.style.transition = `transform var(--duration-normal) var(--ease-spring)`;
         setTimeout(() => { btn.style.transition = ''; }, 400);
       });
+
+      btn.addEventListener('click', (e) => {
+        if (prefersReducedMotion) return;
+        const rect = btn.getBoundingClientRect();
+        const size = Math.max(btn.offsetWidth, btn.offsetHeight) * 2;
+        const ripple = document.createElement('span');
+        ripple.className = 'btn-ripple';
+        ripple.style.width = size + 'px';
+        ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+        btn.appendChild(ripple);
+        ripple.addEventListener('animationend', () => ripple.remove());
+      });
     });
   }
 
-  /* === GLARE HOVER ON CARDS === */
-  function initGlareCards() {
+  /* === TILT + GLARE HOVER ON CARDS === */
+  function initTiltCards() {
     if (isTouchDevice || prefersReducedMotion) return;
 
     document.querySelectorAll('.glass-card').forEach(card => {
@@ -142,8 +156,48 @@
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
+
+        // Glare follows cursor
         glare.style.background = `radial-gradient(300px circle at ${x}px ${y}px, rgba(255,255,255,0.06), transparent 60%)`;
+
+        // 3D tilt (-8 to +8 deg)
+        const rotateY = ((x / rect.width) - 0.5) * 16;
+        const rotateX = ((y / rect.height) - 0.5) * -16;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        card.style.boxShadow = `${-rotateY * 1.5}px ${rotateX * 1.5}px 30px rgba(0,0,0,0.3), 0 0 40px rgba(201,168,76,0.08)`;
       });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 600ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+        card.style.transform = '';
+        card.style.boxShadow = '';
+        setTimeout(() => { card.style.transition = ''; }, 600);
+      });
+    });
+  }
+
+  /* === SPOTLIGHT CURSOR === */
+  function initSpotlightCursor() {
+    if (isTouchDevice || prefersReducedMotion) return;
+
+    const spotlight = document.querySelector('.cursor-spotlight');
+    if (!spotlight) return;
+
+    let rafId;
+    document.addEventListener('mousemove', (e) => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        spotlight.style.setProperty('--spot-x', e.clientX + 'px');
+        spotlight.style.setProperty('--spot-y', e.clientY + 'px');
+        if (!spotlight.classList.contains('active')) {
+          spotlight.classList.add('active');
+        }
+        rafId = null;
+      });
+    });
+
+    document.addEventListener('mouseleave', () => {
+      spotlight.classList.remove('active');
     });
   }
 
@@ -151,6 +205,7 @@
   window.AmotiveEffects = {
     initParticles,
     initMagneticButtons,
-    initGlareCards
+    initTiltCards,
+    initSpotlightCursor
   };
 })();
