@@ -271,6 +271,259 @@
     opacity: 0.8;
   }
 
+  /* === PRICING SECTION === */
+  .pricing-section {
+    position: relative;
+  }
+
+  /* Industry anchor table (the hook) */
+  .industry-anchor {
+    max-width: 720px;
+    margin: 0 auto var(--space-4xl);
+    padding: var(--space-2xl);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .industry-anchor-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .industry-anchor-intro {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xl);
+    line-height: var(--leading-relaxed);
+  }
+
+  .anchor-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: var(--space-md);
+  }
+
+  .anchor-row:last-of-type {
+    border-bottom: none;
+  }
+
+  .anchor-row.amotive-row {
+    margin-top: var(--space-md);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--gold-dim);
+    border-bottom: none;
+  }
+
+  .anchor-label {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    flex: 1;
+  }
+
+  .anchor-row.amotive-row .anchor-label {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .anchor-price {
+    color: var(--gray-500);
+    font-size: var(--text-sm);
+    font-variant-numeric: tabular-nums;
+    text-decoration: line-through;
+    text-decoration-color: rgba(239, 68, 68, 0.4);
+    white-space: nowrap;
+  }
+
+  .anchor-row.amotive-row .anchor-price {
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .anchor-footnote {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border);
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .anchor-footnote strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* Pricing tier cards (the sink) */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+    align-items: stretch;
+  }
+
+  .pricing-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-xl);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--duration-normal) var(--ease-out-expo);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .pricing-card.featured {
+    border-color: rgba(201, 168, 76, 0.35);
+    background: linear-gradient(
+      180deg,
+      rgba(201, 168, 76, 0.04),
+      rgba(255, 255, 255, 0.04)
+    );
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px var(--gold-dim);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+  }
+
+  .pricing-tier-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-ultra);
+    color: var(--gold);
+    margin-bottom: var(--space-sm);
+  }
+
+  .pricing-tier-name {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .pricing-tier-desc {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    margin-bottom: var(--space-xl);
+    min-height: 2.5em;
+  }
+
+  .pricing-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .pricing-amount-prefix {
+    color: var(--gray-400);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
+
+  .pricing-amount-value {
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .pricing-amount-suffix {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+  }
+
+  .pricing-note {
+    color: var(--gold);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    margin-bottom: var(--space-xl);
+    min-height: 1em;
+  }
+
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-2xl);
+    flex: 1;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.45rem 0;
+    color: var(--gray-300);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+  }
+
+  .pricing-features li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: 0.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a84c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .pricing-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-fineprint {
+    text-align: center;
+    color: var(--gray-500);
+    font-size: var(--text-xs);
+    margin-top: var(--space-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: var(--leading-relaxed);
+  }
+
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
     .services-grid {
@@ -285,6 +538,14 @@
 
     .security-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .industry-anchor {
+      padding: var(--space-xl) var(--space-lg);
     }
 
     .hero-cta {
@@ -309,6 +570,7 @@
   <a href="/" class="nav-logo">amotive<span>.</span></a>
   <ul class="nav-links">
     <li><a href="/services/">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/security/">Security</a></li>
     <li><a href="/contact/">Contact</a></li>
@@ -320,6 +582,7 @@
 </nav>
 <div class="nav-overlay">
   <a href="/services/">Services</a>
+  <a href="#pricing">Pricing</a>
   <a href="/about/">About</a>
   <a href="/security/">Security</a>
   <a href="/contact/">Contact</a>
@@ -455,6 +718,119 @@
           <p>Monthly report. What we did, what moved, what's next. Numbers you can verify yourself. We don't hide behind vanity metrics.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <p class="section-label" data-animate="fade-up">Pricing</p>
+      <h2 class="section-title" data-scroll-float>Let's talk about what this actually costs.</h2>
+      <p class="section-sub" data-animate="fade-up">Most agencies won't publish prices. That's a tell. Here's what the industry charges for the kind of work we do.</p>
+
+      <!-- Industry anchor (the hook) -->
+      <div class="industry-anchor" data-animate="fade-up">
+        <h3 class="industry-anchor-title">Here's what the industry charges.</h3>
+        <p class="industry-anchor-intro">Public reporting and industry research on custom marketing sites — the stuff with real code, real design, real CMS.</p>
+
+        <div class="anchor-row">
+          <span class="anchor-label">Top-tier agencies (Instrument, Ueno, Active Theory)</span>
+          <span class="anchor-price">$150k&ndash;$500k+</span>
+        </div>
+        <div class="anchor-row">
+          <span class="anchor-label">Mid-tier agencies — brand + site</span>
+          <span class="anchor-price">$100k&ndash;$250k</span>
+        </div>
+        <div class="anchor-row">
+          <span class="anchor-label">Boutique studio (3&ndash;15 people)</span>
+          <span class="anchor-price">$15k&ndash;$60k</span>
+        </div>
+        <div class="anchor-row">
+          <span class="anchor-label">Freelancer / template shop</span>
+          <span class="anchor-price">$2k&ndash;$8k</span>
+        </div>
+        <div class="anchor-row amotive-row">
+          <span class="anchor-label">Amotive</span>
+          <span class="anchor-price">From $4,500</span>
+        </div>
+
+        <p class="anchor-footnote"><strong>What most clients don't realize:</strong> 60% of an agency bill is overhead — sales teams, project managers, account directors, office rent. You're paying for the operation, not the craft. We run six clients at a time. No sales team. No PMs. You text the person writing your code.</p>
+      </div>
+
+      <!-- Pricing tiers (the sink) -->
+      <div class="pricing-grid" data-stagger="150">
+        <div class="pricing-card" data-animate="fade-up">
+          <p class="pricing-tier-label">Starter</p>
+          <h3 class="pricing-tier-name">The Site.</h3>
+          <p class="pricing-tier-desc">One-time build. Yours forever. No strings.</p>
+          <div class="pricing-amount">
+            <span class="pricing-amount-prefix">Starting at</span>
+            <span class="pricing-amount-value">$4,500</span>
+            <span class="pricing-amount-suffix">one-time</span>
+          </div>
+          <p class="pricing-note">&nbsp;</p>
+          <ul class="pricing-features">
+            <li>Up to 8 pages, hand-coded</li>
+            <li>Custom responsive design</li>
+            <li>SEO architecture from line one</li>
+            <li>Full security stack included</li>
+            <li>Sub-second load times</li>
+            <li>2 rounds of revisions</li>
+            <li>30-day launch</li>
+            <li>60 days post-launch support</li>
+          </ul>
+          <a href="/contact/" class="btn btn-outline pricing-cta">Start with this &rarr;</a>
+        </div>
+
+        <div class="pricing-card featured" data-animate="fade-up">
+          <span class="featured-badge">Most Popular</span>
+          <p class="pricing-tier-label">Full Engine</p>
+          <h3 class="pricing-tier-name">The Whole Thing.</h3>
+          <p class="pricing-tier-desc">Website plus marketing plus optimization. One team. One bill.</p>
+          <div class="pricing-amount">
+            <span class="pricing-amount-prefix">From</span>
+            <span class="pricing-amount-value">$2,500</span>
+            <span class="pricing-amount-suffix">/month</span>
+          </div>
+          <p class="pricing-note">Website included free with 12-month engagement</p>
+          <ul class="pricing-features">
+            <li>Everything in Starter ($4,500 value — included)</li>
+            <li>Local SEO + Google Business</li>
+            <li>Monthly content strategy</li>
+            <li>Performance monitoring</li>
+            <li>Ongoing optimization &amp; updates</li>
+            <li>Priority direct access</li>
+            <li>Unlimited minor updates</li>
+            <li>Monthly reporting in plain English</li>
+          </ul>
+          <a href="/contact/" class="btn btn-gold pricing-cta">Start with this &rarr;</a>
+        </div>
+
+        <div class="pricing-card" data-animate="fade-up">
+          <p class="pricing-tier-label">Growth</p>
+          <h3 class="pricing-tier-name">The Marketing.</h3>
+          <p class="pricing-tier-desc">For businesses who already have a site worth marketing.</p>
+          <div class="pricing-amount">
+            <span class="pricing-amount-prefix">From</span>
+            <span class="pricing-amount-value">$1,500</span>
+            <span class="pricing-amount-suffix">/month</span>
+          </div>
+          <p class="pricing-note">Month-to-month. No long contracts.</p>
+          <ul class="pricing-features">
+            <li>Local SEO that actually ranks</li>
+            <li>Content strategy from search data</li>
+            <li>Google Business optimization</li>
+            <li>Performance &amp; uptime monitoring</li>
+            <li>Monthly reporting</li>
+            <li>Quarterly strategy calls</li>
+            <li>Site performance audit included</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <a href="/contact/" class="btn btn-outline pricing-cta">Start with this &rarr;</a>
+        </div>
+      </div>
+
+      <p class="pricing-fineprint" data-animate="fade-up">Prices are starting points. Final quote depends on scope — page count, integrations, custom illustration, motion work. We'll tell you what it costs before you commit. Most clients get a number in 24 hours.</p>
     </div>
   </section>
 
