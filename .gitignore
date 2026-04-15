@@ -38,6 +38,10 @@ config.local.yaml
 !apple-touch-icon.png
 !og-image.png
 
+# Lead/outreach data — contains third-party PII, never commit
+leads/
+outreach/
+
 # Project directories (separate repos or private)
 projects/alpaca-bot/
 projects/GoogleRecaptchaBypass/
