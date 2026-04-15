@@ -395,5 +395,7 @@ document.querySelectorAll('.faq-q').forEach(btn => { btn.addEventListener('click
 let ticking = false;
 window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(() => { const s = window.scrollY; document.querySelectorAll('.geo-particle').forEach((p, i) => { p.style.transform = `translateY(${s * (0.02 + i * 0.008)}px) rotate(${45 + s * 0.01}deg)`; }); ticking = false; }); ticking = true; } }, { passive: true });
 </script>
+<script src="/js/consent.js" defer></script>
+<script src="/js/fingerprint.js" defer></script>
 </body>
 </html>
